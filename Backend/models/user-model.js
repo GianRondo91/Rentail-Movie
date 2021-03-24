@@ -13,6 +13,11 @@ const userSchema = new Schema({
     surname: {
         type: String
     },
+    username: {
+        type:String,
+        required: true,
+        unique: true
+    },
     email: {
         type: String,
         required: true
@@ -25,7 +30,10 @@ const userSchema = new Schema({
     phone: {
         type: String
     },
-    direction: {
+    birthday: {
+        type:Date
+    },
+    address: {
         type: String
     },
     payment: {
