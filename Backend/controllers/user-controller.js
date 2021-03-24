@@ -36,7 +36,7 @@ class UserController{
         }
 
         return jwt.sign(payload, secret);
-    };q
+    };
 
     //Mostrar un user por Id
     async findById(id){
