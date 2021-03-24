@@ -4,8 +4,10 @@ const orderController = require("../controllers/order-controller");
 
 //POST - Create a new Order in the DB
 router.post('/', async (req, res) => {
+    console.log("Esto es el req",req)
     try{
-        const order = await orderController.rentMovie(req.body.user_id,req.body.film_id);
+        const order = await orderController.rentMovie(req.body.userId,req.body.filmId);
+        console.log("soy el userId",req.body.userId)
         const status = 'success';
         res.json({status,order});
     } catch( error ){
@@ -14,3 +16,5 @@ router.post('/', async (req, res) => {
         });
     }
 });
+
+module.exports = router;
