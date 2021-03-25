@@ -1,0 +1,225 @@
+/*BASE*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol,
+ul {
+  list-style: none; }
+
+blockquote,
+q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+@font-face {
+  font-family: NotoSans-Bold;
+  src: url("../../../public/fonts/ttf/NotoSans-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: NotoSans-BoldItalic;
+  src: url("../../../public/fonts/ttf/NotoSans-BoldItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: NotoSans-Italic;
+  src: url("../../../public/fonts/ttf/NotoSans-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: NotoSans-Regular;
+  src: url("../../../public/fonts/ttf/NotoSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+/*UTILITIES*/
+/*Colors*/
+/**/
+/*Gama de colores por definir - Yellows and Blues*/
+/*Botones*/
+/*Sizes*/
+/*Margin and Padding*/
+/*Porcentjes*/
+/*Imagenes-Sizes*/
+/*--------------------------------------------------*/
+/*For Grid*/
+#header.cell-1 > div {
+  width: 100%; }
+
+#footer.cell-1 > div {
+  width: 100%; }
+
+#header.cell-2 > div {
+  width: 50%; }
+
+#footer.cell-2 > div {
+  width: 50%; }
+
+#header.cell-3 > div {
+  width: 33.33333%; }
+
+#footer.cell-3 > div {
+  width: 33.33333%; }
+
+#header.cell-4 > div {
+  width: 25%; }
+
+#footer.cell-4 > div {
+  width: 25%; }
+
+#header.cell-5 > div {
+  width: 20%; }
+
+#footer.cell-5 > div {
+  width: 20%; }
+
+#header.cell-6 > div {
+  width: 16.66667%; }
+
+#footer.cell-6 > div {
+  width: 16.66667%; }
+
+/*--------------------------------------------------*/
+/*Funciones*/
+/*
+Se utiliza
+
+  .c-button {
+  color: #FF0000;
+  border: getBorderSize(2) solid #00FF00;
+}
+
+se transforma en
+
+.c-button {
+  color: #FF0000;
+  border: 20px solid #00FF00;
+}
+*/
+/*
+.principal-buton{
+    @include principal-button(nth($btnBlue,1), nth($btnBlue,2), nth($btnBlue,3));
+}
+*/
+/*COMPONENTS*/
+/*VIEWS*/
