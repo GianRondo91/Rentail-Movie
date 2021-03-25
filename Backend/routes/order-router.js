@@ -17,4 +17,17 @@ router.post('/', async (req, res) => {
     }
 });
 
+router.get('/', async (req, res)=>{
+    try{
+        res.json(await orderController.showAllOrders())
+
+    }catch(error){
+        return res.status(404).json({
+            message: "Orders not found"
+        });
+
+    }
+
+});
+
 module.exports = router;

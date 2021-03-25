@@ -23,6 +23,11 @@ class Rent {
             filmId: filmId
         });
     };
+    // Get all orders
+    async showAllOrders(){
+        return Order.find();
+
+    };
 
 };
 
