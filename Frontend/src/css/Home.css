@@ -1,0 +1,68 @@
+.contenedorHome {
+  width: 100vw;
+  height: auto;
+  background-color: #221c1c;
+  display: flex;
+  flex-direction: column; }
+
+#myVideo {
+  top: 5em;
+  left: 0;
+  width: 100vw;
+  height: 70vh;
+  object-fit: cover; }
+
+.content {
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px; }
+
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  margin: 0.5em; }
+
+#myBtn:hover {
+  background: #ddd;
+  color: black; }
+
+.h2 {
+  color: #aaa9a3;
+  margin: 1em; }
+
+.ultimas {
+  margin-left: 0.5em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-x: auto; }
+
+.separador {
+  border: 0.5px solid #3a3838;
+  width: 70em;
+  margin: 2em;
+  margin-left: 6em; }
+
+.populares {
+  margin-left: 0.5em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-x: auto; }
+
+.recomendadas {
+  margin-left: 0.5em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-x: auto; }

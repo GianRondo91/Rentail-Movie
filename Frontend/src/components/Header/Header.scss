@@ -1,79 +1,90 @@
 .vistaHeader{
-    width:100vw;
-    height: 5em;
-    background-color: rgb(44, 42, 42);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-.logo{
-    margin-left: 2em;
-    width: 12em;
-    height: 4em;
-    border-radius: 2em;
-    //background-image: url('../../img/Logo.png');
-}
-.nav{
-   
-    margin-left: 32em;
-    margin-top: 1em;
-    width: 38em;
-    height: 2.5em;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  //  justify-content: center;
-    align-items: center;
-    color:white
-}  
 
-.inicio{
-    margin: 1em;
-    transition: 0.5s;
-}
-.inicio:hover{
-  
-    color: rgb(44, 191, 228);
-    transition: 0.5s;
-}
-.search{
-    margin: 1em;
-    all:unset;
-    border: 0.2em solid rgb(44, 191, 228);
-    height: 2em;
-    border-radius: 2em;
-    background-color: white;
-    transition: 1s;
-}
-.search:hover{
-    background-color: rgb(195, 203, 209);
-    border: 0.2em solid rgb(21, 33, 36);
-    transition: 1s;
-}
-.directorio{
-    margin: 1em;
-}
-.directorio:hover{
-  
-    color: rgb(44, 191, 228);
-    transition: 0.5s;
-}
-    
-.login {
-    margin: 1em;
-    border-radius: 2em;
-    border: 0.2px black solid;
-    width: 6em;
-    height: 2em;
-    background-color: rgb(44, 191, 228);
-    color: white;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100vw;
+    height: 3em;
+    border: 0.01em solid rgb(77, 73, 73);
+    color: white;
+    background-color: rgb(34, 32, 32);
     align-items: center;
-}
-.login:hover{
-     border: 0.2em solid rgb(21, 33, 36);
-     background-color: rgb(195, 203, 209);
-     color: white;
-     transition: 0.5s;
+
+
+    .logo{
+        font-size: 1em;
+        color: rgb(170, 169, 163);
+        margin-left: 2em;
+    }
+      
+    .nav{
+        width: 40%;
+        height: 90%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        margin-top:-0.5em;
+        justify-content: space-evenly;
+        color: rgb(170, 169, 163);
+
+           .search{
+              all:unset;
+              width: 8em;
+              height: 1em;
+              transition: 0.8s;
+              border-radius: 2em;
+              
+           }
+           .search:hover{
+               all:unset;
+               transition: 0.8s;
+              // background-color: rgb(134, 134, 179);
+               color:rgb(170, 169, 163);
+               width: 8em;
+               height: 1em;
+               border-radius: 2em;
+           }
+           .inicio{
+               font-size: 1em;
+               color: rgb(170, 169, 163);
+               transition: 0.8s;
+           }
+           .inicio:hover{
+               font-size: 1.2em;
+               transition: 0.8s;
+               color: rgb(22, 152, 212);
+           }
+           .Peliculas{
+            font-size: 1em;
+            color: rgb(170, 169, 163);
+            transition: 0.8s;
+           }
+           .Peliculas:hover{
+            font-size: 1.2em;
+            transition: 0.8s;
+            color:rgb(22, 152, 212);
+           }
+           .Series{
+            font-size: 1em;
+            color: rgb(170, 169, 163);
+            transition: 0.8s;
+            }
+            .Series:hover{
+            font-size: 1.2em;
+            transition: 0.8s;
+            color: rgb(22, 152, 212);
+            }
+            .userName{
+            font-size: 1em;
+            color: rgb(170, 169, 163);
+            transition: 0.8s;
+            }
+            .userName:hover{
+            font-size: 1.2em;
+            transition: 0.8s;
+            color: rgb(22, 152, 212);
+            }
+    
+
+    }
 }
