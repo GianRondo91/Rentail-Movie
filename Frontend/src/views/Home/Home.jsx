@@ -82,7 +82,7 @@ const Home = (props)=>{
         
         <div>
 
-        < Header style='style1'/>
+        < Header style ='style1'/>
            <div className="Contenedor">
             
               <div className="trailer" >
@@ -107,6 +107,8 @@ const Home = (props)=>{
               <div className="relacionadas">
               {recomendaciones.map(recomendaciones=> <Movie key={recomendaciones.id} {...recomendaciones} onClick={()=>takeMeTo(recomendaciones)}/>)}
               </div>
+
+              
          
            </div> 
            

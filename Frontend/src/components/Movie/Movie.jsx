@@ -13,7 +13,7 @@ const Movie =({title,poster_path,overview,release_date,vote_average,id,onClick,s
 
         <div className="movie">
                 <img className ="movieCard" src={FirstPartOflinkimage+poster_path} alt={title} onClick={onClick}/>
-                <h1>{title}</h1>
+            
 
         </div>
     )
