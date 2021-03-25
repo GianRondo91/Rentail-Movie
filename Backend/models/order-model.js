@@ -3,20 +3,24 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const ObjectId = mongoose.Types.ObjectId;
+const User = mongoose.model('User');
 
 const orderSchema = new Schema({
     
     
     filmId: {
         type: ObjectId,
-        ref: "Film",
+        ref: "Movie",
         require: true
     },
-    userId:{
-        type: ObjectId,
+    
+    userId: { 
+        type: ObjectId, 
         ref: "User",
-        require:true
+        required: true
     },
+       
+    
     order_date:{
         type: Date,
         default: new Date
