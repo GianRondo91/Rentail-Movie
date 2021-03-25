@@ -344,7 +344,7 @@ header nav a.activo {
   background-size: cover;
   margin-bottom: 3.12em;
   display: flex;
-  align-items: flex-end; }
+  align-items: end; }
 
 .pelicula-principal .contenedor {
   margin: 0 auto;
@@ -382,9 +382,9 @@ header nav a.activo {
 
 /* ---- ----- ----- Contenedor Titulo y Controles ----- ----- ----- */
 .contenedor-titulo-controles {
-  display: flex-end;
+  display: flex;
   justify-content: space-between;
-  align-items: flex-end; }
+  align-items: end; }
 
 .contenedor-titulo-controles h3 {
   color: #fff;
