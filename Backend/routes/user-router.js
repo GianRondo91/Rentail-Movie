@@ -1,6 +1,7 @@
 //Requerimos de la librería express el método router
 const router = require("express").Router();
 const jwt = require('jsonwebtoken');
+const auth = require('../middlewares/auth')
 
 //importamos el controlador de user
 const userController = require("../controllers/user-controller")
@@ -44,7 +45,7 @@ router.post('/login',async (req, res) => {
 
 
 //Traer un user por Id
-router.get("/:id", async (req, res)=>{
+router.get("/:id", auth, async (req, res)=>{
     try{
         const id= req.params.id;
         res.json(await userController.findById(id));
@@ -56,7 +57,7 @@ router.get("/:id", async (req, res)=>{
 })
 
 //Actualizar datos de user
-router.put("/:id", async (req, res)=>{
+router.put("/:id", auth, async (req, res)=>{
     try{
         const id = req.params.id;
         const updatedUser = await userController.updateUser(id, req.body);

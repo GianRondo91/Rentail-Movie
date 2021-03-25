@@ -39,6 +39,11 @@ const userSchema = new Schema({
     payment: {
         type: String
     },
+    role: {
+        type: String,
+        default: 'client',
+        enum: ["client", "admin"]
+       },
     creationDate: {
         type: Date,
         default: new Date
