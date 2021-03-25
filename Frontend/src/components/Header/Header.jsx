@@ -7,7 +7,7 @@ const Header = (props)=>{
     let history=useHistory();
  
 
-    if( props.style == 'style1'){
+    if( props.style === 'style1'){
 
         return(
               
@@ -32,7 +32,7 @@ const Header = (props)=>{
                 
             </div>
         )
-    }if(props.style == 'style2'){
+    }if(props.style === 'style2'){
 
      return(
 

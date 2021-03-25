@@ -130,25 +130,25 @@ table {
 
 @font-face {
   font-family: NotoSans-Bold;
-  src: url("../../../public/fonts/ttf/NotoSans-Bold.ttf") format("truetype");
+  src: url("../scss/fonts/ttf/NotoSans-Bold.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: NotoSans-BoldItalic;
-  src: url("../../../public/fonts/ttf/NotoSans-BoldItalic.ttf") format("truetype");
+  src: url("../scss/fonts/ttf/NotoSans-BoldItalic.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: NotoSans-Italic;
-  src: url("../../../public/fonts/ttf/NotoSans-Italic.ttf") format("truetype");
+  src: url("../scss/fonts/ttf/NotoSans-Italic.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: NotoSans-Regular;
-  src: url("../../../public/fonts/ttf/NotoSans-Regular.ttf") format("truetype");
+  src: url("../scss/fonts/ttf/NotoSans-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
@@ -222,4 +222,311 @@ se transforma en
 }
 */
 /*COMPONENTS*/
+.vistaHeader {
+  width: 100vw;
+  height: 5em;
+  background-color: #2c2a2a;
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+
+.logo {
+  margin-left: 2em;
+  width: 12em;
+  height: 4em;
+  border-radius: 2em; }
+
+.nav {
+  margin-left: 32em;
+  margin-top: 1em;
+  width: 38em;
+  height: 2.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  color: white; }
+
+.inicio {
+  margin: 1em;
+  transition: 0.5s; }
+
+.inicio:hover {
+  color: #2cbfe4;
+  transition: 0.5s; }
+
+.search {
+  margin: 1em;
+  all: unset;
+  border: 0.2em solid #2cbfe4;
+  height: 2em;
+  border-radius: 2em;
+  background-color: white;
+  transition: 1s; }
+
+.search:hover {
+  background-color: #c3cbd1;
+  border: 0.2em solid #152124;
+  transition: 1s; }
+
+.directorio {
+  margin: 1em; }
+
+.directorio:hover {
+  color: #2cbfe4;
+  transition: 0.5s; }
+
+.login {
+  margin: 1em;
+  border-radius: 2em;
+  border: 0.2px black solid;
+  width: 6em;
+  height: 2em;
+  background-color: #2cbfe4;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.login:hover {
+  border: 0.2em solid #152124;
+  background-color: #c3cbd1;
+  color: white;
+  transition: 0.5s; }
+
+:root {
+  --rojo: #E50914;
+  --fondo: #141414; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  background: var(--fondo);
+  font-family: 'Open Sans', sans-serif; }
+
+.contenedor {
+  width: 90%;
+  margin: auto; }
+
+header {
+  padding: 30px 0; }
+
+header .contenedor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+header .logotipo {
+  font-family: 'Bebas Neue', cursive;
+  font-weight: normal;
+  color: var(--rojo);
+  font-size: 40px; }
+
+header nav a {
+  color: #AAA;
+  text-decoration: none;
+  margin-right: 20px; }
+
+header nav a:hover,
+header nav a.activo {
+  color: #FFF; }
+
+/* ---- ----- ----- Pelicula Principal ----- ----- ----- */
+.pelicula-principal {
+  font-size: 16px;
+  min-height: 40.62em;
+  color: #fff;
+  background: linear-gradient(rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url("../img/1.png");
+  background-position: center center;
+  background-size: cover;
+  margin-bottom: 3.12em;
+  display: flex;
+  align-items: flex-end; }
+
+.pelicula-principal .contenedor {
+  margin: 0 auto;
+  margin-bottom: 6.25em; }
+
+.pelicula-principal .titulo {
+  font-weight: 600;
+  font-size: 3.12em;
+  margin-bottom: 0.4em; }
+
+.pelicula-principal .descripcion {
+  font-weight: normal;
+  font-size: 1em;
+  line-height: 1.75em;
+  max-width: 50%;
+  margin-bottom: 1.25em; }
+
+.pelicula-principal .boton {
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 0.31em;
+  padding: 0.93em 1.87em;
+  color: #fff;
+  margin-right: 1.25em;
+  cursor: pointer;
+  transition: .3s ease all;
+  font-size: 1.12em; }
+
+.pelicula-principal .boton:hover {
+  background: #fff;
+  color: #000; }
+
+.pelicula-principal .boton i {
+  margin-right: 1.25em; }
+
+/* ---- ----- ----- Contenedor Titulo y Controles ----- ----- ----- */
+.contenedor-titulo-controles {
+  display: flex-end;
+  justify-content: space-between;
+  align-items: flex-end; }
+
+.contenedor-titulo-controles h3 {
+  color: #fff;
+  font-size: 30px; }
+
+.contenedor-titulo-controles .indicadores button {
+  background: #fff;
+  height: 3px;
+  width: 10px;
+  cursor: pointer;
+  border: none;
+  margin-right: 2px; }
+
+.contenedor-titulo-controles .indicadores button:hover,
+.contenedor-titulo-controles .indicadores button.activo {
+  background: red; }
+
+/* ---- ----- ----- Contenedor Principal y Flechas ----- ----- ----- */
+.peliculas-recomendadas {
+  margin-bottom: 70px; }
+
+.peliculas-recomendadas .contenedor-principal {
+  display: flex;
+  align-items: center;
+  position: relative; }
+
+.peliculas-recomendadas .contenedor-principal .flecha-izquierda,
+.peliculas-recomendadas .contenedor-principal .flecha-derecha {
+  position: absolute;
+  border: none;
+  background: rgba(0, 0, 0, 0.3);
+  font-size: 40px;
+  height: 50%;
+  top: calc(50% - 25%);
+  line-height: 40px;
+  width: 50px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 500;
+  transition: .2s ease all; }
+
+.peliculas-recomendadas .contenedor-principal .flecha-izquierda:hover,
+.peliculas-recomendadas .contenedor-principal .flecha-derecha:hover {
+  background: rgba(0, 0, 0, 0.9); }
+
+.peliculas-recomendadas .contenedor-principal .flecha-izquierda {
+  left: 0; }
+
+.peliculas-recomendadas .contenedor-principal .flecha-derecha {
+  right: 0; }
+
+/* ---- ----- ----- Carousel ----- ----- ----- */
+.peliculas-recomendadas .contenedor-carousel {
+  width: 100%;
+  padding: 20px 0;
+  overflow: hidden;
+  scroll-behavior: smooth; }
+
+.peliculas-recomendadas .contenedor-carousel .carousel {
+  display: flex;
+  flex-wrap: nowrap; }
+
+.peliculas-recomendadas .contenedor-carousel .carousel .pelicula {
+  min-width: 20%;
+  transition: .3s ease all;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); }
+
+.peliculas-recomendadas .contenedor-carousel .carousel .pelicula.hover {
+  transform: scale(1.2);
+  transform-origin: center; }
+
+.peliculas-recomendadas .contenedor-carousel .carousel .pelicula img {
+  width: 100%;
+  vertical-align: top; }
+
+/* ---- ----- ----- Media Queries ----- ----- ----- */
+@media screen and (max-width: 800px) {
+  header .logotipo {
+    margin-bottom: 10px;
+    font-size: 30px; }
+  header .contenedor {
+    flex-direction: column;
+    text-align: center; }
+  .pelicula-principal {
+    font-size: 14px; }
+  .pelicula-principal .descripcion {
+    max-width: 100%; }
+  .peliculas-recomendadas .contenedor-carousel {
+    overflow: visible; }
+  .peliculas-recomendadas .contenedor-carousel .carousel {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; }
+  .peliculas-recomendadas .indicadores,
+  .peliculas-recomendadas .flecha-izquierda,
+  .peliculas-recomendadas .flecha-derecha {
+    display: none; } }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.movieCard {
+  display: flex;
+  margin: 0.5em;
+  color: #e6dbdb;
+  width: 8em;
+  height: 10em;
+  border: 0.1em solid blueviolet;
+  border-radius: 1.5em;
+  transition: 0.5s; }
+
 /*VIEWS*/
+.contenedor {
+  width: 100vw;
+  height: auto;
+  background-color: #110e0e; }
+  .contenedor .trailer .video {
+    top: 5em;
+    left: 0;
+    width: 100vw;
+    height: 70vh;
+    object-fit: cover; }
+  .contenedor .h1 {
+    justify-self: flex-start; }
+  .contenedor .ultimas {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 12em;
+    overflow: auto; }
+  .contenedor .populares {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 12em;
+    overflow: auto; }
+  .contenedor .relacionadas {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 12em;
+    overflow: auto; }

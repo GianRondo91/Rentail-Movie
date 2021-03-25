@@ -6,10 +6,12 @@
 @import './scss/utilities/variables.scss';
 @import './scss/utilities/mixins.scss';
 
-
-
 /*COMPONENTS*/
-// @import '';
+@import './components/Header/Header.scss';
+@import './components/Carrousel/Carrousel.scss';
+@import './components/Movie/Movie.scss';
+@import './components/Slider/slider.scss';
 
 /*VIEWS*/
-// @import '';
+@import './views/Home/Home.scss';
+@import './views/Register/Register.scss';
