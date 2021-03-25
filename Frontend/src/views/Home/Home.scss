@@ -1,0 +1,41 @@
+.contenedor{
+
+    width: 100vw;
+    height: auto;
+    background-color: rgb(17, 14, 14) ;
+    
+      
+}
+.video{
+
+   // position: fixed;
+    top: 5em;
+    left: 0;
+    width: 100vw;
+    height: 70vh;
+    object-fit: cover;
+ }
+ .ultimas{
+     display: flex;
+     flex-direction: row;
+     width: 100vw;
+     height: 12em;
+     overflow: auto;
+ }
+ .h1{
+     justify-self: flex-start;
+ }
+ .populares{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 12em;
+    overflow: auto;
+ }
+ .relacionadas{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 12em;
+    overflow: auto;
+ }
