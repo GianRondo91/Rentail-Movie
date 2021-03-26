@@ -6,15 +6,19 @@
   flex-direction: column; }
 
 #myVideo {
+  all: unset;
   top: 5em;
   left: 0;
   width: 100vw;
-  height: 70vh;
-  object-fit: cover; }
+  height: 82vh;
+  object-fit: cover;
+  z-index: 0; }
 
 .content {
+  z-index: 1;
+  margin-top: -7em;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.2);
   color: #f1f1f1;
   width: 100%;
   padding: 20px; }
@@ -24,8 +28,9 @@
   font-size: 18px;
   padding: 10px;
   border: none;
-  background: #000;
-  color: #fff;
+  border-radius: 0.5em;
+  background: #f3f0f0;
+  color: #0a0a0a;
   cursor: pointer;
   margin: 0.5em; }
 
@@ -35,24 +40,24 @@
 
 .h2 {
   color: #aaa9a3;
-  margin: 1em; }
+  margin: 1em;
+  height: 1em; }
 
 .ultimas {
-  margin-left: 0.5em;
+  margin-left: 1.5em;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
-  overflow-x: auto; }
+  justify-content: flex-start; }
 
 .separador {
   border: 0.5px solid #3a3838;
   width: 70em;
-  margin: 2em;
   margin-left: 6em; }
 
 .populares {
-  margin-left: 0.5em;
+  margin-left: 1.5em;
+  height: 8em;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -60,79 +65,9 @@
   overflow-x: auto; }
 
 .recomendadas {
-  margin-left: 0.5em;
+  margin-left: 1.5em;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
   overflow-x: auto; }
-
-.films-container .content-carousel {
-  width: 100%;
-  padding: 1.25em 0;
-  /*hiden-> todo lo que sobresalga quiero que este 100% oculto*/
-  overflow: hidden;
-  /* overflow-x: scroll; */
-  /*scroll con animacion*/
-  scroll-behavior: smooth; }
-
-.films-container .content-carousel .carousel {
-  display: flex;
-  flex-wrap: nowrap; }
-
-.films-container .content-carousel .carousel .film {
-  /* min-width: 20%; */
-  min-width: 25%;
-  transition: .3s ease all;
-  box-shadow: 5px 5px 10px var(--transparent3); }
-
-.films-container .content-carousel .carousel .film.hover {
-  transform: scale(1.2);
-  transform-origin: center; }
-
-.films-container .content-carousel .carousel .film img {
-  /* width: 100%; */
-  vertical-align: top; }
-
-.principal-movie .button {
-  background: var(--transparent5);
-  border: none;
-  border-radius: 0.31em;
-  /* padding: 0.93em 1.87em; */
-  padding: 0.43em 1.8em;
-  color: var(--white);
-  /* margin-left: 1.25em; */
-  margin-left: 0px;
-  cursor: pointer;
-  transition: 3s ease all;
-  /* font-size: 1.12em; */
-  font-size: 1em; }
-
-.principal-movie .button:hover {
-  background: var(--white);
-  color: var(--black); }
-
-.principal-movie .button i {
-  margin-right: 1.25em; }
-
-/*content-title-controls*/
-.content-title-controls {
-  /* display: flex; */
-  justify-content: space-between;
-  align-items: end; }
-
-.content-title-controls h3 {
-  color: var(--white);
-  font-size: 1.87em; }
-
-.content-title-controls .indicators button {
-  background: white;
-  height: 0.18em;
-  width: 0.62em;
-  cursor: pointer;
-  border: none;
-  margin-right: 0.12em; }
-
-.content-title-controls .indicators button:hover,
-.content-title-controls .indicators button.active {
-  background: var(--rojo); }
