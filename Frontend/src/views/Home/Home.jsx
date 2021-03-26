@@ -3,6 +3,10 @@ import Movie from '../../components/Movie/Movie';
 import video from '../../video/videoplayback.mp4';
 import Header from '../../components/Header/Header';
 import { useHistory } from 'react-router-dom';
+import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; 
+import styles from 'react-responsive-carousel/lib/styles/carousel.min.css';
+
 import './Home.scss';
 
 
@@ -79,7 +83,7 @@ const Home = (props) => {
 
    // Carousel 
 
-  /* const getRecommendMovies = () => {
+  const getRecommendMovies = () => {
       fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=bb78e4cf3442e302d928f2c5edcdbee1`)
           .then(res => res.json())
           .then(data => {
@@ -95,17 +99,14 @@ const Home = (props) => {
                   carousel.innerHTML += `<div class='film'><a href="#"><img src='${imagePath}' class='img-fluid float-end'></img></a></div>`
                       // console.log(pelicula.poster_path);
               });
-              createPagination(data.results, document.querySelector('.recommended-films .indicators'));
+              //createPagination(data.results, document.querySelector('.recommended-films .indicators'));
           });
   };
   
-  attachCarouselEvents(document.querySelector('.recommended-films'));
-  getRecommendMovies();*/
+  //attachCarouselEvents(document.querySelector('.recommended-films'));
+  //getRecommendMovies();
       
    // Fin Carousel
-
-   
-
       
    return (
 
@@ -115,7 +116,7 @@ const Home = (props) => {
       < Header/>
          <div className="contenedorHome">
          
-         <video className='myVideo' controls autoplay loop id="myVideo" src={video}></video>
+         <video className='myVideo' autoPlay muted loop id="myVideo" src={video}></video>
          <div class="content">
               
               <p>Ir a Peliculas</p>
@@ -125,8 +126,18 @@ const Home = (props) => {
               <div className="separador"></div>
             <h2 className='h2'>Ultimas Peliculas Añadidas</h2>
 
+            <Carousel>
+             {latest.map(latest => <Movie key={latest.id} {...latest} onClick={() => takeMeTo(latest)} />)} 
+             </Carousel>
+
+
+
+            
+            
+          
+
             <div className="ultimas">
-               {latest.map(latest => <Movie key={latest.id} {...latest} onClick={() => takeMeTo(latest)} />)}
+               
             </div>
               <div className="separador"></div>
             <h2 className='h2'>Populares</h2>
