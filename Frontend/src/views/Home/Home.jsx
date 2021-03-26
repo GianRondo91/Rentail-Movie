@@ -7,9 +7,6 @@ import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 
 
-import './Home.scss';
-
-
 
 const Home = (props) => {
 
@@ -111,7 +108,7 @@ const Home = (props) => {
             </div>
             
             <div className="separador"></div>
-            <h2 className='h2'>Ultimas Peliculas Añadidas</h2>
+            <h2 className='tituloDelGenero'>Ultimas Peliculas Añadidas</h2>
             <div className="ultimas">
             <Carousel>
                {latest.map(latest => <Movie key={latest.id} {...latest} onClick={() => takeMeTo(latest)} />)} 
@@ -120,7 +117,7 @@ const Home = (props) => {
 
             
             <div className="separador"></div>
-            <h2 className='h2'>Populares</h2>
+            <h2 className='tituloDelGenero'>Populares</h2>
             <div className="populares">
             <Carousel>
               {populares.map(populares => <Movie key={populares.id} {...populares} onClick={() => takeMeTo(populares)} />)}
@@ -128,7 +125,7 @@ const Home = (props) => {
             </div>
 
             <div className="separador"></div>
-            <h2 className='h2'>Recomendaciones</h2>
+            <h2 className='tituloDelGenero'>Recomendaciones</h2>
             <div className="recomendaciones">
             <Carousel>
                {recomendaciones.map(recomendaciones => <Movie key={recomendaciones.id} {...recomendaciones} onClick={() => takeMeTo(recomendaciones)} />)}
