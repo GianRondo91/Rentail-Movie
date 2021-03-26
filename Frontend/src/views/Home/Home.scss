@@ -13,10 +13,11 @@
  #myVideo {
    
         // position: fixed;
+         all:unset;
          top: 5em;
          left: 0;
          width: 100vw;
-         height: 70vh;
+         height: 82vh;
          object-fit: cover;
          z-index: 0;
       
@@ -41,6 +42,7 @@
     font-size: 18px;
     padding: 10px;
     border: none;
+    border-radius: 0.5em;
     background: rgb(243, 240, 240);
     color: rgb(10, 10, 10);
     cursor: pointer;

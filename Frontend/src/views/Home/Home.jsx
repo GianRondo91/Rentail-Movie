@@ -83,7 +83,7 @@ const Home = (props) => {
 
    // Carousel 
 
-  const getRecommendMovies = () => {
+  /*const getRecommendMovies = () => {
       fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=bb78e4cf3442e302d928f2c5edcdbee1`)
           .then(res => res.json())
           .then(data => {
@@ -103,8 +103,8 @@ const Home = (props) => {
           });
   };
   
-  //attachCarouselEvents(document.querySelector('.recommended-films'));
-  //getRecommendMovies();
+attachCarouselEvents(document.querySelector('.recommended-films'));
+getRecommendMovies();*/
       
    // Fin Carousel
       

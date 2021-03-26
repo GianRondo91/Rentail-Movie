@@ -6,10 +6,11 @@
   flex-direction: column; }
 
 #myVideo {
+  all: unset;
   top: 5em;
   left: 0;
   width: 100vw;
-  height: 70vh;
+  height: 82vh;
   object-fit: cover;
   z-index: 0; }
 
@@ -27,6 +28,7 @@
   font-size: 18px;
   padding: 10px;
   border: none;
+  border-radius: 0.5em;
   background: #f3f0f0;
   color: #0a0a0a;
   cursor: pointer;
