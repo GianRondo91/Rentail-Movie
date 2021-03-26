@@ -3,6 +3,10 @@ import Movie from '../../components/Movie/Movie';
 import video from '../../video/videoplayback.mp4';
 import Header from '../../components/Header/Header';
 import { useHistory } from 'react-router-dom';
+import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; 
+import styles from 'react-responsive-carousel/lib/styles/carousel.min.css';
+
 import './Home.scss';
 
 
@@ -72,39 +76,79 @@ const Home = (props) => {
 
 
    }
+   const GotoMovies=()=>{
 
+      history.push('/peliculas')
+   }
 
+   // Carousel 
 
-
-
+  const getRecommendMovies = () => {
+      fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=bb78e4cf3442e302d928f2c5edcdbee1`)
+          .then(res => res.json())
+          .then(data => {
+              let carousel = document.querySelector('.recommended-films .carousel');
+  
+              data.results.forEach(pelicula => {
+                  let imagePath = 'img/no-image.png';
+  
+                  if (pelicula.poster_path) {
+                      imagePath = `https://image.tmdb.org/t/p/w500${pelicula.poster_path}`;
+                  }
+  
+                  carousel.innerHTML += `<div class='film'><a href="#"><img src='${imagePath}' class='img-fluid float-end'></img></a></div>`
+                      // console.log(pelicula.poster_path);
+              });
+              //createPagination(data.results, document.querySelector('.recommended-films .indicators'));
+          });
+  };
+  
+  //attachCarouselEvents(document.querySelector('.recommended-films'));
+  //getRecommendMovies();
+      
+   // Fin Carousel
+      
    return (
 
 
-      <div>
+    <div>
 
-         < Header style='style1' />
-         <div className="Contenedor">
+      < Header/>
+         <div className="contenedorHome">
+         
+         <video className='myVideo' autoPlay muted loop id="myVideo" src={video}></video>
+         <div class="content">
+              
+              <p>Ir a Peliculas</p>
+              <button id="myBtn" onClick={()=>GotoMovies()}> Click </button>
+             </div>
+            
+              <div className="separador"></div>
+            <h2 className='h2'>Ultimas Peliculas Añadidas</h2>
 
-            <div className="trailer" >
-               <video className='video' id='video' src={video} controls autoplay></video>
+            <Carousel>
+             {latest.map(latest => <Movie key={latest.id} {...latest} onClick={() => takeMeTo(latest)} />)} 
+             </Carousel>
 
-            </div>
 
-            <h1 className='h1'>Ultimas Peliculas Añadidas</h1>
+
+            
+            
+          
 
             <div className="ultimas">
-               {latest.map(latest => <Movie key={latest.id} {...latest} onClick={() => takeMeTo(latest)} />)}
+               
             </div>
-
-            <h1 className='h1'>Populares</h1>
+              <div className="separador"></div>
+            <h2 className='h2'>Populares</h2>
 
             <div className="populares">
                {populares.map(populares => <Movie key={populares.id} {...populares} onClick={() => takeMeTo(populares)} />)}
             </div>
+              <div className="separador"></div>
+            <h2 className='h2'>Recomendaciones</h2>
 
-            <h1 className='h1'>Recomendaciones</h1>
-
-            <div className="relacionadas">
+            <div className="recomendadas">
                {recomendaciones.map(recomendaciones => <Movie key={recomendaciones.id} {...recomendaciones} onClick={() => takeMeTo(recomendaciones)} />)}
             </div>
 
