@@ -40,24 +40,24 @@
 
 .h2 {
   color: #aaa9a3;
-  margin: 1em; }
+  margin: 1em;
+  height: 1em; }
 
 .ultimas {
-  margin-left: 0.5em;
+  margin-left: 1.5em;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
-  overflow-x: auto; }
+  justify-content: flex-start; }
 
 .separador {
   border: 0.5px solid #3a3838;
   width: 70em;
-  margin: 2em;
   margin-left: 6em; }
 
 .populares {
-  margin-left: 0.5em;
+  margin-left: 1.5em;
+  height: 8em;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -65,7 +65,7 @@
   overflow-x: auto; }
 
 .recomendadas {
-  margin-left: 0.5em;
+  margin-left: 1.5em;
   display: flex;
   flex-direction: row;
   align-items: center;
