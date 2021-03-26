@@ -119,8 +119,8 @@ const Home = (props) => {
          <video className='myVideo' autoPlay muted loop id="myVideo" src={video}></video>
          <div class="content">
               
-              <p>Mas info</p>
-              <button id="myBtn" onClick={()=>GotoMovies()}> Click </button>
+              <p>AQUA-MAN</p>
+              <button id="myBtn" onClick={()=>GotoMovies()}> Mas información </button>
              </div>
             
               <div className="separador"></div>
