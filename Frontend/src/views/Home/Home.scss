@@ -18,6 +18,7 @@
          width: 100vw;
          height: 70vh;
          object-fit: cover;
+         z-index: 0;
       
      
   }
@@ -25,8 +26,10 @@
 
   .content {
     //position: fixed;
+    z-index: 1;
+    margin-top: -7em;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.2);
     color: #f1f1f1;
     width: 100%;
     padding: 20px;

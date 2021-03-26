@@ -5,7 +5,7 @@ import Header from '../../components/Header/Header';
 import { useHistory } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; 
-import styles from 'react-responsive-carousel/lib/styles/carousel.min.css';
+
 
 import './Home.scss';
 
@@ -119,7 +119,7 @@ const Home = (props) => {
          <video className='myVideo' autoPlay muted loop id="myVideo" src={video}></video>
          <div class="content">
               
-              <p>Ir a Peliculas</p>
+              <p>Mas info</p>
               <button id="myBtn" onClick={()=>GotoMovies()}> Click </button>
              </div>
             
@@ -129,12 +129,6 @@ const Home = (props) => {
             <Carousel>
              {latest.map(latest => <Movie key={latest.id} {...latest} onClick={() => takeMeTo(latest)} />)} 
              </Carousel>
-
-
-
-            
-            
-          
 
             <div className="ultimas">
                
