@@ -1,0 +1,96 @@
+
+    .form-content {
+        height: $per-8;
+        .form-content-title {
+            font-size: $size-p;
+            margin-top: $mp-k;
+            letter-spacing: $size-c;
+        }
+        .form-content-inputs {
+            height: $mp-s;
+            margin: $mp-l $mp-0 $mp-l $mp-0;
+            .form-label {
+                letter-spacing: $size-b;
+            }
+            .form-password {
+                margin-top: $mp-l;
+                display: flex;
+                justify-content: space-between;
+            }
+            .form-input {
+                @include input(nth($dark, 1), nth($grey, 3));
+                outline: none;
+                margin-top: $mp-e;
+            }
+            .form-input-password-eye{
+                position: absolute;
+                right: $mp-m;
+                bottom: ($mp-v - $mp-r) + $mp-f;
+                color: nth($grey, 3);
+                cursor: pointer;
+            }
+            .form-label-password {}
+            .form-label-error {
+                color: nth($grey, 3);
+                cursor: pointer;
+            }
+            .form-button {
+                color: nth($fontColor, 1);
+                @include principal-login-button(nth($btnBlue, 1), nth($btnBlue, 2), nth($btnBlue, 3));
+                margin-top: $mp-l;
+                letter-spacing: $mp-a;
+            }
+        }
+        .form-content-options {
+            margin-top: $mp-n;
+            letter-spacing: $size-b;
+            .form-content-options-label {
+                margin-bottom: $mp-k;
+                text-align: center;
+                color: nth($grey, 3);
+            }
+            .buttons-login {
+                display: flex;
+                align-items: center;
+                margin-left: auto;
+                margin-right: auto;
+                width: $per-8;
+                .button-login {
+                    justify-content: center;
+                    align-items: center;
+                    color: nth($grey, 1);
+                    @include alternative-button-social-network(nth($grey, 1), nth($grey, 2));
+                    .button-login-letter{
+                        padding-left: $mp-g;
+                    }
+                }
+                .button-login-google {
+                    align-items: center;
+                    display: flex;
+                }
+                .button-login-facebook {
+                    align-items: center;
+                    display: flex;
+                }
+            }
+            .form-content-register {
+                margin-top: $mp-k;
+                display: flex;
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+                width: $mp-u - $mp-k;
+                .register-question {
+                    color: nth($grey, 3);
+                }
+                .register {
+                    padding-left: $mp-e;
+                    .register-link{
+                        text-decoration: none;
+                        color: white;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
