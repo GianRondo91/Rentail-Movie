@@ -34,11 +34,7 @@ const Home = (props) => {
           
             setLatest(data.results)
          })
-
-     
-
-
-       //Latest page1 and age2
+     //Latest page1 and page2
 
       fetch(Latest)
          .then(res => (res.json()))
