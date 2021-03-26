@@ -1,0 +1,104 @@
+#content{
+    width: $per-10;
+    height: $per-10;
+    display: inline-flex;
+    .content-left{
+        width: $per-6;     
+    }
+    .content-right{
+        width: $per-4;
+        background-color: nth($fontColor, 4);
+        color: white;
+        .form{
+            margin: 30px 50px;
+            // background-color: blue;
+            height: 720px;
+            .form-logo{
+                height: 50px;
+                font-size: $size-ñ;
+                text-align: right;
+                // background-color: red;
+            }
+            .form-content{
+                // background-color: purple;
+                height: 500px;
+                .form-content-title{
+                    font-size: $size-p;
+                    margin-top: $mp-k;
+                }
+                .form-content-inputs{
+                    // background-color: pink;
+                    height: 200px;
+                    margin: $mp-l $mp-0 $mp-l $mp-0;
+                    .form-label{
+
+                    }
+                    .form-password{
+                        margin-top: $mp-l;
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                    .form-input{
+                        @include input(nth($grey,1), nth($grey,2));
+                        outline: none;
+                        margin-top: $mp-e;
+                    }
+                    .form-label-password{
+                        
+                    }
+                    .form-label-error{
+
+                    }
+                    .form-input-email{
+
+                    }
+                    .form-button{
+                        color: nth($fontColor, 1);
+                        @include principal-login-button(nth($btnBlue,1), nth($btnBlue,2), nth($btnBlue,3));
+                        margin: $mp-l $mp-0 $mp-l $mp-0;
+                        p{
+                            // align-items: center;
+                            // text-align: center;
+                            // display: flex;
+                        }
+                    }
+                }
+                .form-content-options{
+                    
+                    .form-content-options-label{
+                        margin: $mp-o $mp-0 $mp-m $mp-0;
+                        text-align: center;
+                    }
+                    .buttons-login{
+                        display: inline-flex;
+                        .button-login{
+                            
+                            justify-content: center;
+                            align-items: center;
+                            color: nth($grey, 1 );
+                            @include alternative-button-social-network(nth($grey,1), nth($grey,2));
+                        }
+                        .button-login-google{
+                            align-items: center;
+                            display: flex;
+                        }
+                        .button-login-facebook{
+                            align-items: center;
+                            display: flex;
+                        }
+                    }
+                    .form-content-register{
+                        .register-question{
+                            // background-color: lightblue;
+                            text-align: center;
+                            margin-top: $mp-k;
+                            .register{
+                                
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

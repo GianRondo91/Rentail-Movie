@@ -344,7 +344,7 @@ header nav a.activo {
   background-size: cover;
   margin-bottom: 3.12em;
   display: flex;
-  align-items: flex-end; }
+  align-items: end; }
 
 .pelicula-principal .contenedor {
   margin: 0 auto;
@@ -382,9 +382,9 @@ header nav a.activo {
 
 /* ---- ----- ----- Contenedor Titulo y Controles ----- ----- ----- */
 .contenedor-titulo-controles {
-  display: flex-end;
+  display: flex;
   justify-content: space-between;
-  align-items: flex-end; }
+  align-items: end; }
 
 .contenedor-titulo-controles h3 {
   color: #fff;
@@ -500,6 +500,91 @@ header nav a.activo {
   transition: 0.5s; }
 
 /*VIEWS*/
+#content {
+  width: 100%;
+  height: 100%;
+  display: inline-flex; }
+  #content .content-left {
+    width: 60%; }
+  #content .content-right {
+    width: 40%;
+    background-color: #1C1C1C;
+    color: white; }
+    #content .content-right .form {
+      margin: 30px 50px;
+      height: 720px; }
+      #content .content-right .form .form-logo {
+        height: 50px;
+        font-size: 28px;
+        text-align: right; }
+      #content .content-right .form .form-content {
+        height: 500px; }
+        #content .content-right .form .form-content .form-content-title {
+          font-size: 32px;
+          margin-top: 40px; }
+        #content .content-right .form .form-content .form-content-inputs {
+          height: 200px;
+          margin: 48px 0px 48px 0px; }
+          #content .content-right .form .form-content .form-content-inputs .form-password {
+            margin-top: 48px;
+            display: flex;
+            justify-content: space-between; }
+          #content .content-right .form .form-content .form-content-inputs .form-input {
+            width: 100%;
+            height: 40px;
+            background-color: #DCDCDC;
+            color: #C0C0C0;
+            border-radius: 4px;
+            border: 1px solid #DCDCDC;
+            outline: none;
+            margin-top: 10px; }
+          #content .content-right .form .form-content .form-content-inputs .form-button {
+            color: #ffffff;
+            background: linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
+            background-color: #3d94f6;
+            border-radius: 1px;
+            border: 0px solid #337fed;
+            display: inline-block;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 1px 10px;
+            text-decoration: none;
+            width: 100%;
+            text-align: center;
+            height: 40px;
+            margin: 48px 0px 48px 0px; }
+        #content .content-right .form .form-content .form-content-options .form-content-options-label {
+          margin: 128px 0px 64px 0px;
+          text-align: center; }
+        #content .content-right .form .form-content .form-content-options .buttons-login {
+          display: inline-flex; }
+          #content .content-right .form .form-content .form-content-options .buttons-login .button-login {
+            justify-content: center;
+            align-items: center;
+            color: #DCDCDC;
+            border-radius: 4px;
+            border: 1px solid #C0C0C0;
+            display: inline-block;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 2px 12px;
+            text-decoration: none;
+            margin: 20px;
+            width: 160px;
+            height: 48px;
+            text-align: center; }
+          #content .content-right .form .form-content .form-content-options .buttons-login .button-login-google {
+            align-items: center;
+            display: flex; }
+          #content .content-right .form .form-content .form-content-options .buttons-login .button-login-facebook {
+            align-items: center;
+            display: flex; }
+        #content .content-right .form .form-content .form-content-options .form-content-register .register-question {
+          text-align: center;
+          margin-top: 40px; }
+
 .contenedor {
   width: 100vw;
   height: auto;
