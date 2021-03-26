@@ -15,7 +15,6 @@ function App() {
               <Route path="/" exact component={Landing}/>
               <Route path="/Register" exact component={Register}/>
               <Route path="/Home" exact component={Home}/>
-              
          </Switch>
       </BrowserRouter>
     </div>
