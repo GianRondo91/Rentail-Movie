@@ -14,6 +14,7 @@ class Rent {
     async rentMovie (userId, filmId){
         const userEntity = await User.findById(userId);
         const movieEntity = await Movie.findById(filmId);
+        console.log("A ver que nos traes...",userEntity, movieEntity)
         if(!userEntity || !movieEntity){
             throw new Error("Movie or user not found")
         }
@@ -21,6 +22,11 @@ class Rent {
             userId: userId,
             filmId: filmId
         });
+    };
+    // Get all orders
+    async showAllOrders(){
+        return Order.find();
+
     };
 
 };

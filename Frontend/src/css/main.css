@@ -223,76 +223,73 @@ se transforma en
 */
 /*COMPONENTS*/
 .vistaHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   width: 100vw;
-  height: 5em;
-  background-color: #2c2a2a;
-  display: flex;
-  flex-direction: row;
-  align-items: center; }
-
-.logo {
-  margin-left: 2em;
-  width: 12em;
-  height: 4em;
-  border-radius: 2em; }
-
-.nav {
-  margin-left: 32em;
-  margin-top: 1em;
-  width: 38em;
-  height: 2.5em;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  color: white; }
-
-.inicio {
-  margin: 1em;
-  transition: 0.5s; }
-
-.inicio:hover {
-  color: #2cbfe4;
-  transition: 0.5s; }
-
-.search {
-  margin: 1em;
-  all: unset;
-  border: 0.2em solid #2cbfe4;
-  height: 2em;
-  border-radius: 2em;
-  background-color: white;
-  transition: 1s; }
-
-.search:hover {
-  background-color: #c3cbd1;
-  border: 0.2em solid #152124;
-  transition: 1s; }
-
-.directorio {
-  margin: 1em; }
-
-.directorio:hover {
-  color: #2cbfe4;
-  transition: 0.5s; }
-
-.login {
-  margin: 1em;
-  border-radius: 2em;
-  border: 0.2px black solid;
-  width: 6em;
-  height: 2em;
-  background-color: #2cbfe4;
+  height: 3em;
+  border: 0.01em solid #4d4949;
   color: white;
-  display: flex;
-  justify-content: center;
+  background-color: #222020;
   align-items: center; }
-
-.login:hover {
-  border: 0.2em solid #152124;
-  background-color: #c3cbd1;
-  color: white;
-  transition: 0.5s; }
+  .vistaHeader .logo {
+    font-size: 1em;
+    color: #aaa9a3;
+    margin-left: 2em; }
+  .vistaHeader .nav {
+    width: 40%;
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin-top: -0.5em;
+    justify-content: space-evenly;
+    color: #aaa9a3; }
+    .vistaHeader .nav .search {
+      all: unset;
+      width: 8em;
+      height: 1em;
+      transition: 0.8s;
+      border-radius: 2em; }
+    .vistaHeader .nav .search:hover {
+      all: unset;
+      transition: 0.8s;
+      color: #aaa9a3;
+      width: 8em;
+      height: 1em;
+      border-radius: 2em; }
+    .vistaHeader .nav .inicio {
+      font-size: 1em;
+      color: #aaa9a3;
+      transition: 0.8s; }
+    .vistaHeader .nav .inicio:hover {
+      font-size: 1.2em;
+      transition: 0.8s;
+      color: #1698d4; }
+    .vistaHeader .nav .Peliculas {
+      font-size: 1em;
+      color: #aaa9a3;
+      transition: 0.8s; }
+    .vistaHeader .nav .Peliculas:hover {
+      font-size: 1.2em;
+      transition: 0.8s;
+      color: #1698d4; }
+    .vistaHeader .nav .Series {
+      font-size: 1em;
+      color: #aaa9a3;
+      transition: 0.8s; }
+    .vistaHeader .nav .Series:hover {
+      font-size: 1.2em;
+      transition: 0.8s;
+      color: #1698d4; }
+    .vistaHeader .nav .userName {
+      font-size: 1em;
+      color: #aaa9a3;
+      transition: 0.8s; }
+    .vistaHeader .nav .userName:hover {
+      font-size: 1.2em;
+      transition: 0.8s;
+      color: #1698d4; }
 
 :root {
   --rojo: #E50914;
@@ -500,6 +497,7 @@ header nav a.activo {
   transition: 0.5s; }
 
 /*VIEWS*/
+<<<<<<< HEAD
 #content {
   width: 100%;
   height: 100%;
@@ -586,32 +584,73 @@ header nav a.activo {
           margin-top: 40px; }
 
 .contenedor {
+=======
+.contenedorHome {
+>>>>>>> 99cd426c3ad28fec95d6b2a75d840a17d66db9ed
   width: 100vw;
   height: auto;
-  background-color: #110e0e; }
-  .contenedor .trailer .video {
-    top: 5em;
-    left: 0;
-    width: 100vw;
-    height: 70vh;
-    object-fit: cover; }
-  .contenedor .h1 {
-    justify-self: flex-start; }
-  .contenedor .ultimas {
-    display: flex;
-    flex-direction: row;
-    width: 100vw;
-    height: 12em;
-    overflow: auto; }
-  .contenedor .populares {
-    display: flex;
-    flex-direction: row;
-    width: 100vw;
-    height: 12em;
-    overflow: auto; }
-  .contenedor .relacionadas {
-    display: flex;
-    flex-direction: row;
-    width: 100vw;
-    height: 12em;
-    overflow: auto; }
+  background-color: #221c1c;
+  display: flex;
+  flex-direction: column; }
+
+#myVideo {
+  top: 5em;
+  left: 0;
+  width: 100vw;
+  height: 70vh;
+  object-fit: cover; }
+
+.content {
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px; }
+
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  margin: 0.5em; }
+
+#myBtn:hover {
+  background: #ddd;
+  color: black; }
+
+.h2 {
+  color: #aaa9a3;
+  margin: 1em; }
+
+.ultimas {
+  margin-left: 0.5em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-x: auto; }
+
+.separador {
+  border: 0.5px solid #3a3838;
+  width: 70em;
+  margin: 2em;
+  margin-left: 6em; }
+
+.populares {
+  margin-left: 0.5em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-x: auto; }
+
+.recomendadas {
+  margin-left: 0.5em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-x: auto; }
