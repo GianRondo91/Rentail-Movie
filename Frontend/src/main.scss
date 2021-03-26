@@ -8,11 +8,13 @@
 
 /*COMPONENTS*/
 @import './components/Header/Header.scss';
-@import './components/Carrousel/Carrousel.scss';
+@import './components/Login/Login.scss';
+@import './components/Register/Register.scss';
+// @import './components/Carrousel/Carrousel.scss';
 @import './components/Movie/Movie.scss';
-@import './components/Slider/slider.scss';
+// @import './components/Slider/slider.scss';
 
 /*VIEWS*/
 @import './views/Landing/Landing.scss';
 @import './views/Home/Home.scss';
-@import './views/Register/Register.scss';
+// @import './views/Register/Register.scss';
