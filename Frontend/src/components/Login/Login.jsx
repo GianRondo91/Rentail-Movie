@@ -56,7 +56,10 @@ const Login = (props) => {
                   console.log(user)
                   console.log(token)
                   props.dispatch({type:LOGIN,payload:response.data});
-                  history.push('/profile')
+                  setTimeout(() => {
+                  history.push('/home')    
+                  }, 1000);
+                  
 
 
               }else {

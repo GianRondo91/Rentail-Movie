@@ -13,11 +13,7 @@ const userSchema = new Schema({
     surname: {
         type: String
     },
-    username: {
-        type:String,
-        //required: true,
-        unique: true
-    },
+    
     email: {
         type: String,
         required: true
@@ -42,11 +38,7 @@ const userSchema = new Schema({
         type: String,
         default:'Tarjeta de credito'
     },
-   // role: {
-      //  type: String,
-     //   default: 'client',
-     //   enum: ["client", "admin"]
-     //  },
+   
     creationDate: {
         type: Date,
         default: new Date

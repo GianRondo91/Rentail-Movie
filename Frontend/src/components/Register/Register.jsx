@@ -18,14 +18,13 @@ const Register = (props) => {
 
         name: "",
         surname: "",
-       // username: "",
         email: "",
         password: "",
-       // phone: "",
+        phone: "",
         birthday: "",
         adress: "",
         payment: "",
-        role:""
+      
 
       });
     
@@ -59,14 +58,13 @@ const Register = (props) => {
          let userData = {
             name: user.name,
             surname: user.surname,
-           // username:'user-username',
             email: user.email,
             password: user.password,
-           // phone: user.phone,
-            birthday: user.birthday,
+            phone: 555555555,
+            birthday: 'campo a rellenar',
             adress: user.adress,
             payment:user.payment,
-            role:user.role
+           
           };
               console.log(userData);
    
@@ -75,8 +73,10 @@ const Register = (props) => {
          let response = setTimeout(async ()=>{
 
             await axios.post(endpointUser,userData); 
-         },1000) 
-         if(response.status == 200){
+
+            console.log(response)
+        },1000) 
+         if(response){
          
           alert('Usuario Registrado Con Exito')
          }else{
