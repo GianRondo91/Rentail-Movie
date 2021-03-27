@@ -17,7 +17,10 @@ class UserController{
 
     //Crear users
     async createNewUser(user){
+        
         user.password = await bcrypt.hash(user.password, 5)
+        console.log(user)
+        console.log(user.password)
         return User.create(user);
     };
 
@@ -35,7 +38,7 @@ class UserController{
             tokenCreationDate: new Date,
         }
 
-        return jwt.sign(payload, secret);
+        return {jwt:jwt.sign(payload, secret),user:user};
     };
 
     //Mostrar un user por Id
