@@ -325,6 +325,8 @@ se transforma en
       bottom: 428px;
       color: #A9A9A9;
       cursor: pointer; }
+    .form-content .form-content-inputs .messaje {
+      color: #FF0000; }
     .form-content .form-content-inputs .form-label-error {
       color: #A9A9A9;
       cursor: pointer; }
