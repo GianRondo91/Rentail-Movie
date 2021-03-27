@@ -1,3 +1,4 @@
+import { faWindows } from '@fortawesome/free-brands-svg-icons';
 import React from 'react';
 
 
@@ -11,36 +12,33 @@ const Header = (props)=>{
        //console.log(credentials)
        console.log(user.name)
        console.log(user.phone)
+
+       const logout =()=>{
+         let confirmar = window.confirm('¿Seguro que quires salir de tu perfil?')
+         if(confirmar){
+           setTimeout(() => {
+             localStorage.removeItem('user');
+             history.push('/')
+           }, 1000);
+          }
+       }
     
-        if(user?.name){
+       
         return(
            
          <div className="vistaHeader">
            
             <div className="logo" onClick={()=>history.push('/')}>Rakuten TGJ</div>
               <div className="nav">
-                <div className="inicio" onClick={()=>history.push('/')}>Inicio</div>
+                <div className="inicio" onClick={()=>history.push('/')}>Mi Colección</div>
                 <div className="Peliculas" onClick={()=> history.push('/peliculas')}>Peliculas</div>
                 <div className="Series" onClick={()=> history.push('/series')}> Series</div>
                 <input className="search" type="text" placeholder=" Busqueda..."/>
-                <div className="userName" onClick={()=> history.push('/')}>{user.name}</div>
+                <div className="userName" onClick={()=> logout()}>{user.name}</div>
                </div>
               
         </div>
-        )}
-        else(
-          <div className="vistaHeader">
-
-            <div className="logo" onClick={()=>history.push('/')}>Rakuten TGJ</div>
-              <div className="nav">
-                <div className="inicio" onClick={()=>history.push('/')}>Inicio</div>
-                <div className="Peliculas" onClick={()=> history.push('/peliculas')}>Peliculas</div>
-                <div className="Series" onClick={()=> history.push('/series')}> Series</div>
-                <input className="search" type="text" placeholder=" Busqueda..."/>
-                <div className="userName" onClick={()=> history.push('/')}>Bienvenido {user.name}</div>
-               </div>
-              
-        </div>
+        
         )
     
 
