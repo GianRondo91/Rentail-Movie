@@ -231,11 +231,13 @@ se transforma en
   height: 3em;
   border: 0.01em solid #4d4949;
   color: white;
-  background-color: #222020;
+  background-color: #1E2126;
   align-items: center; }
   .vistaHeader .logo {
-    font-size: 1em;
-    color: #aaa9a3;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: italic;
+    font-size: 2em;
+    color: #0ab8e4;
     margin-left: 2em; }
   .vistaHeader .nav {
     width: 40%;
@@ -255,7 +257,7 @@ se transforma en
     .vistaHeader .nav .search:hover {
       all: unset;
       transition: 0.8s;
-      color: #aaa9a3;
+      color: #bdbbaf;
       width: 8em;
       height: 1em;
       border-radius: 2em; }
@@ -435,10 +437,10 @@ se transforma en
   display: flex;
   margin: 0.5em;
   color: #e6dbdb;
-  width: 8em;
-  height: 10em;
+  width: 15em;
+  height: 8em;
   border: 0.1em solid blueviolet;
-  border-radius: 1.5em;
+  border-radius: 0em;
   transition: 0.5s; }
 
 /*VIEWS*/
@@ -472,20 +474,23 @@ se transforma en
 .contenedorHome {
   width: 100vw;
   height: auto;
-  background-color: #221c1c;
+  background-color: #1E2126;
   display: flex;
   flex-direction: column; }
-
-#myVideo {
-  top: 5em;
-  left: 0;
-  width: 100vw;
-  height: 70vh;
-  object-fit: cover; }
+  .contenedorHome #myVideo {
+    all: unset;
+    top: 5em;
+    left: 0;
+    width: 100vw;
+    height: 82vh;
+    object-fit: cover;
+    z-index: 0; }
 
 .content {
+  z-index: 1;
+  margin-top: -7em;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.2);
   color: #f1f1f1;
   width: 100%;
   padding: 20px; }
@@ -495,8 +500,9 @@ se transforma en
   font-size: 18px;
   padding: 10px;
   border: none;
-  background: #000;
-  color: #fff;
+  border-radius: 0.5em;
+  background: #f3f0f0;
+  color: #1e62d0;
   cursor: pointer;
   margin: 0.5em; }
 
@@ -504,26 +510,25 @@ se transforma en
   background: #ddd;
   color: black; }
 
-.h2 {
+.tituloDelGenero {
   color: #aaa9a3;
-  margin: 1em; }
+  margin: 1em;
+  height: 1em; }
 
 .ultimas {
-  margin-left: 0.5em;
+  margin-left: 1.5em;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
-  overflow-x: auto; }
+  justify-content: flex-start; }
 
 .separador {
   border: 0.5px solid #3a3838;
   width: 70em;
-  margin: 2em;
   margin-left: 6em; }
 
 .populares {
-  margin-left: 0.5em;
+  margin-left: 1.5em;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -531,7 +536,7 @@ se transforma en
   overflow-x: auto; }
 
 .recomendadas {
-  margin-left: 0.5em;
+  margin-left: 1.5em;
   display: flex;
   flex-direction: row;
   align-items: center;

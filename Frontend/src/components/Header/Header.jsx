@@ -1,5 +1,5 @@
 import React from 'react';
-import './Header.scss';
+
 
 import {useHistory} from 'react-router-dom';
 
@@ -13,7 +13,7 @@ const Header = (props)=>{
               
         <div className="vistaHeader">
 
-            <div className="logo">TNombre WEB</div>
+            <div className="logo" onClick={()=>history.push('/')}>Rakuten TGJ</div>
               <div className="nav">
                 <div className="inicio" onClick={()=>history.push('/')}>Inicio</div>
                 <div className="Peliculas" onClick={()=> history.push('/peliculas')}>Peliculas</div>
