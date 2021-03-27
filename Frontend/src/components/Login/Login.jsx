@@ -1,12 +1,51 @@
-import React from 'react';
-//
+import React, { useState } from 'react';
+import {useHistory} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle, faFacebookF } from '@fortawesome/free-brands-svg-icons';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import checkError from '../../My-tools/My-tools';
+import axios from 'axios';
 
 const Login = () => {
-    return (
+
+    let history = useHistory();
+
+            const [user,setUser]=useState({ email:'',password:'' })
+            const [messaje,setMessage] = useState('')
+
+            const handler = (e) => {
+                setUser({...user, [e.target.name]:e.target.value});
+            };
+        
+            
+
+            const sendData = async ()=>{
+                  
+                setMessage('');
+
+              let notValidated = checkError(user)
+              setMessage(notValidated);
+
+               if(notValidated){
+               return;
+               }
+                 let userData ={
+                 email : user.email,
+                 password :user.password
+                }
+                 
+                let response = await axios.post('http://localhost:3002/users/login',userData)
+                if(response){
+                   localStorage.setItem('credentials',response.data.jwt.user)
+                   
+                   console.log(response.data.jwt.user)
+
+                   history.push('/profile');
+                }else{alert('Usuario No Encontrado')}
+            }
+            return (
         <div className="form">
+            
             <div className="form-logo">
                 <div className="form-logo-first">Net </div>
                 <div className="form-logo-second"> Film</div>
@@ -15,14 +54,14 @@ const Login = () => {
                 <div className="form-content-title">Bienvenido de vuelta</div>
                 <div className="form-content-inputs">
                     <p className='form-label'>Email</p>
-                    <input className="form-input form-input-email"></input>
+                    <input onChange={handler}  name='email' className="form-input form-input-email"></input>
                     <div className="form-password">
                         <p className='form-label form-label-password'>Contraseña</p>
                         <p className='form-label-error'>¿Has olvidado tu contraseña?</p>
                     </div>
-                    <input className="form-input form-input-password"></input>
+                    <input onChange={handler} name='password' className="form-input form-input-password"></input>
                     <FontAwesomeIcon icon={faEye} className='form-input-password-eye' />
-                    <div className="form-button">
+                    <div onClick={()=>{sendData()}} className="form-button">
                         Iniciar Sesión
                             </div>
                 </div>

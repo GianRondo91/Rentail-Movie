@@ -5,6 +5,7 @@ import {  } from '@fortawesome/free-solid-svg-icons';
 import React, {useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+import checkError from '../../My-tools/My-tools';
 
                      // Starting..................//TAREK//
 
@@ -17,10 +18,10 @@ const Register = (props) => {
 
         name: "",
         surname: "",
-        username: "",
+       // username: "",
         email: "",
         password: "",
-        phone: "",
+       // phone: "",
         birthday: "",
         adress: "",
         payment: "",
@@ -28,14 +29,14 @@ const Register = (props) => {
 
       });
     
-     
+      const [message, setMessage] = useState('');
      
      
     
       // Manejar el estado
 
       const handleState = (e) => {
-        setUser({...user, [e.target.name]: e.target.type === "number" ? +e.target.value : e.target.value});
+        setUser({...user, [e.target.name]:e.target.value});
     };
 
   
@@ -43,15 +44,25 @@ const Register = (props) => {
       // Envio de datos del registro
     
       const sendData = async () => {
-      
-    
-        let userData = {
+
+         // Check for erros---------------------//
+
+         setMessage('');
+
+        let notValidated = checkError(user)
+        setMessage(notValidated);
+
+        if(notValidated){
+            return;
+        }
+
+         let userData = {
             name: user.name,
             surname: user.surname,
-            username:'user.username',
+           // username:'user-username',
             email: user.email,
             password: user.password,
-            phone: user.phone,
+           // phone: user.phone,
             birthday: user.birthday,
             adress: user.adress,
             payment:user.payment,
@@ -62,13 +73,14 @@ const Register = (props) => {
             let endpointUser = 'http://localhost:3002/users';
           
          let response = setTimeout(async ()=>{
+
             await axios.post(endpointUser,userData); 
          },1000) 
-         if(response){
-             
+         if(response.status == 200){
          
+          alert('Usuario Registrado Con Exito')
          }else{
-             console.log('no hay datos,algo ha fallado')
+             alert('Lo siento , no se pudo completar el registro, vuelve a intentarlo mas tarde')
          }
      
       };
@@ -92,8 +104,10 @@ const Register = (props) => {
                         <div className="form-content-inputs form-content-inputs-register">
                             <p className='form-label form-label-register form-label-name' onChange={handleState}>Nombre</p>
                             <input name= 'name' className="form-input form-input-register form-input-name" onChange={handleState}></input>
+                            {message}
                             <p className='form-label form-label-register form-label-first-surname'>Apellidos</p>
                             <input name= 'surname' className="form-input form-input-register form-input-first-surname" onChange={handleState}></input>
+                            {message}
                             <p className='form-label form-label-register form-label-second-surname'>Direccíon</p>
                             <input name= 'adress' className="form-input form-input-register form-input-second-surname" onChange={handleState}></input>
                             <div className="city">
