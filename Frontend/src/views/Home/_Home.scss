@@ -12,25 +12,20 @@
          all:unset;
          top: 5em;
          left: 0;
-         width: 100vw;
+         //width: 100vw;
          height: 82vh;
          object-fit: cover;
          z-index: 0;
-    }
-}
-.content {
+    }.content {
     //position: fixed;
     z-index: 1;
     margin-top: -7em;
     bottom: 0;
     background: rgba(0, 0, 0, 0.2);
     color: #f1f1f1;
-    width: 100%;
+    //width: 100%;
     padding: 20px;
-  }
-  
- 
-  #myBtn {
+  }#myBtn {
     width: 200px;
     font-size: 18px;
     padding: 10px;
@@ -41,6 +36,11 @@
     cursor: pointer;
     margin: 0.5em;
   }
+  
+}
+
+ 
+  
   
   #myBtn:hover {
     background: #ddd;

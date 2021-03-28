@@ -29,7 +29,10 @@
                 color: nth($grey, 3);
                 cursor: pointer;
             }
-            .form-label-password {}
+            .messaje{
+                color:nth($red, 7);
+            }
+           // .form-label-password {}
             .form-label-error {
                 color: nth($grey, 3);
                 cursor: pointer;

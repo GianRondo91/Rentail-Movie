@@ -2,16 +2,16 @@ import React from 'react';
 
 
 
-const Movie =({title,poster_path,overview,release_date,vote_average,id,onClick,stylo})=>{
+const Movie =({title,poster_path,overview,release_date,vote_average,id,onClick,stylo,className})=>{
 
     let FirstPartOflinkimage ='https://image.tmdb.org/t/p/original';
 
-
-
+    
+    
 
     return(
 
-        <div className="movie">
+        <div className={className}>
                 <img className ="movieCard" src={FirstPartOflinkimage+poster_path} alt={title} onClick={onClick}/>
             
 
