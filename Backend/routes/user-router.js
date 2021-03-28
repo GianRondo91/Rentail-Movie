@@ -1,3 +1,12 @@
+//Requerimos de la librería express el método router
+const router = require("express").Router();
+const jwt = require('jsonwebtoken');
+const auth = require('../middlewares/auth')
+
+//importamos el controlador de user
+const userController = require("../controllers/user-controller")
+
+//traecr todos los users
 router.get("/", async (req,res)=>{
     try{
         res.json(await userController.showAllUsers());
