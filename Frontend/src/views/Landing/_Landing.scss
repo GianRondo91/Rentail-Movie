@@ -1,5 +1,9 @@
+body{
+    background-color: adjust-color(nth($dark, 2), $alpha: -0.03);
+}
+
 #content {
-    width: $per-10;
+    width: $q-xl;
     height: $mp-x;
     display: inline-flex;
     font-family: $font-Questrial-Regular;

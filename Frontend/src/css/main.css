@@ -161,6 +161,7 @@ table {
 /*Botones*/
 /*Sizes*/
 /*Margin and Padding*/
+/*Media-query*/
 /*Porcentjes*/
 /*Imagenes-Sizes*/
 /*--------------------------------------------------*/
@@ -296,7 +297,8 @@ se transforma en
       color: #1698d4; }
 
 .form-content {
-  height: 80%; }
+  height: 80%;
+  position: relative; }
   .form-content .form-content-title {
     font-size: 32px;
     margin-top: 40px;
@@ -322,8 +324,8 @@ se transforma en
       margin-top: 10px; }
     .form-content .form-content-inputs .form-input-password-eye {
       position: absolute;
-      right: 64px;
-      bottom: 428px;
+      right: 24px;
+      bottom: 322px;
       color: #A9A9A9;
       cursor: pointer; }
     .form-content .form-content-inputs .messaje {
@@ -457,8 +459,11 @@ se transforma en
   transition: 0.5s; }
 
 /*VIEWS*/
+body {
+  background-color: rgba(22, 25, 28, 0.97); }
+
 #content {
-  width: 100%;
+  width: 1440px;
   height: 800px;
   display: inline-flex;
   font-family: "Questrial-Regular"; }
@@ -641,3 +646,46 @@ se transforma en
         width: 20em;
         height: 25em;
         border-radius: 0.5em; }
+
+/*RESPONSIVE DESIGN*/
+@media (min-width: 1440px) {
+  #content {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto; } }
+
+@media (min-width: 1201px) and (max-width: 1439px) {
+  #content {
+    width: 1200px;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10%; }
+    #content .content-left {
+      width: 50%; }
+    #content .content-right {
+      width: 50%; } }
+
+@media all and (min-width: 1008px) and (max-width: 1200px) {
+  #content {
+    width: 1008px;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10%; }
+    #content .content-left {
+      width: 50%; }
+    #content .content-right {
+      width: 50%; } }
+
+@media (min-width: 375px) and (max-width: 1007px) {
+  #content {
+    width: auto;
+    display: flex;
+    margin-top: 10%; }
+    #content .content-left {
+      width: 0%; }
+    #content .content-right {
+      width: 500px;
+      margin-right: auto;
+      margin-left: auto; } }
