@@ -36,7 +36,7 @@ const MovieProfile =()=>{
                   </div>
                   <div className="overview">
                      <h3 className='sinopsis'>Sinopsis:</h3>
-                     <p>{dataMovie.overview}</p></div>
+                     <p className='overviewSize'>{dataMovie.overview}</p></div>
                </div>
             <div className="MoviePoster">
                <img  className='poster' src={link+dataMovie.poster_path} alt={dataMovie.tite}/>
