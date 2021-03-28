@@ -11,7 +11,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 const Home = (props) => {
 
    const [latest, setLatest] = useState([]);
-   const [latestPageTwo,setLatestPageTwo]=useState([]);
+   const [destacado,setDestacado]=useState([]);
    const [populares, setPopulares] = useState([]);
    const [recomendaciones, setRecomendaciones] = useState([]);
 
@@ -20,7 +20,7 @@ const Home = (props) => {
       //Ultimas Peliculas
 
       let Latest = "https://api.themoviedb.org/3/movie/now_playing?api_key=ef2edc9da61e81787a8079a7df721936&language=en-US&page=1";
-      let LatestPageTow ="https://api.themoviedb.org/3/movie/now_playing?api_key=ef2edc9da61e81787a8079a7df721936&language=en-US&page=2";
+      let destacado ="https://api.themoviedb.org/3/movie/now_playing?api_key=ef2edc9da61e81787a8079a7df721936&language=en-US&page=2";
 
       let populares = 'https://api.themoviedb.org/3/movie/popular?api_key=ef2edc9da61e81787a8079a7df721936&language=en-US&page=1';
 
@@ -44,11 +44,11 @@ const Home = (props) => {
          })
 
          
-      fetch(LatestPageTow)
+      fetch(destacado)
       .then(res => (res.json()))
       .then(data => {
         
-         setLatestPageTwo(data.results)
+         setDestacado(data.results.slice(0,5))
       })
       
 
@@ -59,8 +59,9 @@ const Home = (props) => {
       fetch(recomendaciones)
          .then(res => (res.json()))
          .then(data => {
+            console.log(data.results.slice(0,5))
           
-            setRecomendaciones(data.results)
+            setRecomendaciones(data.results);
          })
 
 
@@ -120,10 +121,14 @@ const Home = (props) => {
             </Carousel>
             </div>
 
+            <div className="destacado">
+            {destacado.map(destacado => <Movie key={destacado.id} {...destacado} onClick={() => takeMeTo(destacado)} />)}
+            </div>
+
             <div className="separador"></div>
             <h2 className='tituloDelGenero'>Recomendaciones</h2>
-            <div className="recomendaciones">
-            <Carousel>
+            <div className="Destacado">
+             <Carousel>
                {recomendaciones.map(recomendaciones => <Movie key={recomendaciones.id} {...recomendaciones} onClick={() => takeMeTo(recomendaciones)} />)}
             </Carousel>
             </div>
