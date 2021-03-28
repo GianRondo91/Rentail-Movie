@@ -5,8 +5,39 @@
     background-color: nth($dark,1);
 
       .MoviePanel{
-          width: 10em;
-          height: 10em;
-          border: 1em solid white;
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          justify-content: space-evenly;
+       
+
+        .dataMovie{
+        width: 68vw;
+          height: 80vh;
+          border: 0.01em solid white;
+
+             .movieTtile{
+
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                color: rgb(230, 222, 222);
+
+                .titleSize{
+                    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                    font-size: 3em;
+                }
+             }
+
+
       }
+        .MoviePoster{
+          width: 28vw;
+          height: 80vh;
+          border: 0.01em solid white;
+      }
+
+      }
+    
+    
 }
