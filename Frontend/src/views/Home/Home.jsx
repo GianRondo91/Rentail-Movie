@@ -74,11 +74,11 @@ const Home = (props) => {
 
    let history = useHistory();
 
-   const takeMeTo = (latest) => {
+   const takeMeTo = () => {
 
       localStorage.setItem('latest', JSON.stringify(latest))
 
-      setTimeout(() => { history.push('/movieProfile') }, 500)
+      setTimeout(() => { history.push('/MovieProfile') }, 500)
 
 
    }
@@ -108,7 +108,7 @@ const Home = (props) => {
             <h2 className='tituloDelGenero'>Ultimas Peliculas Añadidas</h2>
             <div className="ultimas">
             <Carousel>
-               {latest.map(latest => <Movie key={latest.id} {...latest} onClick={() => takeMeTo(latest)} />)} 
+               {latest.map(latest => <Movie style ='uno' key={latest.id} {...latest} onClick={() => takeMeTo(latest)} />)} 
             </Carousel>
             </div>
 
@@ -117,19 +117,20 @@ const Home = (props) => {
             <h2 className='tituloDelGenero'>Populares</h2>
             <div className="populares">
             <Carousel>
-              {populares.map(populares => <Movie key={populares.id} {...populares} onClick={() => takeMeTo(populares)} />)}
+              {populares.map(populares => <Movie style='uno' key={populares.id} {...populares} onClick={() => takeMeTo(populares)} />)}
             </Carousel>
             </div>
-
+            
+            <div className="separador"></div>
             <div className="destacado">
-            {destacado.map(destacado => <Movie key={destacado.id} {...destacado} onClick={() => takeMeTo(destacado)} />)}
+            {destacado.map(destacado => <Movie style ='dos'key={destacado.id} {...destacado} onClick={() => takeMeTo(destacado)} />)}
             </div>
 
             <div className="separador"></div>
             <h2 className='tituloDelGenero'>Recomendaciones</h2>
             <div className="Destacado">
              <Carousel>
-               {recomendaciones.map(recomendaciones => <Movie key={recomendaciones.id} {...recomendaciones} onClick={() => takeMeTo(recomendaciones)} />)}
+               {recomendaciones.map(recomendaciones => <Movie style='uno' key={recomendaciones.id} {...recomendaciones} onClick={() => takeMeTo(recomendaciones)} />)}
             </Carousel>
             </div>
 

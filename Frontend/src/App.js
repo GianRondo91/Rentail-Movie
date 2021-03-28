@@ -6,6 +6,7 @@ import Home from './views/Home/Home';
 import Register from './components/Register/Register';
 import Loading from './components/Loading/Loading';
 import Profile from './views/Profile/Profile';
+import MovieProfile from './views/Movie-Profile/Movie-profile';
 
 
 function App() {
@@ -19,6 +20,8 @@ function App() {
               <Route path="/Home" exact component={Home}/>
               <Route path='/loading' exact component={Loading}/>
               <Route path='/profile' exact component={Profile}/>
+              <Route path='/MovieProfile' exact component={MovieProfile}/>
+
               
          </Switch>
       </BrowserRouter>

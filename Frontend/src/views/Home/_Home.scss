@@ -25,7 +25,7 @@
     bottom: 0;
     background: rgba(0, 0, 0, 0.2);
     color: #f1f1f1;
-    width: 100%;
+    width: 98%;
     padding: 20px;
   }
   
@@ -83,6 +83,10 @@
     align-items: center;
     justify-content: flex-start;
     overflow-x: auto;
+}
+.destacado{
+  display: flex;
+  flex-direction: row;
 }
   
     

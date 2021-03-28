@@ -17,4 +17,9 @@
 /*VIEWS*/
 @import './views/Landing/Landing.scss';
 @import './views/Home/Home.scss';
+@import './views/Movie-Profile/Movie-profile';
 // @import './views/Register/Register.scss';
+
+//*CAROUSSEL*//
+//@import "react-responsive-carousel/lib/styles/carousel.min.css"; 
+@import './components/Carousel/Carousel.scss';

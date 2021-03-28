@@ -6,15 +6,27 @@
    
 
 }
-.movieCard{
+.movieCardUno{
    
-          display: flex;
-          margin:0.5em;
-          color: rgb(230, 219, 219);
-          width: 15em;
-          height: 8em;
-          border: 0.1em solid blueviolet;
-          border-radius: 0em;
-          transition: 0.5s;
+    display: flex;
+    margin:0.5em;
+    color: rgb(230, 219, 219);
+    width: 15em;
+    height: 8em;
+    border: 0.1em solid blueviolet;
+    border-radius: 0em;
+    transition: 0.5s;
 
+}
+.movieCardDos{
+    display: flex;
+    flex-direction: row;
+    margin:0.5em;
+    color: rgb(230, 219, 219);
+    width: 15em;
+    height: 30em;
+    border: 0.1em solid blueviolet;
+    border-radius: 0em;
+    transition: 0.5s;
+    margin-left: 0.5em;
 }

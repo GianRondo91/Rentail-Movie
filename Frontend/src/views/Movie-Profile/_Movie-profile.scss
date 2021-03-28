@@ -1,0 +1,12 @@
+.movieProfileContainer{
+
+    width: 100vw;
+    height: 100vh;
+    background-color: nth($dark,1);
+
+      .MoviePanel{
+          width: 10em;
+          height: 10em;
+          border: 1em solid white;
+      }
+}
