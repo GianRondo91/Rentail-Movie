@@ -7,9 +7,6 @@ import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 
 
-import './Home.scss';
-
-
 
 const Home = (props) => {
 
@@ -37,11 +34,7 @@ const Home = (props) => {
           
             setLatest(data.results)
          })
-
-     
-
-
-       //Latest page1 and age2
+     //Latest page1 and page2
 
       fetch(Latest)
          .then(res => (res.json()))
@@ -102,7 +95,7 @@ const Home = (props) => {
       < Header/>
          <div className="contenedorHome">
          
-         <video className='myVideo' autoPlay muted loop id="myVideo" src={video}></video>
+         <video className='myVideo' autoPlay   loop id="myVideo" src={video}></video>
          <div class="content">
               
              <h1 className='h1'></h1> 
@@ -111,7 +104,7 @@ const Home = (props) => {
             </div>
             
             <div className="separador"></div>
-            <h2 className='h2'>Ultimas Peliculas Añadidas</h2>
+            <h2 className='tituloDelGenero'>Ultimas Peliculas Añadidas</h2>
             <div className="ultimas">
             <Carousel>
                {latest.map(latest => <Movie key={latest.id} {...latest} onClick={() => takeMeTo(latest)} />)} 
@@ -120,7 +113,7 @@ const Home = (props) => {
 
             
             <div className="separador"></div>
-            <h2 className='h2'>Populares</h2>
+            <h2 className='tituloDelGenero'>Populares</h2>
             <div className="populares">
             <Carousel>
               {populares.map(populares => <Movie key={populares.id} {...populares} onClick={() => takeMeTo(populares)} />)}
@@ -128,7 +121,7 @@ const Home = (props) => {
             </div>
 
             <div className="separador"></div>
-            <h2 className='h2'>Recomendaciones</h2>
+            <h2 className='tituloDelGenero'>Recomendaciones</h2>
             <div className="recomendaciones">
             <Carousel>
                {recomendaciones.map(recomendaciones => <Movie key={recomendaciones.id} {...recomendaciones} onClick={() => takeMeTo(recomendaciones)} />)}

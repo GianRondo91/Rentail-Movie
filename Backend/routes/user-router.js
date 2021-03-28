@@ -21,9 +21,11 @@ router.get("/", async (req,res)=>{
 //Crear un user
 router.post("/", async (req, res)=>{
     try{
+       console.log(req.body)
         const user = await userController.createNewUser(req.body);
         const status = "Success";
         res.json({status, user});
+      
     }catch(error){
         return res.status(500).json({
             message: error.message
