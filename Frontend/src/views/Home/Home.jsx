@@ -126,7 +126,7 @@ const Home = (props) => {
             <h2 className='tituloDelGenero'>Destacadas</h2>
             <div className="destacado">
             
-            {destacado.map(destacado => <Movie style ='uno' key={destacado.id} {...destacado} onClick={() => takeMeTo(destacado)} />)}
+            {destacado.map(destacado => <Movie style ='dos' key={destacado.id} {...destacado} onClick={() => takeMeTo(destacado)} />)}
             </div>
 
             <div className="separador"></div>
