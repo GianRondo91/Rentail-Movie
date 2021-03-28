@@ -3,6 +3,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url(react-responsive-carousel/lib/styles/carousel.min.css);
 html,
 body,
 div,
@@ -483,30 +484,26 @@ se transforma en
     all: unset;
     top: 5em;
     left: 0;
-    width: 100vw;
     height: 82vh;
     object-fit: cover;
     z-index: 0; }
-
-.content {
-  z-index: 1;
-  margin-top: -7em;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.2);
-  color: #f1f1f1;
-  width: 100%;
-  padding: 20px; }
-
-#myBtn {
-  width: 200px;
-  font-size: 18px;
-  padding: 10px;
-  border: none;
-  border-radius: 0.5em;
-  background: #f3f0f0;
-  color: #1e62d0;
-  cursor: pointer;
-  margin: 0.5em; }
+  .contenedorHome .content {
+    z-index: 1;
+    margin-top: -7em;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+    color: #f1f1f1;
+    padding: 20px; }
+  .contenedorHome #myBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    border-radius: 0.5em;
+    background: #f3f0f0;
+    color: #1e62d0;
+    cursor: pointer;
+    margin: 0.5em; }
 
 #myBtn:hover {
   background: #ddd;
@@ -544,3 +541,5 @@ se transforma en
   align-items: center;
   justify-content: flex-start;
   overflow-x: auto; }
+
+/*caroussel*/

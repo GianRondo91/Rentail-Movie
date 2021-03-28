@@ -95,7 +95,7 @@ const Home = (props) => {
       < Header/>
          <div className="contenedorHome">
          
-         <video className='myVideo' autoPlay   loop id="myVideo" src={video}></video>
+         <video className='myVideo' autoPlay muted  loop id="myVideo" src={video}></video>
          <div class="content">
               
              <h1 className='h1'></h1> 
@@ -107,7 +107,7 @@ const Home = (props) => {
             <h2 className='tituloDelGenero'>Ultimas Peliculas Añadidas</h2>
             <div className="ultimas">
             <Carousel>
-               {latest.map(latest => <Movie key={latest.id} {...latest} onClick={() => takeMeTo(latest)} />)} 
+               {latest.map(latest => <Movie className = 'movie' key={latest.id} {...latest} onClick={() => takeMeTo(latest)} />)} 
             </Carousel>
             </div>
 
