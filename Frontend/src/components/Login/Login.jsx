@@ -64,6 +64,8 @@ const Login = (props) => {
 
               }else {
                   setMessage('Sus credenciales son erroneos, comprueba su email o contraseña')
+                 // setMessage('')
+                  alert('Sus credenciales son erroneos, comprueba su email o contraseña')
               }
             }
 

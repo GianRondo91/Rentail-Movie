@@ -435,7 +435,7 @@ se transforma en
   justify-content: center;
   align-items: center; }
 
-.movieCardUno {
+.movieCard {
   display: flex;
   margin: 0.5em;
   color: #e6dbdb;
@@ -444,18 +444,6 @@ se transforma en
   border: 0.1em solid blueviolet;
   border-radius: 0em;
   transition: 0.5s; }
-
-.movieCardDos {
-  display: flex;
-  flex-direction: row;
-  margin: 0.5em;
-  color: #e6dbdb;
-  width: 15em;
-  height: 30em;
-  border: 0.1em solid blueviolet;
-  border-radius: 0em;
-  transition: 0.5s;
-  margin-left: 0.5em; }
 
 /*VIEWS*/
 #content {
@@ -495,7 +483,6 @@ se transforma en
     all: unset;
     top: 5em;
     left: 0;
-    width: 100vw;
     height: 82vh;
     object-fit: cover;
     z-index: 0; }
@@ -506,7 +493,6 @@ se transforma en
   bottom: 0;
   background: rgba(0, 0, 0, 0.2);
   color: #f1f1f1;
-  width: 98%;
   padding: 20px; }
 
 #myBtn {
@@ -565,6 +551,10 @@ se transforma en
   width: 100vw;
   height: 100vh;
   background-color: #1E2126; }
+  .movieProfileContainer .MoviePanel {
+    width: 10em;
+    height: 10em;
+    border: 1em solid white; }
 
 .carousel .control-arrow, .carousel.carousel-slider .control-arrow {
   -webkit-transition: all .25s ease-in;
