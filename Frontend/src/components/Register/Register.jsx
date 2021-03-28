@@ -2,7 +2,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle, faFacebookF} from '@fortawesome/free-brands-svg-icons';
 import {  } from '@fortawesome/free-solid-svg-icons';
-import React, {useEffect, useState } from "react";
+import React, { useState } from "react";
+// import React, {useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import checkError from '../../My-tools/My-tools';
