@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 //Requerimos de la librería express el método router
+=======
+>>>>>>> 648c2ac879bb852f5eb5065524b81318a267d2eb
 const router = require("express").Router();
 const jwt = require('jsonwebtoken');
 const auth = require('../middlewares/auth')
@@ -7,6 +10,10 @@ const auth = require('../middlewares/auth')
 const userController = require("../controllers/user-controller")
 
 //traecr todos los users
+<<<<<<< HEAD
+=======
+
+>>>>>>> 648c2ac879bb852f5eb5065524b81318a267d2eb
 router.get("/", async (req,res)=>{
     try{
         res.json(await userController.showAllUsers());
