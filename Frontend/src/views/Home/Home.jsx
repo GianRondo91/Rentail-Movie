@@ -74,13 +74,14 @@ const Home = (props) => {
 
    let history = useHistory();
 
-   const takeMeTo = () => {
 
-      localStorage.setItem('latest', JSON.stringify(latest))
+   const takeMeTo = (movie) => {
 
-      setTimeout(() => { history.push('/MovieProfile') }, 500)
+      localStorage.setItem('movie', JSON.stringify(movie));
+      let LittleJson = JSON.parse(localStorage.getItem('movie'));
+      console.log(LittleJson);
 
-
+      history.push('/MovieProfile')
    }
    const GotoMovies = () => {
 
@@ -122,7 +123,9 @@ const Home = (props) => {
             </div>
 
             <div className="separador"></div>
+            <h2 className='tituloDelGenero'>Destacadas</h2>
             <div className="destacado">
+
                {destacado.map(destacado => <Movie style='dos' key={destacado.id} {...destacado} onClick={() => takeMeTo(destacado)} />)}
             </div>
 
@@ -132,10 +135,14 @@ const Home = (props) => {
                <Carousel>
                   {recomendaciones.map(recomendaciones => <Movie style='uno' key={recomendaciones.id} {...recomendaciones} onClick={() => takeMeTo(recomendaciones)} />)}
                </Carousel>
+               {/* <div className="recomendadas">
+               <Carousel>
+                  {recomendaciones.map(recomendaciones => <Movie style='uno' key={recomendaciones.id} {...recomendaciones} onClick={() => takeMeTo(recomendaciones)} />)}
+               </Carousel>
+               </div> */}
+
+
             </div>
-
-
-
          </div>
 
       </div>
