@@ -458,6 +458,43 @@ se transforma en
   border-radius: 0em;
   transition: 0.5s; }
 
+.component-header-user {
+  font-family: "Questrial-Regular";
+  width: 100%;
+  height: 80px;
+  display: flex;
+  color: white;
+  position: relative; }
+  .component-header-user .component-header-logo {
+    display: flex;
+    position: absolute;
+    font-size: 38px;
+    width: 50%;
+    margin-left: 50px;
+    bottom: 0;
+    cursor: pointer; }
+    .component-header-user .component-header-logo .user-logo-first {
+      color: #585858; }
+    .component-header-user .component-header-logo .user-logo-second {
+      font-weight: bold;
+      padding-left: 10px; }
+  .component-header-user .component-header-menu {
+    width: 50%; }
+    .component-header-user .component-header-menu .component-header-menu-ul {
+      display: flex;
+      position: absolute;
+      right: 26px;
+      bottom: 0;
+      font-size: 22px; }
+      .component-header-user .component-header-menu .component-header-menu-ul .component-header-menu-li {
+        margin-right: 50px;
+        cursor: pointer; }
+        .component-header-user .component-header-menu .component-header-menu-ul .component-header-menu-li .component-header-menu-a {
+          text-decoration: none;
+          color: white; }
+      .component-header-user .component-header-menu .component-header-menu-ul .component-header-menu-li-icon {
+        color: #f24537; }
+
 /*VIEWS*/
 body {
   background-color: rgba(22, 25, 28, 0.97); }
@@ -473,7 +510,7 @@ body {
   #content .content-right {
     width: 40%;
     background-color: #16191C;
-    color: white; }
+    color: #ffffff; }
     #content .content-right .form {
       margin: 30px 50px;
       height: 720px; }
