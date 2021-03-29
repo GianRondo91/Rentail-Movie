@@ -19,7 +19,10 @@ const orderSchema = new Schema({
         ref: "User",
         required: true
     },
-       
+    price:{
+        type: Number,
+        default: 4.99
+    },
     
     order_date:{
         type: Date,

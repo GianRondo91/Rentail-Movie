@@ -20,7 +20,11 @@ const Register = (props) => {
         phone: "",
         birthday: "",
         adress: "",
+        country:"",
+        city:"",
+        postal:"",
         payment: "",
+        
     });
 
     const [message, setMessage] = useState('');
@@ -51,7 +55,10 @@ const Register = (props) => {
             phone: '555555555',
             birthday: 'campo a rellenar',
             adress: user.adress,
-            payment: user.payment,
+            country: user.country,
+            city: user.city,
+            postal: user.postal,
+            payment: "a completar despues"
         };
         console.log(userData);
 
@@ -97,15 +104,15 @@ const Register = (props) => {
                             <div className="city">
                                 <div className="city-options city-country">
                                     <p className='form-label form-label-register form-label-country'>Pais</p>
-                                    <input className="form-input form-input-city form-input-country" onChange={handleState}></input>
+                                    <input name="country" className="form-input form-input-city form-input-country" onChange={handleState}></input>
                                 </div>
                                 <div className="city-options city-city">
                                     <p className='form-label form-label-register form-label-city'>Ciudad</p>
-                                    <input className="form-input form-input-city form-input-city" onChange={handleState}></input>
+                                    <input name="city" className="form-input form-input-city form-input-city" onChange={handleState}></input>
                                 </div>
                                 <div className="city-options city-cp">
                                     <p className='form-label form-label-register form-label-cp'>CP</p>
-                                    <input className="form-input form-input-city form-input-cp" onChange={handleState}></input>
+                                    <input name="postal" className="form-input form-input-city form-input-cp" onChange={handleState}></input>
                                     {message}
                                 </div>
                             </div>

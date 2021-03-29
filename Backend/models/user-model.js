@@ -25,18 +25,27 @@ const userSchema = new Schema({
     },
     phone: {
         type: String,
-        default:'Se le pedira al cliente , mas tarde'
+        default:'A completar más tarde'
     },
     birthday: {
         type:String,
-        default:'No es relevante'
+        default:'A completar más tarde'
     },
     address: {
         type: String
     },
+    country: {
+        type: String
+    },
+    city:{
+        type: String
+    },
+    postal:{
+        type: String
+    },
     payment: {
         type: String,
-        default:'Tarjeta de credito'
+        default:'A completar más tarde'
     },
    
     creationDate: {
