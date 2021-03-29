@@ -458,6 +458,7 @@ se transforma en
   border-radius: 0em;
   transition: 0.5s; }
 
+<<<<<<< HEAD
 .component-header-user {
   font-family: "Questrial-Regular";
   width: 100%;
@@ -494,6 +495,66 @@ se transforma en
           color: white; }
       .component-header-user .component-header-menu .component-header-menu-ul .component-header-menu-li-icon {
         color: #f24537; }
+=======
+.vistaFooter {
+  margin-top: 20px;
+  color: #A4A4A4;
+  width: 100%;
+  height: 320px;
+  font-family: "Questrial-Regular"; }
+  .vistaFooter .header-footer {
+    margin-left: 10px; }
+  .vistaFooter .links-block {
+    display: flex;
+    margin-top: 16px;
+    align-content: space-between;
+    width: 100%;
+    text-align: left; }
+    .vistaFooter .links-block .first-block {
+      display: flex;
+      flex-direction: column;
+      margin-left: 10px;
+      height: 88px;
+      justify-content: space-evenly; }
+    .vistaFooter .links-block .second-block {
+      display: flex;
+      flex-direction: column;
+      margin-left: 10px;
+      height: 88px;
+      justify-content: space-evenly; }
+    .vistaFooter .links-block .third-block {
+      display: flex;
+      flex-direction: column;
+      margin-left: 10px;
+      height: 88px;
+      justify-content: space-evenly; }
+    .vistaFooter .links-block .fourth-block {
+      display: flex;
+      flex-direction: column;
+      margin-left: 10px;
+      height: 88px;
+      justify-content: space-evenly; }
+  .vistaFooter .link-languages {
+    margin-left: 10px;
+    margin-top: 16px; }
+  .vistaFooter .link-logo {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-top: 20px; }
+    .vistaFooter .link-logo .form-logo {
+      margin-top: 10px;
+      height: 32px;
+      font-size: 28px;
+      text-align: right;
+      display: flex;
+      justify-content: flex-start; }
+      .vistaFooter .link-logo .form-logo .form-logo-first {
+        color: #585858; }
+      .vistaFooter .link-logo .form-logo .form-logo-second {
+        font-weight: bold;
+        padding-left: 10px; }
+>>>>>>> f0c7106a97069414aa6fa789ff364104540a4484
 
 /*VIEWS*/
 body {
