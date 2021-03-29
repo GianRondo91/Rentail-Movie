@@ -1,15 +1,15 @@
 @mixin principal-button($firstColor, $secondColor, $thirdColor) {
     background: linear-gradient(to bottom, $firstColor 5%, $thirdColor 100%);
     background-color: $firstColor;
-    border-radius: $size-b;
-    border: $size-aa solid $secondColor;
+    border-radius: $size-d;
+    border: $size-b solid $secondColor;
     display: inline-block;
     cursor: pointer;
-    font-size: $size-g;
+    font-size: $size-j;
     font-weight: bold;
     padding: $size-b $mp-f;
     text-decoration: none;
-    margin: $mp-e;
+    margin: $mp-g;
 }
 
 @mixin principal-login-button($firstColor, $secondColor, $thirdColor) {
@@ -66,7 +66,15 @@
     font-size: $size-j;
 }
 
-
+@mixin input-security($width){
+    width: $width;
+    margin-top: $mp-c - $size-a;
+    margin-bottom: $mp-h;
+    font-size: $mp-g - $size-a;
+    border-radius: $mp-e;
+    outline: none;
+    border: none;
+}
 /*
 .principal-buton{
     @include principal-button(nth($btnBlue,1), nth($btnBlue,2), nth($btnBlue,3));

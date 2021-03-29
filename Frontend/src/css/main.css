@@ -495,6 +495,99 @@ se transforma en
       .component-header-user .component-header-menu .component-header-menu-ul .component-header-menu-li-icon {
         color: #f24537; }
 
+.data-user {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  width: 1200px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+  position: relative; }
+  .data-user .form-update-data {
+    background-color: #C6B6B6 40%;
+    width: 50%;
+    box-shadow: 1px 5px 15px 5px #000000; }
+    .data-user .form-update-data .form-data-content {
+      width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+      display: grid; }
+      .data-user .form-update-data .form-data-content .form-update-data-input {
+        outline: none; }
+  .data-user .form-update-payment {
+    background: #51C2C0;
+    width: 40%;
+    height: 300px;
+    border-radius: 10px; }
+    .data-user .form-update-payment .form-payment-content {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 25px;
+      font-size: 18px; }
+      .data-user .form-update-payment .form-payment-content .form-update-payment-title {
+        top: 5px; }
+        .data-user .form-update-payment .form-payment-content .form-update-payment-title .form-payment-content-title {
+          font-size: 22px; }
+        .data-user .form-update-payment .form-payment-content .form-update-payment-title .form-update-payment-img {
+          background-image: url("https://user-images.githubusercontent.com/56218293/112899721-cd853580-90e2-11eb-811c-40df9729b4ea.png");
+          width: 177px;
+          height: 47px;
+          background-repeat: no-repeat;
+          background-size: contain;
+          position: absolute;
+          right: 23px;
+          top: 251px; }
+      .data-user .form-update-payment .form-payment-content .principal-data {
+        width: 90%;
+        margin-top: 25px; }
+        .data-user .form-update-payment .form-payment-content .principal-data .form-update-payment-label {
+          margin-top: 30px; }
+        .data-user .form-update-payment .form-payment-content .principal-data .form-update-payment-input {
+          width: 100%;
+          margin-top: 5px;
+          margin-bottom: 20px;
+          font-size: 15px;
+          border-radius: 10px;
+          outline: none;
+          border: none; }
+      .data-user .form-update-payment .form-payment-content .security {
+        display: flex; }
+        .data-user .form-update-payment .form-payment-content .security .security-date .form-update-security-input {
+          width: 80%;
+          margin-top: 5px;
+          margin-bottom: 20px;
+          font-size: 15px;
+          border-radius: 10px;
+          outline: none;
+          border: none; }
+        .data-user .form-update-payment .form-payment-content .security .security-code .form-update-security-input {
+          width: 80%;
+          margin-top: 5px;
+          margin-bottom: 20px;
+          font-size: 15px;
+          border-radius: 10px;
+          outline: none;
+          border: none; }
+      .data-user .form-update-payment .form-payment-content .form-update-payment-button {
+        bottom: 218px;
+        position: absolute;
+        right: 95px;
+        color: #ffffff;
+        background: linear-gradient(to bottom, #1E90FF 5%, #4169E1 100%);
+        background-color: #1E90FF;
+        border-radius: 6px;
+        border: 2px solid #6495ED;
+        display: inline-block;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 2px 12px;
+        text-decoration: none;
+        margin: 16px; }
+
 .vistaFooter {
   margin-top: 20px;
   color: #A4A4A4;

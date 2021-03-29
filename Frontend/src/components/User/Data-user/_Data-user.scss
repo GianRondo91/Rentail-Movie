@@ -1,0 +1,105 @@
+.data-user{
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    width: 1200px;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+    position: relative;
+    
+    .form-update-data{
+        background-color: #C6B6B6 40%;
+        width: 50%;
+        box-shadow: 1px 5px 15px 5px #000000;
+        .form-data-content{
+            width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+            display: grid;
+            .form-data-content-title{
+
+            }
+            .form-update-data-label{
+
+            }
+            .form-update-data-input{
+                outline: none;
+            }
+            .form-update-data-button{
+    
+            }
+        }
+        
+    }
+    .form-update-payment{
+        background: nth($formulary, 2);
+        width: 40%;
+        height: 300px;
+        border-radius: 10px;
+        
+        .form-payment-content{
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 25px;
+            font-size: 18px;
+            .form-update-payment-title{
+                top: 5px;
+                
+                .form-payment-content-title{
+                    font-size: 22px;
+                }
+                .form-update-payment-img{
+                    background-image: url('https://user-images.githubusercontent.com/56218293/112899721-cd853580-90e2-11eb-811c-40df9729b4ea.png');
+                    width: 177px;
+                    height: 47px;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    position: absolute;
+                    right: 23px;
+                    top: 251px;
+                }
+            }
+            .principal-data{
+                width: 90%;
+                margin-top: 25px;
+                .form-update-payment-label{
+                    margin-top: 30px;
+                }
+                .form-update-payment-input{
+                    @include input-security($per-10);
+                }
+            }
+            .security{
+                display: flex;
+                .security-date{
+                    .form-update-security-label{
+
+                    }
+                    .form-update-security-input{
+                        @include input-security($per-8);
+                    }
+                }
+                .security-code{
+                    .form-update-security-label{
+                    }
+                    .form-update-security-input{
+                        @include input-security($per-8);
+                    }
+                }
+                
+            }
+            
+            .form-update-payment-button{
+                bottom: 218px;
+                position: absolute;
+                right: 95px;
+                color: nth($fontColor, 1);
+                @include principal-button(nth($blue,1), nth($blue,2),nth($blue,3));
+            }
+        }
+        
+    }
+}
