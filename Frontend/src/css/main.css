@@ -458,7 +458,6 @@ se transforma en
   border-radius: 0em;
   transition: 0.5s; }
 
-<<<<<<< HEAD
 .component-header-user {
   font-family: "Questrial-Regular";
   width: 100%;
@@ -495,7 +494,7 @@ se transforma en
           color: white; }
       .component-header-user .component-header-menu .component-header-menu-ul .component-header-menu-li-icon {
         color: #f24537; }
-=======
+
 .vistaFooter {
   margin-top: 20px;
   color: #A4A4A4;
@@ -554,7 +553,6 @@ se transforma en
       .vistaFooter .link-logo .form-logo .form-logo-second {
         font-weight: bold;
         padding-left: 10px; }
->>>>>>> f0c7106a97069414aa6fa789ff364104540a4484
 
 /*VIEWS*/
 body {
