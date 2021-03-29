@@ -5,7 +5,7 @@ import Header from '../../components/Header/Header';
 import { useHistory } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-
+import Footer from '../../components/Footer/Footer.jsx';
 
 
 const Home = (props) => {
@@ -144,8 +144,9 @@ const Home = (props) => {
 
             </div>
          </div>
-
+         <Footer/>
       </div>
+      
    )
 
 }

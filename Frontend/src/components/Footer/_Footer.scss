@@ -1,0 +1,52 @@
+.vistaFooter{
+    color: nth($fontColor , 2);
+    width: $mp-z + $mp-q;
+    font-family: $font-Questrial-Regular;
+    .header-footer{
+        .header-footer-question{
+
+        }
+    }
+    .links-block{
+        display: flex;
+        align-content: space-between;
+        width: $mp-z;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        .first-block{
+            .first-block-li{
+
+            }
+
+        }
+        .second-block{
+            .second-block-li{
+
+            }
+        }
+        .third-block{
+            .third-block-li{
+
+            }
+        }
+        .fourth-block{
+            .fourth-block-li{
+                
+            }
+        }
+
+    }
+    .link-languages{
+
+    }
+    .link-logo{
+        .link-logo-title{
+
+        }
+        .link-logo-subtitle{
+
+        }
+
+    }
+}
