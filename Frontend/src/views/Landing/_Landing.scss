@@ -14,7 +14,7 @@ body{
     .content-right {
         width: $per-4;
         background-color: nth($dark, 2);
-        color: white;
+        color: nth($fontColor, 1);
         .form {
             margin: $size-o $size-u;
             height: $mp-w + $mp-h;

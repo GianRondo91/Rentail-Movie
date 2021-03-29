@@ -1,22 +1,21 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {useHistory} from 'react-router-dom';
+import HeaderUser from '../../components/User/Header-user/Header-user';
+// import {useHistory} from 'react-router-dom';
 
 
 const Profile =(props)=>{
 
-    let history = useHistory();
+    // let history = useHistory();
 
     let credentials=props.user.name;
     console.log(credentials);
 
     return(
 
-        <div>
-            Soy Profile del --Usuario
-
-
-
+        <div className='component-profile'>
+            <HeaderUser/>
+            
         </div>
     )
 }
