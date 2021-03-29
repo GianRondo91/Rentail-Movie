@@ -48,7 +48,7 @@ const Register = (props) => {
             surname: user.surname,
             email: user.email,
             password: user.password,
-            phone: 555555555,
+            phone: '555555555',
             birthday: 'campo a rellenar',
             adress: user.adress,
             payment: user.payment,
@@ -88,10 +88,10 @@ const Register = (props) => {
                         <div className="form-content-inputs form-content-inputs-register">
                             <p className='form-label form-label-register form-label-name' onChange={handleState}>Nombre</p>
                             <input name='name' className="form-input form-input-register form-input-name" onChange={handleState}></input>
-                            {message}
+                           
                             <p className='form-label form-label-register form-label-first-surname'>Apellidos</p>
                             <input name='surname' className="form-input form-input-register form-input-first-surname" onChange={handleState}></input>
-                            {message}
+                            
                             <p className='form-label form-label-register form-label-second-surname'>Direccíon</p>
                             <input name='adress' className="form-input form-input-register form-input-second-surname" onChange={handleState}></input>
                             <div className="city">
@@ -106,6 +106,7 @@ const Register = (props) => {
                                 <div className="city-options city-cp">
                                     <p className='form-label form-label-register form-label-cp'>CP</p>
                                     <input className="form-input form-input-city form-input-cp" onChange={handleState}></input>
+                                    {message}
                                 </div>
                             </div>
                             <p className='form-label form-label-register '>Email</p>

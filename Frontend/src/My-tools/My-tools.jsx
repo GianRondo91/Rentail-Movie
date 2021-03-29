@@ -53,7 +53,7 @@ const checkError = (data) => {
             case 'phone' : 
 
                 // eslint-disable-next-line
-                if(! /^[0-9]{9,11}$/.test(data[element])){
+                if(! /^(\+34|0034|34)?[ -]*(6|7)[ -]*([0-9][ -]*){8}.text(data[element])/){
 
                     return "El telefono introducido solo puede contener números";
                 }
