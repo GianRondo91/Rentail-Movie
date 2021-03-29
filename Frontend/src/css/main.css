@@ -471,7 +471,7 @@ se transforma en
     font-size: 38px;
     width: 50%;
     margin-left: 50px;
-    bottom: 0;
+    bottom: 0px;
     cursor: pointer; }
     .component-header-user .component-header-logo .user-logo-first {
       color: #585858; }
@@ -483,11 +483,11 @@ se transforma en
     .component-header-user .component-header-menu .component-header-menu-ul {
       display: flex;
       position: absolute;
-      right: 26px;
-      bottom: 0;
+      right: 50px;
+      bottom: 0px;
       font-size: 22px; }
       .component-header-user .component-header-menu .component-header-menu-ul .component-header-menu-li {
-        margin-right: 50px;
+        margin-right: 24px;
         cursor: pointer; }
         .component-header-user .component-header-menu .component-header-menu-ul .component-header-menu-li .component-header-menu-a {
           text-decoration: none;
