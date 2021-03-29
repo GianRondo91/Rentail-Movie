@@ -1,52 +1,71 @@
 .vistaFooter{
+    margin-top: $mp-h;
     color: nth($fontColor , 2);
-    width: $mp-z + $mp-q;
+    width: $per-10;
+    height: $mp-t;
     font-family: $font-Questrial-Regular;
     .header-footer{
-        .header-footer-question{
-
-        }
+        margin-left: $mp-e;
     }
     .links-block{
         display: flex;
+        margin-top: $mp-g;
         align-content: space-between;
-        width: $mp-z;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
+        width: $per-10;
+        text-align: left;
         .first-block{
-            .first-block-li{
-
-            }
-
+            display: flex;
+            flex-direction: column;
+            margin-left: $mp-e;
+            height: $mp-d + $mp-n;
+            justify-content: space-evenly;
         }
         .second-block{
-            .second-block-li{
-
-            }
+            display: flex;
+            flex-direction: column;
+            margin-left: $mp-e;
+            height: $mp-d + $mp-n;
+            justify-content: space-evenly;
         }
         .third-block{
-            .third-block-li{
-
-            }
+            display: flex;
+            flex-direction: column;
+            margin-left: $mp-e;
+            height: $mp-d + $mp-n;
+            justify-content: space-evenly;
         }
         .fourth-block{
-            .fourth-block-li{
-                
-            }
+            display: flex;
+            flex-direction: column;
+            margin-left: $mp-e;
+            height: $mp-d + $mp-n;
+            justify-content: space-evenly;
         }
 
     }
     .link-languages{
-
+        margin-left: $mp-e;
+        margin-top: $mp-g;
     }
     .link-logo{
-        .link-logo-title{
-
+        display: flex;
+        flex-direction: column;
+        margin-left: $mp-e;
+        margin-top: $mp-h;
+        .form-logo {
+            margin-top: $mp-e;
+            height: $mp-j;
+            font-size: $size-nn;
+            text-align: right;
+            display: flex;
+            justify-content: flex-start;
+            .form-logo-first{
+                color: nth($fontColor, 3);
+            }
+            .form-logo-second{
+                font-weight: bold;
+                padding-left: $mp-e;
+            }
         }
-        .link-logo-subtitle{
-
-        }
-
     }
 }

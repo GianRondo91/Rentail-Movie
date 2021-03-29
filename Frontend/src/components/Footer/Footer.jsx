@@ -17,7 +17,6 @@ const Footer = (props)=>{
                     <li className="first-block-li">Preguntas frecuentes</li>
                     <li className="first-block-li">Inversores</li>
                     <li className="first-block-li">Formas de ver</li>
-                    <li className="first-block-li">Onformación corporativa</li>
                 </ul>
                 <ul className="links-block second-block">
                     <li className="second-block-li">Centro de ayuda</li>
@@ -39,7 +38,10 @@ const Footer = (props)=>{
                 Español
             </div>
             <div className="link-logo">
-                <p className="link-logo-title">NetFlim</p>
+                <div className="form-logo">
+                    <div className="form-logo-first">Net </div>
+                    <div className="form-logo-second"> Film</div>
+                </div>
                 <p className="link-logo-subtitle">ESPAÑA</p>
             </div>
 
