@@ -2,19 +2,39 @@
 const AdminBro = require('admin-bro')
 const AdminBroExpress = require('@admin-bro/express')
 const AdminBroMongoose = require('@admin-bro/mongoose')
+
 const User = require('../models/user-model')
 const Order = require('../models/order-model')
+
 
 const mongo = require('mongoose')
 
 AdminBro.registerAdapter(AdminBroMongoose)
 
 
+const locale = {
+  translations: {
+    labels: {
+      // change Heading for Login
+      loginWelcome: '',
+    },
+    messages: {
+      loginWelcome: '',
+    },
+  },
+};
 
 const adminBro = new AdminBro({
   databases: [mongo],
   resources: [User, Order],
   rootPath: '/admin',
+  locale,
+  branding: {
+    companyName: 'Net Film',
+    softwareBrothers: false,
+    logo: '',
+  },
+
 })
 
 
