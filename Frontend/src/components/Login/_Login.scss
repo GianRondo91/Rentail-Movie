@@ -1,6 +1,7 @@
 
     .form-content {
         height: $per-8;
+        position: relative;
         .form-content-title {
             font-size: $size-p;
             margin-top: $mp-k;
@@ -24,8 +25,8 @@
             }
             .form-input-password-eye{
                 position: absolute;
-                right: $mp-m;
-                bottom: ($mp-v - $mp-r) + $mp-f;
+                right: $mp-i;
+                bottom: $mp-t + $mp-a;
                 color: nth($grey, 3);
                 cursor: pointer;
             }

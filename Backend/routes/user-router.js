@@ -1,3 +1,4 @@
+//Requerimos de la librería express el método router
 const router = require("express").Router();
 const jwt = require('jsonwebtoken');
 const auth = require('../middlewares/auth')

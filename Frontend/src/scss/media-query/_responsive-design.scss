@@ -1,0 +1,54 @@
+@media (min-width: $q-xl){
+    #content {
+        display: flex;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+@media (min-width: $q-l + $size-a) and (max-width: $q-xl - $size-a){
+    #content {
+        width: $q-l;
+        display: flex;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: $per-1;
+        .content-left {
+            width: $per-5;
+        }
+        .content-right {
+            width: $per-5;
+        }
+    }
+}
+@media all and (min-width: $q-m + $size-a) and (max-width: $q-l) {
+    #content {
+        width: $q-m + $size-a;
+        display: flex;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: $per-1;
+        .content-left {
+            width: $per-5;
+        }
+        .content-right {
+            width: $per-5;
+        }
+    }
+}
+
+@media (min-width: $q-s)  and (max-width: $q-m) {
+    #content {
+        width: auto;
+        display: flex;
+        margin-top: $per-1;
+        .content-left {
+            width: $per-0;
+        }
+        .content-right {
+            width: $img-xxll;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    }
+}
