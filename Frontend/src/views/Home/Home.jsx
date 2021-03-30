@@ -3,7 +3,7 @@ import Movie from '../../components/Movie/Movie';
 import video from '../../video/videoplayback.mp4';
 import Header from '../../components/Header/Header';
 import { useHistory } from 'react-router-dom';
-import { Carousel } from 'react-responsive-carousel';
+
 // import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Footer from '../../components/Footer/Footer.jsx';
 
@@ -26,7 +26,7 @@ const Home = (props) => {
 
       //Ultimas Peliculas
 
-      let latest = `${base_url}now_playing?api_key=${key}&${language}&page=1`;
+      let Latest = `${base_url}now_playing?api_key=${key}&${language}&page=1`;
       let destacado = `${base_url}now_playing?api_key=${key}&${language}&page=2`;
 
       let populares = `${base_url}popular?api_key=${key}&${language}`;
@@ -43,7 +43,7 @@ const Home = (props) => {
          })
       //Latest page1 and page2
 
-      fetch(latest)
+      fetch(Latest)
          .then(res => (res.json()))
          .then(data => {
 
@@ -58,10 +58,7 @@ const Home = (props) => {
             setDestacado(data.results.slice(0, 5))
          })
 
-
       //Recomendaciones
-
-
 
       fetch(recomendaciones)
          .then(res => (res.json()))
@@ -70,12 +67,7 @@ const Home = (props) => {
 
             setRecomendaciones(data.results);
          })
-
-
-
-
-
-   }, []);
+   },[]);
 
    //Functions:
 
@@ -98,12 +90,9 @@ const Home = (props) => {
 
    return (
 
-
-      <div>
-
-         < Header />
+         
          <div className="contenedorHome">
-
+         < Header />
             <video className='myVideo' autoPlay muted loop id="myVideo" src={video}></video>
             <div class="content">
 
@@ -115,18 +104,18 @@ const Home = (props) => {
             <div className="separador"></div>
             <h2 className='tituloDelGenero'>Ultimas Peliculas Añadidas</h2>
             <div className="ultimas">
-               <Carousel showArrows={true} showThumbs={true}>
-                  {latest.map(latest => <Movie style='uno' key={latest.id} {...latest} onClick={() => takeMeTo(latest)} />)}
-               </Carousel>
+             
+                  {latest.map(latest => <Movie style='uno' key={latest.id}  {...latest} onClick={() => takeMeTo(latest)} />)}
+               
             </div>
 
 
             <div className="separador"></div>
             <h2 className='tituloDelGenero'>Populares</h2>
             <div className="populares">
-               <Carousel>
+               
                   {populares.map(populares => <Movie style='uno' key={populares.id} {...populares} onClick={() => takeMeTo(populares)} />)}
-               </Carousel>
+              
             </div>
 
             <div className="separador"></div>
@@ -138,10 +127,10 @@ const Home = (props) => {
 
             <div className="separador"></div>
             <h2 className='tituloDelGenero'>Recomendaciones</h2>
-            <div className="Destacado">
-               <Carousel>
-                  {recomendaciones.map(recomendaciones => <Movie style='uno' key={recomendaciones.id} {...recomendaciones} onClick={() => takeMeTo(recomendaciones)} />)}
-               </Carousel>
+            <div className="recomendaciones">
+               
+               {recomendaciones.map(recomendaciones => <Movie style='uno' key={recomendaciones.id} {...recomendaciones} onClick={() => takeMeTo(recomendaciones)} />)}
+         
                {/* <div className="recomendadas">
                <Carousel>
                   {recomendaciones.map(recomendaciones => <Movie style='uno' key={recomendaciones.id} {...recomendaciones} onClick={() => takeMeTo(recomendaciones)} />)}
@@ -150,9 +139,10 @@ const Home = (props) => {
 
 
             </div>
+            <Footer/>
          </div>
-         <Footer/>
-      </div>
+         
+      
       
    )
 
