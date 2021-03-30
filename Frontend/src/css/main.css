@@ -442,8 +442,8 @@ se transforma en
   display: flex;
   margin: 0.5em;
   color: #e6dbdb;
-  width: 15em;
-  height: 8em;
+  width: 9em;
+  height: 13em;
   border: 0.1em solid blueviolet;
   border-radius: 0em;
   transition: 0.5s; }
@@ -453,7 +453,7 @@ se transforma en
   margin: 0.8em;
   color: #e6dbdb;
   width: 15em;
-  height: 25em;
+  height: 22em;
   border: 0.1em solid blueviolet;
   border-radius: 0em;
   transition: 0.5s; }
@@ -720,66 +720,58 @@ body {
     height: 82vh;
     object-fit: cover;
     z-index: 0; }
-
-.content {
-  z-index: 1;
-  margin-top: -7em;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.2);
-  color: #f1f1f1;
-  padding: 20px; }
-
-#myBtn {
-  width: 200px;
-  font-size: 18px;
-  padding: 10px;
-  border: none;
-  border-radius: 0.5em;
-  background: #f3f0f0;
-  color: #1e62d0;
-  cursor: pointer;
-  margin: 0.5em; }
-
-#myBtn:hover {
-  background: #ddd;
-  color: black; }
-
-.tituloDelGenero {
-  color: #aaa9a3;
-  margin: 1em;
-  height: 1em; }
-
-.ultimas {
-  margin-left: 1.5em;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start; }
-
-.separador {
-  border: 0.5px solid #3a3838;
-  width: 70em;
-  margin-left: 6em; }
-
-.populares {
-  margin-left: 1.5em;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  overflow-x: auto; }
-
-.recomendadas {
-  margin-left: 1.5em;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  overflow-x: auto; }
-
-.destacado {
-  display: flex;
-  flex-direction: row; }
+  .contenedorHome .content {
+    z-index: 1;
+    margin-top: -7em;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+    color: #f1f1f1;
+    padding: 20px; }
+    .contenedorHome .content #myBtn {
+      width: 200px;
+      font-size: 18px;
+      padding: 10px;
+      border: none;
+      border-radius: 0.5em;
+      background: #f3f0f0;
+      color: #1e62d0;
+      cursor: pointer;
+      margin: 0.5em; }
+    .contenedorHome .content #myBtn:hover {
+      background: #ddd;
+      color: black; }
+  .contenedorHome .tituloDelGenero {
+    color: #aaa9a3;
+    margin: 1em;
+    height: 1em; }
+  .contenedorHome .separador {
+    border: 0.5px solid #3a3838;
+    width: 70em;
+    margin-left: 6em; }
+  .contenedorHome .ultimas {
+    margin-left: 1.5em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-x: auto; }
+  .contenedorHome .populares {
+    margin-left: 1.5em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-x: auto; }
+  .contenedorHome .destacado {
+    display: flex;
+    flex-direction: row; }
+  .contenedorHome .recomendaciones {
+    margin-left: 1.5em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-x: auto; }
 
 .movieProfileContainer {
   width: 100vw;

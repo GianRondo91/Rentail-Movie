@@ -3,8 +3,8 @@ import Movie from '../../components/Movie/Movie';
 import video from '../../video/videoplayback.mp4';
 import Header from '../../components/Header/Header';
 import { useHistory } from 'react-router-dom';
-import { Carousel } from 'react-responsive-carousel';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+
+// import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Footer from '../../components/Footer/Footer.jsx';
 
 
@@ -15,16 +15,23 @@ const Home = (props) => {
    const [populares, setPopulares] = useState([]);
    const [recomendaciones, setRecomendaciones] = useState([]);
 
+   //Constuccion de URL consultas TMDB
+
+   let key = "ef2edc9da61e81787a8079a7df721936";
+   let base_url = `http://api.themoviedb.org/3/movie/`;
+   let language = "language=es-ES"
+   
+
    useEffect(() => {
 
       //Ultimas Peliculas
 
-      let Latest = "https://api.themoviedb.org/3/movie/now_playing?api_key=ef2edc9da61e81787a8079a7df721936&language=en-US&page=1";
-      let destacado = "https://api.themoviedb.org/3/movie/now_playing?api_key=ef2edc9da61e81787a8079a7df721936&language=en-US&page=2";
+      let Latest = `${base_url}now_playing?api_key=${key}&${language}&page=1`;
+      let destacado = `${base_url}now_playing?api_key=${key}&${language}&page=2`;
 
-      let populares = 'https://api.themoviedb.org/3/movie/popular?api_key=ef2edc9da61e81787a8079a7df721936&language=en-US&page=1';
+      let populares = `${base_url}popular?api_key=${key}&${language}`;
 
-      let recomendaciones = 'https://api.themoviedb.org/3/movie/top_rated?api_key=ef2edc9da61e81787a8079a7df721936&language=en-US&page=1'
+      let recomendaciones = `${base_url}top_rated?api_key=${key}&${language}`
 
       //Populares
 
@@ -51,10 +58,7 @@ const Home = (props) => {
             setDestacado(data.results.slice(0, 5))
          })
 
-
       //Recomendaciones
-
-
 
       fetch(recomendaciones)
          .then(res => (res.json()))
@@ -63,12 +67,7 @@ const Home = (props) => {
 
             setRecomendaciones(data.results);
          })
-
-
-
-
-
-   }, []);
+   },[]);
 
    //Functions:
 
@@ -91,12 +90,9 @@ const Home = (props) => {
 
    return (
 
-
-      <div>
-
-         < Header />
+         
          <div className="contenedorHome">
-
+         < Header />
             <video className='myVideo' autoPlay muted loop id="myVideo" src={video}></video>
             <div class="content">
 
@@ -108,18 +104,18 @@ const Home = (props) => {
             <div className="separador"></div>
             <h2 className='tituloDelGenero'>Ultimas Peliculas Añadidas</h2>
             <div className="ultimas">
-               <Carousel>
-                  {latest.map(latest => <Movie style='uno' key={latest.id} {...latest} onClick={() => takeMeTo(latest)} />)}
-               </Carousel>
+             
+                  {latest.map(latest => <Movie style='uno' key={latest.id}  {...latest} onClick={() => takeMeTo(latest)} />)}
+               
             </div>
 
 
             <div className="separador"></div>
             <h2 className='tituloDelGenero'>Populares</h2>
             <div className="populares">
-               <Carousel>
+               
                   {populares.map(populares => <Movie style='uno' key={populares.id} {...populares} onClick={() => takeMeTo(populares)} />)}
-               </Carousel>
+              
             </div>
 
             <div className="separador"></div>
@@ -131,10 +127,10 @@ const Home = (props) => {
 
             <div className="separador"></div>
             <h2 className='tituloDelGenero'>Recomendaciones</h2>
-            <div className="Destacado">
-               <Carousel>
-                  {recomendaciones.map(recomendaciones => <Movie style='uno' key={recomendaciones.id} {...recomendaciones} onClick={() => takeMeTo(recomendaciones)} />)}
-               </Carousel>
+            <div className="recomendaciones">
+               
+               {recomendaciones.map(recomendaciones => <Movie style='uno' key={recomendaciones.id} {...recomendaciones} onClick={() => takeMeTo(recomendaciones)} />)}
+         
                {/* <div className="recomendadas">
                <Carousel>
                   {recomendaciones.map(recomendaciones => <Movie style='uno' key={recomendaciones.id} {...recomendaciones} onClick={() => takeMeTo(recomendaciones)} />)}
@@ -143,9 +139,10 @@ const Home = (props) => {
 
 
             </div>
+            <Footer/>
          </div>
-         <Footer/>
-      </div>
+         
+      
       
    )
 
