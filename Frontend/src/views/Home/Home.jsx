@@ -15,6 +15,8 @@ const Home = (props) => {
    const [populares, setPopulares] = useState([]);
    const [recomendaciones, setRecomendaciones] = useState([]);
 
+  
+
    //Constuccion de URL consultas TMDB
 
    let key = "ef2edc9da61e81787a8079a7df721936";
@@ -87,6 +89,7 @@ const Home = (props) => {
       history.push('/peliculas')
    }
 
+ 
 
    return (
 

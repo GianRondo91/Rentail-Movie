@@ -1,11 +1,19 @@
 import React from 'react';
+import {useState, useEffect} from 'react'
 import AddFavourite from '../Add-fav/AddFavourite'
 
 
 
 const Movie =({title,poster_path,overview,release_date,vote_average,id,onClick,style})=>{
-
+  
+  const [favourites, setFavourites] = useState([]);
   //---------------------//
+  const addFavouriteMovie = (movie) => {
+    const newFavouriteList = [...favourites, movie];
+    console.log('aaaaa',newFavouriteList)
+    setFavourites(newFavouriteList);
+    //saveToLocalStorage(newFavouriteList);
+ }
 
   let FirstPartOflinkimage ='https://image.tmdb.org/t/p/original';
 
@@ -20,7 +28,7 @@ const Movie =({title,poster_path,overview,release_date,vote_average,id,onClick,s
 
    let movieStyelDos = <div className="movie">
    <img className ="movieStyelDos" src={FirstPartOflinkimage+poster_path} alt={title} onClick={onClick}/>
-   <div className="overlay-two">
+   <div className="overlay-two" onClick={() => addFavouriteMovie(title)}>
    <AddFavourite/>
    </div>
    </div>
