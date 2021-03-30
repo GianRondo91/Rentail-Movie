@@ -20,11 +20,11 @@ const Register = (props) => {
         phone: "",
         birthday: "",
         adress: "",
-        country:"",
-        city:"",
-        postal:"",
+        country: "",
+        city: "",
+        postal: "",
         payment: "",
-        
+
     });
 
     const [message, setMessage] = useState('');
@@ -68,15 +68,15 @@ const Register = (props) => {
 
             await axios.post(endpointUser, userData);
 
-            console.log(response)
+            console.log(response);
         }, 1000)
         if (response) {
-            alert('Usuario Registrado Con Exito')
+            alert('Usuario Registrado Con Exito');
             setTimeout(() => {
                 history.push('/')
             }, 1000);
         } else {
-            alert('Lo siento , no se pudo completar el registro, vuelve a intentarlo mas tarde')
+            alert('Lo siento , no se pudo completar el registro, vuelve a intentarlo mas tarde');
         }
     };
 
@@ -95,10 +95,10 @@ const Register = (props) => {
                         <div className="form-content-inputs form-content-inputs-register">
                             <p className='form-label form-label-register form-label-name' onChange={handleState}>Nombre</p>
                             <input name='name' className="form-input form-input-register form-input-name" onChange={handleState}></input>
-                           
+
                             <p className='form-label form-label-register form-label-first-surname'>Apellidos</p>
                             <input name='surname' className="form-input form-input-register form-input-first-surname" onChange={handleState}></input>
-                            
+
                             <p className='form-label form-label-register form-label-second-surname'>Direccíon</p>
                             <input name='adress' className="form-input form-input-register form-input-second-surname" onChange={handleState}></input>
                             <div className="city">

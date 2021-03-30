@@ -1,5 +1,5 @@
 import React from 'react';
-import './Footer.scss';
+
 
 import {useHistory} from 'react-router-dom';
 
@@ -10,14 +10,13 @@ const Footer = (props)=>{
               
         <div className="vistaFooter">
             <div className="header-footer">
-                <div>¿Preguntas? Llama al 900 000 000</div>
+                <div className="header-footer-question">¿Preguntas? Llama al 900 000 000</div>
             </div>
-            <div className="links-blok">
+            <div className="links-block">
                 <ul className="links-block first-block">
                     <li className="first-block-li">Preguntas frecuentes</li>
                     <li className="first-block-li">Inversores</li>
                     <li className="first-block-li">Formas de ver</li>
-                    <li className="first-block-li">Onformación corporativa</li>
                 </ul>
                 <ul className="links-block second-block">
                     <li className="second-block-li">Centro de ayuda</li>
@@ -39,7 +38,10 @@ const Footer = (props)=>{
                 Español
             </div>
             <div className="link-logo">
-                <p className="link-logo-title">NetFlim</p>
+                <div className="form-logo">
+                    <div className="form-logo-first">Net </div>
+                    <div className="form-logo-second"> Film</div>
+                </div>
                 <p className="link-logo-subtitle">ESPAÑA</p>
             </div>
 

@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import Header from '../../components/Header/Header';
 import {useHistory} from 'react-router-dom';
+<<<<<<< HEAD
 import axios from 'axios';
 
+=======
+import ReactPlayer from 'react-player';
+>>>>>>> 21888d4ed1e67d5513523c32a1389eb355e10b5d
 
 const MovieProfile =()=>{
 

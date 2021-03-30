@@ -1,0 +1,45 @@
+.component-header-user{
+    font-family: $font-Questrial-Regular;
+    width: $per-10;
+    height: $mp-n;
+    display: flex;
+    color: nth($principal-color, 1);
+    position: relative;
+    .component-header-logo{
+        display: flex;
+        position: absolute;
+        font-size: $size-s;
+        width: $per-5;
+        margin-left: $size-u;
+        bottom: $mp-0;
+        cursor: pointer;
+        .user-logo-first{
+            color: nth($fontColor, 3);
+        }
+        .user-logo-second{
+            font-weight: bold;
+            padding-left: $mp-e;
+        }
+    }
+    .component-header-menu{
+        width: $per-5;
+        .component-header-menu-ul{
+            display: flex;
+            position: absolute;
+            right: $size-u;
+            bottom: $mp-0;
+            font-size: $size-l;
+            .component-header-menu-li{
+                margin-right: $mp-i;
+                cursor: pointer;
+                .component-header-menu-a{
+                    text-decoration: none;
+                    color: nth($principal-color, 1);
+                }
+            }
+            .component-header-menu-li-icon{
+                color: nth($btnRed, 1);
+            }
+        }
+    }
+}
