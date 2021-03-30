@@ -229,7 +229,7 @@ se transforma en
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 100vw;
+  width: 1400px;
   height: 3em;
   border: 0.01em solid #4d4949;
   color: white;
@@ -460,7 +460,9 @@ se transforma en
 
 .component-header-user {
   font-family: "Questrial-Regular";
-  width: 100%;
+  width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
   height: 80px;
   display: flex;
   color: white;
@@ -474,7 +476,7 @@ se transforma en
     bottom: 0px;
     cursor: pointer; }
     .component-header-user .component-header-logo .user-logo-first {
-      color: #585858; }
+      color: #51C2C0; }
     .component-header-user .component-header-logo .user-logo-second {
       font-weight: bold;
       padding-left: 10px; }
@@ -506,7 +508,7 @@ se transforma en
   margin-top: 50px;
   position: relative; }
   .data-user .form-update-data {
-    background: #2f5d62;
+    background: rgba(250, 213, 134, 0.4);
     width: 50%;
     border-radius: 10px; }
     .data-user .form-update-data .form-data-content {
@@ -537,7 +539,7 @@ se transforma en
         background: linear-gradient(to bottom, #1E90FF 5%, #4169E1 100%);
         background-color: #1E90FF;
         border-radius: 6px;
-        border: 2px solid #6495ED;
+        border: 0px solid #6495ED;
         display: inline-block;
         cursor: pointer;
         font-size: 18px;
@@ -546,7 +548,7 @@ se transforma en
         text-decoration: none;
         margin: 16px; }
   .data-user .form-update-payment {
-    background: #51C2C0;
+    background: rgba(81, 194, 192, 0.7);
     width: 40%;
     height: 300px;
     border-radius: 10px; }
@@ -608,7 +610,7 @@ se transforma en
         background: linear-gradient(to bottom, #1E90FF 5%, #4169E1 100%);
         background-color: #1E90FF;
         border-radius: 6px;
-        border: 2px solid #6495ED;
+        border: 0px solid #6495ED;
         display: inline-block;
         cursor: pointer;
         font-size: 18px;
@@ -671,7 +673,7 @@ se transforma en
       display: flex;
       justify-content: flex-start; }
       .vistaFooter .link-logo .form-logo .form-logo-first {
-        color: #585858; }
+        color: #51C2C0; }
       .vistaFooter .link-logo .form-logo .form-logo-second {
         font-weight: bold;
         padding-left: 10px; }
@@ -702,7 +704,7 @@ body {
         display: flex;
         justify-content: flex-end; }
         #content .content-right .form .form-logo .form-logo-first {
-          color: #585858; }
+          color: #51C2C0; }
         #content .content-right .form .form-logo .form-logo-second {
           font-weight: bold;
           padding-left: 10px; }
@@ -862,7 +864,12 @@ body {
   #content {
     display: flex;
     margin-right: auto;
-    margin-left: auto; } }
+    margin-left: auto; }
+  /*Data-user*/
+  .component-profile {
+    width: 1400px;
+    margin-left: auto;
+    margin-right: auto; } }
 
 @media (min-width: 1201px) and (max-width: 1439px) {
   #content {
@@ -874,7 +881,10 @@ body {
     #content .content-left {
       width: 50%; }
     #content .content-right {
-      width: 50%; } }
+      width: 50%; }
+  /*Data-user*/
+  .component-profile .component-header-user {
+    width: 1200px; } }
 
 @media all and (min-width: 1008px) and (max-width: 1200px) {
   #content {
@@ -886,6 +896,16 @@ body {
     #content .content-left {
       width: 50%; }
     #content .content-right {
+      width: 50%; }
+  /*Data-user*/
+  .component-profile .component-header-user {
+    width: 1008px; }
+  .component-profile .data-user {
+    width: 1036px; }
+    .component-profile .data-user .form-update-data {
+      width: 50%; }
+    .component-profile .data-user .form-update-payment {
+      margin-left: 20px;
       width: 50%; } }
 
 @media (min-width: 375px) and (max-width: 1007px) {
@@ -898,4 +918,25 @@ body {
     #content .content-right {
       width: 500px;
       margin-right: auto;
-      margin-left: auto; } }
+      margin-left: auto; }
+  /*Data-user*/
+  .component-profile {
+    width: 512px;
+    margin-left: auto;
+    margin-right: auto; }
+    .component-profile .component-header-user {
+      display: table-cell;
+      text-align: right; }
+      .component-profile .component-header-user .component-header-menu .component-header-menu-ul {
+        top: 96px;
+        position: absolute;
+        left: 40px; }
+    .component-profile .data-user .form-update-data {
+      width: 40%; }
+      .component-profile .data-user .form-update-data .form-data-content {
+        left: 5%; }
+    .component-profile .data-user .form-update-payment {
+      position: absolute;
+      top: 664px; }
+      .component-profile .data-user .form-update-payment .form-payment-content .form-update-payment-button {
+        bottom: -60px; } }

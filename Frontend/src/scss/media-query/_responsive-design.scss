@@ -4,6 +4,12 @@
         margin-right: auto;
         margin-left: auto;
     }
+    /*Data-user*/
+    .component-profile{
+        width: $q-l + $mp-q + $mp-d;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 @media (min-width: $q-l + $size-a) and (max-width: $q-xl - $size-a){
@@ -18,6 +24,12 @@
         }
         .content-right {
             width: $per-5;
+        }
+    }
+    /*Data-user*/
+    .component-profile{
+        .component-header-user{
+           width: $mp-z;
         }
     }
 }
@@ -35,6 +47,22 @@
             width: $per-5;
         }
     }
+    /*Data-user*/
+    .component-profile{
+        .component-header-user{
+           width: $mp-z - ($mp-q);
+        }
+        .data-user{
+            width: $mp-z - ($mp-p + $mp-b);
+            .form-update-data{
+                width: $per-5;
+            }
+            .form-update-payment{
+                margin-left: $mp-h;
+                width: $per-5;
+            }
+        }
+    }
 }
 
 @media (min-width: $q-s)  and (max-width: $q-m) {
@@ -49,6 +77,40 @@
             width: $img-xxll;
             margin-right: auto;
             margin-left: auto;
+        }
+    }
+    /*Data-user*/
+    .component-profile{
+        width: 512px;
+        margin-left: auto;
+        margin-right: auto;
+        .component-header-user{
+           display: table-cell;
+           text-align: right;
+            .component-header-menu{
+                .component-header-menu-ul{
+                    top: $mp-nn;
+                    position: absolute;
+                    left: $mp-k;
+                }
+            }
+        }
+        .data-user{
+            .form-update-data{
+                width: $per-4;
+                .form-data-content{
+                    left: $per-1 / 2;
+                }
+            }
+            .form-update-payment{
+                position: absolute;
+                    top: $mp-v + $mp-i;
+                .form-payment-content{
+                    .form-update-payment-button{
+                        bottom: $mg-60;
+                    }
+                }
+            }
         }
     }
 }

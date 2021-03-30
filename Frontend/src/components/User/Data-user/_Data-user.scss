@@ -9,7 +9,7 @@
     margin-top: $size-u;
     position: relative;
     .form-update-data{
-        background: nth($formulary, 3);
+        background: adjust-color(nth($formulary, 3), $alpha: -.6);
         width: $per-5;
         border-radius: $mp-e;
         .form-data-content{
@@ -42,7 +42,7 @@
         }
     }
     .form-update-payment{
-        background: nth($formulary, 2);
+        background: adjust-color(nth($formulary, 2), $alpha: -0.3);
         width: $per-4;
         height: $mp-t - $mp-h;
         border-radius: $mp-e;
