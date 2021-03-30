@@ -7,7 +7,7 @@ import styles from 'react-responsive-carousel/lib/styles/carousel.min.css';
 class DemoCarousel extends Component {
     render() {
         return (
-            <Carousel>
+            <Carousel >
                 <div className={styles}>
                     <img  src="assets/1.jpeg" />
                     
