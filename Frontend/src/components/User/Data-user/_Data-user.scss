@@ -3,32 +3,46 @@
     display: flex;
     justify-content: space-between;
     width: 1200px;
-    height: 600px;
+    height: 616px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 80px;
+    margin-top: 50px;
     position: relative;
     
     .form-update-data{
-        background-color: #C6B6B6 40%;
+        background: nth($formulary, 3);
         width: 50%;
-        box-shadow: 1px 5px 15px 5px #000000;
+        border-radius: 10px;
+        
         .form-data-content{
-            width: 70%;
-            margin-left: auto;
-            margin-right: auto;
+            width: 30%;
+            position: absolute;
+            left: 10%;
+            top: 5%;
             display: grid;
             .form-data-content-title{
-
+                font-size: 22px;
+                margin-bottom: 30px;
             }
             .form-update-data-label{
 
             }
             .form-update-data-input{
                 outline: none;
+                @include input-security($per-10);
+            }
+            .country-city-cp{
+                display: flex;
+                .country-city-cp-style{
+                    .form-update-data-input{
+                        width: 90%;
+                    }
+                }
+                margin-bottom: 20px;
             }
             .form-update-data-button{
-    
+                color: nth($fontColor, 1);
+                @include principal-button(nth($blue,1), nth($blue,2),nth($blue,3));
             }
         }
         
@@ -40,14 +54,13 @@
         border-radius: 10px;
         
         .form-payment-content{
-            width: 80%;
+            width: $per-8;
             margin-left: auto;
             margin-right: auto;
             margin-top: 25px;
             font-size: 18px;
             .form-update-payment-title{
                 top: 5px;
-                
                 .form-payment-content-title{
                     font-size: 22px;
                 }
@@ -58,12 +71,12 @@
                     background-repeat: no-repeat;
                     background-size: contain;
                     position: absolute;
-                    right: 23px;
+                    right: 43px;
                     top: 251px;
                 }
             }
             .principal-data{
-                width: 90%;
+                width: $per-10;
                 margin-top: 25px;
                 .form-update-payment-label{
                     margin-top: 30px;
@@ -86,12 +99,11 @@
                     .form-update-security-label{
                     }
                     .form-update-security-input{
-                        @include input-security($per-8);
+                        @include input-security($per-10);
                     }
                 }
                 
             }
-            
             .form-update-payment-button{
                 bottom: 218px;
                 position: absolute;
