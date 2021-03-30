@@ -3,12 +3,6 @@ import Movie from '../../components/Movie/Movie';
 import video from '../../video/videoplayback.mp4';
 import Header from '../../components/Header/Header';
 import { useHistory } from 'react-router-dom';
-<<<<<<< HEAD
-import { Carousel } from 'react-responsive-carousel';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import axios from 'axios';
-=======
->>>>>>> 21888d4ed1e67d5513523c32a1389eb355e10b5d
 
 // import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Footer from '../../components/Footer/Footer.jsx';
@@ -64,11 +58,6 @@ const Home = (props) => {
 
             setDestacado(data.results.slice(0, 5))
          })
-<<<<<<< HEAD
-        
-=======
-
->>>>>>> 21888d4ed1e67d5513523c32a1389eb355e10b5d
       //Recomendaciones
 
       fetch(recomendaciones)
@@ -101,18 +90,9 @@ const Home = (props) => {
 
    return (
 
-<<<<<<< HEAD
-
-      <div>
-
-        < Header />
-         <div className="contenedorHome">
-          
-=======
          
          <div className="contenedorHome">
          < Header />
->>>>>>> 21888d4ed1e67d5513523c32a1389eb355e10b5d
             <video className='myVideo' autoPlay muted loop id="myVideo" src={video}></video>
             
             <div class="content">
