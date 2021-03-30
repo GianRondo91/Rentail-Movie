@@ -47,7 +47,7 @@ router.post('/login',async (req, res) => {
 
 
 //Traer un user por Id
-router.get("/:id", auth, async (req, res)=>{
+router.get("/:id", async (req, res)=>{
     try{
         const id= req.params.id;
         res.json(await userController.findById(id));

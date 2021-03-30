@@ -8,13 +8,28 @@ const movieSchema = new Schema({
         type: String, 
         default: "movie"   
     },
-    year: {
+    release_date: {
+        type: String
+    },
+    original_title:{
+        type:String
+    },
+    vote_average:{
         type: Number
+    },
+    id:{
+        type:Number
+    },
+    popularity:{
+        type :String
+    },
+    vote_count:{
+        type:String
     },
     overview: {
         type: String
     },
-    image: {
+    poster_path: {
         type: String
     },
     genre: {
