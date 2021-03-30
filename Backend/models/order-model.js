@@ -9,15 +9,19 @@ const orderSchema = new Schema({
     
     
     filmId: {
-        type: ObjectId,
+        type: String,
         ref: "Movie",
-        require: true
+        require: true,
+        //unique:true
     },
     
     userId: { 
         type: ObjectId, 
         ref: "User",
         required: true
+    },
+    movieData:{
+        type:Object,
     },
     price:{
         type: Number,

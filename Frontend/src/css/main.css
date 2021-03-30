@@ -493,11 +493,13 @@ body {
   width: 100vw;
   height: auto;
   background-color: #1E2126;
+  position: relative;
   display: flex;
   flex-direction: column; }
   .contenedorHome #myVideo {
+    position: absolute;
     all: unset;
-    top: 5em;
+    top: 0;
     left: 0;
     height: 82vh;
     object-fit: cover;

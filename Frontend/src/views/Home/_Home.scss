@@ -3,19 +3,21 @@
     width: 100vw;
     height: auto;
     background-color: nth($dark, 1);
-   
-
+    position: relative;
     display: flex;
     flex-direction: column;
+
       #myVideo {
+        position: absolute;
       // position: fixed;
          all:unset;
-         top: 5em;
+         top: 0;
          left: 0;
          //width: 100vw;
          height: 82vh;
          object-fit: cover;
          z-index: 0;
+         
     }
 }
 .content {
