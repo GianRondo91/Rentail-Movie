@@ -554,10 +554,10 @@ se transforma en
       width: 80%;
       margin-left: auto;
       margin-right: auto;
-      margin-top: 25px;
-      font-size: 18px; }
+      margin-top: 24px;
+      font-size: 16px; }
       .data-user .form-update-payment .form-payment-content .form-update-payment-title {
-        top: 5px; }
+        top: 6px; }
         .data-user .form-update-payment .form-payment-content .form-update-payment-title .form-payment-content-title {
           font-size: 22px; }
         .data-user .form-update-payment .form-payment-content .form-update-payment-title .form-update-payment-img {
@@ -567,8 +567,8 @@ se transforma en
           background-repeat: no-repeat;
           background-size: contain;
           position: absolute;
-          right: 43px;
-          top: 251px; }
+          right: 42px;
+          top: 252px; }
       .data-user .form-update-payment .form-payment-content .principal-data {
         width: 100%;
         margin-top: 25px; }
@@ -603,7 +603,7 @@ se transforma en
       .data-user .form-update-payment .form-payment-content .form-update-payment-button {
         bottom: 218px;
         position: absolute;
-        right: 95px;
+        right: 97px;
         color: #ffffff;
         background: linear-gradient(to bottom, #1E90FF 5%, #4169E1 100%);
         background-color: #1E90FF;
