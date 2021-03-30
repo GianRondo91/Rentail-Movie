@@ -7,15 +7,25 @@ import AddFavourite from '../Add-fav/AddFavourite'
 const Movie =({title,poster_path,overview,release_date,vote_average,id,onClick,style})=>{
   
   const [favourites, setFavourites] = useState([]);
-  //---------------------//
+
+  //-----ADDING A FAV-------------//
   const addFavouriteMovie = (movie) => {
     const newFavouriteList = [...favourites, movie];
     console.log('aaaaa',newFavouriteList)
     setFavourites(newFavouriteList);
-    let local = localStorage.setItem('favourites', JSON.stringify(newFavouriteList));
-   console.log('yo soy local con mi tigre', local)
-   
+    localStorage.setItem('favourites', JSON.stringify(newFavouriteList)); 
  }
+
+ //---------DELETING A FAV---------//
+
+ /* const removeFavouriteMovie = (movie) => {
+  const newFavouriteList = favourites.filter(
+    (favourite) => favourite.imdbID !== movie.imdbID
+  );
+
+  setFavourites(newFavouriteList);
+  
+}; */
 
   let FirstPartOflinkimage ='https://image.tmdb.org/t/p/original';
 
