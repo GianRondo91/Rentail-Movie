@@ -3,9 +3,9 @@ import Movie from '../../components/Movie/Movie';
 import video from '../../video/videoplayback.mp4';
 import Header from '../../components/Header/Header';
 import { useHistory } from 'react-router-dom';
-
-// import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Footer from '../../components/Footer/Footer.jsx';
+import { } from '@fortawesome/free-solid-svg-icons';
+
 
 
 const Home = (props) => {
@@ -92,9 +92,9 @@ const Home = (props) => {
 
          
          <div className="contenedorHome">
-         < Header />
+         
             <video className='myVideo' autoPlay muted loop id="myVideo" src={video}></video>
-            
+            < Header/>
             <div class="content">
 
                <h1 className='h1'></h1>
