@@ -777,6 +777,7 @@ body {
     overflow-x: auto; }
 
 .movieProfileContainer {
+  margin-top: 32.5em;
   width: 100vw;
   height: 100vh;
   background-color: #1E2126; }

@@ -78,8 +78,9 @@ const MovieProfile =()=>{
 
     return(
       <>
-         <Header/>
+         
         <div className='movieProfileContainer'>
+           <Header/>
             <div className="MoviePanel">
                <div className="dataMovie">
 
