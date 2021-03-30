@@ -4,7 +4,6 @@ import HeaderUser from '../Header-user/Header-user';
 
 const Data = () => {
 
-
     return (
         <div className='component-profile'>
             <HeaderUser />
@@ -16,18 +15,28 @@ const Data = () => {
                         <input type="name" className='form-update-data-input'/>
                         <label htmlFor="" className='form-update-data-label'>Apellidos</label>
                         <input type="surname" className='form-update-data-input'/>
+                        <label htmlFor="" className='form-update-data-label'>Fecha de nacimiento</label>
+                        <input type="date" step="1" min="1930-12" max="2006-12" className='form-update-data-input'/>
                         <label htmlFor="" className='form-update-data-label'>Telefono</label>
                         <input type="phone" className='form-update-data-input'/>
                         <label htmlFor="" className='form-update-data-label'>Email</label>
                         <input type="email" className='form-update-data-input'/>
                         <label htmlFor="" className='form-update-data-label'>Dirección</label>
                         <input type="address" className='form-update-data-input'/>
-                        <label htmlFor="" className='form-update-data-label'>País</label>
-                        <input type="country" className='form-update-data-input'/>
-                        <label htmlFor="" className='form-update-data-label'>Provincia</label>
-                        <input type="city" className='form-update-data-input'/>
-                        <label htmlFor="" className='form-update-data-label'>CP</label>
-                        <input type="cp" className='form-update-data-input'/>
+                        <div className="country-city-cp">
+                            <div className="country-city-cp-style">
+                                <label htmlFor="" className='form-update-data-label'>País</label>
+                                <input type="country" className='form-update-data-input'/>
+                            </div>
+                            <div className="country-city-cp-style">
+                                <label htmlFor="" className='form-update-data-label'>Provincia</label>
+                                <input type="city" className='form-update-data-input'/>
+                            </div>
+                            <div className="country-city-cp-style">
+                                <label htmlFor="" className='form-update-data-label'>CP</label>
+                                <input type="cp" className='form-update-data-input'/>
+                            </div>
+                        </div>
                         <input type="button" value="Actualizar" className='form-update-data-button'/>
                     </div>
                 </div>
@@ -46,11 +55,11 @@ const Data = () => {
                         <div className="security">
                             <div className="security-date">
                                 <label htmlFor="" className='form-update-security-label'>Fecha de vencimiento</label>
-                                <input type="date" className='form-update-security-input input-date'/>
+                                <input type="month" name="month" step="1" min="2021-04" max="2026-12"  className='form-update-security-input input-date'/>
                             </div>
                             <div className="security-code">
                                 <label htmlFor="" className='form-update-security-label'>Código de seguridad</label>
-                                <input type="security-code" className='form-update-security-input'/>
+                                <input type="security-code" name='security-code' max='4' className='form-update-security-input'/>
                             </div>
                         </div>
                         <input type="button" value="Actualizar metodo de pagó" className='form-update-payment-button'/>
