@@ -869,9 +869,13 @@ body {
   align-items: center;
   justify-content: center; }
   .component-series .video-player {
-    margin-top: 5em;
+    margin-top: 43em;
     width: 100%;
-    height: 30em; }
+    height: 30em;
+    position: absolute;
+    /* justify-content: center; */
+    margin-left: 77em;
+    margin-right: auto; }
 
 /*RESPONSIVE DESIGN*/
 @media (min-width: 1440px) {
