@@ -1,22 +1,22 @@
 .contenedorHome{
 
-    width: 100vw;
-    height: auto;
-    background-color: nth($dark, 1);
-    display: flex;
-    flex-direction: column;
+  width: 100vw;
+  height: auto;
+  background-color: nth($dark, 1);
+  display: flex;
+  flex-direction: column;
 
-    #myVideo {
-    // position: fixed;
-        all:unset;
-        top: 5em;
-        left: 0;
-        //width: 100vw;
-        height: 82vh;
-        object-fit: cover;
-       z-index: 0;
-    }
-   .content {
+  #myVideo {
+  // position: fixed;
+    all:unset;
+    top: 5em;
+    left: 0;
+    //width: 100vw;
+    height: 82vh;
+    object-fit: cover;
+    // z-index: 0;
+  }
+  .content {
     //position: fixed;
     z-index: 1;
     //margin-top: -7em;
@@ -44,14 +44,14 @@
     }
   }
   .tituloDelGenero{
-      color: rgb(170, 169, 163) ;
-      margin:1em;
-      height: 1em;
+    color: rgb(170, 169, 163) ;
+    margin:1em;
+    height: 1em;
   }
   .separador{
-      border:0.5px solid rgb(58, 56, 56);
-      width: 70em;
-      margin-left:6em;
+    border:0.5px solid rgb(58, 56, 56);
+    width: 70em;
+    margin-left:6em;
   }
   .ultimas{
     margin-left: 1.5em;    
@@ -63,12 +63,12 @@
   }
 
   .populares{
-      margin-left: 1.5em;  
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: flex-start;
-      overflow-x: auto;
+    margin-left: 1.5em;  
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-x: auto;
   }
 
   .destacado{

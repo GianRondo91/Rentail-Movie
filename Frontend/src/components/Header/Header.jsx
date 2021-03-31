@@ -23,7 +23,10 @@ const Header = (props) => {
 
   return (
     <div className="vistaHeader">
-      <div className="logo" onClick={() => history.push('/')}>Rakuten TGJ</div>
+      <div className="form-logo">
+        <div className="form-logo-first">Net </div>
+        <div className="form-logo-second"> Film</div>
+      </div>
       <div className="nav">
         <div className="inicio" onClick={() => history.push('/')}>Mi Colección</div>
         <div className="Peliculas" onClick={() => history.push('/peliculas')}>Peliculas</div>

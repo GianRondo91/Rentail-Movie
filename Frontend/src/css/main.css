@@ -233,15 +233,19 @@ se transforma en
   color: white;
   background-color: rgba(22, 21, 21, 0.1);
   align-items: center;
-  margin-top: -32em;
+  margin-top: -40em;
   z-index: 3;
   bottom: 0; }
-  .vistaHeader .logo {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-style: italic;
+  .vistaHeader .form-logo {
+    display: flex;
+    flex-direction: row;
     font-size: 2em;
-    color: #0ab8e4;
     margin-left: 2em; }
+    .vistaHeader .form-logo .form-logo-first {
+      color: #51C2C0; }
+    .vistaHeader .form-logo .form-logo-second {
+      font-weight: bold;
+      padding-left: 10px; }
   .vistaHeader .nav {
     width: 55%;
     height: 90%;
@@ -723,8 +727,7 @@ body {
     top: 5em;
     left: 0;
     height: 82vh;
-    object-fit: cover;
-    z-index: 0; }
+    object-fit: cover; }
   .contenedorHome .content {
     z-index: 1;
     margin-top: 22em;
@@ -805,7 +808,7 @@ body {
         color: #A4A4A4;
         margin-left: 96px;
         margin-top: 24px;
-        font-size: 28px; }
+        font-size: 50px; }
       .movie-profile-container .movie-panel .data-movie .movie-rate {
         width: 100%;
         font-family: "Questrial-Regular";
@@ -861,8 +864,8 @@ body {
       justify-content: center;
       align-items: center; }
     .movie-profile-container .movie-panel .movie-poster img {
-      width: 40%;
-      height: 30%em; }
+      width: 45%;
+      height: 60%; }
   .movie-profile-container .show-video-movie {
     display: flex;
     margin-top: 20px;

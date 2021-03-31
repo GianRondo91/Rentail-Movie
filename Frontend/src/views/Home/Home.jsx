@@ -92,9 +92,9 @@ const Home = (props) => {
 
       
       <div className="contenedorHome">
-         < Header />
-         <video className='myVideo' autoPlay muted loop id="myVideo" src={video}></video>
          
+         <video className='myVideo' autoPlay muted loop id="myVideo" src={video}></video>
+         < Header />
          <div class="content">
 
             <h1 className='h1'></h1>

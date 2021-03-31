@@ -32,7 +32,7 @@
         color: nth($fontColor,2 );
         margin-left: $mp-nn;
         margin-top: $mp-i;
-        font-size: $size-nn;
+        font-size: $size-u;
       }   
              
       .movie-rate{
@@ -115,8 +115,8 @@
       align-items: center; 
     }
     .movie-poster img{
-      width: 40%;
-      height: 30%em;
+      width: 45%;
+      height: 60%;
     }
   }
   .show-video-movie{
