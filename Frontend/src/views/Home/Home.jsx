@@ -101,7 +101,7 @@ const Home = (props) => {
       
       <div className="contenedorHome">
          
-            <video className='myVideo' autoPlay muted loop id="myVideo" src={video}></video>
+            <video className='myVideo' autoPlay  loop id="myVideo" src={video}></video>
             < Header />
             <div class="content">
 

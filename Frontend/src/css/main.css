@@ -233,7 +233,7 @@ se transforma en
   color: white;
   background-color: rgba(22, 21, 21, 0.1);
   align-items: center;
-  margin-top: -39em;
+  margin-top: -32em;
   z-index: 3;
   bottom: 0; }
   .vistaHeader .logo {
@@ -761,7 +761,7 @@ body {
     z-index: 0; }
   .contenedorHome .content {
     z-index: 1;
-    margin-top: 29em;
+    margin-top: 22em;
     bottom: 0;
     background: rgba(0, 0, 0, 0.2);
     color: #f1f1f1;
@@ -909,6 +909,20 @@ body {
       width: 50%;
       height: 100%;
       position: absolute; }
+
+.series-container {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  flex-direction: column; }
+
+.imagen-principal {
+  width: 100vh;
+  height: 30em; }
+
+.h1-series {
+  color: blanchedalmond;
+  font-size: 2em; }
 
 /*RESPONSIVE DESIGN*/
 @media (min-width: 1440px) {
