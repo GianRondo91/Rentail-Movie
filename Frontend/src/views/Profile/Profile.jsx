@@ -11,8 +11,8 @@ const Profile =(props)=>{
    
     // let history = useHistory();
 
-    let credentials=props.user.name;
-    console.log(credentials);
+    // let credentials=props.user.name;
+    // console.log(credentials);
 
     return(
 
@@ -25,11 +25,12 @@ const Profile =(props)=>{
 }
 
 
-const mapStateToProps = state => {
-    return {
-        user : state.userReducer.user,
-        token : state.userReducer.token,
-       }
-}
+// const mapStateToProps = state => {
+//     return {
+//         user : state.userReducer.user,
+//         token : state.userReducer.token,
+//        }
+// }
 
-export default connect(mapStateToProps)(Profile);
+// export default connect(mapStateToProps)(Profile);
+export default Profile;

@@ -1,33 +1,32 @@
+.App{
+  width: 100% !important;
+
+}
 .contenedorHome{
+  position: relative;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  // height: auto;
+  background-color: nth($dark, 1);
+  // display: flex;
+  // flex-direction: column;
 
-    width: 100vw;
-    height: auto;
-    background-color: nth($dark, 1);
-    display: flex;
-    flex-direction: column;
-
-    #myVideo {
-    // position: fixed;
-        all:unset;
-        top: 5em;
-        left: 0;
-        //width: 100vw;
-        height: 82vh;
-        object-fit: cover;
-       z-index: 0;
-    }
-   .content {
-    //position: fixed;
+  #myVideo {
+  // position: fixed;
+    all:unset;
+    top: 5em;
+    left: 0;
+    width: 100%;
+    height: 82vh;
+    object-fit: cover;
+    // z-index: 0;
+  }
+  .content {
+    position: absolute;
     z-index: 1;
-    //margin-top: -7em;
-    margin-top: 22em;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.2);
-    color: #f1f1f1;
-    //width: 100%;
-    padding: 20px;
+    font-weight: 800;
 
-    #myBtn {
       width: 200px;
       font-size: 18px;
       padding: 10px;
@@ -44,14 +43,14 @@
     }
   }
   .tituloDelGenero{
-      color: rgb(170, 169, 163) ;
-      margin:1em;
-      height: 1em;
+    color: rgb(170, 169, 163) ;
+    margin:1em;
+    height: 1em;
   }
   .separador{
-      border:0.5px solid rgb(58, 56, 56);
-      width: 70em;
-      margin-left:6em;
+    border:0.5px solid rgb(58, 56, 56);
+    width: 70em;
+    margin-left:6em;
   }
   .ultimas{
     margin-left: 1.5em;    
@@ -63,12 +62,12 @@
   }
 
   .populares{
-      margin-left: 1.5em;  
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: flex-start;
-      overflow-x: auto;
+    margin-left: 1.5em;  
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-x: auto;
   }
 
   .destacado{
@@ -86,7 +85,7 @@
    
   }
 
-}
+
 
   
     
