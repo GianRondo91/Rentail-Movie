@@ -6,19 +6,9 @@ import HeaderUser from '../../components/User/Header-user/Header-user';
 
 const Profile =(props)=>{
 
-    const [favouritesMovies, setFavouritesMovies] = useState()
-
-    useEffect(() => {
-        allFavouritesMovies()
-      });
 
 
-    const allFavouritesMovies = () => {
-        const allFavourites = localStorage.getItem("favoritos")
-        console.log(allFavourites)
-        setFavouritesMovies(allFavourites)
-    }
-
+   
     // let history = useHistory();
 
     let credentials=props.user.name;
@@ -28,7 +18,7 @@ const Profile =(props)=>{
 
         <div className='component-profile'>
             <HeaderUser/>
-            <p>{favouritesMovies}</p>
+           
             
         </div>
     )
