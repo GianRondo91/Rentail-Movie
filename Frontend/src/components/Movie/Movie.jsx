@@ -4,17 +4,10 @@ import AddFavourite from '../Add-fav/AddFavourite'
 
 
 
-const Movie =({title,poster_path,overview,release_date,vote_average,id,onClick,style})=>{
+const Movie =({title,poster_path,overview,release_date,vote_average,id,onClick,style,addFavouriteMovie})=>{
   
-  const [favourites, setFavourites] = useState([]);
-
   //-----ADDING A FAV-------------//
-  const addFavouriteMovie = (movie) => {
-    const newFavouriteList = [...favourites, movie];
-    console.log('aaaaa',newFavouriteList)
-    setFavourites(newFavouriteList);
-    localStorage.setItem('favourites', JSON.stringify(newFavouriteList)); 
- }
+
 
  //---------DELETING A FAV---------//
 
@@ -32,15 +25,15 @@ const Movie =({title,poster_path,overview,release_date,vote_average,id,onClick,s
   //Preparando los dos tamaños
 
    let movieStyelOne =<div className="movie">
-   <img className ="movieStyelOne" src={FirstPartOflinkimage+poster_path} alt={title} onClick={onClick}/>
-   <div className="overlay" onClick={() => addFavouriteMovie(id,title)}>
+   <img className ="movieStyelOne" src={FirstPartOflinkimage+poster_path} alt={title} /* onClick={onClick} *//>
+   <div className="overlay" onClick={() => addFavouriteMovie(id)}>
      <AddFavourite/>
    </div>
    </div>
 
    let movieStyelDos = <div className="movie">
    <img className ="movieStyelDos" src={FirstPartOflinkimage+poster_path} alt={title} onClick={onClick}/>
-   <div className="overlay-two" onClick={() => addFavouriteMovie(id,title)}>
+   <div className="overlay-two" onClick={() => addFavouriteMovie(id)}>
    <AddFavourite/>
    </div>
    </div>

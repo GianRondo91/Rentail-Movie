@@ -1,10 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {connect} from 'react-redux';
 import HeaderUser from '../../components/User/Header-user/Header-user';
 // import {useHistory} from 'react-router-dom';
 
 
 const Profile =(props)=>{
+
+    const [favouritesMovies, setFavouritesMovies] = useState()
+
+    useEffect(() => {
+        allFavouritesMovies()
+      });
+
+
+    const allFavouritesMovies = () => {
+        const allFavourites = localStorage.getItem("favoritos")
+        console.log(allFavourites)
+        setFavouritesMovies(allFavourites)
+    }
 
     // let history = useHistory();
 
@@ -15,6 +28,7 @@ const Profile =(props)=>{
 
         <div className='component-profile'>
             <HeaderUser/>
+            <p>{favouritesMovies}</p>
             
         </div>
     )
