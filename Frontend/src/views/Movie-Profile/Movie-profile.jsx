@@ -1,9 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../../components/Header/Header';
 import {useHistory} from 'react-router-dom';
 //import ReactPlayer from 'react-player';
 import axios from 'axios';
 const MovieProfile =()=>{
+
+   const [rent , setRent]=useState(
+       
+      {
+         rentId :'',
+         userId:'',
+         filmId:'',
+         initialDate:'',
+         film:''
+
+      }
+
+
+   )
 
    let user =JSON.parse(localStorage.getItem('user'));
    console.log(user._id);
@@ -65,14 +79,21 @@ const MovieProfile =()=>{
       let rentData={
            userId : user._id,
            filmId :dataMovie.id,
-           film :dataMovie
+           film :dataMovie,
+           initialDate:new Date,
+        
            } 
      
       console.log('Los datos del alquiler',rentData)
 
       let response= await axios.post(endPointRent,rentData);
-      console.log(response);
+     
+         setRent(response.data);
+         localStorage.setItem('rentData',response.data)
+  
+      console.log(response.data);
       localStorage.setItem('rentInfo',JSON.stringify(response))
+      console.log(user)
 
    }
 
