@@ -226,7 +226,7 @@ se transforma en
 */
 /*COMPONENTS*/
 .header-movies {
-  width: 100%;
+  width: 100% !important;
   height: 15px;
   background-color: transparent;
   position: absolute !important;
@@ -444,18 +444,21 @@ se transforma en
   color: white;
   position: relative; }
   .component-header-user .component-header-logo {
-    display: flex;
     position: absolute;
     font-size: 38px;
     width: 50%;
     margin-left: 50px;
     bottom: 0px;
     cursor: pointer; }
-    .component-header-user .component-header-logo .user-logo-first {
-      color: #51C2C0; }
-    .component-header-user .component-header-logo .user-logo-second {
-      font-weight: bold;
-      padding-left: 10px; }
+    .component-header-user .component-header-logo .logo-link {
+      text-decoration: none;
+      color: white;
+      display: flex; }
+      .component-header-user .component-header-logo .logo-link .user-logo-first {
+        color: #51C2C0; }
+      .component-header-user .component-header-logo .logo-link .user-logo-second {
+        font-weight: bold;
+        padding-left: 10px; }
   .component-header-user .component-header-menu {
     width: 50%; }
     .component-header-user .component-header-menu .component-header-menu-ul {

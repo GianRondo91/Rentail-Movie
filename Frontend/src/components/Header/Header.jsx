@@ -25,9 +25,12 @@ const Header = (props) => {
 
   return (
     <div className='component-header-user header-movies'>
-      <div className="component-header-logo">
-        <div className="user-logo-first">Net </div>
-        <div className="user-logo-second"> Film</div>
+      <div className="component-header-logo header-logo">
+        <a href="/home" className='logo-link'>
+          <div className="user-logo-first">Net </div>
+          <div className="user-logo-second"> Film</div>
+        </a>
+        
       </div>
       <div className="component-header-menu header-menu-movies">
         <ul className="component-header-menu-ul header-menu-ul">
