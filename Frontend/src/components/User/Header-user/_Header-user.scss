@@ -1,6 +1,8 @@
 .component-header-user{
     font-family: $font-Questrial-Regular;
-    width: $per-10;
+    width: $q-xl - $mp-k;
+    margin-left: auto;
+    margin-right: auto;
     height: $mp-n;
     display: flex;
     color: nth($principal-color, 1);

@@ -3,9 +3,9 @@ import Movie from '../../components/Movie/Movie';
 import video from '../../video/videoplayback.mp4';
 import Header from '../../components/Header/Header';
 import { useHistory } from 'react-router-dom';
-
-// import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Footer from '../../components/Footer/Footer.jsx';
+import { } from '@fortawesome/free-solid-svg-icons';
+
 
 
 const Home = (props) => {
@@ -22,7 +22,7 @@ const Home = (props) => {
    let key = "ef2edc9da61e81787a8079a7df721936";
    let base_url = `http://api.themoviedb.org/3/movie/`;
    let language = "language=es-ES"
-   
+
 
    useEffect(() => {
 
@@ -59,17 +59,16 @@ const Home = (props) => {
 
             setDestacado(data.results.slice(0, 5))
          })
-
       //Recomendaciones
 
       fetch(recomendaciones)
          .then(res => (res.json()))
          .then(data => {
-            console.log(data.results.slice(0, 5))
+
 
             setRecomendaciones(data.results);
          })
-   },[]);
+   }, []);
 
    //Functions:
 
@@ -99,8 +98,8 @@ const Home = (props) => {
 
    return (
 
-         
-         <div className="contenedorHome">
+      
+      <div className="contenedorHome">
          < Header />
             <video className='myVideo' autoPlay muted loop id="myVideo" src={video}></video>
             <div class="content">
@@ -140,19 +139,56 @@ const Home = (props) => {
                
                {recomendaciones.map(recomendaciones => <Movie style='uno' key={recomendaciones.id} addFavouriteMovie={addFavouriteMovie} {...recomendaciones} onClick={() => takeMeTo(recomendaciones)} />)}
          
-               {/* <div className="recomendadas">
+         <div class="content">
+
+            <h1 className='h1'></h1>
+            <p>AQUA-MAN</p>
+            <button id="myBtn" onClick={() => GotoMovies()}> Mas información </button>
+         </div>
+
+         <div className="separador"></div>
+         <h2 className='tituloDelGenero'>Ultimas Peliculas Añadidas</h2>
+         <div className="ultimas">
+
+            {latest.map(latest => <Movie style='uno' key={latest.id}  {...latest} onClick={() => takeMeTo(latest)} />)}
+
+         </div>
+
+
+         <div className="separador"></div>
+         <h2 className='tituloDelGenero'>Populares</h2>
+         <div className="populares">
+
+            {populares.map(populares => <Movie style='uno' key={populares.id} {...populares} onClick={() => takeMeTo(populares)} />)}
+
+         </div>
+
+         <div className="separador"></div>
+         <h2 className='tituloDelGenero'>Destacadas</h2>
+         <div className="destacado">
+
+            {destacado.map(destacado => <Movie style='dos' key={destacado.id} {...destacado} onClick={() => takeMeTo(destacado)} />)}
+         </div>
+
+         <div className="separador"></div>
+         <h2 className='tituloDelGenero'>Recomendaciones</h2>
+         <div className="recomendaciones">
+
+            {recomendaciones.map(recomendaciones => <Movie style='uno' key={recomendaciones.id} {...recomendaciones} onClick={() => takeMeTo(recomendaciones)} />)}
+
+            {/* <div className="recomendadas">
                <Carousel>
                   {recomendaciones.map(recomendaciones => <Movie style='uno' key={recomendaciones.id} {...recomendaciones} onClick={() => takeMeTo(recomendaciones)} />)}
                </Carousel>
                </div> */}
 
 
-            </div>
-            <Footer/>
          </div>
-         
-      
-      
+         <Footer />
+      </div>
+
+      </div>
+
    )
 
 }

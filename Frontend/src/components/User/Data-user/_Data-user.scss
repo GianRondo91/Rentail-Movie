@@ -2,71 +2,77 @@
     color: white;
     display: flex;
     justify-content: space-between;
-    width: 1200px;
-    height: 600px;
+    width: $q-l;
+    height: $img-xxxl + $mp-g;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 80px;
+    margin-top: $size-u;
     position: relative;
-    
     .form-update-data{
-        background-color: #C6B6B6 40%;
-        width: 50%;
-        box-shadow: 1px 5px 15px 5px #000000;
+        background: adjust-color(nth($formulary, 3), $alpha: -.6);
+        width: $per-5;
+        border-radius: $mp-e;
         .form-data-content{
-            width: 70%;
-            margin-left: auto;
-            margin-right: auto;
+            width: $per-3;
+            position: absolute;
+            left: $per-1;
+            top: $per-1 / 2;
             display: grid;
             .form-data-content-title{
-
-            }
-            .form-update-data-label{
-
+                font-size: $mp-h + $mp-a;
+                margin-bottom: $mp-i + $mp-c;
             }
             .form-update-data-input{
                 outline: none;
+                @include input-security($per-10);
+            }
+            .country-city-cp{
+                display: flex;
+                .country-city-cp-style{
+                    .form-update-data-input{
+                        width: $per-9;
+                    }
+                }
+                margin-bottom: $mp-h;
             }
             .form-update-data-button{
-    
+                color: nth($fontColor, 1);
+                @include principal-button(nth($blue,1), nth($blue,2),nth($blue,3));
             }
         }
-        
     }
     .form-update-payment{
-        background: nth($formulary, 2);
-        width: 40%;
-        height: 300px;
-        border-radius: 10px;
-        
+        background: adjust-color(nth($formulary, 2), $alpha: -0.3);
+        width: $per-4;
+        height: $mp-t - $mp-h;
+        border-radius: $mp-e;
         .form-payment-content{
-            width: 80%;
+            width: $per-8;
             margin-left: auto;
             margin-right: auto;
-            margin-top: 25px;
-            font-size: 18px;
+            margin-top: $mp-i;
+            font-size: $mp-g;
             .form-update-payment-title{
-                top: 5px;
-                
+                top: $mp-c;
                 .form-payment-content-title{
-                    font-size: 22px;
+                    font-size: $mp-h + $mp-a;
                 }
                 .form-update-payment-img{
                     background-image: url('https://user-images.githubusercontent.com/56218293/112899721-cd853580-90e2-11eb-811c-40df9729b4ea.png');
-                    width: 177px;
-                    height: 47px;
+                    width: $mp-p + $mp-g + $size-a;
+                    height: $mp-l - $size-a;
                     background-repeat: no-repeat;
                     background-size: contain;
                     position: absolute;
-                    right: 23px;
-                    top: 251px;
+                    right: $mp-k + $size-b;
+                    top: $mp-s - $mp-b;
                 }
             }
             .principal-data{
-                width: 90%;
-                margin-top: 25px;
+                width: $per-10;
+                margin-top: $mp-i + $size-a;
                 .form-update-payment-label{
-                    margin-top: 30px;
+                    margin-top: $size-o;
                 }
                 .form-update-payment-input{
                     @include input-security($per-10);
@@ -75,27 +81,20 @@
             .security{
                 display: flex;
                 .security-date{
-                    .form-update-security-label{
-
-                    }
                     .form-update-security-input{
                         @include input-security($per-8);
                     }
                 }
                 .security-code{
-                    .form-update-security-label{
-                    }
                     .form-update-security-input{
-                        @include input-security($per-8);
+                        @include input-security($per-10);
                     }
                 }
-                
             }
-            
             .form-update-payment-button{
-                bottom: 218px;
+                bottom: $mp-r - $mp-c;
                 position: absolute;
-                right: 95px;
+                right: $mp-nn + $size-a;
                 color: nth($fontColor, 1);
                 @include principal-button(nth($blue,1), nth($blue,2),nth($blue,3));
             }
