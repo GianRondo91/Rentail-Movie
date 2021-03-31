@@ -778,42 +778,54 @@ body {
     justify-content: flex-start;
     overflow-x: auto; }
 
-.movieProfileContainer {
+.movie-profile-container {
   margin-top: 32.5em;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   background-color: #1E2126; }
-  .movieProfileContainer .MoviePanel {
+  .movie-profile-container .movie-panel {
+    width: 100%;
+    height: 40em;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     justify-content: space-evenly; }
-    .movieProfileContainer .MoviePanel .dataMovie {
-      width: 55vw;
-      height: 80vh; }
-      .movieProfileContainer .MoviePanel .dataMovie .movieTtile {
+    .movie-profile-container .movie-panel .data-movie {
+      width: 60%;
+      height: 40em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; }
+      .movie-profile-container .movie-panel .data-movie .movie-title {
+        width: 100%;
+        font-family: "Questrial-Regular";
+        color: #A4A4A4;
+        margin-left: 96px;
+        margin-top: 24px;
+        font-size: 28px; }
+      .movie-profile-container .movie-panel .data-movie .movie-rate {
+        width: 100%;
+        font-family: "Questrial-Regular";
+        font-size: 18px;
+        margin-left: 96px;
+        color: #A4A4A4;
+        display: flex;
+        flex-direction: row; }
+      .movie-profile-container .movie-panel .data-movie .movie-rent {
+        font-family: "Questrial-Regular";
+        font-size: 18px;
         display: flex;
         flex-direction: row;
-        justify-content: flex-start;
-        color: #e6dede;
-        margin: 3em; }
-        .movieProfileContainer .MoviePanel .dataMovie .movieTtile .titleSize {
-          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-          font-size: 3em; }
-      .movieProfileContainer .MoviePanel .dataMovie .movieRateAndMore .rateSize {
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        font-size: 1.5em;
-        color: #cebfbf;
-        margin: 0.5em; }
-      .movieProfileContainer .MoviePanel .dataMovie .panelRentMovie {
-        display: flex;
-        flex-direction: row;
-        width: 25em;
+        width: 100%;
         height: 6em;
+        justify-content: space-evenly;
         align-items: center;
         margin: 1em; }
-        .movieProfileContainer .MoviePanel .dataMovie .panelRentMovie .rent {
-          width: 8em;
+        .movie-profile-container .movie-panel .data-movie .movie-rent .rent {
+          width: 40%;
           height: 4em;
           border: 0.01em solid #111213;
           border-radius: 0.3em;
@@ -821,47 +833,48 @@ body {
           margin: 1em;
           justify-content: center;
           align-items: center;
-          background-color: #e9bb3d; }
-          .movieProfileContainer .MoviePanel .dataMovie .panelRentMovie .rent .rentSize {
-            color: #1d1d1b;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            font-size: 1.5em; }
-        .movieProfileContainer .MoviePanel .dataMovie .panelRentMovie .MasRecomendaciones {
-          width: 13em;
+          background-color: #E2C547; }
+        .movie-profile-container .movie-panel .data-movie .movie-rent .mas-recomendaciones {
+          width: 40%;
           height: 4em;
           border: 0.01em solid #111213;
           border-radius: 0.3em;
           display: flex;
           justify-content: center;
           align-items: center;
-          background-color: #52527a; }
-          .movieProfileContainer .MoviePanel .dataMovie .panelRentMovie .MasRecomendaciones .rentSize {
-            color: #FFF8DC;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            font-size: 1.5em;
-            margin: 1em; }
-          .movieProfileContainer .MoviePanel .dataMovie .panelRentMovie .MasRecomendaciones .overview {
-            border: 0.01em solid #b1b9c2;
-            width: 20em;
-            height: 15em;
-            color: white; }
-            .movieProfileContainer .MoviePanel .dataMovie .panelRentMovie .MasRecomendaciones .overview .sinopsis {
-              font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
-            .movieProfileContainer .MoviePanel .dataMovie .panelRentMovie .MasRecomendaciones .overview .overviewSize {
-              font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-              font-size: 2em; }
-    .movieProfileContainer .MoviePanel .MoviePoster {
-      width: 28vw;
-      height: 80vh;
+          background-color: #99BFB3; }
+      .movie-profile-container .movie-panel .data-movie .overview {
+        width: 100%;
+        height: 15em;
+        color: #A4A4A4;
+        margin-left: 96px; }
+        .movie-profile-container .movie-panel .data-movie .overview .sinopsis {
+          font-size: 28px; }
+        .movie-profile-container .movie-panel .data-movie .overview .overviewSize {
+          margin-top: 20px;
+          font-family: "Questrial-Regular";
+          font-size: 18px; }
+    .movie-profile-container .movie-panel .movie-poster {
+      width: 40%;
+      height: 40em;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center; }
-      .movieProfileContainer .MoviePanel .MoviePoster .poster {
-        margin-top: 1em;
-        width: 20em;
-        height: 25em;
-        border-radius: 0.5em; }
+    .movie-profile-container .movie-panel .movie-poster img {
+      width: 40%;
+      height: 30%em; }
+  .movie-profile-container .show-video-movie {
+    display: flex;
+    margin-top: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 35em; }
+    .movie-profile-container .show-video-movie .multimedia {
+      width: 50%;
+      height: 100%;
+      position: absolute; }
 
 /*RESPONSIVE DESIGN*/
 @media (min-width: 1440px) {

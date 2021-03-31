@@ -14,14 +14,14 @@ const Home = (props) => {
    const [destacado, setDestacado] = useState([]);
    const [populares, setPopulares] = useState([]);
    const [recomendaciones, setRecomendaciones] = useState([]);
-   const [moviesDeMiApi,setMoviesDeMiApi] =useState([]);
+   const [moviesDeMiApi, setMoviesDeMiApi] = useState([]);
 
    //Constuccion de URL consultas TMDB
 
    let key = "ef2edc9da61e81787a8079a7df721936";
    let base_url = `http://api.themoviedb.org/3/movie/`;
    let language = "language=es-ES"
-   
+
 
    useEffect(() => {
 
@@ -63,11 +63,11 @@ const Home = (props) => {
       fetch(recomendaciones)
          .then(res => (res.json()))
          .then(data => {
-            
+
 
             setRecomendaciones(data.results);
          })
-   },[]);
+   }, []);
 
    //Functions:
 
@@ -90,61 +90,61 @@ const Home = (props) => {
 
    return (
 
+      
+      <div className="contenedorHome">
+         < Header />
+         <video className='myVideo' autoPlay muted loop id="myVideo" src={video}></video>
          
-         <div className="contenedorHome">
-         
-            <video className='myVideo' autoPlay muted loop id="myVideo" src={video}></video>
-            < Header/>
-            <div class="content">
+         <div class="content">
 
-               <h1 className='h1'></h1>
-               <p>AQUA-MAN</p>
-               <button id="myBtn" onClick={() => GotoMovies()}> Mas información </button>
-            </div>
+            <h1 className='h1'></h1>
+            <p>AQUA-MAN</p>
+            <button id="myBtn" onClick={() => GotoMovies()}> Mas información </button>
+         </div>
 
-            <div className="separador"></div>
-            <h2 className='tituloDelGenero'>Ultimas Peliculas Añadidas</h2>
-            <div className="ultimas">
-             
-                  {latest.map(latest => <Movie style='uno' key={latest.id}  {...latest} onClick={() => takeMeTo(latest)} />)}
-               
-            </div>
+         <div className="separador"></div>
+         <h2 className='tituloDelGenero'>Ultimas Peliculas Añadidas</h2>
+         <div className="ultimas">
+
+            {latest.map(latest => <Movie style='uno' key={latest.id}  {...latest} onClick={() => takeMeTo(latest)} />)}
+
+         </div>
 
 
-            <div className="separador"></div>
-            <h2 className='tituloDelGenero'>Populares</h2>
-            <div className="populares">
-               
-                  {populares.map(populares => <Movie style='uno' key={populares.id} {...populares} onClick={() => takeMeTo(populares)} />)}
-              
-            </div>
+         <div className="separador"></div>
+         <h2 className='tituloDelGenero'>Populares</h2>
+         <div className="populares">
 
-            <div className="separador"></div>
-            <h2 className='tituloDelGenero'>Destacadas</h2>
-            <div className="destacado">
+            {populares.map(populares => <Movie style='uno' key={populares.id} {...populares} onClick={() => takeMeTo(populares)} />)}
 
-              {destacado.map(destacado => <Movie style='dos' key={destacado.id} {...destacado} onClick={() => takeMeTo(destacado)} />)}
-            </div>
+         </div>
 
-            <div className="separador"></div>
-            <h2 className='tituloDelGenero'>Recomendaciones</h2>
-            <div className="recomendaciones">
-               
-               {recomendaciones.map(recomendaciones => <Movie style='uno' key={recomendaciones.id} {...recomendaciones} onClick={() => takeMeTo(recomendaciones)} />)}
-         
-               {/* <div className="recomendadas">
+         <div className="separador"></div>
+         <h2 className='tituloDelGenero'>Destacadas</h2>
+         <div className="destacado">
+
+            {destacado.map(destacado => <Movie style='dos' key={destacado.id} {...destacado} onClick={() => takeMeTo(destacado)} />)}
+         </div>
+
+         <div className="separador"></div>
+         <h2 className='tituloDelGenero'>Recomendaciones</h2>
+         <div className="recomendaciones">
+
+            {recomendaciones.map(recomendaciones => <Movie style='uno' key={recomendaciones.id} {...recomendaciones} onClick={() => takeMeTo(recomendaciones)} />)}
+
+            {/* <div className="recomendadas">
                <Carousel>
                   {recomendaciones.map(recomendaciones => <Movie style='uno' key={recomendaciones.id} {...recomendaciones} onClick={() => takeMeTo(recomendaciones)} />)}
                </Carousel>
                </div> */}
 
 
-            </div>
-            <Footer/>
          </div>
-         
-      
-      
+         <Footer />
+      </div>
+
+
+
    )
 
 }
