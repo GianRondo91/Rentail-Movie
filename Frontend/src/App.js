@@ -8,6 +8,7 @@ import Loading from './components/Loading/Loading';
 import Profile from './views/Profile/Profile';
 import MovieProfile from './views/Movie-Profile/Movie-profile';
 import Data from './components/User/Data-user/Data-user';
+import Series from './views/Series/Series';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
               <Route path='/profile' exact component={Profile}/>
               <Route path='/profile/data' exact component={Data}/>
               <Route path='/MovieProfile' exact component={MovieProfile}/>
+              <Route path='/series' exact component={Series}/>
          </Switch>
       </BrowserRouter>
     </div>
