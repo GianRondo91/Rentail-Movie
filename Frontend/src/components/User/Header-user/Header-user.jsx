@@ -21,7 +21,7 @@ const HeaderUser = () => {
             <div className="component-header-menu">
                 <ul className="component-header-menu-ul">
                     <li className="component-header-menu-li"><a href="/profile/data" className='component-header-menu-a'>Mis datos</a></li>
-                    <li className="component-header-menu-li"><a href="/profile" className='component-header-menu-a'>Favoritos</a></li>
+                    <li className="component-header-menu-li"><a href="/profile/favourites" className='component-header-menu-a'>Favoritos</a></li>
                     <li className="component-header-menu-li">UserName</li>
                     <li className="component-header-menu-li component-header-menu-li-icon" onClick={exit}> <FontAwesomeIcon icon={faUserTimes} /></li>
                     {/* Probar que funciones correctamente el logout*/}

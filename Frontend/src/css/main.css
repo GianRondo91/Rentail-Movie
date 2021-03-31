@@ -233,7 +233,7 @@ se transforma en
   color: white;
   background-color: rgba(22, 21, 21, 0.1);
   align-items: center;
-  margin-top: -32em;
+  margin-top: -39em;
   z-index: 3;
   bottom: 0; }
   .vistaHeader .logo {
@@ -436,13 +436,47 @@ se transforma en
     width: 336px; }
 
 .movie {
+  position: relative;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; }
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  transition: transform 0.2s; }
+
+.movie:hover {
+  cursor: pointer;
+  transform: scale(1.1); }
+
+.movie:hover .overlay {
+  opacity: 1; }
+
+.movie:hover .overlay-two {
+  opacity: 1; }
+
+.overlay {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  width: 7em;
+  transition: 0.5s ease;
+  opacity: 0;
+  bottom: 0;
+  padding: 1em;
+  margin-bottom: 0.6em;
+  text-align: center; }
+
+.overlay-two {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  width: 13em;
+  transition: 0.5s ease;
+  opacity: 0;
+  bottom: 0;
+  padding: 1em;
+  margin-bottom: 0.9em;
+  text-align: center; }
 
 .movieStyelOne {
-  display: flex;
+  display: block;
   margin: 0.5em;
   color: #e6dbdb;
   width: 9em;
@@ -463,7 +497,9 @@ se transforma en
 
 .component-header-user {
   font-family: "Questrial-Regular";
-  width: 100%;
+  width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
   height: 80px;
   display: flex;
   color: white;
@@ -477,7 +513,7 @@ se transforma en
     bottom: 0px;
     cursor: pointer; }
     .component-header-user .component-header-logo .user-logo-first {
-      color: #585858; }
+      color: #51C2C0; }
     .component-header-user .component-header-logo .user-logo-second {
       font-weight: bold;
       padding-left: 10px; }
@@ -509,7 +545,7 @@ se transforma en
   margin-top: 50px;
   position: relative; }
   .data-user .form-update-data {
-    background: #2f5d62;
+    background: rgba(250, 213, 134, 0.4);
     width: 50%;
     border-radius: 10px; }
     .data-user .form-update-data .form-data-content {
@@ -540,7 +576,7 @@ se transforma en
         background: linear-gradient(to bottom, #1E90FF 5%, #4169E1 100%);
         background-color: #1E90FF;
         border-radius: 6px;
-        border: 2px solid #6495ED;
+        border: 0px solid #6495ED;
         display: inline-block;
         cursor: pointer;
         font-size: 18px;
@@ -549,7 +585,7 @@ se transforma en
         text-decoration: none;
         margin: 16px; }
   .data-user .form-update-payment {
-    background: #51C2C0;
+    background: rgba(81, 194, 192, 0.7);
     width: 40%;
     height: 300px;
     border-radius: 10px; }
@@ -611,7 +647,7 @@ se transforma en
         background: linear-gradient(to bottom, #1E90FF 5%, #4169E1 100%);
         background-color: #1E90FF;
         border-radius: 6px;
-        border: 2px solid #6495ED;
+        border: 0px solid #6495ED;
         display: inline-block;
         cursor: pointer;
         font-size: 18px;
@@ -674,7 +710,7 @@ se transforma en
       display: flex;
       justify-content: flex-start; }
       .vistaFooter .link-logo .form-logo .form-logo-first {
-        color: #585858; }
+        color: #51C2C0; }
       .vistaFooter .link-logo .form-logo .form-logo-second {
         font-weight: bold;
         padding-left: 10px; }
@@ -705,7 +741,7 @@ body {
         display: flex;
         justify-content: flex-end; }
         #content .content-right .form .form-logo .form-logo-first {
-          color: #585858; }
+          color: #51C2C0; }
         #content .content-right .form .form-logo .form-logo-second {
           font-weight: bold;
           padding-left: 10px; }
@@ -725,7 +761,7 @@ body {
     z-index: 0; }
   .contenedorHome .content {
     z-index: 1;
-    margin-top: 22em;
+    margin-top: 29em;
     bottom: 0;
     background: rgba(0, 0, 0, 0.2);
     color: #f1f1f1;
@@ -776,42 +812,54 @@ body {
     justify-content: flex-start;
     overflow-x: auto; }
 
-.movieProfileContainer {
+.movie-profile-container {
   margin-top: 32.5em;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   background-color: #1E2126; }
-  .movieProfileContainer .MoviePanel {
+  .movie-profile-container .movie-panel {
+    width: 100%;
+    height: 40em;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     justify-content: space-evenly; }
-    .movieProfileContainer .MoviePanel .dataMovie {
-      width: 55vw;
-      height: 80vh; }
-      .movieProfileContainer .MoviePanel .dataMovie .movieTtile {
+    .movie-profile-container .movie-panel .data-movie {
+      width: 60%;
+      height: 40em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; }
+      .movie-profile-container .movie-panel .data-movie .movie-title {
+        width: 100%;
+        font-family: "Questrial-Regular";
+        color: #A4A4A4;
+        margin-left: 96px;
+        margin-top: 24px;
+        font-size: 28px; }
+      .movie-profile-container .movie-panel .data-movie .movie-rate {
+        width: 100%;
+        font-family: "Questrial-Regular";
+        font-size: 18px;
+        margin-left: 96px;
+        color: #A4A4A4;
+        display: flex;
+        flex-direction: row; }
+      .movie-profile-container .movie-panel .data-movie .movie-rent {
+        font-family: "Questrial-Regular";
+        font-size: 18px;
         display: flex;
         flex-direction: row;
-        justify-content: flex-start;
-        color: #e6dede;
-        margin: 3em; }
-        .movieProfileContainer .MoviePanel .dataMovie .movieTtile .titleSize {
-          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-          font-size: 3em; }
-      .movieProfileContainer .MoviePanel .dataMovie .movieRateAndMore .rateSize {
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        font-size: 1.5em;
-        color: #cebfbf;
-        margin: 0.5em; }
-      .movieProfileContainer .MoviePanel .dataMovie .panelRentMovie {
-        display: flex;
-        flex-direction: row;
-        width: 25em;
+        width: 100%;
         height: 6em;
+        justify-content: space-evenly;
         align-items: center;
         margin: 1em; }
-        .movieProfileContainer .MoviePanel .dataMovie .panelRentMovie .rent {
-          width: 8em;
+        .movie-profile-container .movie-panel .data-movie .movie-rent .rent {
+          width: 40%;
           height: 4em;
           border: 0.01em solid #111213;
           border-radius: 0.3em;
@@ -819,54 +867,60 @@ body {
           margin: 1em;
           justify-content: center;
           align-items: center;
-          background-color: #e9bb3d; }
-          .movieProfileContainer .MoviePanel .dataMovie .panelRentMovie .rent .rentSize {
-            color: #1d1d1b;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            font-size: 1.5em; }
-        .movieProfileContainer .MoviePanel .dataMovie .panelRentMovie .MasRecomendaciones {
-          width: 13em;
+          background-color: #E2C547; }
+        .movie-profile-container .movie-panel .data-movie .movie-rent .mas-recomendaciones {
+          width: 40%;
           height: 4em;
           border: 0.01em solid #111213;
           border-radius: 0.3em;
           display: flex;
           justify-content: center;
           align-items: center;
-          background-color: #52527a; }
-          .movieProfileContainer .MoviePanel .dataMovie .panelRentMovie .MasRecomendaciones .rentSize {
-            color: #FFF8DC;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            font-size: 1.5em;
-            margin: 1em; }
-          .movieProfileContainer .MoviePanel .dataMovie .panelRentMovie .MasRecomendaciones .overview {
-            border: 0.01em solid #b1b9c2;
-            width: 20em;
-            height: 15em;
-            color: white; }
-            .movieProfileContainer .MoviePanel .dataMovie .panelRentMovie .MasRecomendaciones .overview .sinopsis {
-              font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
-            .movieProfileContainer .MoviePanel .dataMovie .panelRentMovie .MasRecomendaciones .overview .overviewSize {
-              font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-              font-size: 2em; }
-    .movieProfileContainer .MoviePanel .MoviePoster {
-      width: 28vw;
-      height: 80vh;
+          background-color: #99BFB3; }
+      .movie-profile-container .movie-panel .data-movie .overview {
+        width: 100%;
+        height: 15em;
+        color: #A4A4A4;
+        margin-left: 96px; }
+        .movie-profile-container .movie-panel .data-movie .overview .sinopsis {
+          font-size: 28px; }
+        .movie-profile-container .movie-panel .data-movie .overview .overviewSize {
+          margin-top: 20px;
+          font-family: "Questrial-Regular";
+          font-size: 18px; }
+    .movie-profile-container .movie-panel .movie-poster {
+      width: 40%;
+      height: 40em;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center; }
-      .movieProfileContainer .MoviePanel .MoviePoster .poster {
-        margin-top: 1em;
-        width: 20em;
-        height: 25em;
-        border-radius: 0.5em; }
+    .movie-profile-container .movie-panel .movie-poster img {
+      width: 40%;
+      height: 30%em; }
+  .movie-profile-container .show-video-movie {
+    display: flex;
+    margin-top: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 35em; }
+    .movie-profile-container .show-video-movie .multimedia {
+      width: 50%;
+      height: 100%;
+      position: absolute; }
 
 /*RESPONSIVE DESIGN*/
 @media (min-width: 1440px) {
   #content {
     display: flex;
     margin-right: auto;
-    margin-left: auto; } }
+    margin-left: auto; }
+  /*Data-user*/
+  .component-profile {
+    width: 1400px;
+    margin-left: auto;
+    margin-right: auto; } }
 
 @media (min-width: 1201px) and (max-width: 1439px) {
   #content {
@@ -878,7 +932,10 @@ body {
     #content .content-left {
       width: 50%; }
     #content .content-right {
-      width: 50%; } }
+      width: 50%; }
+  /*Data-user*/
+  .component-profile .component-header-user {
+    width: 1200px; } }
 
 @media all and (min-width: 1008px) and (max-width: 1200px) {
   #content {
@@ -890,6 +947,16 @@ body {
     #content .content-left {
       width: 50%; }
     #content .content-right {
+      width: 50%; }
+  /*Data-user*/
+  .component-profile .component-header-user {
+    width: 1008px; }
+  .component-profile .data-user {
+    width: 1036px; }
+    .component-profile .data-user .form-update-data {
+      width: 50%; }
+    .component-profile .data-user .form-update-payment {
+      margin-left: 20px;
       width: 50%; } }
 
 @media (min-width: 375px) and (max-width: 1007px) {
@@ -902,4 +969,25 @@ body {
     #content .content-right {
       width: 500px;
       margin-right: auto;
-      margin-left: auto; } }
+      margin-left: auto; }
+  /*Data-user*/
+  .component-profile {
+    width: 512px;
+    margin-left: auto;
+    margin-right: auto; }
+    .component-profile .component-header-user {
+      display: table-cell;
+      text-align: right; }
+      .component-profile .component-header-user .component-header-menu .component-header-menu-ul {
+        top: 96px;
+        position: absolute;
+        left: 40px; }
+    .component-profile .data-user .form-update-data {
+      width: 40%; }
+      .component-profile .data-user .form-update-data .form-data-content {
+        left: 5%; }
+    .component-profile .data-user .form-update-payment {
+      position: absolute;
+      top: 664px; }
+      .component-profile .data-user .form-update-payment .form-payment-content .form-update-payment-button {
+        bottom: -60px; } }

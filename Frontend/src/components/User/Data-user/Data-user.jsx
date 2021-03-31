@@ -37,7 +37,7 @@ const Data = () => {
                                 <input type="cp" className='form-update-data-input'/>
                             </div>
                         </div>
-                        <input type="button" value="Actualizar" className='form-update-data-button'/>
+                        <input type="button" value="Actualizar datos" className='form-update-data-button'/>
                     </div>
                 </div>
                 <div className="form-update-payment">

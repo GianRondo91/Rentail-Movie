@@ -22,6 +22,7 @@ function App() {
               <Route path='/loading' exact component={Loading}/>
               <Route path='/profile' exact component={Profile}/>
               <Route path='/profile/data' exact component={Data}/>
+              {/* <Route path='/profile/favourites' exact component={}/> */}
               <Route path='/MovieProfile' exact component={MovieProfile}/>
          </Switch>
       </BrowserRouter>
