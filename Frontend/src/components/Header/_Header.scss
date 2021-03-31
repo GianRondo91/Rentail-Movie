@@ -1,9 +1,10 @@
 .header-movies{
-    width: 100%;
+    width: 100% !important;
     height: 15px;
     background-color: transparent;
     position: absolute !important;
     z-index: 1;
+
     .header-menu-movies{
         .header-menu-ul{
             .header-menu-li{
