@@ -229,7 +229,14 @@ se transforma en
   width: 100%;
   height: 15px;
   background-color: transparent;
-  position: absolute !important; }
+  position: absolute !important;
+  z-index: 1; }
+  .header-movies .header-menu-movies .header-menu-ul .header-menu-li .search {
+    width: 250px;
+    border-radius: 10px;
+    margin-right: 29px;
+    outline: none;
+    border: none; }
 
 .form-content {
   height: 80%;
@@ -683,7 +690,7 @@ body {
 
 .contenedorHome {
   position: relative;
-  width: 1440px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   background-color: #1E2126; }
