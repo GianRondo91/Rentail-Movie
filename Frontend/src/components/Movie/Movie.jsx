@@ -25,7 +25,7 @@ const Movie =({title,poster_path,overview,release_date,vote_average,id,onClick,s
   //Preparando los dos tamaños
 
    let movieStyelOne =<div className="movie">
-   <img className ="movieStyelOne" src={FirstPartOflinkimage+poster_path} alt={title} /* onClick={onClick} *//>
+   <img className ="movieStyelOne" src={FirstPartOflinkimage+poster_path} alt={title}  onClick={onClick}/>
    <div className="overlay" onClick={() => addFavouriteMovie(id)}>
      <AddFavourite/>
    </div>
