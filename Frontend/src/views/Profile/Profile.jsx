@@ -5,12 +5,7 @@ import HeaderUser from '../../components/User/Header-user/Header-user';
 
 
 const Profile =(props)=>{
-
-
-
-   
     // let history = useHistory();
-
     // let credentials=props.user.name;
     // console.log(credentials);
 

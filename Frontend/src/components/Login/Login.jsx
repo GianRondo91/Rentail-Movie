@@ -6,7 +6,7 @@ import { faEye } from '@fortawesome/free-solid-svg-icons';
 import checkError from '../../My-tools/My-tools';
 import { connect } from 'react-redux';
 import axios from 'axios';
-import { LOGIN } from '../../redux/types';
+import { LOGIN } from '../../redux/types/userTypes';
 // import {LOGOUT,UPDATE_USER} from '../../redux/types';
 // import { layer } from '@fortawesome/fontawesome-svg-core';
 
@@ -43,20 +43,22 @@ const Login = (props) => {
         };
 
         let response = await axios.post('http://localhost:3002/users/login', credentialsData);
+        console.log("soy el response de login", response.data.jwt);
+        props.dispatch({ type: LOGIN, payload: response.data.jwt });
 
         if (response.status === 200) {
-            console.log(response);
+            
 
-            localStorage.setItem('token', response.data.jwt.jwt)
-            localStorage.setItem('user', JSON.stringify(response.data.jwt.user));
+            // localStorage.setItem('token', response.data.jwt.jwt)
+            // localStorage.setItem('user', JSON.stringify(response.data.jwt.user));
 
-            let token = localStorage.getItem('token');
-            let user = JSON.parse(localStorage.getItem('user'));
+            // let token = localStorage.getItem('token');
+            // let user = JSON.parse(localStorage.getItem('user'));
 
-            console.log(user);
-            console.log(token);
+            // console.log(user);
+            // console.log(token);
 
-            props.dispatch({ type: LOGIN, payload: response.data });
+            
 
             setTimeout(() => {
                 history.push('/home')
@@ -113,11 +115,7 @@ const Login = (props) => {
     )
 };
 
-// const mapStateToProps = state => {
-//     return {
-//         user: state.userReducer.user,
-//         token: state.userReducer.token,
-//     }
-// }
+
+
 
 export default connect()(Login);
