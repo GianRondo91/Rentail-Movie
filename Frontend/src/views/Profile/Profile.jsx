@@ -4,7 +4,8 @@ import HeaderUser from '../../components/User/Header-user/Header-user';
 
 
 const Profile =()=>{
-   
+    let FirstPartOfLinkImage ='https://image.tmdb.org/t/p/original';
+
 
     const [favouritesMovies, setFavouritesMovies] = useState([])
 
@@ -28,8 +29,9 @@ const Profile =()=>{
 
         <div className='component-profile'>
             <HeaderUser/>
-            <p>{favouritesMovies[0].title}</p>
-            
+            <div>
+            {favouritesMovies.map(fav => <img alt={fav.title} src={FirstPartOfLinkImage+fav.poster_path}/>)}
+            </div>
         </div>
     )
 }
