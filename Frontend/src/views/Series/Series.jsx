@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useEffect, useState } from 'react';
 import Movie from '../../components/Movie/Movie';
 //import video from '../../video/videoplayback.mp4';
@@ -86,4 +87,29 @@ const Series = (props) => {
 
 
 
+=======
+import React from 'react';
+import Header from '../../components/Header/Header';
+import ReactPlayer from 'react-player';
+
+const Series =()=>{
+
+
+    return(
+
+        <div className='component-series'>
+            <Header/>
+            <div className='video-player'>
+                <ReactPlayer
+                url="https://www.youtube.com/watch?v=0U9BGCry6ho"
+                controls
+                />
+            </div>
+           
+            
+        </div>
+    )
+}
+
+>>>>>>> 0a597b1953c26bf764976f87c012644f8e2a629b
 export default Series;
