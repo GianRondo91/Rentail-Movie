@@ -59,7 +59,8 @@ const MovieProfile = (props) => {
       let rentData = {
          userId: props.user._id,
          filmId: dataMovie.id,
-         film: dataMovie
+         film: dataMovie,
+         payment:true
       }
 
    
