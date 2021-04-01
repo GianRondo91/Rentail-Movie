@@ -14,10 +14,12 @@
 
 .movie:hover .overlay {
     opacity: 1;
+    color: white;
 }
 
 .movie:hover .overlay-two {
     opacity: 1;
+    color: white;
 }
 
 .overlay {
@@ -30,6 +32,10 @@
     padding: 1em;
     margin-bottom: 0.6em;
     text-align: center;
+    .mr-2{
+        margin-right: 5px;
+        text-align: center;
+    }
 }
 
 .overlay-two {
@@ -42,6 +48,9 @@
     padding: 1em;
     margin-bottom: 0.9em;
     text-align: center;
+    .mr-2{
+        margin-right: 5px;
+    }
 }
 
 .movieStyelOne {
@@ -50,7 +59,6 @@
     color: rgb(230, 219, 219);
     width: 9em;
     height: 13em;
-    border: 0.1em solid blueviolet;
     border-radius: 0em;
     transition: 0.5s;
 }
@@ -61,7 +69,6 @@
     color: rgb(230, 219, 219);
     width: 15em;
     height: 22em;
-    border: 0.1em solid blueviolet;
     border-radius: 0em;
     transition: 0.5s;
 }
