@@ -11,7 +11,7 @@ const orderSchema = new Schema({
     filmId: {
         type: String,
         ref: "Movie",
-        require: true,
+        //require: true,
         //unique:true
     },
     
@@ -34,7 +34,7 @@ const orderSchema = new Schema({
     },
     return_date:{
         type: Date,
-        default: new Date(+new Date()+4*24*60*60*1000)
+        default: new Date(+new Date()+0*0*0*1*1000)
     },
 
 })

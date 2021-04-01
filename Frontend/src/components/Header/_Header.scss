@@ -1,9 +1,26 @@
+<<<<<<< HEAD
+.vistaHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+   // width: 100vw;
+    height: 3em;
+    //border: 0.01em solid rgba(77, 73, 73,01);
+    color: white;
+    //background-color: nth($dark, 1);
+    background-color: rgba(22, 21, 21,0.1);
+    align-items: center;
+    margin-top: -32em;
+    z-index: 3;
+    bottom: 0;
+=======
 .header-movies{
     width: 100% !important;
     height: 15px;
     background-color: transparent;
     position: absolute !important;
     z-index: 1;
+>>>>>>> 71472c760768e32930ddd99b4cbdbb48b8d7329d
 
     .header-menu-movies{
         .header-menu-ul{
