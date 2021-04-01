@@ -3,11 +3,12 @@ import Header from '../../components/Header/Header';
 import { useHistory } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 import axios from 'axios';
+import { connect } from 'react-redux';
 
-const MovieProfile = ({style}) => {
-
-   let user = JSON.parse(localStorage.getItem('user'));
-   console.log(user._id);
+const MovieProfile = (props) => {
+   const [rentFilm,setRentFilm] = useState(true)
+   // let user = JSON.parse(localStorage.getItem('user'));
+   // console.log(user._id);
 
    let link = 'https://image.tmdb.org/t/p/original';
    let dataMovie = JSON.parse(localStorage.getItem('movie'));
@@ -84,21 +85,20 @@ const MovieProfile = ({style}) => {
       //Datos de lel alquiler , Id del usuario , id de la pelicula y el  objeto completo de la pelicula//
 
       let rentData = {
-         userId: user._id,
+         userId: props.user.id,
          filmId: dataMovie.id,
          film: dataMovie
       }
 
-      console.log('Los datos del alquiler', rentData)
+      
       let response = await axios.post(endPointRent, rentData);
       console.log("Soy la respuesta del aqluiler", response);
       localStorage.setItem('rentInfo', JSON.stringify(response))
-     
-     
-
+      setRentFilm(false)
    }
-      let DatosRent = JSON.parse(localStorage.getItem('rentInfo'));
-      console.log(DatosRent.data.order._id)
+      
+   // let DatosRent = JSON.parse(localStorage.getItem('rentInfo'));
+   
       
      
    
@@ -106,7 +106,7 @@ const MovieProfile = ({style}) => {
    let Rented=<div className="rent" >Estas Viendo <br /></div>
    
 
-   if(DatosRent.data){
+   if(rentFilm==false){
    return (
 
 
@@ -184,12 +184,12 @@ const MovieProfile = ({style}) => {
       </div>
       )
    }
-
-
-
-
-
-
 }
 
-export default MovieProfile;
+const mapStateToProps =state =>{
+   return{
+     user : state.user,
+     token : state.token
+   }
+ };
+export default connect(mapStateToProps)(MovieProfile);
