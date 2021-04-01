@@ -44,6 +44,10 @@
                     color: nth($principal-color, 1);
                 }
             }
+            .component-header-menu-li-name{
+                color: nth($fontColor, 3);
+                cursor: none;
+            }
             .component-header-menu-li-icon{
                 color: nth($btnRed, 1);
             }

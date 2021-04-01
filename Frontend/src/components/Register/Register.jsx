@@ -19,12 +19,10 @@ const Register = (props) => {
         password: "",
         phone: "",
         birthday: "",
-        adress: "",
+        address: "",
         country: "",
         city: "",
-        postal: "",
-        payment: "",
-
+        postal: ""
     });
 
     const [message, setMessage] = useState('');
@@ -52,13 +50,10 @@ const Register = (props) => {
             surname: user.surname,
             email: user.email,
             password: user.password,
-            phone: '555555555',
-            birthday: 'campo a rellenar',
-            adress: user.adress,
+            address: user.address,
             country: user.country,
             city: user.city,
-            postal: user.postal,
-            payment: "a completar despues"
+            postal: user.postal
         };
         console.log(userData);
 
@@ -100,7 +95,7 @@ const Register = (props) => {
                             <input name='surname' className="form-input form-input-register form-input-first-surname" onChange={handleState}></input>
 
                             <p className='form-label form-label-register form-label-second-surname'>Direccíon</p>
-                            <input name='adress' className="form-input form-input-register form-input-second-surname" onChange={handleState}></input>
+                            <input name='address' className="form-input form-input-register form-input-second-surname" onChange={handleState}></input>
                             <div className="city">
                                 <div className="city-options city-country">
                                     <p className='form-label form-label-register form-label-country'>Pais</p>

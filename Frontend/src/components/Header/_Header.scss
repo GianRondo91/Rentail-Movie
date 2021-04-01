@@ -16,6 +16,10 @@
                     border: none;
                 }
             }
+            .header-menu-li-name{
+                color: nth($fontColor, 3);
+                cursor: none !important;
+            }
         }
     }
 }

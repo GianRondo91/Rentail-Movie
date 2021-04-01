@@ -37,9 +37,13 @@ const Header = (props) => {
       <div className="component-header-menu header-menu-movies">
         <ul className="component-header-menu-ul header-menu-ul">
         <li className="component-header-menu-li  header-menu-li"><input className="search" type="text" placeholder=" Busqueda..." /></li>
-          <li className="component-header-menu-li header-menu-li"><a href="/profile" className='component-header-menu-a header-menu-a'>Mi Colección</a></li>
           <li className="component-header-menu-li  header-menu-li"><a href="/series" className='component-header-menu-a' >Series</a></li>
+<<<<<<< HEAD
           <li className="component-header-menu-li  header-menu-li" >Bienvenido {props.user?.name}</li>
+=======
+          <li className="component-header-menu-li header-menu-li"><a href="/profile" className='component-header-menu-a header-menu-a'>Favoritos</a></li>
+          <li className="component-header-menu-li  header-menu-li header-menu-li-name"> {user.name}</li>
+>>>>>>> b71a8063b6725a7b4c581327cc07953224455a14
           <li className="component-header-menu-li  header-menu-li component-header-menu-li-icon" onClick={() => logout()}> <FontAwesomeIcon icon={faUserTimes} /></li>
         </ul>
       </div>
