@@ -225,81 +225,6 @@ se transforma en
 }
 */
 /*COMPONENTS*/
-<<<<<<< HEAD
-.vistaHeader {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  height: 3em;
-  color: white;
-  background-color: rgba(22, 21, 21, 0.1);
-  align-items: center;
-  margin-top: -32em;
-  z-index: 3;
-  bottom: 0; }
-  .vistaHeader .logo {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-style: italic;
-    font-size: 2em;
-    color: #0ab8e4;
-    margin-left: 2em; }
-  .vistaHeader .nav {
-    width: 55%;
-    height: 90%;
-    margin-left: -10em;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    margin-top: -0.5em;
-    justify-content: space-evenly;
-    color: white; }
-    .vistaHeader .nav .search {
-      all: unset;
-      width: 8em;
-      height: 1em;
-      transition: 0.8s;
-      border-radius: 2em;
-      color: #f1f0e9; }
-    .vistaHeader .nav .search:hover {
-      all: unset;
-      transition: 0.8s;
-      color: #f1f0e9;
-      width: 8em;
-      height: 1em;
-      border-radius: 2em; }
-    .vistaHeader .nav .inicio {
-      font-size: 1.5em;
-      color: #fffffd;
-      transition: 0.8s; }
-    .vistaHeader .nav .inicio:hover {
-      font-size: 1.7em;
-      transition: 0.8s;
-      color: #1698d4; }
-    .vistaHeader .nav .Peliculas {
-      font-size: 1.2em;
-      color: #fffffd;
-      transition: 0.8s; }
-    .vistaHeader .nav .Peliculas:hover {
-      font-size: 1.3em;
-      transition: 0.8s;
-      color: #1698d4; }
-    .vistaHeader .nav .Series {
-      font-size: 1.2em;
-      color: #fffffd;
-      transition: 0.8s; }
-    .vistaHeader .nav .Series:hover {
-      font-size: 1.3em;
-      transition: 0.8s;
-      color: #1698d4; }
-    .vistaHeader .nav .userName {
-      font-size: 1.3em;
-      color: #fffffd;
-      transition: 0.8s; }
-    .vistaHeader .nav .userName:hover {
-      font-size: 1.3em;
-      transition: 0.8s;
-      color: #1698d4; }
-=======
 .header-movies {
   width: 100% !important;
   height: 15px;
@@ -312,7 +237,6 @@ se transforma en
     margin-right: 29px;
     outline: none;
     border: none; }
->>>>>>> 71472c760768e32930ddd99b4cbdbb48b8d7329d
 
 .form-content {
   height: 80%;
@@ -783,14 +707,8 @@ body {
   .contenedorHome .content {
     position: absolute;
     z-index: 1;
-<<<<<<< HEAD
-    margin-top: 22em;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.2);
-=======
     top: 710px;
     /* background: rgba(0, 0, 0, 0.2); */
->>>>>>> 71472c760768e32930ddd99b4cbdbb48b8d7329d
     color: #f1f1f1;
     /* padding: 20px; */
     left: 100px;
