@@ -48,7 +48,7 @@ const MovieProfile = (props) => {
 
    //Alquilar un pelicula//
    
-   
+   console.log(props.user?._id)
   
    const Alquilar = async () => {
 
@@ -57,15 +57,17 @@ const MovieProfile = (props) => {
     //Datos de lel alquiler , Id del usuario , id de la pelicula y el  objeto completo de la pelicula//
 
       let rentData = {
-         userId: props.user.id,
+         userId: props.user._id,
          filmId: dataMovie.id,
          film: dataMovie
       }
 
-      
+   
       let response = await axios.post(endPointRent, rentData);
+      console.log('estos son los datos del alquiler ',rentData)
 
       localStorage.setItem('rentInfo', JSON.stringify(response))
+      console.log('estos son lo datos del backend', response.data)
       setRentFilm(false)
    }
       
