@@ -58,26 +58,7 @@ const Series = (props) => {
 
     return (
 
-      <>
-      <div className="series-container">
-         
-            <img src={casaDePapel} alt="casa" className="imagen-principal"/>
-            < Header />
-            <div class="informacion-dentro-del-div">
-
-               <h1 className='h1-series'></h1>
-               <p>La Casa De Papel</p>
-               <button id="myBtn-series" > Ver Mas </button>
-            </div>
-
-            <div className="separador-series"></div>
-            <h2 className='titulo-del-genero-series'>Ultimas Series Añadidas</h2>
-            <div className="ultimas-series">
-            {series.map(series => <Movie style='uno' key={series.id} {...series} onClick={() => takeMeTo(series)} />)}
-            </div>
-        </div>
-        <Footer />
-      </>  
+    <div></div>
 
    )
 

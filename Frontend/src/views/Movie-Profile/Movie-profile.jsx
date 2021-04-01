@@ -40,33 +40,6 @@ const MovieProfile = (props) => {
       getTrailer()
    }, []);
 
-   //Envio de datos de la pelicula a almacenar en la base de datos//
-   /*const AlmacenarMovie =async()=>{
-      let EndpointAlmacenar ='http://localhost:3002/movies/';
-      // comprobar si el id existe //
-      let responseDataMovie = await axios.get(EndpointAlmacenar);
-      let movieDB = responseDataMovie.data;
-      // datos de la pelicula eligida//
-      console.log(dataMovie);
-      //datos de mis peliculas en mi base de datos//
-      console.log(movieDB)
-      
-      console.log(EndpointAlmacenar+dataMovie.id)
-      let movie;
-      for(movie of movieDB){
-         console.log(movie.id)
-         console.log(dataMovie.id)
-         if( movie.id === dataMovie._id){
-            return console.log('la pelicula ya existe')
-         }else{
-            
-            let peliGuardada =await axios.post(EndpointAlmacenar,dataMovie)
-            let PeliculasEnMiDB = await axios.get(EndpointAlmacenar);
-            console.log(peliGuardada)
-            console.log(PeliculasEnMiDB)
-         }
-      }
-   }*/
 
    //Alquilar un pelicula//
    const Alquilar = async () => {
@@ -94,15 +67,6 @@ const MovieProfile = (props) => {
    
 
    if(rentFilm==false){
-   return (
-   
-   console.log(DatosRent.data.order._id);
-
-   let NotRented = <div className="rent" onClick={() => Alquilar()}>Alquilar <br />4.99€</div>
-   let Rented = <div className="rent" >Estas Viendo <br/></div>
-
-
-   if (DatosRent.data) {
       return (
          <div className='movie-profile-container'>
             <Header />
@@ -163,12 +127,13 @@ const MovieProfile = (props) => {
             </div>
          </div>
       )
-   )}}
+   }
+}
 
 const mapStateToProps =state =>{
    return{
      user : state.user,
      token : state.token
    }
- };
+ }
 export default connect(mapStateToProps)(MovieProfile);
