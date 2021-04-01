@@ -4,18 +4,19 @@ import HeaderUser from '../Header-user/Header-user';
 import {useHistory} from 'react-router-dom';
 import axios from "axios";
 import checkError from '../../../My-tools/My-tools';
+import { connect } from 'react-redux';
 
-const Data = () => {
+const Data = (props) => {
 
     let history = useHistory();
-    let loggedUser = localStorage.getItem('user');
-    let userdata = JSON.parse(loggedUser);
+    // let loggedUser = localStorage.getItem('user');
+    // let userdata = JSON.parse(loggedUser);
 
-    const [user, setUser] = useState(userdata);
+    const [user, setUser] = useState(props.user);
     const [message, setMessageUpdateData] = useState('');
     const [messagePayment, setMessagePayment] = useState('');
 
-    if(!loggedUser){
+    if(!props.token){
         history.push('/');
         return null;
     };
@@ -80,29 +81,29 @@ const Data = () => {
                     <div className="form-data-content">
                         <p className='form-data-content-title'>Actualizar datos</p>
                         <label htmlFor="" className='form-update-data-label' onChange={handleState}>Nombre</label>
-                        <input type="name" name="name" className='form-update-data-input' value={user.name} onChange={handleState}/>
+                        <input type="name" name="name" className='form-update-data-input' value={props.user.name} onChange={handleState}/>
                         <label htmlFor="" className='form-update-data-label' onChange={handleState}>Apellidos</label>
-                        <input type="surname" name="surname" className='form-update-data-input' value={user.surname} onChange={handleState}/>
+                        <input type="surname" name="surname" className='form-update-data-input' value={props.user.surname} onChange={handleState}/>
                         <label htmlFor="" className='form-update-data-label' onChange={handleState}>Fecha de nacimiento</label>
-                        <input type="date" name="birthday"  step="1" min="1930-12" max="2006-12" className='form-update-data-input' value={user.birthday} onChange={handleState}/>
+                        <input type="date" name="birthday"  step="1" min="1930-12" max="2006-12" className='form-update-data-input' value={props.user.birthday} onChange={handleState}/>
                         <label htmlFor="" className='form-update-data-label' onChange={handleState}>Telefono</label>
-                        <input type="phone" name="phone" className='form-update-data-input' value={user.phone} onChange={handleState}/>
+                        <input type="phone" name="phone" className='form-update-data-input' value={props.user.phone} onChange={handleState}/>
                         <label htmlFor="" className='form-update-data-label' onChange={handleState}>Email</label>
-                        <input type="email" name="email" className='form-update-data-input' value={user.email} onChange={handleState}/>
+                        <input type="email" name="email" className='form-update-data-input' value={props.user.email} onChange={handleState}/>
                         <label htmlFor="" className='form-update-data-label' onChange={handleState}>Dirección</label>
-                        <input type="address" name="address" className='form-update-data-input'  value={user.address} onChange={handleState}/>
+                        <input type="address" name="address" className='form-update-data-input'  value={props.user.address} onChange={handleState}/>
                         <div className="country-city-cp">
                             <div className="country-city-cp-style">
                                 <label htmlFor="" className='form-update-data-label' onChange={handleState}>País</label>
-                                <input type="country" name="country" className='form-update-data-input'  value={user.country} onChange={handleState}/>
+                                <input type="country" name="country" className='form-update-data-input'  value={props.user.country} onChange={handleState}/>
                             </div>
                             <div className="country-city-cp-style">
                                 <label htmlFor="" className='form-update-data-label' onChange={handleState}>Provincia</label>
-                                <input type="city" name="city" className='form-update-data-input' value={user.city} onChange={handleState}/>
+                                <input type="city" name="city" className='form-update-data-input' value={props.user.city} onChange={handleState}/>
                             </div>
                             <div className="country-city-cp-style">
                                 <label htmlFor="" className='form-update-data-label' onChange={handleState}>CP</label>
-                                <input type="cp" name="postal" className='form-update-data-input' value={user.postal} onChange={handleState}/>
+                                <input type="cp" name="postal" className='form-update-data-input' value={props.user.postal} onChange={handleState}/>
                             </div>
                         </div>
                         {message}
@@ -118,18 +119,18 @@ const Data = () => {
                         </div>
                         <div className="principal-data">
                             <label htmlFor="" className='form-update-payment-label'>Nombre</label>
-                            <input type="name" name="nameUser" className='form-update-payment-input' value={user.payment.nameUser} onChange={handleStatePayment}/>
+                            <input type="name" name="nameUser" className='form-update-payment-input' value={props.user.payment.nameUser} onChange={handleStatePayment}/>
                             <label htmlFor="" className='form-update-payment-label'>Número de tarjeta</label>
-                            <input type="numberCard" name="numberCard" className='form-update-payment-input' value={user.payment.numberCard} onChange={handleStatePayment}/>
+                            <input type="numberCard" name="numberCard" className='form-update-payment-input' value={props.user.payment.numberCard} onChange={handleStatePayment}/>
                         </div>
                         <div className="security">
                             <div className="security-date">
                                 <label htmlFor="" className='form-update-security-label'>Fecha de vencimiento</label>
-                                <input type="month" name="date" step="1" min="2021-04" max="2026-12" className='form-update-security-input input-date' value={user.payment.date} onChange={handleStatePayment}/>
+                                <input type="month" name="date" step="1" min="2021-04" max="2026-12" className='form-update-security-input input-date' value={props.user.payment.date} onChange={handleStatePayment}/>
                             </div>
                             <div className="security-code">
                                 <label htmlFor="" className='form-update-security-label'>Código de seguridad</label>
-                                <input type="security-code" name="codeSecurity" max="4" className="form-update-security-input" value={user.payment.codeSecurity} onChange={handleStatePayment}/>
+                                <input type="security-code" name="codeSecurity" max="4" className="form-update-security-input" value={props.user.payment.codeSecurity} onChange={handleStatePayment}/>
                             </div>
                         </div>
                     </div>
@@ -138,4 +139,11 @@ const Data = () => {
         </div>
     );
 }
-export default Data;
+
+const mapStateToProps =state =>{
+    return{
+      user : state.user,
+      token : state.token
+    }
+  };
+export default connect(mapStateToProps)(Data);
