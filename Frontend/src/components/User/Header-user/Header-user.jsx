@@ -3,17 +3,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserTimes } from '@fortawesome/free-solid-svg-icons';
 import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { LOGOUT } from '../../../redux/types/userTypes';
 
 const HeaderUser = (props) => {
 
     const history = useHistory();
-    // let user = JSON.parse(localStorage.getItem('user'));
 
     const logout = () => {
         let confirmar = window.confirm('¿Seguro que quires salir de tu perfil?');
         if (confirmar) {
         setTimeout(() => {
-            localStorage.removeItem('user');
+            props.dispatch({type: LOGOUT, payload: {}});
             history.push('/');
         }, 1000);
         };
@@ -30,7 +30,7 @@ const HeaderUser = (props) => {
                 <ul className="component-header-menu-ul">
                     <li className="component-header-menu-li"><a href="/profile/data" className='component-header-menu-a'>Mis datos</a></li>
                     <li className="component-header-menu-li"><a href="/profile" className='component-header-menu-a'>Favoritos</a></li>
-                    <li className="component-header-menu-li component-header-menu-li-name"> {props.user.name}</li>
+                    <li className="component-header-menu-li component-header-menu-li-name"> {props.user?.name}</li>
                     <li className="component-header-menu-li component-header-menu-li-icon" onClick={() => logout()}> <FontAwesomeIcon icon={faUserTimes} /></li>
                     {/* Probar que funciones correctamente el logout*/}
                 </ul>

@@ -48,10 +48,10 @@ const Series = (props) => {
    //Functions:
 
    let history = useHistory();
-   const takeMeTo = () => {
+   const takeMeTo = (movie) => {
 
-    localStorage.setItem('serie', JSON.stringify(series));
-    let LittleJson = JSON.parse(localStorage.getItem('serie'));
+    localStorage.setItem('movie', JSON.stringify(movie));
+    let LittleJson = JSON.parse(localStorage.getItem('movie'));
     console.log(LittleJson);
 
     history.push('/MovieProfile')
