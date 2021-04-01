@@ -1,0 +1,18 @@
+
+.component-profile{
+    display: flex;
+    flex-direction: column;
+    color: white;
+  .favourites-container{
+    display: flex;
+    flex-direction: column;
+    width: 8em;
+    height: 13em;
+    color: white;
+    .favourites-img{
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+  }
+}
