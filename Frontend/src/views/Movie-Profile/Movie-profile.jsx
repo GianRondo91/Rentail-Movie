@@ -147,6 +147,7 @@ const MovieProfile = ({style}) => {
 
    )}else{
       return(
+      
          <div className='movie-profile-container'>
          <Header />
          <div className="movie-panel">
