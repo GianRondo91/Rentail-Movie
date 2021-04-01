@@ -1,6 +1,6 @@
 import {applyMiddleware, compose, createStore} from 'redux';
 import { save, load } from "redux-localstorage-simple";
-import rootReducer from './reducers/user-router';
+import rootReducer from './reducers/userReducer';
 
 const createStoreWithMiddleware = applyMiddleware(
 	save({state: ['dataUser']})
