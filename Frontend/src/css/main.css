@@ -870,24 +870,17 @@ body {
       height: 100%;
       position: absolute; }
 
-.component-series {
-  position: relative;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+.series-container {
+  width: 100vw;
   height: auto;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; }
-  .component-series .video-player {
-    margin-top: 43em;
-    width: 100%;
-    height: 30em;
-    position: absolute;
-    /* justify-content: center; */
-    margin-left: 77em;
-    margin-right: auto; }
+  flex-direction: column; }
+  .series-container .imagen-principal {
+    width: 100vh;
+    height: 30em; }
+  .series-container .h1-series {
+    color: blanchedalmond;
+    font-size: 2em; }
 
 /*RESPONSIVE DESIGN*/
 @media (min-width: 1440px) {
