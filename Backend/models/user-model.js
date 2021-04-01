@@ -13,23 +13,19 @@ const userSchema = new Schema({
     surname: {
         type: String
     },
-    
     email: {
         type: String,
         required: true
     },
     password: {
         type: String,
-        required: true,
-        
+        required: true
     },
     phone: {
-        type: String,
-        default:'A completar más tarde'
+        type: String
     },
     birthday: {
-        type:String,
-        default:'A completar más tarde'
+        type: String
     },
     address: {
         type: String
@@ -37,17 +33,26 @@ const userSchema = new Schema({
     country: {
         type: String
     },
-    city:{
+    city: {
         type: String
     },
-    postal:{
+    postal: {
         type: String
     },
     payment: {
-        type: String,
-        default:'A completar más tarde'
+        nameUser: {
+            type: String
+        },
+        numberCard: {
+            type: Number
+        },
+        date: {
+            type: Date
+        },
+        codeSecurity: {
+            type: Number
+        }
     },
-   
     creationDate: {
         type: Date,
         default: new Date
@@ -55,9 +60,9 @@ const userSchema = new Schema({
 });
 
 const toJSONConfig = {
-    transform: (doc,ret,opt) => {
-           delete ret['password']
-           return ret
+    transform: (doc, ret, opt) => {
+        delete ret['password']
+        return ret
     }
 };
 

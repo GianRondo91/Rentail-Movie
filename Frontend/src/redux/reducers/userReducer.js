@@ -1,9 +1,8 @@
-import {LOGIN, LOGOUT,UPDATE_USER} from '../types';
+import {LOGIN, LOGOUT,UPDATE_USER} from '../types/userTypes';
 
 const initialState = {
     user: {},
-    token: ''
-
+    token: ""
 };
 
 const userReducer = (state = initialState, action) => {
@@ -12,7 +11,7 @@ const userReducer = (state = initialState, action) => {
             return {
                 ...state,
                 user : action.payload.user,
-                token : action.payload.token,
+                token : action.payload.token
             }
 
         case LOGOUT :

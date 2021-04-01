@@ -1,21 +1,17 @@
-.component-series{
-    position: relative;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+.series-container{
+    width: 100vw;
     height: auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
 
-    .video-player{
-        margin-top: 43em;
-        width: 100%;
-        height: 30em;
-        position: absolute;
-        /* justify-content: center; */
-        margin-left: 77em;
-        margin-right: auto;
-    }
+      .imagen-principal{
+         width: 100vh;
+         height: 30em;   
+     }
+       .h1-series{
+         color: blanchedalmond;
+         font-size: 2em;
+     }
+
 }
+ 

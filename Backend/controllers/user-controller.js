@@ -37,8 +37,9 @@ class UserController{
             userId: user.id,
             tokenCreationDate: new Date,
         }
-
-        return {jwt:jwt.sign(payload, secret),user:user};
+        const token = jwt.sign(payload, secret);
+        return {token, user}
+        
     };
 
     //Mostrar un user por Id
