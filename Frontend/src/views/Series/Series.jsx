@@ -6,6 +6,7 @@ import { useHistory } from 'react-router-dom';
 import Footer from '../../components/Footer/Footer.jsx';
 import { } from '@fortawesome/free-solid-svg-icons';
 import casaDePapel from '../../img/casa02.jpg';
+//import HeaderUser from '../../components/User/Header-user/Header-user';
 
 
 
@@ -58,7 +59,19 @@ const Series = (props) => {
 
     return (
 
-    <div></div>
+    <div className='contenedor-padre-series'>
+
+           <Header/>
+           <div className="imagen-portada">
+              <img className='portada' src={casaDePapel} alt="Casa de papel"/>
+           </div>
+
+           <div className="portada-series">
+           {series.map(series => <Movie style='dos' key={series.id}  {...series} onClick={() => takeMeTo(series)} />)}
+           </div>
+
+
+    </div>
 
    )
 
