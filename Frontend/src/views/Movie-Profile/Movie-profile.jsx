@@ -4,8 +4,10 @@ import { useHistory } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 import axios from 'axios';
 
-const MovieProfile = ({style}) => {
+const MovieProfile = (props) => {
 
+   const [rentFilm,setRentFilm] = useState(true)
+      
    let user = JSON.parse(localStorage.getItem('user'));
    console.log(user._id);
 
@@ -45,68 +47,34 @@ const MovieProfile = ({style}) => {
 
 
 
-   //Envio de datos de la pelicula a almacenar en la base de datos//
-   /*const AlmacenarMovie =async()=>{
-      let EndpointAlmacenar ='http://localhost:3002/movies/';
-      // comprobar si el id existe //
-      let responseDataMovie = await axios.get(EndpointAlmacenar);
-      let movieDB = responseDataMovie.data;
-      // datos de la pelicula eligida//
-      console.log(dataMovie);
-      //datos de mis peliculas en mi base de datos//
-      console.log(movieDB)
-      
-      console.log(EndpointAlmacenar+dataMovie.id)
-      let movie;
-      for(movie of movieDB){
-         console.log(movie.id)
-         console.log(dataMovie.id)
-         if( movie.id === dataMovie._id){
-            return console.log('la pelicula ya existe')
-         }else{
-            
-            let peliGuardada =await axios.post(EndpointAlmacenar,dataMovie)
-            let PeliculasEnMiDB = await axios.get(EndpointAlmacenar);
-            console.log(peliGuardada)
-            console.log(PeliculasEnMiDB)
-         }
-      }
-      
-   }*/
-
    //Alquilar un pelicula//
-
-
+   
+   
+  
    const Alquilar = async () => {
 
       let endPointRent = 'http://localhost:3002/orders';
-
-      //Datos de lel alquiler , Id del usuario , id de la pelicula y el  objeto completo de la pelicula//
+      
+    //Datos de lel alquiler , Id del usuario , id de la pelicula y el  objeto completo de la pelicula//
 
       let rentData = {
          userId: user._id,
          filmId: dataMovie.id,
          film: dataMovie
       }
-
-      console.log('Los datos del alquiler', rentData)
       let response = await axios.post(endPointRent, rentData);
-      console.log("Soy la respuesta del aqluiler", response);
-      localStorage.setItem('rentInfo', JSON.stringify(response))
-     
-     
 
+      localStorage.setItem('rentInfo', JSON.stringify(response))
+      setRentFilm(false)
+    
+     
    }
       let DatosRent = JSON.parse(localStorage.getItem('rentInfo'));
-      console.log(DatosRent.data.order._id)
       
-     
-   
-   let NotRented=<div className="rent" onClick={() => Alquilar()}>Alquilar <br />4.99€</div>
-   let Rented=<div className="rent" >Estas Viendo <br /></div>
-   
+      let NotRented=<div className="rent" onClick={() => Alquilar()}>Alquilar <br />4.99€</div>
+      let Rented=<div className="rent" >Estas Viendo <br /></div>
 
-   if(DatosRent.data){
+   if(rentFilm == false){
    return (
 
 
@@ -134,7 +102,7 @@ const MovieProfile = ({style}) => {
             </div>
          </div>
          <div className="show-video-movie">
-            <div className="multimedia">
+            <div className="multimedia" name='video'>
                <ReactPlayer
 
                   url={trailer}
@@ -172,7 +140,7 @@ const MovieProfile = ({style}) => {
             </div>
          </div>
          <div className="show-video-movie">
-            <div className="multimedia">
+            <div className="multimedia" >
                <ReactPlayer
 
                   url={trailer}
