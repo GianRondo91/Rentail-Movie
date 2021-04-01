@@ -4,13 +4,9 @@ import HeaderUser from '../../components/User/Header-user/Header-user';
 
 
 const Profile =()=>{
-    
-    let key = "ef2edc9da61e81787a8079a7df721936";
-    let base_url = `http://api.themoviedb.org/3/movie/`;
-    let language = "language=es-ES"
+   
 
-    const [favouritesMoviesId, setFavouritesMoviesId] = useState([])
-    const [allFavMovies, setAllFavMovies] = useState([])
+    const [favouritesMovies, setFavouritesMovies] = useState([])
 
     useEffect(() => {
         allFavouritesMovies()
@@ -19,22 +15,12 @@ const Profile =()=>{
 
 
     const allFavouritesMovies = () => {
-        const allFavourites = localStorage.getItem("favoritos")
+        const allFavourites = JSON.parse(localStorage.getItem("favoritos"))
+
         
-        setFavouritesMoviesId(allFavourites)
-        console.log(favouritesMoviesId)
-        favouritesMoviesId.forEach(movie_id => {
-       
-        console.log(movie_id, 'id')
-
-            fetch(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=ef2edc9da61e81787a8079a7df721936&language=en`)
-            .then(res => (res.json()))
-            .then(data => {
-
-            setAllFavMovies([data])
-            console.log(data)
-         })
-        })}   
+        setFavouritesMovies(allFavourites)
+        console.log(favouritesMovies)
+        }   
 
   
 
@@ -42,7 +28,7 @@ const Profile =()=>{
 
         <div className='component-profile'>
             <HeaderUser/>
-            <p>{favouritesMoviesId}</p>
+            <p>{favouritesMovies[0].title}</p>
             
         </div>
     )

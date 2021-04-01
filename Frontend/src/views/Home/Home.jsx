@@ -88,10 +88,10 @@ const Home = (props) => {
       history.push('/peliculas')
    }
 
-   const addFavouriteMovie = (id) => {
-      const listaFavoritos = [...favoritos, id]
+   const addFavouriteMovie = (id,title,posther_path) => {
+      const listaFavoritos = [...favoritos, {id,title,posther_path}]
       setFavoritos(listaFavoritos)
-      localStorage.setItem("favoritos", favoritos)
+      localStorage.setItem("favoritos", JSON.stringify(favoritos))
    }
 
  
