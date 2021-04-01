@@ -117,18 +117,18 @@ const Data = (props) => {
                         </div>
                         <div className="principal-data">
                             <label htmlFor="" className='form-update-payment-label'>Nombre</label>
-                            <input type="name" name="nameUser" className='form-update-payment-input' value={user.payment.nameUser} onChange={handleStatePayment}/>
+                            <input type="name" name="nameUser" className='form-update-payment-input' value={user.payment?.nameUser} onChange={handleStatePayment}/>
                             <label htmlFor="" className='form-update-payment-label'>Número de tarjeta</label>
-                            <input type="numberCard" name="numberCard" className='form-update-payment-input' value={user.payment.numberCard} onChange={handleStatePayment}/>
+                            <input type="numberCard" name="numberCard" className='form-update-payment-input' value={user.payment?.numberCard} onChange={handleStatePayment}/>
                         </div>
                         <div className="security">
                             <div className="security-date">
                                 <label htmlFor="" className='form-update-security-label'>Fecha de vencimiento</label>
-                                <input type="month" name="date" step="1" min="2021-04" max="2026-12" className='form-update-security-input input-date' value={user.payment.date} onChange={handleStatePayment}/>
+                                <input type="month" name="date" step="1" min="2021-04" max="2026-12" className='form-update-security-input input-date' value={user.payment?.date} onChange={handleStatePayment}/>
                             </div>
                             <div className="security-code">
                                 <label htmlFor="" className='form-update-security-label'>Código de seguridad</label>
-                                <input type="security-code" name="codeSecurity" max="4" className="form-update-security-input" value={user.payment.codeSecurity} onChange={handleStatePayment}/>
+                                <input type="security-code" name="codeSecurity" max="4" className="form-update-security-input" value={user.payment?.codeSecurity} onChange={handleStatePayment}/>
                             </div>
                         </div>
                     </div>
