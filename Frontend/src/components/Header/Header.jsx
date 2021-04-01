@@ -9,11 +9,7 @@ import { LOGOUT } from '../../redux/types/userTypes';
 const Header = (props) => {
   
   let history = useHistory();
-  // let user = JSON.parse(localStorage.getItem('user'));
-  //let user =props.user;
-  //console.log(credentials)
-  // console.log(user.name);
-  // console.log(user.phone);
+ 
 
   const logout = () => {
     let confirmar = window.confirm('¿Seguro que quires salir de tu perfil?');
