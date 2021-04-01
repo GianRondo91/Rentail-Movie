@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 import axios from 'axios';
 import { connect } from 'react-redux';
+import video from '../../video/videoplayback.mp4'
 
 const MovieProfile = (props) => {
    const [rentFilm,setRentFilm] = useState(true)
@@ -48,16 +49,16 @@ const MovieProfile = (props) => {
 
       //Datos de lel alquiler , Id del usuario , id de la pelicula y el  objeto completo de la pelicula//
       let rentData = {
-         userId: props.user.id,
+         userId: props.user._id,
          filmId: dataMovie.id,
          film: dataMovie,
          payment:true
       }
 
       
-      let response = await axios.post(endPointRent, rentData);
-      console.log("Soy la respuesta del aqluiler", response);
-      localStorage.setItem('rentInfo', JSON.stringify(response))
+       let response = await axios.post(endPointRent, rentData);
+       console.log("Soy la respuesta del aqluiler", response);
+       localStorage.setItem('rentInfo', JSON.stringify(response))
       setRentFilm(false)
    }
       
@@ -65,7 +66,9 @@ const MovieProfile = (props) => {
    
    let NotRented=<div className="rent" onClick={() => Alquilar()}>Alquilar <br />4.99€</div>
    let Rented=<div className="rent" >Estas Viendo <br /></div>
-   
+   let Player = <div className='player-movie'>
+      <video className='player-movie-child' src={video} controls autoPlay muted loop></video>
+   </div>
 
    if(rentFilm==false){
       return (
@@ -74,28 +77,20 @@ const MovieProfile = (props) => {
             <div className="movie-panel">
                <div className="data-movie">
                   <div className="movie-title">{dataMovie.title}</div>
-                  <div className="movie-rate">Rate : {dataMovie.vote_average}  votos : {dataMovie.vote_count}  Release date : {dataMovie.release_date}</div>
+                  
                   <div className="movie-rent">
                      {Rented}
                      <div className="mas-recomendaciones" onClick={() => goto()}> Ver Mas Recomendaciónes </div>
                   </div>
                   <div className="overview">
-                     <h3 className='sinopsis'>Sinopsis:</h3>
-                     <p className='overviewSize'>{dataMovie.overview}</p>
+                     {Player}
                   </div>
                </div>
                <div className="movie-poster">
                   <img src={link + dataMovie.poster_path} alt={dataMovie.tite} />
                </div>
             </div>
-            <div className="show-video-movie">
-               <div className="multimedia">
-                  <ReactPlayer
-                     url={trailer}
-                     controls
-                  />
-               </div>
-            </div>
+            
          </div>
       )
    } else {
