@@ -12,10 +12,9 @@ const MovieProfile = (props) => {
 
    let link = 'https://image.tmdb.org/t/p/original';
    let dataMovie = JSON.parse(localStorage.getItem('movie'));
-   console.log(dataMovie.id)
+   console.log(dataMovie.id);
 
-   const [trailer, setTrailer] = useState("")
-
+   const [trailer, setTrailer] = useState("");
 
    // Getting trailer link
 
@@ -34,126 +33,100 @@ const MovieProfile = (props) => {
       setTimeout(() => {
          history.push('/home')
       }, 1000);
-
-   }
+   };
 
    // //USEEFFECTS
-
    useEffect(() => {
       getTrailer()
    }, []);
 
 
-
-
    //Alquilar un pelicula//
-   
-   console.log(props.user?._id)
-  
    const Alquilar = async () => {
 
       let endPointRent = 'http://localhost:3002/orders';
-      
-    //Datos de lel alquiler , Id del usuario , id de la pelicula y el  objeto completo de la pelicula//
 
+      //Datos de lel alquiler , Id del usuario , id de la pelicula y el  objeto completo de la pelicula//
       let rentData = {
-         userId: props.user._id,
+         userId: props.user.id,
          filmId: dataMovie.id,
          film: dataMovie,
          payment:true
       }
 
-   
+      
       let response = await axios.post(endPointRent, rentData);
-      console.log('estos son los datos del alquiler ',rentData)
-
+      console.log("Soy la respuesta del aqluiler", response);
       localStorage.setItem('rentInfo', JSON.stringify(response))
-      console.log('estos son lo datos del backend', response.data)
       setRentFilm(false)
    }
       
    // let DatosRent = JSON.parse(localStorage.getItem('rentInfo'));
    
-      
-      let NotRented=<div className="rent" onClick={() => Alquilar()}>Alquilar <br />4.99€</div>
-      let Rented=<div className="rent" >Estas Viendo <br /></div>
+   let NotRented=<div className="rent" onClick={() => Alquilar()}>Alquilar <br />4.99€</div>
+   let Rented=<div className="rent" >Estas Viendo <br /></div>
+   
 
    if(rentFilm==false){
-   return (
-
-
-      <div className='movie-profile-container'>
-         <Header />
-         <div className="movie-panel">
-            <div className="data-movie">
-
-               <div className="movie-title">{dataMovie.title}</div>
-               <div className="movie-rate">Rate : {dataMovie.vote_average}  votos : {dataMovie.vote_count}  Release date : {dataMovie.release_date}</div>
-               <div className="movie-rent">
-                  {Rented}
-                  
-                  <div className="mas-recomendaciones" onClick={() => goto()}> Ver Mas Recomendaciónes </div>
-
-               </div>
-               <div className="overview">
-                  <h3 className='sinopsis'>Sinopsis:</h3>
-                  <p className='overviewSize'>{dataMovie.overview}</p></div>
-            </div>
-            <div className="movie-poster">
-               
-               <img src={link + dataMovie.poster_path} alt={dataMovie.tite}/>
-               
-            </div>
-         </div>
-         <div className="show-video-movie">
-            <div className="multimedia" name='video'>
-               <ReactPlayer
-
-                  url={trailer}
-                  controls
-               />
-            </div>
-
-         </div>
-      </div>
-
-   )}else{
-      return(
-      
+      return (
          <div className='movie-profile-container'>
-         <Header />
-         <div className="movie-panel">
-            <div className="data-movie">
-
-               <div className="movie-title">{dataMovie.title}</div>
-               <div className="movie-rate">Rate : {dataMovie.vote_average}  votos : {dataMovie.vote_count}  Release date : {dataMovie.release_date}</div>
-               <div className="movie-rent">
-                  {NotRented}
-                  
-                  <div className="mas-recomendaciones" onClick={() => goto()}> Ver Mas Recomendaciónes </div>
-
+            <Header />
+            <div className="movie-panel">
+               <div className="data-movie">
+                  <div className="movie-title">{dataMovie.title}</div>
+                  <div className="movie-rate">Rate : {dataMovie.vote_average}  votos : {dataMovie.vote_count}  Release date : {dataMovie.release_date}</div>
+                  <div className="movie-rent">
+                     {Rented}
+                     <div className="mas-recomendaciones" onClick={() => goto()}> Ver Mas Recomendaciónes </div>
+                  </div>
+                  <div className="overview">
+                     <h3 className='sinopsis'>Sinopsis:</h3>
+                     <p className='overviewSize'>{dataMovie.overview}</p>
+                  </div>
                </div>
-               <div className="overview">
-                  <h3 className='sinopsis'>Sinopsis:</h3>
-                  <p className='overviewSize'>{dataMovie.overview}</p></div>
+               <div className="movie-poster">
+                  <img src={link + dataMovie.poster_path} alt={dataMovie.tite} />
+               </div>
             </div>
-            <div className="movie-poster">
-               
-               <img src={link + dataMovie.poster_path} alt={dataMovie.tite}/>
-               
+            <div className="show-video-movie">
+               <div className="multimedia">
+                  <ReactPlayer
+                     url={trailer}
+                     controls
+                  />
+               </div>
             </div>
          </div>
-         <div className="show-video-movie">
-            <div className="multimedia" >
-               <ReactPlayer
-
-                  url={trailer}
-                  controls
-               />
+      )
+   } else {
+      return (
+         <div className='movie-profile-container'>
+            <Header />
+            <div className="movie-panel">
+               <div className="data-movie">
+                  <div className="movie-title">{dataMovie.title}</div>
+                  <div className="movie-rate">Rate : {dataMovie.vote_average}  votos : {dataMovie.vote_count}  Release date : {dataMovie.release_date}</div>
+                  <div className="movie-rent">
+                     {NotRented}
+                     <div className="mas-recomendaciones" onClick={() => goto()}> Ver Mas Recomendaciónes </div>
+                  </div>
+                  <div className="overview">
+                     <h3 className='sinopsis'>Sinopsis:</h3>
+                     <p className='overviewSize'>{dataMovie.overview}</p></div>
+               </div>
+               <div className="movie-poster">
+                  <img src={link + dataMovie.poster_path} alt={dataMovie.tite} />
+               </div>
             </div>
-
+            <div className="show-video-movie">
+               <div className="multimedia">
+                  <ReactPlayer
+                     url={trailer}
+                     controls
+                  />
+               </div>
+            </div>
          </div>
-      </div>
       )
    }
 }
@@ -163,5 +136,5 @@ const mapStateToProps =state =>{
      user : state.user,
      token : state.token
    }
- };
+ }
 export default connect(mapStateToProps)(MovieProfile);
