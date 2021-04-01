@@ -8,7 +8,7 @@ const Profile =()=>{
 
 
     const [favouritesMovies, setFavouritesMovies] = useState([])
-
+    console.log(favouritesMovies)
     useEffect(() => {
         allFavouritesMovies()
 
@@ -30,7 +30,7 @@ const Profile =()=>{
         <div className='component-profile'>
             <HeaderUser/>
             <div>
-            {favouritesMovies.map(fav => <img alt={fav.title} src={FirstPartOfLinkImage+fav.poster_path}/>)}
+            {favouritesMovies.map(fav => <div className='favourites-container'><h5>{fav.title}</h5><img alt={fav.title} src={FirstPartOfLinkImage+fav.posther_path}/></div>)}
             </div>
         </div>
     )
