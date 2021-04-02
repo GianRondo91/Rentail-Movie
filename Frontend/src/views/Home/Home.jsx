@@ -5,6 +5,7 @@ import Header from '../../components/Header/Header';
 import { useHistory } from 'react-router-dom';
 import Footer from '../../components/Footer/Footer.jsx';
 import { } from '@fortawesome/free-solid-svg-icons';
+import axios from "axios";
 
 
 const Home = (props) => {
@@ -14,12 +15,21 @@ const Home = (props) => {
    const [populares, setPopulares] = useState([]);
    const [recomendaciones, setRecomendaciones] = useState([]);
    const [favoritos, setFavoritos] = useState([]);
-   
 
    //Constuccion de URL consultas TMDB
    let key = "ef2edc9da61e81787a8079a7df721936";
    let base_url = `http://api.themoviedb.org/3/movie/`;
    let language = "language=es-ES";
+
+   // https://api.themoviedb.org/3/search/movie?api_key=e34f732b92a2e7dbe69709d0433150c3&language=es&query=${query}
+   //Buscar Pelis
+   const search = async (query) => {
+      let baseUrl = `http://api.themoviedb.org/3/search/movie?`;
+      let resultSearch = await axios.get(`${baseUrl}api_key=${key}&language=es&query=${query}`);
+      console.log("soy lop que viene de api", resultSearch);
+      console.log("soy lop que viene de api", resultSearch.data.results);
+      //
+   }
 
    useEffect(() => {
       //Ultimas Peliculas
@@ -55,10 +65,9 @@ const Home = (props) => {
             setRecomendaciones(data.results);
          });
    }, []);
-   
-   
-   //Functions:
 
+
+   //Functions:
    let history = useHistory();
 
    const takeMeTo = (movie) => {
@@ -72,22 +81,20 @@ const Home = (props) => {
       history.push('/peliculas')
    };
 
-   const addFavouriteMovie = (id,title,posther_path) => {
-      const listaFavoritos = [...favoritos, {id,title,posther_path}]
+   const addFavouriteMovie = (id, title, posther_path) => {
+      const listaFavoritos = [...favoritos, { id, title, posther_path }]
       setFavoritos(listaFavoritos)
       localStorage.setItem("favoritos", JSON.stringify(favoritos))
    }
 
- 
-
    return (
       <div className="contenedorHome">
-         < Header />
+         < Header onSearch={search} />
          <video className='myVideo' autoPlay muted loop id="myVideo" src={video}></video>
          <div class="content">
             <h1 className='h1'></h1>
             <p>AQUA-MAN</p>
-            <button id="myBtn" onClick={() => GotoMovies()}> Mas información </button>
+            <button id="myBtn" onClick={GotoMovies}> Mas información </button>
          </div>
          <div className="separador"></div>
          <h2 className='tituloDelGenero'>Ultimas Peliculas Añadidas</h2>
