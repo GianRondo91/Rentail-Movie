@@ -29,25 +29,16 @@ const Profile =()=>{
 
         <div className='component-profile'>
             <HeaderUser/>
-            <div>
-                <div className='spacer'></div>
-                <h3>MIS FAVORITOS</h3>
-                <div className='spacer'></div>
-                <div className='movie-fav-container'>
-                    {favouritesMovies.map(fav => <div className='favourites-container'><h5>{fav.title}</h5><img className='favourites-img' alt={fav.title} src={FirstPartOfLinkImage+fav.posther_path}/></div>)}
+            <div className='content-favourites'>
+               
+                <h3 className='content-favourites-title'>MIS FAVORITOS</h3>
+               
+                <div className='content-favourites-container'>
+                    {favouritesMovies.map(fav => <div className='favourite-container'><h5 className='title-movie'>{fav.title}</h5><img className='favourite-img' alt={fav.title} src={FirstPartOfLinkImage+fav.posther_path}/></div>)}
                 </div>
             </div>
         </div>
     )
 }
 
-
-// const mapStateToProps = state => {
-//     return {
-//         user : state.userReducer.user,
-//         token : state.userReducer.token,
-//        }
-// }
-
-// export default connect(mapStateToProps)(Profile);
 export default Profile;
