@@ -18,6 +18,7 @@ const Home = (props) => {
    const [favoritos, setFavoritos] = useState([]);
    const [movieSearch, setSearch] = useState([]);
    const [movieGenreSearch, setGenre] = useState([]);
+   
 
    //Constuccion de URL consultas TMDB
    let key = "ef2edc9da61e81787a8079a7df721936";
@@ -31,12 +32,15 @@ const Home = (props) => {
    //Buscar Pelis
    const search = async (query) => {
       let resultSearch = await axios.get(`${urlSearch}api_key=${key}&language=es&query=${query}`);
-      return setSearch(resultSearch.data.results)
+      return setSearch(resultSearch.data.results);
    }
    //Busqueda por genero
    const searchGenre = async (genres) => {
+      console.log(genres);
       let genreFilms = await axios.get(`${urlGenre}discover/movie?api_key=${key}&${language}&with_genres=${genres}`);
-      console.log("pelis por genero",genreFilms)
+      console.log("peli por genero", genreFilms);
+      return setGenre(genreFilms.data.results);
+      
    }
    
    useEffect(() => {
@@ -100,10 +104,10 @@ const Home = (props) => {
       localStorage.setItem("favoritos", JSON.stringify(favoritos))
    }
 
-   if (movieSearch.length === 0) {
+   if (movieSearch.length === 0 && movieGenreSearch.length===0) {
       return (
          <div className="contenedorHome">
-            < Header onSearch={search, searchGenre} />
+            < Header onSearch={search} onGenre={searchGenre}/>
             <video className='myVideo' autoPlay muted loop id="myVideo" src={video}></video>
             <div class="content">
                <h1 className='h1'></h1>
@@ -139,7 +143,7 @@ const Home = (props) => {
    } else {
       return (
          <div className="contenedorHome">
-            < Header onSearch={search,searchGenre} />
+            < Header onSearch={search} onGenre={searchGenre}/>
             <video className='myVideo' autoPlay muted loop id="myVideo" src={video}></video>
             <div class="content">
                <h1 className='h1'></h1>
