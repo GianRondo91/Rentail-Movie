@@ -42,4 +42,12 @@ const Profile =()=>{
 }
 
 
+// const mapStateToProps = state => {
+//     return {
+//         user : state.userReducer.user,
+//         token : state.userReducer.token,
+//        }
+// }
+
+// export default connect(mapStateToProps)(Profile);
 export default Profile;

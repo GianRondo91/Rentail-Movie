@@ -1,5 +1,5 @@
 import {combineReducers} from 'redux';
-import userReducer from './user-router';
+import userReducer from './userReducer';
 
 
 

@@ -10,14 +10,14 @@ const checkError = (data) => {
 
             case 'name':
                 
-                if (! /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/.test(data[element])) {
+                if (! /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/.test(data[element])) {
 
                     return " nombre solo puede contener letras ";
                 }
                 break;
 
             case 'surname':
-                if (! /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/.test(data[element])) {
+                if (! /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/.test(data[element])) {
 
                     return " Apellidos solo pueden contener letras  ";
 

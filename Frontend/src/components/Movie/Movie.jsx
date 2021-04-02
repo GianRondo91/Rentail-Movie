@@ -1,26 +1,26 @@
 import React from 'react';
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from 'react'
 import AddFavourite from '../Add-fav/AddFavourite'
 
 
 
-const Movie =({title,poster_path,overview,release_date,vote_average,id,onClick,style,addFavouriteMovie})=>{
-  
+const Movie = ({ title, poster_path, overview, release_date, vote_average, id, onClick, style, addFavouriteMovie }) => {
+
   //-----ADDING A FAV-------------//
 
 
- //---------DELETING A FAV---------//
+  //---------DELETING A FAV---------//
 
- /* const removeFavouriteMovie = (movie) => {
-  const newFavouriteList = favourites.filter(
-    (favourite) => favourite.imdbID !== movie.imdbID
-  );
+  /* const removeFavouriteMovie = (movie) => {
+   const newFavouriteList = favourites.filter(
+     (favourite) => favourite.imdbID !== movie.imdbID
+   );
+ 
+   setFavourites(newFavouriteList);
+   
+ }; */
 
-  setFavourites(newFavouriteList);
-  
-}; */
-
-  let FirstPartOflinkimage ='https://image.tmdb.org/t/p/original';
+  let FirstPartOflinkimage = 'https://image.tmdb.org/t/p/original';
 
   //Preparando los dos tamaños
 

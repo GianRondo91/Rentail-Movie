@@ -8,20 +8,25 @@
     color: nth($principal-color, 1);
     position: relative;
     .component-header-logo{
-        display: flex;
         position: absolute;
         font-size: $size-s;
         width: $per-5;
         margin-left: $size-u;
         bottom: $mp-0;
         cursor: pointer;
-        .user-logo-first{
-            color: nth($fontColor, 3);
+        .logo-link{
+            text-decoration: none;
+            color: white;
+            display: flex;
+            .user-logo-first{
+                color: nth($fontColor, 3);
+            }
+            .user-logo-second{
+                font-weight: bold;
+                padding-left: $mp-e;
+            }
         }
-        .user-logo-second{
-            font-weight: bold;
-            padding-left: $mp-e;
-        }
+        
     }
     .component-header-menu{
         width: $per-5;
@@ -38,6 +43,10 @@
                     text-decoration: none;
                     color: nth($principal-color, 1);
                 }
+            }
+            .component-header-menu-li-name{
+                color: nth($fontColor, 3);
+                cursor: none;
             }
             .component-header-menu-li-icon{
                 color: nth($btnRed, 1);

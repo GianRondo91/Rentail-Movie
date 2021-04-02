@@ -225,79 +225,21 @@ se transforma en
 }
 */
 /*COMPONENTS*/
-.vistaHeader {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  height: 3em;
-  color: white;
-  background-color: rgba(22, 21, 21, 0.1);
-  align-items: center;
-  margin-top: -39em;
-  z-index: 3;
-  bottom: 0; }
-  .vistaHeader .logo {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-style: italic;
-    font-size: 2em;
-    color: #0ab8e4;
-    margin-left: 2em; }
-  .vistaHeader .nav {
-    width: 55%;
-    height: 90%;
-    margin-left: -10em;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    margin-top: -0.5em;
-    justify-content: space-evenly;
-    color: white; }
-    .vistaHeader .nav .search {
-      all: unset;
-      width: 8em;
-      height: 1em;
-      transition: 0.8s;
-      border-radius: 2em;
-      color: #f1f0e9; }
-    .vistaHeader .nav .search:hover {
-      all: unset;
-      transition: 0.8s;
-      color: #f1f0e9;
-      width: 8em;
-      height: 1em;
-      border-radius: 2em; }
-    .vistaHeader .nav .inicio {
-      font-size: 1.5em;
-      color: #fffffd;
-      transition: 0.8s; }
-    .vistaHeader .nav .inicio:hover {
-      font-size: 1.7em;
-      transition: 0.8s;
-      color: #1698d4; }
-    .vistaHeader .nav .Peliculas {
-      font-size: 1.2em;
-      color: #fffffd;
-      transition: 0.8s; }
-    .vistaHeader .nav .Peliculas:hover {
-      font-size: 1.3em;
-      transition: 0.8s;
-      color: #1698d4; }
-    .vistaHeader .nav .Series {
-      font-size: 1.2em;
-      color: #fffffd;
-      transition: 0.8s; }
-    .vistaHeader .nav .Series:hover {
-      font-size: 1.3em;
-      transition: 0.8s;
-      color: #1698d4; }
-    .vistaHeader .nav .userName {
-      font-size: 1.3em;
-      color: #fffffd;
-      transition: 0.8s; }
-    .vistaHeader .nav .userName:hover {
-      font-size: 1.3em;
-      transition: 0.8s;
-      color: #1698d4; }
+.header-movies {
+  width: 100% !important;
+  height: 15px;
+  background-color: transparent;
+  position: absolute !important;
+  z-index: 1; }
+  .header-movies .header-menu-movies .header-menu-ul .header-menu-li .search {
+    width: 250px;
+    border-radius: 10px;
+    margin-right: 29px;
+    outline: none;
+    border: none; }
+  .header-movies .header-menu-movies .header-menu-ul .header-menu-li-name {
+    color: #51C2C0;
+    cursor: none !important; }
 
 .form-content {
   height: 80%;
@@ -362,7 +304,6 @@ se transforma en
       text-align: center;
       color: #A9A9A9; }
     .form-content .form-content-options .buttons-login {
-      display: flex;
       align-items: center;
       margin-left: auto;
       margin-right: auto;
@@ -387,10 +328,8 @@ se transforma en
           padding-left: 16px; }
       .form-content .form-content-options .buttons-login .button-login-google {
         align-items: center;
-        display: flex; }
-      .form-content .form-content-options .buttons-login .button-login-facebook {
-        align-items: center;
-        display: flex; }
+        display: flex;
+        width: 80%; }
     .form-content .form-content-options .form-content-register {
       margin-top: 40px;
       display: flex;
@@ -415,7 +354,7 @@ se transforma en
   margin: 0px;
   height: auto; }
   .form-content-register .form-content-inputs-register .form-label-register {
-    margin-top: 10px; }
+    margin-top: 12px; }
   .form-content-register .form-content-inputs-register .city {
     width: 100%;
     display: flex;
@@ -425,7 +364,8 @@ se transforma en
   .form-content-register .form-content-inputs-register .form-password-register {
     margin-top: 0px; }
   .form-content-register .form-content-inputs-register .form-button-register {
-    margin-top: 32px; }
+    margin-top: 40px;
+    margin-bottom: 32px; }
 
 .form-content-register .form-content-options-register {
   margin-top: 20px; }
@@ -448,15 +388,16 @@ se transforma en
   transform: scale(1.1); }
 
 .movie:hover .overlay {
-  opacity: 1; }
+  opacity: 1;
+  color: white; }
 
 .movie:hover .overlay-two {
-  opacity: 1; }
+  opacity: 1;
+  color: white; }
 
 .overlay {
   position: absolute;
   background: rgba(0, 0, 0, 0.8);
-  color: white;
   width: 7em;
   transition: 0.5s ease;
   opacity: 0;
@@ -464,6 +405,9 @@ se transforma en
   padding: 1em;
   margin-bottom: 0.6em;
   text-align: center; }
+  .overlay .mr-2 {
+    margin-right: 5px;
+    text-align: center; }
 
 .overlay-two {
   position: absolute;
@@ -476,6 +420,8 @@ se transforma en
   padding: 1em;
   margin-bottom: 0.9em;
   text-align: center; }
+  .overlay-two .mr-2 {
+    margin-right: 5px; }
 
 .movieStyelOne {
   display: block;
@@ -483,7 +429,6 @@ se transforma en
   color: #e6dbdb;
   width: 9em;
   height: 13em;
-  border: 0.1em solid blueviolet;
   border-radius: 0em;
   transition: 0.5s; }
 
@@ -493,7 +438,6 @@ se transforma en
   color: #e6dbdb;
   width: 15em;
   height: 22em;
-  border: 0.1em solid blueviolet;
   border-radius: 0em;
   transition: 0.5s; }
 
@@ -507,18 +451,21 @@ se transforma en
   color: white;
   position: relative; }
   .component-header-user .component-header-logo {
-    display: flex;
     position: absolute;
     font-size: 38px;
     width: 50%;
     margin-left: 50px;
     bottom: 0px;
     cursor: pointer; }
-    .component-header-user .component-header-logo .user-logo-first {
-      color: #51C2C0; }
-    .component-header-user .component-header-logo .user-logo-second {
-      font-weight: bold;
-      padding-left: 10px; }
+    .component-header-user .component-header-logo .logo-link {
+      text-decoration: none;
+      color: white;
+      display: flex; }
+      .component-header-user .component-header-logo .logo-link .user-logo-first {
+        color: #51C2C0; }
+      .component-header-user .component-header-logo .logo-link .user-logo-second {
+        font-weight: bold;
+        padding-left: 10px; }
   .component-header-user .component-header-menu {
     width: 50%; }
     .component-header-user .component-header-menu .component-header-menu-ul {
@@ -533,6 +480,9 @@ se transforma en
         .component-header-user .component-header-menu .component-header-menu-ul .component-header-menu-li .component-header-menu-a {
           text-decoration: none;
           color: white; }
+      .component-header-user .component-header-menu .component-header-menu-ul .component-header-menu-li-name {
+        color: #51C2C0;
+        cursor: none; }
       .component-header-user .component-header-menu .component-header-menu-ul .component-header-menu-li-icon {
         color: #f24537; }
 
@@ -748,26 +698,31 @@ body {
           font-weight: bold;
           padding-left: 10px; }
 
+.App {
+  width: 100% !important; }
+
 .contenedorHome {
-  width: 100vw;
-  height: auto;
-  background-color: #1E2126;
-  display: flex;
-  flex-direction: column; }
+  position: relative;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #1E2126; }
   .contenedorHome #myVideo {
     all: unset;
     top: 5em;
     left: 0;
+    width: 100%;
     height: 82vh;
-    object-fit: cover;
-    z-index: 0; }
+    object-fit: cover; }
   .contenedorHome .content {
+    position: absolute;
     z-index: 1;
-    margin-top: 29em;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.2);
+    top: 710px;
     color: #f1f1f1;
-    padding: 20px; }
+    left: 100px;
+    font-size: 30px;
+    font-weight: 800;
+    text-align: center; }
     .contenedorHome .content #myBtn {
       width: 200px;
       font-size: 18px;
@@ -784,7 +739,10 @@ body {
   .contenedorHome .tituloDelGenero {
     color: #aaa9a3;
     margin: 1em;
-    height: 1em; }
+    height: 1em;
+    font-size: 26px;
+    font-family: "Questrial-Regular";
+    margin-left: 36px; }
   .contenedorHome .separador {
     border: 0.5px solid #3a3838;
     width: 70em;
@@ -815,7 +773,7 @@ body {
     overflow-x: auto; }
 
 .movie-profile-container {
-  margin-top: 32.5em;
+  margin-top: -15;
   width: 100%;
   height: 100%;
   display: flex;
@@ -840,8 +798,8 @@ body {
         font-family: "Questrial-Regular";
         color: #A4A4A4;
         margin-left: 96px;
-        margin-top: 24px;
-        font-size: 28px; }
+        font-size: 50px;
+        margin-top: -10px; }
       .movie-profile-container .movie-panel .data-movie .movie-rate {
         width: 100%;
         font-family: "Questrial-Regular";
@@ -859,7 +817,8 @@ body {
         height: 6em;
         justify-content: space-evenly;
         align-items: center;
-        margin: 1em; }
+        margin: 1em;
+        margin-top: -15px; }
         .movie-profile-container .movie-panel .data-movie .movie-rent .rent {
           width: 40%;
           height: 4em;
@@ -884,6 +843,15 @@ body {
         height: 15em;
         color: #A4A4A4;
         margin-left: 96px; }
+        .movie-profile-container .movie-panel .data-movie .overview .player-movie {
+          width: 800px;
+          height: 360px;
+          margin: 50px;
+          margin-top: -20px;
+          margin-left: -18px; }
+          .movie-profile-container .movie-panel .data-movie .overview .player-movie .player-movie-child {
+            width: 100%;
+            height: 100%; }
         .movie-profile-container .movie-panel .data-movie .overview .sinopsis {
           font-size: 28px; }
         .movie-profile-container .movie-panel .data-movie .overview .overviewSize {
@@ -897,8 +865,8 @@ body {
       justify-content: center;
       align-items: center; }
     .movie-profile-container .movie-panel .movie-poster img {
-      width: 40%;
-      height: 30%em; }
+      width: 45%;
+      height: 60%; }
   .movie-profile-container .show-video-movie {
     display: flex;
     margin-top: 20px;
@@ -932,6 +900,24 @@ body {
         width: 100%;
         height: 100%;
         overflow: hidden; }
+
+.contenedor-padre-series {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  flex-direction: column; }
+  .contenedor-padre-series .imagen-portada {
+    width: 100%;
+    height: 560px; }
+    .contenedor-padre-series .imagen-portada .portada {
+      width: 100%;
+      height: 100%; }
+  .contenedor-padre-series .portada-series {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; }
 
 /*RESPONSIVE DESIGN*/
 @media (min-width: 1440px) {

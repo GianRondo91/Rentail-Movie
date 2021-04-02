@@ -10,7 +10,6 @@ services:
           - MONGO_LOG_DIR=/dev/null
       volumes:
           - ./data/mongo:/data/db    
-
   mongoexpress:
           image: mongo-express
           depends_on:

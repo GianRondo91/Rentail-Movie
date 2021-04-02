@@ -17,7 +17,6 @@ class UserController{
 
     //Crear users
     async createNewUser(user){
-        
         user.password = await bcrypt.hash(user.password, 5)
         console.log(user)
         console.log(user.password)
@@ -37,8 +36,33 @@ class UserController{
             userId: user.id,
             tokenCreationDate: new Date,
         }
+        const token = jwt.sign(payload, secret);
+        return {token, user}
+    };
 
-        return {jwt:jwt.sign(payload, secret),user:user};
+    //Google Login
+    async googleLogin(googleInfo){
+        let user =  await User.findOne({email: googleInfo.email});
+
+        if(!user){
+            //creo el usuario
+            user = {
+                name: googleInfo.givenName,
+                surname: googleInfo.familyName,
+                email: googleInfo.email,
+                password: await bcrypt.hash(googleInfo.googleId, 5)
+            };
+            await User.create(user);
+        } else if(!await bcrypt.compare(googleInfo.googleId,user.password)){
+            throw new Error('Hay un usuario ya registrado con el email: ' + googleInfo.email);
+        }
+
+        const payload = {
+            userId: user.id,
+            tokenCreationDate: new Date,
+        }
+        const token = jwt.sign(payload, secret);
+        return {token, user}
     };
 
     //Mostrar un user por Id

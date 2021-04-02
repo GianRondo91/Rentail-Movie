@@ -1,5 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGoogle, faFacebookF } from '@fortawesome/free-brands-svg-icons';
 import { } from '@fortawesome/free-solid-svg-icons';
 import React, { useState } from "react";
 // import React, {useEffect, useState } from "react";
@@ -19,12 +17,10 @@ const Register = (props) => {
         password: "",
         phone: "",
         birthday: "",
-        adress: "",
+        address: "",
         country: "",
         city: "",
-        postal: "",
-        payment: "",
-
+        postal: ""
     });
 
     const [message, setMessage] = useState('');
@@ -52,13 +48,10 @@ const Register = (props) => {
             surname: user.surname,
             email: user.email,
             password: user.password,
-            phone: '555555555',
-            birthday: 'campo a rellenar',
-            adress: user.adress,
+            address: user.address,
             country: user.country,
             city: user.city,
-            postal: user.postal,
-            payment: "a completar despues"
+            postal: user.postal
         };
         console.log(userData);
 
@@ -100,7 +93,7 @@ const Register = (props) => {
                             <input name='surname' className="form-input form-input-register form-input-first-surname" onChange={handleState}></input>
 
                             <p className='form-label form-label-register form-label-second-surname'>Direccíon</p>
-                            <input name='adress' className="form-input form-input-register form-input-second-surname" onChange={handleState}></input>
+                            <input name='address' className="form-input form-input-register form-input-second-surname" onChange={handleState}></input>
                             <div className="city">
                                 <div className="city-options city-country">
                                     <p className='form-label form-label-register form-label-country'>Pais</p>
@@ -129,16 +122,6 @@ const Register = (props) => {
                         </div>
                         <div className="form-content-options form-content-options-register">
                             <p className='form-content-options-label form-content-options-label-register'>o Registrate con</p>
-                            <div className="buttons-login">
-                                <div className="button-login button-login-google">
-                                    <FontAwesomeIcon icon={faGoogle} className='button-login-icon' />
-                                    <em className='button-login-letter'>Google</em>
-                                </div>
-                                <div className="button-login button-login-facebook">
-                                    <FontAwesomeIcon icon={faFacebookF} className='button-login-icon' />
-                                    <em className='button-login-letter'>Facebook</em>
-                                </div>
-                            </div>
                             <div className="form-content-register form-content-register-change">
                                 <p className='register-question'>¿Ya tiene una cuenta? </p>
                                 <p className='register'><a href="/" className='register-link'> Ingresa ahora</a></p>
