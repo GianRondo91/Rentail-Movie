@@ -18,6 +18,7 @@ const Home = (props) => {
    const [favoritos, setFavoritos] = useState([]);
    const [movieSearch, setSearch] = useState([]);
    const [movieGenreSearch, setGenre] = useState([]);
+   const [searchQuery, setSearchQuery] = useState('');
 
    //Constuccion de URL consultas TMDB
    let key = "ef2edc9da61e81787a8079a7df721936";
@@ -26,19 +27,36 @@ const Home = (props) => {
    let urlSearch = `http://api.themoviedb.org/3/search/movie?`;
    let language = "language=es-ES";
 
+   const getGenreName = genre => {
+
+      switch (genre) {
+         case "28":
+            return "Acción";
+         default:
+            break;
+      }
+
+   };
+
    // https://api.themoviedb.org/3/search/movie?api_key=e34f732b92a2e7dbe69709d0433150c3&language=es&query=${query}
    //Buscar Pelis
    const search = async (query) => {
       let resultSearch = await axios.get(`${urlSearch}api_key=${key}&language=es&query=${query}`);
-      return setSearch(resultSearch.data.results)
+      setSearchQuery(query);
+      return setSearch(resultSearch.data.results);
    }
+
    //https://api.themoviedb.org/3/genre/movie/list?api_key=<<api_key>>&language=en-US
    //Busqueda por genero
    const searchGenre = async (genres) => {
+      console.log(genres);
       let genreFilms = await axios.get(`${urlGenre}discover/movie?api_key=${key}&${language}&with_genres=${genres}`);
-      console.log("pelis por genero",genreFilms);
+      console.log("peli por genero", genreFilms);
+      setSearchQuery(getGenreName(genres));
+      return setGenre(genreFilms.data.results);
+
    }
-   
+
    useEffect(() => {
       //Ultimas Peliculas
       let Latest = `${base_url}now_playing?api_key=${key}&${language}&page=1`;
@@ -99,13 +117,12 @@ const Home = (props) => {
       localStorage.setItem("favoritos", JSON.stringify(favoritos))
    }
 
-   if (movieSearch.length === 0) {
+   if (movieSearch.length === 0 && movieGenreSearch.length === 0) {
       return (
          <div className="contenedorHome">
             < Header onSearch={search} onGenre={searchGenre} />
             <video className='myVideo' autoPlay muted loop id="myVideo" src={video}></video>
             <div class="content">
-               <h1 className='h1'></h1>
                <p>AQUA-MAN</p>
                <button id="myBtn" onClick={GotoMovies}> Mas información </button>
             </div>
@@ -123,9 +140,9 @@ const Home = (props) => {
 
             <div className="separador"></div>
             <h2 className='tituloDelGenero'>Destacadas</h2>
-            <div className="destacado">
+            {/* <div className="destacado">
                {destacado.map(destacado => <Movie style='dos' key={destacado.id} {...destacado} addFavouriteMovie={addFavouriteMovie} onClick={() => takeMeTo(destacado)} />)}
-            </div>
+            </div> */}
             <div className="separador"></div>
             <h2 className='tituloDelGenero'>Recomendaciones</h2>
             <div className="recomendaciones">
@@ -138,15 +155,14 @@ const Home = (props) => {
    } else {
       return (
          <div className="contenedorHome">
-            < Header onSearch={search} onGenre={searchGenre}/>
+            < Header onSearch={search} onGenre={searchGenre} />
             <video className='myVideo' autoPlay muted loop id="myVideo" src={video}></video>
             <div class="content">
-               <h1 className='h1'></h1>
                <p>AQUA-MAN</p>
                <button id="myBtn" onClick={GotoMovies}> Mas información </button>
             </div>
             <div className="separador"></div>
-            <h2 className='search-title'>Resultado de la búsqueda</h2>
+            <h2 className='search-title'>Resultado de la búsqueda {searchQuery}</h2>
             <div className="search-array">
                {movieSearch.map(finded => <Movie style='uno' key={finded.id} addFavouriteMovie={addFavouriteMovie} {...finded} onClick={() => takeMeTo(finded)} />)}
             </div>
