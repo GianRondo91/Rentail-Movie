@@ -304,7 +304,6 @@ se transforma en
       text-align: center;
       color: #A9A9A9; }
     .form-content .form-content-options .buttons-login {
-      display: flex;
       align-items: center;
       margin-left: auto;
       margin-right: auto;
@@ -329,10 +328,8 @@ se transforma en
           padding-left: 16px; }
       .form-content .form-content-options .buttons-login .button-login-google {
         align-items: center;
-        display: flex; }
-      .form-content .form-content-options .buttons-login .button-login-facebook {
-        align-items: center;
-        display: flex; }
+        display: flex;
+        width: 80%; }
     .form-content .form-content-options .form-content-register {
       margin-top: 40px;
       display: flex;
@@ -357,7 +354,7 @@ se transforma en
   margin: 0px;
   height: auto; }
   .form-content-register .form-content-inputs-register .form-label-register {
-    margin-top: 10px; }
+    margin-top: 12px; }
   .form-content-register .form-content-inputs-register .city {
     width: 100%;
     display: flex;
@@ -367,7 +364,8 @@ se transforma en
   .form-content-register .form-content-inputs-register .form-password-register {
     margin-top: 0px; }
   .form-content-register .form-content-inputs-register .form-button-register {
-    margin-top: 32px; }
+    margin-top: 40px;
+    margin-bottom: 32px; }
 
 .form-content-register .form-content-options-register {
   margin-top: 20px; }
