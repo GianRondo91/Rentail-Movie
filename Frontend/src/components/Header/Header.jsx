@@ -77,7 +77,7 @@ const Header = (props) => {
             <option value="9648">Misterio</option>
             <option value="10749">Romance</option>
             <option value="878">Ciencia Ficcion</option>
-            <option value="53">Triler</option>
+            <option value="53">Thriller</option>
             <option value="10752">Bélica</option>
             <option value="37">Western</option>
           </select>

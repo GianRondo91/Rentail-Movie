@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import video from '../../video/videoplayback.mp4'
 
 const MovieProfile = (props) => {
-   const [rentFilm,setRentFilm] = useState(true)
+   const [rentFilm, setRentFilm] = useState(true)
    // let user = JSON.parse(localStorage.getItem('user'));
    // console.log(user._id);
 
@@ -52,45 +52,48 @@ const MovieProfile = (props) => {
          userId: props.user._id,
          filmId: dataMovie.id,
          film: dataMovie,
-         payment:true
+         payment: true
       }
 
-      
-       let response = await axios.post(endPointRent, rentData);
-       console.log("Soy la respuesta del aqluiler", response);
-       localStorage.setItem('rentInfo', JSON.stringify(response))
+
+      let response = await axios.post(endPointRent, rentData);
+      console.log("Soy la respuesta del aqluiler", response);
+      localStorage.setItem('rentInfo', JSON.stringify(response))
       setRentFilm(false)
    }
-      
+
    // let DatosRent = JSON.parse(localStorage.getItem('rentInfo'));
-   
-   let NotRented=<div className="rent" onClick={() => Alquilar()}>Alquilar <br />4.99€</div>
-   let Rented=<div className="rent" >Estas Viendo <br /></div>
+
+   let NotRented = <div className="rent" onClick={() => Alquilar()}>Alquilar <br />4.99€</div>
+   let Rented = <div className="rent" >Estas Viendo <br /></div>
    let Player = <div className='player-movie'>
       <video className='player-movie-child' src={video} controls autoPlay muted loop></video>
    </div>
 
-   if(rentFilm==false){
+   if (rentFilm == false) {
       return (
          <div className='movie-profile-container'>
             <Header />
             <div className="movie-panel">
                <div className="data-movie">
                   <div className="movie-title">{dataMovie.title}</div>
-                  
+
                   <div className="movie-rent">
                      {Rented}
                      <div className="mas-recomendaciones" onClick={() => goto()}> Ver Mas Recomendaciónes </div>
                   </div>
                   <div className="overview">
-                     {Player}
+                     <ReactPlayer
+                        url={trailer}
+                        controls
+                     />
                   </div>
                </div>
                <div className="movie-poster">
                   <img src={link + dataMovie.poster_path} alt={dataMovie.tite} />
                </div>
             </div>
-            
+
          </div>
       )
    } else {
@@ -107,29 +110,32 @@ const MovieProfile = (props) => {
                   </div>
                   <div className="overview">
                      <h3 className='sinopsis'>Sinopsis:</h3>
-                     <p className='overviewSize'>{dataMovie.overview}</p></div>
+                     <p className='overviewSize'>{dataMovie.overview}</p>
+                  </div>
+                  <div className="show-video-movie">
+                     <div className="multimedia">
+                        <ReactPlayer
+                           url={trailer}
+                           controls
+                        />
+                     </div>
+                  </div>
+
                </div>
                <div className="movie-poster">
                   <img src={link + dataMovie.poster_path} alt={dataMovie.tite} />
                </div>
             </div>
-            <div className="show-video-movie">
-               <div className="multimedia">
-                  <ReactPlayer
-                     url={trailer}
-                     controls
-                  />
-               </div>
-            </div>
+
          </div>
       )
    }
 }
 
-const mapStateToProps =state =>{
-   return{
-     user : state.user,
-     token : state.token
+const mapStateToProps = state => {
+   return {
+      user: state.user,
+      token: state.token
    }
- }
+}
 export default connect(mapStateToProps)(MovieProfile);
