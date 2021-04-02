@@ -17,8 +17,10 @@
                 }
             }
             .header-menu-li-name{
-                color: nth($fontColor, 3);
-                cursor: none !important;
+                .header-menu-a-name{
+                  color: nth($fontColor, 3);
+                  text-decoration: none;
+                }
             }
         }
     }

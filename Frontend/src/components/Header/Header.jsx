@@ -50,7 +50,7 @@ const Header = (props) => {
           <li className="component-header-menu-li  header-menu-li"><input className="search" name="query" type="text" onKeyUp={search} onChange={handleStateSearch} /></li>
           <li className="component-header-menu-li  header-menu-li"><a href="/series" className='component-header-menu-a' >Series</a></li>
           <li className="component-header-menu-li header-menu-li"><a href="/profile" className='component-header-menu-a header-menu-a'>Favoritos</a></li>
-          <li className="component-header-menu-li  header-menu-li header-menu-li-name">{props.user?.name}</li>
+          <li className="component-header-menu-li  header-menu-li header-menu-li-name"><a href="/profile/data" className='header-menu-a-name'>{props.user?.name}</a></li>
           <li className="component-header-menu-li  header-menu-li component-header-menu-li-icon" onClick={() => logout()}> <FontAwesomeIcon icon={faUserTimes} /></li>
         </ul>
       </div>

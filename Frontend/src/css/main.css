@@ -238,9 +238,9 @@ se transforma en
     margin-right: 29px;
     outline: none;
     border: none; }
-  .header-movies .header-menu-movies .header-menu-ul .header-menu-li-name {
+  .header-movies .header-menu-movies .header-menu-ul .header-menu-li-name .header-menu-a-name {
     color: #51C2C0;
-    cursor: none !important; }
+    text-decoration: none; }
 
 .form-content {
   height: 80%;

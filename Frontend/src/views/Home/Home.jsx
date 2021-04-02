@@ -6,6 +6,7 @@ import { useHistory } from 'react-router-dom';
 import Footer from '../../components/Footer/Footer.jsx';
 import { } from '@fortawesome/free-solid-svg-icons';
 import axios from "axios";
+import { connect } from 'react-redux';
 
 
 const Home = (props) => {
@@ -66,9 +67,13 @@ const Home = (props) => {
          });
    }, []);
 
-
-   //Functions:
    let history = useHistory();
+
+   if (!props.token) {
+      history.push('/');
+      return null;
+   };
+   //Functions:
 
    const takeMeTo = (movie) => {
       localStorage.setItem('movie', JSON.stringify(movie));
@@ -122,5 +127,10 @@ const Home = (props) => {
       </div>
    );
 };
-
-export default Home;
+const mapStateToProps =state =>{
+   return{
+     user : state.user,
+     token : state.token
+   }
+ };
+export default connect(mapStateToProps)(Home);
