@@ -22,7 +22,7 @@ const Login = (props) => {
         let response = await axios.post('http://localhost:3002/users/google/login', googleResponse.profileObj);
         props.dispatch({ type: LOGIN, payload: response.data.jwt });
 
-
+        console.log("soy el google", googleResponse);
 
         if (response.status === 200) {
             setTimeout(() => {
