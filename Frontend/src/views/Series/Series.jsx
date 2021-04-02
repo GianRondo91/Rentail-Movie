@@ -3,7 +3,7 @@ import Movie from '../../components/Movie/Movie';
 //import video from '../../video/videoplayback.mp4';
 import Header from '../../components/Header/Header';
 import { useHistory } from 'react-router-dom';
-import Footer from '../../components/Footer/Footer.jsx';
+import { connect } from 'react-redux';
 import { } from '@fortawesome/free-solid-svg-icons';
 import casaDePapel from '../../img/casa02.jpg';
 //import HeaderUser from '../../components/User/Header-user/Header-user';
@@ -78,5 +78,10 @@ const Series = (props) => {
    )
 
 }
-
-export default Series;
+const mapStateToProps =state =>{
+   return{
+     user : state.user,
+     token : state.token
+   }
+ };
+export default connect(mapStateToProps)(Series);

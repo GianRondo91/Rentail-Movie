@@ -737,6 +737,20 @@ body {
     .contenedorHome .content #myBtn:hover {
       background: #ddd;
       color: black; }
+  .contenedorHome .search-title {
+    color: #aaa9a3;
+    margin: 1em;
+    height: 1em;
+    font-size: 26px;
+    font-family: "Questrial-Regular";
+    margin-left: 36px; }
+  .contenedorHome .search-array {
+    margin-left: 1.5em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-x: auto; }
   .contenedorHome .tituloDelGenero {
     color: #aaa9a3;
     margin: 1em;
