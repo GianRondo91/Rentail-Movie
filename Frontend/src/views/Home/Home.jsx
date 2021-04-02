@@ -24,7 +24,6 @@ const Home = (props) => {
    let urlGenre = `http://api.themoviedb.org/3/`
    let base_url = `http://api.themoviedb.org/3/movie/`;
    let urlSearch = `http://api.themoviedb.org/3/search/movie?`;
-   
    let language = "language=es-ES";
 
    // https://api.themoviedb.org/3/search/movie?api_key=e34f732b92a2e7dbe69709d0433150c3&language=es&query=${query}
@@ -33,10 +32,11 @@ const Home = (props) => {
       let resultSearch = await axios.get(`${urlSearch}api_key=${key}&language=es&query=${query}`);
       return setSearch(resultSearch.data.results)
    }
+   //https://api.themoviedb.org/3/genre/movie/list?api_key=<<api_key>>&language=en-US
    //Busqueda por genero
    const searchGenre = async (genres) => {
       let genreFilms = await axios.get(`${urlGenre}discover/movie?api_key=${key}&${language}&with_genres=${genres}`);
-      console.log("pelis por genero",genreFilms)
+      console.log("pelis por genero",genreFilms);
    }
    
    useEffect(() => {
@@ -45,7 +45,6 @@ const Home = (props) => {
       let destacado = `${base_url}now_playing?api_key=${key}&${language}&page=2`;
       let populares = `${base_url}popular?api_key=${key}&${language}`;
       let recomendaciones = `${base_url}top_rated?api_key=${key}&${language}`;
-
 
       //Populares
       fetch(populares)
@@ -81,8 +80,8 @@ const Home = (props) => {
       history.push('/');
       return null;
    };
-   //Functions:
 
+   //Functions:
    const takeMeTo = (movie) => {
       localStorage.setItem('movie', JSON.stringify(movie));
       let LittleJson = JSON.parse(localStorage.getItem('movie'));
@@ -103,7 +102,7 @@ const Home = (props) => {
    if (movieSearch.length === 0) {
       return (
          <div className="contenedorHome">
-            < Header onSearch={search, searchGenre} />
+            < Header onSearch={search} onGenre={searchGenre} />
             <video className='myVideo' autoPlay muted loop id="myVideo" src={video}></video>
             <div class="content">
                <h1 className='h1'></h1>
@@ -139,7 +138,7 @@ const Home = (props) => {
    } else {
       return (
          <div className="contenedorHome">
-            < Header onSearch={search,searchGenre} />
+            < Header onSearch={search} onGenre={searchGenre}/>
             <video className='myVideo' autoPlay muted loop id="myVideo" src={video}></video>
             <div class="content">
                <h1 className='h1'></h1>
