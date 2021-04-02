@@ -447,7 +447,7 @@ se transforma en
   width: 1400px;
   margin-left: auto;
   margin-right: auto;
-  height: 80px;
+  height: 120px;
   display: flex;
   color: white;
   position: relative; }
@@ -473,7 +473,7 @@ se transforma en
       display: flex;
       position: absolute;
       right: 50px;
-      bottom: 0px;
+      bottom: -50px;
       font-size: 22px; }
       .component-header-user .component-header-menu .component-header-menu-ul .component-header-menu-li {
         margin-right: 24px;
@@ -486,6 +486,12 @@ se transforma en
         cursor: none; }
       .component-header-user .component-header-menu .component-header-menu-ul .component-header-menu-li-icon {
         color: #f24537; }
+      .component-header-user .component-header-menu .component-header-menu-ul .component-header-menu-li-img {
+        bottom: 52px;
+        position: relative; }
+        .component-header-user .component-header-menu .component-header-menu-ul .component-header-menu-li-img .img-user {
+          width: 80px;
+          border-radius: 50%; }
 
 .data-user {
   color: white;

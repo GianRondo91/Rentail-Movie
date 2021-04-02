@@ -36,6 +36,13 @@ const Header = (props) => {
     }
   }
 
+  const getUserImage = () => {
+    if (props.user.image) {
+      return <li className="component-header-menu-li component-header-menu-li-img"><a href="/profile/data" className='header-menu-a-name'><img src={props.user.image} alt="" className='img-user'/></a></li>;
+    }
+    return <li className="component-header-menu-li  header-menu-li header-menu-li-name"><a href="/profile/data" className='header-menu-a-name'>{props.user?.name}</a></li>;
+  };
+
   return (
     <div className='component-header-user header-movies'>
       <div className="component-header-logo header-logo">
@@ -50,7 +57,7 @@ const Header = (props) => {
           <li className="component-header-menu-li  header-menu-li"><input className="search" name="query" type="text" onKeyUp={search} onChange={handleStateSearch} /></li>
           <li className="component-header-menu-li  header-menu-li"><a href="/series" className='component-header-menu-a' >Series</a></li>
           <li className="component-header-menu-li header-menu-li"><a href="/profile" className='component-header-menu-a header-menu-a'>Favoritos</a></li>
-          <li className="component-header-menu-li  header-menu-li header-menu-li-name"><a href="/profile/data" className='header-menu-a-name'>{props.user?.name}</a></li>
+          {getUserImage()}
           <li className="component-header-menu-li  header-menu-li component-header-menu-li-icon" onClick={() => logout()}> <FontAwesomeIcon icon={faUserTimes} /></li>
         </ul>
       </div>

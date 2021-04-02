@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import HeaderUser from '../../components/User/Header-user/Header-user';
 import { useHistory } from 'react-router-dom';
-
+import { connect } from 'react-redux';
 
 const Profile = (props) => {
     let FirstPartOfLinkImage = 'https://image.tmdb.org/t/p/original';
@@ -46,5 +46,10 @@ const Profile = (props) => {
         </div>
     )
 }
-
-export default Profile;
+const mapStateToProps = state => {
+    return {
+      user: state.user,
+      token: state.token
+    }
+  };
+  export default connect(mapStateToProps)(Profile);
