@@ -12,13 +12,20 @@ const HeaderUser = (props) => {
     const logout = () => {
         let confirmar = window.confirm('¿Seguro que quires salir de tu perfil?');
         if (confirmar) {
-        setTimeout(() => {
-            props.dispatch({type: LOGOUT, payload: {}});
-            history.push('/');
-        }, 1000);
+            setTimeout(() => {
+                props.dispatch({ type: LOGOUT, payload: {} });
+                history.push('/');
+            }, 1000);
         };
     };
-    
+
+    const getUserImage = () => {
+        if(props.user.image){
+            return  <li className="component-header-menu-li component-header-menu-li-img"><img src={props.user.image} alt="" className='img-user'/></li>;
+        }
+        return  <li className="component-header-menu-li component-header-menu-li-name"> {props.user?.name}</li>;
+    };
+
     return (
         <div className='component-header-user cell-2'>
             <div className="component-header-logo">
@@ -31,7 +38,8 @@ const HeaderUser = (props) => {
                 <ul className="component-header-menu-ul">
                     <li className="component-header-menu-li"><a href="/profile/data" className='component-header-menu-a'>Mis datos</a></li>
                     <li className="component-header-menu-li"><a href="/profile" className='component-header-menu-a'>Favoritos</a></li>
-                    <li className="component-header-menu-li component-header-menu-li-name"> {props.user?.name}</li>
+                    {/*  */}
+                    {getUserImage()}
                     <li className="component-header-menu-li component-header-menu-li-icon" onClick={() => logout()}> <FontAwesomeIcon icon={faUserTimes} /></li>
                     {/* Probar que funciones correctamente el logout*/}
                 </ul>
@@ -39,10 +47,10 @@ const HeaderUser = (props) => {
         </div>
     );
 }
-const mapStateToProps =state =>{
-    return{
-      user : state.user,
-      token : state.token
+const mapStateToProps = state => {
+    return {
+        user: state.user,
+        token: state.token
     }
-  };
+};
 export default connect(mapStateToProps)(HeaderUser);

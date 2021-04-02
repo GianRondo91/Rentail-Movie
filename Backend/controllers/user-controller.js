@@ -50,6 +50,7 @@ class UserController{
                 name: googleInfo.givenName,
                 surname: googleInfo.familyName,
                 email: googleInfo.email,
+                image: googleInfo.imageUrl,
                 password: await bcrypt.hash(googleInfo.googleId, 5)
             };
             await User.create(user);

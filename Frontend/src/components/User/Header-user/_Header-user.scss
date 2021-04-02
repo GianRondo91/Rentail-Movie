@@ -3,7 +3,7 @@
     width: $q-xl - $mp-k;
     margin-left: auto;
     margin-right: auto;
-    height: $mp-n;
+    height: 120px;
     display: flex;
     color: nth($principal-color, 1);
     position: relative;
@@ -26,7 +26,6 @@
                 padding-left: $mp-e;
             }
         }
-        
     }
     .component-header-menu{
         width: $per-5;
@@ -34,7 +33,7 @@
             display: flex;
             position: absolute;
             right: $size-u;
-            bottom: $mp-0;
+            bottom: -50px;
             font-size: $size-l;
             .component-header-menu-li{
                 margin-right: $mp-i;
@@ -50,6 +49,14 @@
             }
             .component-header-menu-li-icon{
                 color: nth($btnRed, 1);
+            }
+            .component-header-menu-li-img{
+                bottom: 52px;
+                position: relative;
+                .img-user{
+                    width: 80px;
+                    border-radius: 50%;
+                }
             }
         }
     }

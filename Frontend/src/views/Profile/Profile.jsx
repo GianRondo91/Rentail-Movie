@@ -46,6 +46,7 @@ const Profile = (props) => {
         </div>
     )
 }
+<<<<<<< HEAD
 const mapStateToProps =state =>{
     return{
       user : state.user,
@@ -53,3 +54,12 @@ const mapStateToProps =state =>{
     }
   };
 export default connect(mapStateToProps)(Profile);
+=======
+const mapStateToProps = state => {
+    return {
+      user: state.user,
+      token: state.token
+    }
+  };
+  export default connect(mapStateToProps)(Profile);
+>>>>>>> a32f610cb1f5095fbe6e1103e47b3323a69f32aa
