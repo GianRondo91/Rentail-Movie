@@ -30,8 +30,12 @@ const Profile =()=>{
         <div className='component-profile'>
             <HeaderUser/>
             <div>
-            <h3>MIS FAVORITOS</h3>
-            {favouritesMovies.map(fav => <div className='favourites-container'><h5>{fav.title}</h5><img className='favourites-img' alt={fav.title} src={FirstPartOfLinkImage+fav.posther_path}/></div>)}
+                <div className='spacer'></div>
+                <h3>MIS FAVORITOS</h3>
+                <div className='spacer'></div>
+                <div className='movie-fav-container'>
+                    {favouritesMovies.map(fav => <div className='favourites-container'><h5>{fav.title}</h5><img className='favourites-img' alt={fav.title} src={FirstPartOfLinkImage+fav.posther_path}/></div>)}
+                </div>
             </div>
         </div>
     )

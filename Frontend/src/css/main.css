@@ -916,16 +916,22 @@ body {
   display: flex;
   flex-direction: column;
   color: white; }
-  .component-profile .favourites-container {
+  .component-profile .spacer {
+    height: 1em; }
+  .component-profile .movie-fav-container {
     display: flex;
-    flex-direction: column;
-    width: 8em;
-    height: 13em;
-    color: white; }
-    .component-profile .favourites-container .favourites-img {
-      width: 100%;
-      height: 100%;
-      overflow: hidden; }
+    flex-direction: row; }
+    .component-profile .movie-fav-container .favourites-container {
+      display: flex;
+      flex-direction: column;
+      width: 10em;
+      height: 15em;
+      color: white;
+      margin-left: 1em; }
+      .component-profile .movie-fav-container .favourites-container .favourites-img {
+        width: 100%;
+        height: 100%;
+        overflow: hidden; }
 
 /*RESPONSIVE DESIGN*/
 @media (min-width: 1440px) {
