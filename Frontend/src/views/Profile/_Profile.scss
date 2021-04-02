@@ -1,0 +1,40 @@
+
+.component-profile{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-family: $font-Questrial-Regular;
+    .content-favourites{
+        margin-top: 50px;
+        width: 1440px;
+        margin-left: auto;
+        margin-right: auto;
+        .content-favourites-title{
+            font-size: 26px;
+            margin-left: 36px;
+        }
+        .content-favourites-container{
+            display: flex;
+            flex-direction: row;
+            margin-left: 20px;
+            margin-top: 30px;
+            .favourite-container{
+                display: flex;
+                flex-direction: column;
+                width: 10em;
+                height: 15em;
+                color: white;
+                margin-left: 1em;
+                .title-movie{
+                    text-align: center;
+                }
+                .favourite-img{
+                    width: $per-10;
+                    height: $per-10;
+                    overflow: hidden;
+                    margin-top: 10px;
+                }
+            } 
+        }
+    }
+}

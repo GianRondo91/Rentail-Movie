@@ -93,7 +93,7 @@ const Data = (props) => {
                         <div className="country-city-cp">
                             <div className="country-city-cp-style">
                                 <label htmlFor="" className='form-update-data-label'>País</label>
-                                <input type="country" name="country" className='form-update-data-input'  value={user.country} onChange={handleState}/>
+                                <input type="country" name="country" className='form-update-data-input' value={user.country} onChange={handleState}/>
                             </div>
                             <div className="country-city-cp-style">
                                 <label htmlFor="" className='form-update-data-label'>Provincia</label>

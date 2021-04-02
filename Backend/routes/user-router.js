@@ -45,6 +45,17 @@ router.post('/login',async (req, res) => {
     }
 });
 
+//Google login
+router.post('/google/login',async (req, res) => {   
+    try{
+        const jwt = await userController.googleLogin(req.body);
+        res.json({jwt});
+    } catch (error) {
+        return res.status(401).json({
+            message: error.message
+        });
+    }
+});
 
 //Traer un user por Id
 router.get("/:id", async (req, res)=>{

@@ -18,6 +18,7 @@ const HeaderUser = (props) => {
         }, 1000);
         };
     };
+    
     return (
         <div className='component-header-user cell-2'>
             <div className="component-header-logo">

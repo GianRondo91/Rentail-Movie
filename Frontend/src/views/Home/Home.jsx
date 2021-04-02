@@ -14,6 +14,7 @@ const Home = (props) => {
    const [populares, setPopulares] = useState([]);
    const [recomendaciones, setRecomendaciones] = useState([]);
    const [favoritos, setFavoritos] = useState([]);
+   
 
    //Constuccion de URL consultas TMDB
    let key = "ef2edc9da61e81787a8079a7df721936";
@@ -54,7 +55,8 @@ const Home = (props) => {
             setRecomendaciones(data.results);
          });
    }, []);
-
+   
+   
    //Functions:
 
    let history = useHistory();
@@ -70,11 +72,13 @@ const Home = (props) => {
       history.push('/peliculas')
    };
 
-   const addFavouriteMovie = (id) => {
-      const listaFavoritos = [...favoritos, id]
+   const addFavouriteMovie = (id,title,posther_path) => {
+      const listaFavoritos = [...favoritos, {id,title,posther_path}]
       setFavoritos(listaFavoritos)
-      localStorage.setItem("favoritos", favoritos)
-   };
+      localStorage.setItem("favoritos", JSON.stringify(favoritos))
+   }
+
+ 
 
    return (
       <div className="contenedorHome">

@@ -56,7 +56,6 @@
                 color: nth($grey, 3);
             }
             .buttons-login {
-                display: flex;
                 align-items: center;
                 margin-left: auto;
                 margin-right: auto;
@@ -73,10 +72,7 @@
                 .button-login-google {
                     align-items: center;
                     display: flex;
-                }
-                .button-login-facebook {
-                    align-items: center;
-                    display: flex;
+                    width: $per-8;
                 }
             }
             .form-content-register {

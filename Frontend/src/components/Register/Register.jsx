@@ -1,5 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGoogle, faFacebookF } from '@fortawesome/free-brands-svg-icons';
 import { } from '@fortawesome/free-solid-svg-icons';
 import React, { useState } from "react";
 // import React, {useEffect, useState } from "react";
@@ -124,16 +122,6 @@ const Register = (props) => {
                         </div>
                         <div className="form-content-options form-content-options-register">
                             <p className='form-content-options-label form-content-options-label-register'>o Registrate con</p>
-                            <div className="buttons-login">
-                                <div className="button-login button-login-google">
-                                    <FontAwesomeIcon icon={faGoogle} className='button-login-icon' />
-                                    <em className='button-login-letter'>Google</em>
-                                </div>
-                                <div className="button-login button-login-facebook">
-                                    <FontAwesomeIcon icon={faFacebookF} className='button-login-icon' />
-                                    <em className='button-login-letter'>Facebook</em>
-                                </div>
-                            </div>
                             <div className="form-content-register form-content-register-change">
                                 <p className='register-question'>¿Ya tiene una cuenta? </p>
                                 <p className='register'><a href="/" className='register-link'> Ingresa ahora</a></p>
