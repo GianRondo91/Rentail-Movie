@@ -11,7 +11,7 @@ const Header = (props) => {
 
   let history = useHistory();
   const [query, setSearch] = useState("");
-  console.log("soy el query", query.query);
+  const [genrevalue, setGenre] = useState ("")
 
   const logout = () => {
     let confirmar = window.confirm('¿Seguro que quires salir de tu perfil?');
@@ -28,12 +28,19 @@ const Header = (props) => {
     setSearch({ ...query, [e.target.name]: e.target.value })
     console.log("soy el search del handler", query)
   }
+  const handleStateGenre = (e) => {
+    setGenre({ ...genrevalue, [e.target.name]: e.target.value })
+    console.log("soy el search del handler", genrevalue.genres)
+  }
 
   //Llama al callback onSearch
   const search = async (evt) => {
     if (evt.key === 'Enter') {
       props.onSearch(query.query);
     }
+  }
+  const genreSearch = async ()=>{
+    props.onSearch(genrevalue.genres)
   }
 
   const getUserImage = () => {
@@ -55,6 +62,33 @@ const Header = (props) => {
       <div className="component-header-menu header-menu-movies">
         <ul className="component-header-menu-ul header-menu-ul">
           <li className="component-header-menu-li  header-menu-li"><input className="search" name="query" type="text" onKeyUp={search} onChange={handleStateSearch} /></li>
+          <li onChange={handleStateGenre}>
+          <select name ="genres"  onSelect={genreSearch}>
+            <option value="0">Elige Género</option>
+            <option value="28">Acción</option>
+            <option value="12">Aventura</option>
+            <option value="16">Animacion</option>
+            <option value="35">Comedia</option>
+            <option value="80">Crimen</option>
+            <option value="99">Documental</option>
+            <option value="18">Drama</option>
+            <option value="10751">Familia</option>
+            <option value="14">Fantasía</option>
+            <option value="36">Historia</option>
+            <option value="27">Terror</option>
+            <option value="10402">Musica</option>
+            <option value="9648">Misterio</option>
+            <option value="10749">Romance</option>
+            <option value="878">Ciencia Ficcion</option>
+            <option value="53">Triler</option>
+            <option value="10752">Bélica</option>
+            <option value="37">Western</option>
+          </select>
+
+
+        
+    
+          </li>
           <li className="component-header-menu-li  header-menu-li"><a href="/series" className='component-header-menu-a' >Series</a></li>
           <li className="component-header-menu-li header-menu-li"><a href="/profile" className='component-header-menu-a header-menu-a'>Favoritos</a></li>
           {getUserImage()}
