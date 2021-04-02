@@ -28,8 +28,8 @@ const Home = (props) => {
    let urlGenre = `http://api.themoviedb.org/3/`
    let base_url = `http://api.themoviedb.org/3/movie/`;
    let urlSearch = `http://api.themoviedb.org/3/search/movie?`;
-
    let language = "language=es-ES";
+
 
    // https://api.themoviedb.org/3/search/movie?api_key=e34f732b92a2e7dbe69709d0433150c3&language=es&query=${query}
    //Buscar Pelis
@@ -38,6 +38,8 @@ const Home = (props) => {
       setSearchQuery(query);
       return setSearch(resultSearch.data.results);
    }
+
+   //https://api.themoviedb.org/3/genre/movie/list?api_key=<<api_key>>&language=en-US
    //Busqueda por genero
    const searchGenre = async (genres) => {
       let genreFilms = await axios.get(`${urlGenre}discover/movie?api_key=${key}&${language}&with_genres=${genres}`);
@@ -99,7 +101,6 @@ const Home = (props) => {
       let populares = `${base_url}popular?api_key=${key}&${language}`;
       let recomendaciones = `${base_url}top_rated?api_key=${key}&${language}`;
 
-
       //Populares
       fetch(populares)
          .then(res => (res.json()))
@@ -134,8 +135,8 @@ const Home = (props) => {
       history.push('/');
       return null;
    };
-   //Functions:
 
+   //Functions:
    const takeMeTo = (movie) => {
       localStorage.setItem('movie', JSON.stringify(movie));
       let LittleJson = JSON.parse(localStorage.getItem('movie'));
@@ -159,7 +160,6 @@ const Home = (props) => {
             < Header onSearch={search} onGenre={searchGenre} />
             <video className='myVideo' autoPlay muted loop id="myVideo" src={video}></video>
             <div class="content">
-               <h1 className='h1'></h1>
                <p>AQUA-MAN</p>
                <button id="myBtn" onClick={GotoMovies}> Mas información </button>
             </div>
@@ -195,7 +195,6 @@ const Home = (props) => {
             < Header onSearch={search} onGenre={searchGenre} />
             <video className='myVideo' autoPlay muted loop id="myVideo" src={video}></video>
             <div class="content">
-               <h1 className='h1'></h1>
                <p>AQUA-MAN</p>
                <button id="myBtn" onClick={GotoMovies}> Mas información </button>
             </div>
@@ -205,7 +204,7 @@ const Home = (props) => {
                {movieGenreSearch.map(genre => <Movie style='uno' key={genre.id} addFavouriteMovie={addFavouriteMovie} {...genre} onClick={() => takeMeTo(genre)} />)}
             </div>
             <div className="separador"></div>
-            <h2 className='search-title'>Resultado de la búsqueda {searchQuery} </h2>
+            <h2 className='search-title'>Resultado de la búsqueda {searchQuery}</h2>
             <div className="search-array">
                {movieSearch.map(finded => <Movie style='uno' key={finded.id} addFavouriteMovie={addFavouriteMovie} {...finded} onClick={() => takeMeTo(finded)} />)}
             </div>

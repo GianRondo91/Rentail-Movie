@@ -10,6 +10,12 @@
         margin-left: auto;
         margin-right: auto;
     }
+    .contenedorHome{
+        .content{
+            position: absolute;
+            top: 600px !important;
+        }
+    }
 }
 
 @media (min-width: $q-l + $size-a) and (max-width: $q-xl - $size-a){
@@ -32,6 +38,15 @@
            width: $mp-z;
         }
     }
+    .contenedorHome{
+        #myVideo{
+            height: 800px !important;
+        }
+        .content{
+            position: absolute;
+            top: 510px !important;
+        }
+    }
 }
 @media all and (min-width: $q-m + $size-a) and (max-width: $q-l) {
     #content {
@@ -45,6 +60,20 @@
         }
         .content-right {
             width: $per-5;
+        }
+    }
+    .contenedorHome{
+        width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+        .header-movies{
+            height: 142px;
+            .header-logo{
+                bottom: 45px;
+            }
+        }
+        .separador{
+            width: 80%;
         }
     }
     /*Data-user*/
@@ -78,6 +107,11 @@
             margin-right: auto;
             margin-left: auto;
         }
+    }
+    .contenedorHome{
+        width: 1215px;
+        margin-left: auto;
+        margin-right: auto;
     }
     /*Data-user*/
     .component-profile{
