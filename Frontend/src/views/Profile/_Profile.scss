@@ -21,10 +21,10 @@
             .favourite-container{
                 display: flex;
                 flex-direction: column;
-                width: 10em;
-                height: 15em;
+                width: $em-k;
+                height: $em-p;
                 color: white;
-                margin-left: 1em;
+                margin-left: $em-a;
                 .title-movie{
                     text-align: center;
                 }
