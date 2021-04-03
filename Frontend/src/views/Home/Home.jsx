@@ -40,7 +40,6 @@ const Home = (props) => {
       setSearchQuery(query);
       return setSearch(resultSearch.data.results);
    }
-
    //https://api.themoviedb.org/3/genre/movie/list?api_key=<<api_key>>&language=en-US
    //Busqueda por genero
    const searchGenre = async (genres) => {
@@ -173,10 +172,10 @@ const Home = (props) => {
       }
    }
 
-   if (movieSearch.length === 0 && movieGenreSearch.length === 0) {
+   if (movieSearch.length === 0 && movieGenreSearch.length===0) {
       return (
          <div className="contenedorHome">
-            < Header onSearch={search} onGenre={searchGenre} />
+            < Header onSearch={search} onGenre={searchGenre}/>
             <video className='myVideo' autoPlay muted loop id="myVideo" src={video}></video>
             <div class="content">
                <p>AQUA-MAN</p>
@@ -211,7 +210,7 @@ const Home = (props) => {
    } else {
       return (
          <div className="contenedorHome">
-            < Header onSearch={search} onGenre={searchGenre} />
+            < Header onSearch={search} onGenre={searchGenre}/>
             <video className='myVideo' autoPlay muted loop id="myVideo" src={video}></video>
             <div class="content">
                <p>AQUA-MAN</p>
