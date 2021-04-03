@@ -28,7 +28,15 @@ const Profile = (props) => {
         setFavouritesMovies(allFavourites)
         console.log(favouritesMovies)
     }
-
+    
+    const deleteItem = (id) => {
+        const newFavouriteList = favouritesMovies.filter(
+            (favouriteMovie) => favouriteMovie.id !== id
+        );
+        console.log("dsd")
+        setFavouritesMovies(newFavouriteList);
+        localStorage.setItem("favoritos", JSON.stringify(newFavouriteList)) 
+    }
 
 
     return (
@@ -40,7 +48,8 @@ const Profile = (props) => {
                 <h3 className='content-favourites-title'>MIS FAVORITOS</h3>
 
                 <div className='content-favourites-container'>
-                    {favouritesMovies.map(fav => <div className='favourite-container'><h5 className='title-movie'>{fav.title}</h5><img className='favourite-img' alt={fav.title} src={FirstPartOfLinkImage + fav.posther_path} /></div>)}
+                    {favouritesMovies.map(fav => <div className='favourite-container'><h5 className='title-movie'>{fav.title}</h5><img className='favourite-img' alt={fav.title} src={FirstPartOfLinkImage+fav.posther_path}/><button onClick={() => deleteItem(fav.id)}>x</button></div>)}
+                    
                 </div>
             </div>
         </div>

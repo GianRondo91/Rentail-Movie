@@ -5,6 +5,7 @@ import Header from '../../components/Header/Header';
 import { useHistory } from 'react-router-dom';
 import Footer from '../../components/Footer/Footer.jsx';
 import { } from '@fortawesome/free-solid-svg-icons';
+import AddFavourite from '../../components/Add-fav/AddFavourite';
 import axios from "axios";
 import { connect } from 'react-redux';
 
@@ -15,7 +16,8 @@ const Home = (props) => {
    const [destacado, setDestacado] = useState([]);
    const [populares, setPopulares] = useState([]);
    const [recomendaciones, setRecomendaciones] = useState([]);
-   const [favoritos, setFavoritos] = useState([]);
+   const [favoritos, setFavoritos] = useState([""]);
+   /* const [favoritos, setFavoritos] = useState([]); */
    const [movieSearch, setSearch] = useState([]);
    const [movieGenreSearch, setGenre] = useState([]);
    const [searchQuery, setSearchQuery] = useState("");
@@ -101,6 +103,7 @@ const Home = (props) => {
       let populares = `${base_url}popular?api_key=${key}&${language}`;
       let recomendaciones = `${base_url}top_rated?api_key=${key}&${language}`;
 
+      getFavouriteMovies()
       //Populares
       fetch(populares)
          .then(res => (res.json()))
@@ -148,10 +151,22 @@ const Home = (props) => {
       history.push('/peliculas')
    };
 
-   const addFavouriteMovie = (id, title, posther_path) => {
-      const listaFavoritos = [...favoritos, { id, title, posther_path }]
-      setFavoritos(listaFavoritos)
-      localStorage.setItem("favoritos", JSON.stringify(favoritos))
+   const getFavouriteMovies = () =>{
+      let allFavourites = JSON.parse(localStorage.getItem('favoritos'));
+      setFavoritos(allFavourites)
+   }
+
+   const addFavouriteMovie = (id,title,posther_path) => {
+      if(favoritos === null){
+         const listaFavoritos = [{id,title,posther_path}]
+         setFavoritos(listaFavoritos)
+         localStorage.setItem("favoritos", JSON.stringify(listaFavoritos)) 
+      }
+      else if(!(favoritos.filter(movie => movie.id === id).length > 0)) { 
+         const listaFavoritos = [...favoritos, {id,title,posther_path}]
+         setFavoritos(listaFavoritos)
+         localStorage.setItem("favoritos", JSON.stringify(listaFavoritos))    
+      }
    }
 
    if (movieSearch.length === 0 && movieGenreSearch.length === 0) {
