@@ -49,12 +49,76 @@ const Series = (props) => {
     let api_key = 'ef2edc9da61e81787a8079a7df721936';
     const [searchQuery, setSearchQuery] = useState("");
     const [seriesSearch, setSeriesSearch] = useState([]);
+   
     const search = async (query) => {
       let resultSearch = await axios.get(`${url_Base_series}api_key=${api_key}&language=es&query=${query}`);
       setSearchQuery(query);
       console.log(resultSearch.data)
       return setSeriesSearch(resultSearch.data.results);
       
+   }
+
+   //Busqueda por Genero
+   let url_Base_Genge=`http://api.themoviedb.org/3/`;
+   let url_genre ='http://api.themoviedb.org/3/discover/tv?api_key=ef2edc9da61e81787a8079a7df721936&language=es&query=aventura'
+   
+   const [movieGenreSearch, setGenre] = useState([]);
+   const [genreQuery, setGenreQuery] = useState("");
+   const searchGenre = async (genres) => {
+      let genreFilms = await axios.get(`${url_Base_Genge}discover/tv?api_key=${api_key}&${language}&with_genres=${genres}`);
+      setGenreQuery(genres);
+      return setGenre(genreFilms.data.results);
+   }
+   //Genres dictionary
+
+   const genreDictionary = (genreQuery) => {
+      switch (genreQuery) {
+         case "28":
+            return "acción"
+         case "12":
+            return "aventura"
+         case "16":
+            return "animación"
+         case "35":
+            return "comedia"
+         case "80":
+            return "crimen"
+         case "99":
+            return "documental"
+         case "18":
+            return "drama"
+         case "10751":
+            return "familia"
+         case "14":
+            return "fantasía"
+         case "36":
+            return "historia"
+         case "27":
+            return "terror"
+         case "10402":
+            return "música"
+         case "9648":
+            return "misterio"
+         case "10749":
+            return "romance"
+         case "878":
+            return "ciencia ficción"
+         case "53":
+            return "thriller"
+         case "10752":
+            return "bélico"
+         case "37":
+            return "western"
+         default:
+            break;
+      };
+
+   };
+   
+   const addFavouriteMovie = (id, title, posther_path) => {
+      const listaFavoritos = [...favoritos, { id, title, posther_path }]
+      setFavoritos(listaFavoritos)
+      localStorage.setItem("favoritos", JSON.stringify(favoritos))
    }
    
 
@@ -80,7 +144,7 @@ const Series = (props) => {
 
       <div className='contenedor-padre-series'>
 
-        < Header onSearch={search} />
+        < Header onSearch={search} onGenre={searchGenre} />
          <div className="imagen-portada">
             <img className='portada' src={casaDePapel} alt="Casa de papel" />
          </div>
@@ -88,6 +152,12 @@ const Series = (props) => {
          <h2 className='series-title'>Resultado de la búsqueda {searchQuery}</h2>
             <div className="carousel-series">
                {seriesSearch.map(serie => <Movie style='uno' key={serie.id}  {...serie} onClick={() => takeMeTo(serie)} />)}
+
+            </div>
+            <div className="series-genre">
+               <div className="carousel-series">
+               {movieGenreSearch.map(genre => <Movie style='uno' key={genre.id} addFavouriteMovie={addFavouriteMovie} {...genre} onClick={() => takeMeTo(genre)} />)}
+               </div>
             </div>
          <div className="separadorSeries"></div>
          <div className="portada-series">
