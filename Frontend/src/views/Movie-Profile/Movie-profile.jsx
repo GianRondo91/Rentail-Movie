@@ -92,13 +92,12 @@ const MovieProfile = (props) => {
 
    let NotRented = <div className="rent" onClick={() => Alquilar()}>Alquilar <br />4.99€</div>
    let Rented = <div className="rent" >Estas Viendo <br /></div>
-   let Player = <div className='player-movie'>
+   // let Player = 
+   //    <div className='player-movie'>
+   //       <video className='player-movie-child' src={video} controls autoPlay muted loop></video>
+   //    </div>
 
-      <video className='player-movie-child' src={video} controls autoPlay muted loop></video>
-
-   </div>
-
-   if (rentFilm == false) {
+   if (rentFilm === false) {
       return (
          <div className='movie-profile-container'>
             <Header />

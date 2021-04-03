@@ -61,7 +61,7 @@ const Header = (props) => {
           <li className="component-header-menu-li  header-menu-li"><input className="search" name="query" type="text" onKeyUp={search} onChange={handleStateSearch} /></li>
           <li className="component-header-menu-li  header-menu-li-select">
             <select name="genres" onChange={genreSearch} className='header-menu-li-select'>
-              <option value="0">Elige Género</option>
+              <option value="0">Género</option>
               <option value="28">Acción</option>
               <option value="12">Aventura</option>
               <option value="16">Animacion</option>
@@ -76,8 +76,8 @@ const Header = (props) => {
               <option value="10402">Musica</option>
               <option value="9648">Misterio</option>
               <option value="10749">Romance</option>
-              <option value="878">Ciencia Ficcion</option>
-              <option value="53">Triler</option>
+              <option value="878">Ficción</option>
+              <option value="53">Triller</option>
               <option value="10752">Bélica</option>
               <option value="37">Western</option>
             </select>

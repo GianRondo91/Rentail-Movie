@@ -137,7 +137,7 @@ const Series = (props) => {
       let LittleJson = JSON.parse(localStorage.getItem('movie'));
       console.log(LittleJson);
 
-      history.push('/MovieProfile')
+      history.push('/home/movie')
    }
 
    return (
@@ -151,17 +151,17 @@ const Series = (props) => {
          <div className="separadorSeries"></div>
          <h2 className='series-title'>Resultado de la búsqueda {searchQuery}</h2>
             <div className="carousel-series">
-               {seriesSearch.map(serie => <Movie style='uno' key={serie.id}  {...serie} onClick={() => takeMeTo(serie)} />)}
+               {seriesSearch.map(serie => <Movie style='card-style' key={serie.id}  {...serie} onClick={() => takeMeTo(serie)} />)}
 
             </div>
             <div className="series-genre">
                <div className="carousel-series">
-               {movieGenreSearch.map(genre => <Movie style='uno' key={genre.id} addFavouriteMovie={addFavouriteMovie} {...genre} onClick={() => takeMeTo(genre)} />)}
+               {movieGenreSearch.map(genre => <Movie style='card-style' key={genre.id} addFavouriteMovie={addFavouriteMovie} {...genre} onClick={() => takeMeTo(genre)} />)}
                </div>
             </div>
          <div className="separadorSeries"></div>
          <div className="portada-series">
-            {series.map(series => <Movie style='dos' key={series.id}  {...series} onClick={() => takeMeTo(series)} />)}
+            {series.map(series => <Movie style='other-card-style' key={series.id}  {...series} onClick={() => takeMeTo(series)} />)}
          </div>
 
 

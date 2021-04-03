@@ -18,12 +18,13 @@ function App() {
       <BrowserRouter>
          <Switch>
               <Route path="/" exact component={Landing}/>
-              <Route path="/Register" exact component={Register}/>
-              <Route path="/Home" exact component={Home}/>
-              <Route path='/loading' exact component={Loading}/>
+              <Route path="/register" exact component={Register}/>
+              <Route path="/home" exact component={Home}/>
+              <Route path='/home/movie' exact component={MovieProfile}/>
+              {/* Que hace Loading */}
+              <Route path='/loading' exact component={Loading}/> 
               <Route path='/profile' exact component={Profile}/>
               <Route path='/profile/data' exact component={Data}/>
-              <Route path='/MovieProfile' exact component={MovieProfile}/>
               <Route path='/series' exact component={Series}/>
          </Switch>
       </BrowserRouter>

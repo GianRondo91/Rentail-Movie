@@ -1,13 +1,9 @@
 import React from 'react';
 
+const Footer = (props) => {
 
-import {useHistory} from 'react-router-dom';
+    return (
 
-const Footer = (props)=>{
-    let history=useHistory();
-
-    return(
-              
         <div className="vistaFooter">
             <div className="header-footer">
                 <div className="header-footer-question">¿Preguntas? Llama al 900 000 000</div>
@@ -44,11 +40,8 @@ const Footer = (props)=>{
                 </div>
                 <p className="link-logo-subtitle">ESPAÑA</p>
             </div>
-
-            
         </div>
     )
-    
+};
 
-}
 export default Footer;
