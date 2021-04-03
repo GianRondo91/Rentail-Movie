@@ -27,16 +27,6 @@ const Home = (props) => {
    let urlSearch = `http://api.themoviedb.org/3/search/movie?`;
    let language = "language=es-ES";
 
-   const getGenreName = genre => {
-
-      switch (genre) {
-         case "28":
-            return "Acción";
-         default:
-            break;
-      }
-
-   };
 
    // https://api.themoviedb.org/3/search/movie?api_key=e34f732b92a2e7dbe69709d0433150c3&language=es&query=${query}
    //Buscar Pelis
@@ -45,18 +35,16 @@ const Home = (props) => {
       setSearchQuery(query);
       return setSearch(resultSearch.data.results);
    }
-
    //https://api.themoviedb.org/3/genre/movie/list?api_key=<<api_key>>&language=en-US
    //Busqueda por genero
    const searchGenre = async (genres) => {
       console.log(genres);
       let genreFilms = await axios.get(`${urlGenre}discover/movie?api_key=${key}&${language}&with_genres=${genres}`);
       console.log("peli por genero", genreFilms);
-      setSearchQuery(getGenreName(genres));
       return setGenre(genreFilms.data.results);
-
+      
    }
-
+   
    useEffect(() => {
       //Ultimas Peliculas
       let Latest = `${base_url}now_playing?api_key=${key}&${language}&page=1`;
@@ -117,10 +105,10 @@ const Home = (props) => {
       localStorage.setItem("favoritos", JSON.stringify(favoritos))
    }
 
-   if (movieSearch.length === 0 && movieGenreSearch.length === 0) {
+   if (movieSearch.length === 0 && movieGenreSearch.length===0) {
       return (
          <div className="contenedorHome">
-            < Header onSearch={search} onGenre={searchGenre} />
+            < Header onSearch={search} onGenre={searchGenre}/>
             <video className='myVideo' autoPlay muted loop id="myVideo" src={video}></video>
             <div class="content">
                <p>AQUA-MAN</p>
@@ -139,8 +127,8 @@ const Home = (props) => {
             </div>
 
             <div className="separador"></div>
-            <h2 className='tituloDelGenero'>Destacadas</h2>
-            {/* <div className="destacado">
+            {/* <h2 className='tituloDelGenero'>Destacadas</h2>
+            <div className="destacado">
                {destacado.map(destacado => <Movie style='dos' key={destacado.id} {...destacado} addFavouriteMovie={addFavouriteMovie} onClick={() => takeMeTo(destacado)} />)}
             </div> */}
             <div className="separador"></div>
@@ -155,7 +143,7 @@ const Home = (props) => {
    } else {
       return (
          <div className="contenedorHome">
-            < Header onSearch={search} onGenre={searchGenre} />
+            < Header onSearch={search} onGenre={searchGenre}/>
             <video className='myVideo' autoPlay muted loop id="myVideo" src={video}></video>
             <div class="content">
                <p>AQUA-MAN</p>
