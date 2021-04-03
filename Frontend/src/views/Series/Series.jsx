@@ -6,6 +6,7 @@ import { useHistory } from 'react-router-dom';
 import Footer from '../../components/Footer/Footer.jsx';
 import { } from '@fortawesome/free-solid-svg-icons';
 import casaDePapel from '../../img/casa02.jpg';
+import BasicPagination from '../../components/Pagination/Pagination';
 //import HeaderUser from '../../components/User/Header-user/Header-user';
 
 
@@ -55,7 +56,27 @@ const Series = (props) => {
     console.log(LittleJson);
 
     history.push('/MovieProfile')
+
+    
  }
+
+ let pageOne =   <div className="portada-series">
+ {series.map(series => <Movie style='dos' key={series.id}  {...series} onClick={() => takeMeTo(series)} />)}
+ </div>
+
+let pageTwo =   <div className="portada-series">
+{series.map(series => <Movie style='dos' key={series.id}  {...series} onClick={() => takeMeTo(series)} />)}
+</div>
+
+let pageTree =   <div className="portada-series">
+{series.map(series => <Movie style='dos' key={series.id}  {...series} onClick={() => takeMeTo(series)} />)}
+</div>
+
+   let NexPage =()=>{
+      
+      
+      
+   } 
 
     return (
 
@@ -65,12 +86,13 @@ const Series = (props) => {
            <div className="imagen-portada">
               <img className='portada' src={casaDePapel} alt="Casa de papel"/>
            </div>
-
-           <div className="portada-series">
-           {series.map(series => <Movie style='dos' key={series.id}  {...series} onClick={() => takeMeTo(series)} />)}
+            {pageOne}
+          
+         
+           <div className="pages">
+            <BasicPagination onClick={NexPage}/>
            </div>
-
-
+      <Footer/>
     </div>
 
    )

@@ -931,6 +931,11 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap; }
+  .contenedor-padre-series .pages {
+    width: 300px;
+    height: 30px;
+    color: white;
+    margin-left: 500px; }
 
 /*RESPONSIVE DESIGN*/
 @media (min-width: 1440px) {
