@@ -19,7 +19,7 @@ const Profile = (props) => {
         allFavouritesMovies()
 
 
-        let firstPart='https://image.tmdb.org/t/p/original';
+        //let firstPart='https://image.tmdb.org/t/p/original';
 
 
         // Traer todos los alquileres del usuario
