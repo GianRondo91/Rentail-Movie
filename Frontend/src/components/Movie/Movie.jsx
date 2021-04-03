@@ -11,14 +11,6 @@ const Movie = ({ title, poster_path, overview, release_date, vote_average, id, o
   const [heartStyle, setHeartStyle]= useState('one')
   //---------DELETING A FAV---------//
 
-  /* const removeFavouriteMovie = (movie) => {
-   const newFavouriteList = favourites.filter(
-     (favourite) => favourite.imdbID !== movie.imdbID
-   );
- 
-   setFavourites(newFavouriteList);
-   
- }; */
 
   let FirstPartOflinkimage = 'https://image.tmdb.org/t/p/original';
   //Preparando los dos tamaños
