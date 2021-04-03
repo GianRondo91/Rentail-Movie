@@ -24,6 +24,7 @@ const MovieProfile = (props) => {
       client:props.user.name,
       initialRentDate:'',
       returnRentDate:'',
+      poster:'',
       payment:true
 
    })
@@ -56,15 +57,17 @@ const MovieProfile = (props) => {
    //Alquilar un pelicula//
    const Alquilar = async () => {
 
-      let endPointRent = 'http://localhost:3002/orders';
+      let endPointRent = `http://localhost:3002/users/${props.user.userId}/orders`;
 
       //Datos de lel alquiler , Id del usuario , id de la pelicula y el  objeto completo de la pelicula//
       let rentData = {
          userId: props.user._id,
          filmId: dataMovie.id,
-         film: dataMovie,
+         film: dataMovie.poster_path,
+         poster_path:dataMovie.poster_path,
          payment: true
       }
+      console.log(rentData)
 
 
       let response = await axios.post(endPointRent, rentData);
@@ -104,7 +107,7 @@ const MovieProfile = (props) => {
             <Header />
             <div className="movie-panel">
                <div className="data-movie">
-                  <div className="movie-title">{dataMovie.title}</div>
+               <div className="movie-title">{dataMovie.title}{dataMovie.name}</div>
 
                   <div className="movie-rent">
                      {Rented}
@@ -116,6 +119,7 @@ const MovieProfile = (props) => {
                      <h2 classeName='Rent-Data'>Pago Del Alquiler :{realizado}</h2>
                      <h2 classeName='Rent-Data'>Fecha De Inicio Del Alquiler:{order.initialRentDate}</h2>
                      <h2 classeName='Rent-Data'>Fecha De La Devolucion : {order.returnRentDate}</h2>
+                 
                
 
                   </div>
@@ -133,7 +137,7 @@ const MovieProfile = (props) => {
             <Header />
             <div className="movie-panel">
                <div className="data-movie">
-                  <div className="movie-title">{dataMovie.title}</div>
+                  <div className="movie-title">{dataMovie.title}{dataMovie.name}</div>
                   <div className="movie-rate">Rate : {dataMovie.vote_average}  votos : {dataMovie.vote_count}  Release date : {dataMovie.release_date}</div>
                   <div className="movie-rent">
                      {NotRented}

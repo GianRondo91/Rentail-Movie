@@ -37,6 +37,7 @@ const HeaderUser = (props) => {
             <div className="component-header-menu">
                 <ul className="component-header-menu-ul">
                     <li className="component-header-menu-li"><a href="/profile/data" className='component-header-menu-a'>Mis datos</a></li>
+                    <li className="component-header-menu-li"><a href="/profile" className='component-header-menu-a' >Mi Alquiler</a></li>
                     <li className="component-header-menu-li"><a href="/profile" className='component-header-menu-a'>Favoritos</a></li>
                     {/*  */}
                     {getUserImage()}
