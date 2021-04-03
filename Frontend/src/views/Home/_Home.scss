@@ -46,6 +46,22 @@
             color: black;
         }
     }
+    .search-genre{
+        color: rgb(170, 169, 163);
+        margin: 1em;
+        height: 1em;
+        font-size: 26px;
+        font-family: $font-Questrial-Regular;
+        margin-left: 36px;
+    }
+    .search-genre-array{
+        margin-left: 1.5em;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        overflow-x: auto;
+    }
     .search-title {
         color: rgb(170, 169, 163);
         margin: 1em;
@@ -71,6 +87,7 @@
         margin-left: 36px;
     }
     .separador {
+        
         border: 0.5px solid rgb(58, 56, 56);
         width: 70em;
         margin-left: 6em;

@@ -13,8 +13,6 @@ class Rent {
     //Create a new order
     async rentMovie (userId, filmId ,film){
         const userEntity = await User.findById(userId)
-        //const movieEntity = await Movie.findById(filmId);
-        
         const movieEntity =filmId;
         const movieDataEntity = film;
         console.log("A ver que nos traes...",userEntity, movieEntity,movieDataEntity)

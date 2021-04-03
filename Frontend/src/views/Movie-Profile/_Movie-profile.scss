@@ -7,8 +7,9 @@
   background-color: nth($dark,1);
 
   .movie-panel{
+    margin-top: $mp-p;
     width: 100%;
-    height: 40em;
+    height: $mp-v+$mp-e;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -16,12 +17,13 @@
        
 
     .data-movie{
-      width: 60%;
-      height: 40em;
+      width: 45%;
+      height: $mp-w;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      
       
           
 
@@ -55,12 +57,12 @@
         font-size: $size-j;
         display: flex;
         flex-direction: row;
-        width: 100%;
-        height: 6em;
+        width: 85%;
+        height: $mp-m;
         justify-content: space-evenly;
         align-items: center;
         margin: 1em;
-        margin-top: -15px;
+        margin-top: $mp-j;
                  
 
         .rent{
@@ -92,12 +94,20 @@
       }
 
       .overview{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         width: 100%;
-        height: 15em;
+        height: $mp-q+$mp-d;
         color: nth($fontColor,2 );
         margin-left: $mp-nn;
+        .Rent-Data{
+          color: whitesmoke;
+          font-size: 32px;
+        }
 
         .player-movie{
+          margin: 40px;
           width: 800px;
           height: 360px;
           margin: 50px;
@@ -120,38 +130,37 @@
           font-size: $size-j;
         }
       }
+      .show-video-movie{
+        display: flex;
+        margin-top: 20px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: $mp-t+$mp-n;
+    
+        .multimedia{
+          
+          height: 100%;
+         
+        }
+    
+      }
     }
     
     .movie-poster{
       width: 40%;
       height: 40em;
-      // border: 0.01em solid white;
       display: flex;
       justify-content: center;
       align-items: center; 
     }
     .movie-poster img{
-      width: 45%;
-      height: 60%;
+      width: $mp-u;
+      height: $mp-v;
     }
   }
-  .show-video-movie{
-    display: flex;
-    margin-top: 20px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 35em;
-
-    .multimedia{
-      width: 50%;
-      height: 100%;
-      position: absolute;
-    
-    }
-
-  }
+  
     
     
 }
