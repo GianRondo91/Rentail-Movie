@@ -5,6 +5,7 @@ import Header from '../../components/Header/Header';
 import { useHistory } from 'react-router-dom';
 import Footer from '../../components/Footer/Footer.jsx';
 import { } from '@fortawesome/free-solid-svg-icons';
+import AddFavourite from '../../components/Add-fav/AddFavourite';
 
 
 const Home = (props) => {
@@ -13,7 +14,8 @@ const Home = (props) => {
    const [destacado, setDestacado] = useState([]);
    const [populares, setPopulares] = useState([]);
    const [recomendaciones, setRecomendaciones] = useState([]);
-   const [favoritos, setFavoritos] = useState([]);
+   const [favoritos, setFavoritos] = useState([""]);
+
 
    //Constuccion de URL consultas TMDB
    let key = "ef2edc9da61e81787a8079a7df721936";
@@ -27,6 +29,7 @@ const Home = (props) => {
       let populares = `${base_url}popular?api_key=${key}&${language}`;
       let recomendaciones = `${base_url}top_rated?api_key=${key}&${language}`;
 
+      getFavouriteMovies()
       //Populares
       fetch(populares)
          .then(res => (res.json()))
@@ -70,10 +73,22 @@ const Home = (props) => {
       history.push('/peliculas')
    };
 
+   const getFavouriteMovies = () =>{
+      let allFavourites = JSON.parse(localStorage.getItem('favoritos'));
+      setFavoritos(allFavourites)
+   }
+
    const addFavouriteMovie = (id,title,posther_path) => {
-      const listaFavoritos = [...favoritos, {id,title,posther_path}]
-      setFavoritos(listaFavoritos)
-      localStorage.setItem("favoritos", JSON.stringify(favoritos))
+      if(favoritos === null){
+         const listaFavoritos = [{id,title,posther_path}]
+         setFavoritos(listaFavoritos)
+         localStorage.setItem("favoritos", JSON.stringify(listaFavoritos)) 
+      }
+      else if(!(favoritos.filter(movie => movie.id === id).length > 0)) { 
+         const listaFavoritos = [...favoritos, {id,title,posther_path}]
+         setFavoritos(listaFavoritos)
+         localStorage.setItem("favoritos", JSON.stringify(listaFavoritos))    
+      }
    }
 
  

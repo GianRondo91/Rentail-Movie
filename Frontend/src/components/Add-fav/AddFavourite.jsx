@@ -1,9 +1,9 @@
 
 import React from 'react';
 
-const AddFavourite = ({style}) => {
+const AddFavourite = ({heartStyle}) => {
 
-	if (style === 'one'){
+	if (heartStyle === 'one'){
 
 		return (
 			<>
@@ -25,7 +25,7 @@ const AddFavourite = ({style}) => {
 		);
 	}
 
-	if (style === 'two'){
+	if (heartStyle === 'two'){
 
 		return (
 			<>
