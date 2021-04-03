@@ -3,26 +3,23 @@ import Movie from '../../components/Movie/Movie';
 //import video from '../../video/videoplayback.mp4';
 import Header from '../../components/Header/Header';
 import { useHistory } from 'react-router-dom';
-import Footer from '../../components/Footer/Footer.jsx';
+import { connect } from 'react-redux';
 import { } from '@fortawesome/free-solid-svg-icons';
 import casaDePapel from '../../img/casa02.jpg';
 //import HeaderUser from '../../components/User/Header-user/Header-user';
-
-
 
 
 const Series = (props) => {
 
    const [series, setSeries] = useState([]);
    const [favoritos, setFavoritos] = useState([]);
-  
 
    //Constuccion de URL consultas TMDB
 
    let key = "ef2edc9da61e81787a8079a7df721936";
    let base_url = `http://api.themoviedb.org/3/movie/`;
    let language = "language=es-ES"
-   let colectionSeries ='https://api.themoviedb.org/3/tv/popular?api_key=ef2edc9da61e81787a8079a7df721936&language=en-US&page=1'
+   let colectionSeries = 'https://api.themoviedb.org/3/tv/popular?api_key=ef2edc9da61e81787a8079a7df721936&language=en-US&page=1'
 
    useEffect(() => {
 
@@ -42,42 +39,49 @@ const Series = (props) => {
             setSeries(data.results)
          })
 
-     
    }, []);
 
    //Functions:
 
    let history = useHistory();
+
+   if (!props.token) {
+      history.push('/');
+      return null;
+   };
+
    const takeMeTo = (movie) => {
 
-    localStorage.setItem('movie', JSON.stringify(movie));
-    let LittleJson = JSON.parse(localStorage.getItem('movie'));
-    console.log(LittleJson);
+      localStorage.setItem('movie', JSON.stringify(movie));
+      let LittleJson = JSON.parse(localStorage.getItem('movie'));
+      console.log(LittleJson);
 
-    history.push('/MovieProfile')
- }
+      history.push('/MovieProfile')
+   }
 
-    return (
+   return (
 
-    <div className='contenedor-padre-series'>
+      <div className='contenedor-padre-series'>
 
-           <Header/>
-           <div className="imagen-portada">
-              <img className='portada' src={casaDePapel} alt="Casa de papel"/>
-           </div>
+         <Header />
+         <div className="imagen-portada">
+            <img className='portada' src={casaDePapel} alt="Casa de papel" />
+         </div>
 
-           <div className="portada-series">
-           {series.map(series => <Movie style='dos' key={series.id}  {...series} onClick={() => takeMeTo(series)} />)}
-           </div>
+         <div className="portada-series">
+            {series.map(series => <Movie style='dos' key={series.id}  {...series} onClick={() => takeMeTo(series)} />)}
+         </div>
 
 
-    </div>
+      </div>
 
    )
 
 }
-
-
-
-
-export default Series;
+const mapStateToProps =state =>{
+   return{
+     user : state.user,
+     token : state.token
+   }
+ };
+export default connect(mapStateToProps)(Series);

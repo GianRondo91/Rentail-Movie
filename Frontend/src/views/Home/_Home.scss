@@ -18,7 +18,7 @@
         left: 0;
         width: 100%;
         height: 82vh;
-        object-fit: cover;
+        object-fit: none;
         // z-index: 0;
     }
     .content {
@@ -45,6 +45,38 @@
             background: #ddd;
             color: black;
         }
+    }
+    .search-genre{
+        color: rgb(170, 169, 163);
+        margin: 1em;
+        height: 1em;
+        font-size: 26px;
+        font-family: $font-Questrial-Regular;
+        margin-left: 36px;
+    }
+    .search-genre-array{
+        margin-left: 1.5em;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        overflow-x: auto;
+    }
+    .search-title {
+        color: rgb(170, 169, 163);
+        margin: 1em;
+        height: 1em;
+        font-size: 26px;
+        font-family: $font-Questrial-Regular;
+        margin-left: 36px;
+    }
+    .search-array{
+        margin-left: 1.5em;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        overflow-x: auto;
     }
     .tituloDelGenero {
         color: rgb(170, 169, 163);

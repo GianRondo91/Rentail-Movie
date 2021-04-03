@@ -15,14 +15,12 @@ const Login = (props) => {
 
     let history = useHistory();
     // let type = 'text';
-    
+
     //lOGIN CON GOOGLE
     const responseGoogle = async (googleResponse) => {
 
         let response = await axios.post('http://localhost:3002/users/google/login', googleResponse.profileObj);
         props.dispatch({ type: LOGIN, payload: response.data.jwt });
-
-
 
         if (response.status === 200) {
             setTimeout(() => {
@@ -56,7 +54,7 @@ const Login = (props) => {
         if (notValidated) {
             return;
         }
-        
+
         let credentialsData = {
             email: credentials.email,
             password: credentials.password
@@ -103,21 +101,20 @@ const Login = (props) => {
                 <div className="form-content-options">
                     <p className='form-content-options-label'>o inicia sesión con</p>
                     <div className="buttons-login">
-                        <div className="button-login button-login-google">
-                            <FontAwesomeIcon icon={faGoogle} className='button-login-icon' />
-                            {/* <em className='button-login-letter'>Google</em> */}
-                            <GoogleLogin
+                        {/* <em className='button-login-letter'>Google</em> */}
+                        <GoogleLogin
                             clientId="456831578075-531n7r8fhuf0l4uk1tide9nlbukf94be.apps.googleusercontent.com"
                             // buttonText="Login"
                             render={renderProps => (
-                                <em onClick={renderProps.onClick} disabled={renderProps.disabled} className='button-login-letter'>Google</em>
-                                // <button onClick={renderProps.onClick} disabled={renderProps.disabled} className='button-login-letter'>This is my custom Google button</button>
-                              )}
+                                <div className="button-login button-login-google" onClick={renderProps.onClick} >
+                                    <FontAwesomeIcon icon={faGoogle} className='button-login-icon' />
+                                    <div disabled={renderProps.disabled} className='button-login-letter'>Google</div>
+                                </div>
+                            )}
                             onSuccess={responseGoogle}
                             // onFailure={responseGoogle}
                             cookiePolicy={'single_host_origin'}
                         />
-                        </div>
                     </div>
                     <div className="form-content-register">
                         <p className='register-question'>¿Todavia no tienes una cuenta? </p>
