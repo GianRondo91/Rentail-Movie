@@ -4,7 +4,7 @@ import AddFavourite from '../Add-fav/AddFavourite'
 
 
 
-const Movie = ({ title, poster_path, overview, release_date, vote_average, id, onClick, style, addFavouriteMovie }) => {
+const Movie = ({ title, poster_path,overview, release_date, vote_average, id, onClick, style, addFavouriteMovie }) => {
 
   //-----ADDING A FAV-------------//
 
