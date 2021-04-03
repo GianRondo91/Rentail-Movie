@@ -51,6 +51,14 @@ const Profile = (props) => {
         console.log(favouritesMovies)
     }
     
+    const deleteItem = (id) => {
+        const newFavouriteList = favouritesMovies.filter(
+            (favouriteMovie) => favouriteMovie.id !== id
+        );
+        console.log("dsd")
+        setFavouritesMovies(newFavouriteList);
+        localStorage.setItem("favoritos", JSON.stringify(newFavouriteList)) 
+    }
 
 
     return (
