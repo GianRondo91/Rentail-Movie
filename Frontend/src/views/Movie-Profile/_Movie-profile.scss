@@ -94,12 +94,20 @@
       }
 
       .overview{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         width: 100%;
         height: $mp-q+$mp-d;
         color: nth($fontColor,2 );
         margin-left: $mp-nn;
+        .Rent-Data{
+          color: whitesmoke;
+          font-size: 32px;
+        }
 
         .player-movie{
+          margin: 40px;
           width: 800px;
           height: 360px;
           margin: 50px;
