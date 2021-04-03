@@ -1,24 +1,37 @@
-.header-movies{
+.header-movies {
     width: 100% !important;
     height: 15px;
     background-color: transparent;
     position: absolute !important;
     z-index: 1;
-
-    .header-menu-movies{
-        .header-menu-ul{
-            .header-menu-li{
-                .search{
+    .header-menu-movies {
+        .header-menu-ul {
+            .header-menu-li {
+                .search {
                     width: 250px;
+                    height: 20px;
+                    font-size: 15px;
                     border-radius: 10px;
                     margin-right: 29px;
                     outline: none;
                     border: none;
                 }
             }
-            .header-menu-li-name{
-                color: nth($fontColor, 3);
-                cursor: none !important;
+            .header-menu-li-select{
+                font-size: 20px;
+                .header-menu-li-select {
+                    border-radius: 6px;
+                    background-color: transparent;
+                    border: none;
+                    color: white;
+                    outline: none;
+                }
+            }
+            .header-menu-li-name {
+                .header-menu-a-name {
+                    color: nth($fontColor, 3);
+                    text-decoration: none;
+                }
             }
         }
     }

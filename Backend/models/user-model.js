@@ -39,6 +39,9 @@ const userSchema = new Schema({
     postal: {
         type: String
     },
+    image: {
+        type: String
+    },
     payment: {
         nameUser: {
             type: String

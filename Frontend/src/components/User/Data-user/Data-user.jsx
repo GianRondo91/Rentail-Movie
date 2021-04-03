@@ -77,7 +77,7 @@ const Data = (props) => {
             <div className="data-user">
                 <div className="form-update-data">
                     <div className="form-data-content">
-                        <p className='form-data-content-title'>Actualizar datos</p>
+                        <p className='form-data-content-title'>Bienvenido {user.name} {user.surname}</p>
                         <label htmlFor="" className='form-update-data-label'>Nombre</label>
                         <input type="name" name="name" className='form-update-data-input' value={user.name} onChange={handleState}/>
                         <label htmlFor="" className='form-update-data-label'>Apellidos</label>

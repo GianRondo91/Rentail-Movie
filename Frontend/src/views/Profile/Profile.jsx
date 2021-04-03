@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import HeaderUser from '../../components/User/Header-user/Header-user';
-// import {useHistory} from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-
-const Profile =()=>{
-    let FirstPartOfLinkImage ='https://image.tmdb.org/t/p/original';
+const Profile = (props) => {
+    let FirstPartOfLinkImage = 'https://image.tmdb.org/t/p/original';
 
 
     const [favouritesMovies, setFavouritesMovies] = useState([])
@@ -12,33 +12,44 @@ const Profile =()=>{
     useEffect(() => {
         allFavouritesMovies()
 
-      },[]);
+    }, []);
 
+    let history = useHistory();
+
+    if (!props.token) {
+        history.push('/');
+        return null;
+    };
 
     const allFavouritesMovies = () => {
         const allFavourites = JSON.parse(localStorage.getItem("favoritos"))
 
-        
+
         setFavouritesMovies(allFavourites)
         console.log(favouritesMovies)
-        }   
+    }
 
-  
 
-    return(
+
+    return (
 
         <div className='component-profile'>
-            <HeaderUser/>
+            <HeaderUser />
             <div className='content-favourites'>
-               
+
                 <h3 className='content-favourites-title'>MIS FAVORITOS</h3>
-               
+
                 <div className='content-favourites-container'>
-                    {favouritesMovies.map(fav => <div className='favourite-container'><h5 className='title-movie'>{fav.title}</h5><img className='favourite-img' alt={fav.title} src={FirstPartOfLinkImage+fav.posther_path}/></div>)}
+                    {favouritesMovies.map(fav => <div className='favourite-container'><h5 className='title-movie'>{fav.title}</h5><img className='favourite-img' alt={fav.title} src={FirstPartOfLinkImage + fav.posther_path} /></div>)}
                 </div>
             </div>
         </div>
     )
 }
-
-export default Profile;
+const mapStateToProps =state =>{
+    return{
+      user : state.user,
+      token : state.token
+    }
+  };
+export default connect(mapStateToProps)(Profile);
