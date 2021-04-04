@@ -64,14 +64,16 @@ const Login = (props) => {
         console.log("soy el response de login", response.data.jwt);
         props.dispatch({ type: LOGIN, payload: response.data.jwt });
 
-        if (response.status === 200) {
-            setTimeout(() => {
-                history.push('/home')
-            }, 1000);
-        } else {
+        if (!response.status === 200 || response || response.status === 404) {
+
             setMessage('Sus credenciales son erroneos, comprueba su email o contraseña');
             setMessage('');
             alert('Sus credenciales son erroneos, comprueba su email o contraseña');
+            
+        } else {
+            setTimeout(() => {
+                history.push('/home')
+            }, 1000);
         }
     }
 

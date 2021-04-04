@@ -86,8 +86,8 @@ const Data = (props) => {
                         <input type="date" name="birthday"  step="1" min="1930-12" max="2006-12" className='form-update-data-input' value={user.birthday} onChange={handleState}/>
                         <label htmlFor="" className='form-update-data-label'>Telefono</label>
                         <input type="phone" name="phone" className='form-update-data-input' value={user.phone} onChange={handleState}/>
-                        <label htmlFor="" className='form-update-data-label'>Email</label>
-                        <input type="email" name="email" className='form-update-data-input' value={user.email} onChange={handleState}/>
+                        {/*<label htmlFor="" className='form-update-data-label'>Email</label>
+                        <input type="email" name="email" className='form-update-data-input' value={user.email} onChange={handleState}/>*/}
                         <label htmlFor="" className='form-update-data-label'>Dirección</label>
                         <input type="address" name="address" className='form-update-data-input' value={user.address} onChange={handleState}/>
                         <div className="country-city-cp">
@@ -117,7 +117,7 @@ const Data = (props) => {
                         </div>
                         <div className="principal-data">
                             <label htmlFor="" className='form-update-payment-label'>Nombre</label>
-                            <input type="name" name="nameUser" className='form-update-payment-input' value={user.payment?.nameUser} onChange={handleStatePayment}/>
+                            <input type="text" name="name" className='form-update-payment-input' value={user.payment?.nameUser} onChange={handleStatePayment}/>
                             <label htmlFor="" className='form-update-payment-label'>Número de tarjeta</label>
                             <input type="numberCard" name="numberCard" className='form-update-payment-input' value={user.payment?.numberCard} onChange={handleStatePayment}/>
                         </div>

@@ -69,8 +69,7 @@ const Profile = (props) => {
                 </div>
                 <h3 className='content-favourites-title'>Historial de mi Alquiler</h3>
                 <div className="historial">
-                   {/* {showRent.map(rent => <Movie style="other-card-style" key={rent._id} {...rent.movieData} />)}*/}
-                    {showRent.map(showRent => <Movie style="other-card-style" key={showRent} {...showRent} />)}
+                  {showRent.map(showRent => <Movie style="other-card-style" key={showRent} {...showRent} />)}
                 </div>
             </div>
             <Footer />
