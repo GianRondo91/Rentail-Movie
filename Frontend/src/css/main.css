@@ -906,6 +906,10 @@ body {
     .component-profile .content-favourites .content-favourites-title {
       font-size: 26px;
       margin-left: 36px; }
+      .component-profile .content-favourites .content-favourites-title .historial {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap; }
     .component-profile .content-favourites .content-favourites-container {
       display: flex;
       flex-direction: row;

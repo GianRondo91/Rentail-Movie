@@ -4,17 +4,32 @@ import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import axios from 'axios';
+import Movie from '../../components/Movie/Movie'
 
 const Profile = (props) => {
     let FirstPartOfLinkImage = 'https://image.tmdb.org/t/p/original';
 
+    const [favouritesMovies, setFavouritesMovies] = useState([]);
+    const [showRent, setShowRent] = useState([]);
+    const [image, setImage] = useState([]);
 
-    const [favouritesMovies, setFavouritesMovies] = useState([])
+
     console.log(favouritesMovies)
     useEffect(() => {
-        allFavouritesMovies()
-
+        allFavouritesMovies();
+        //let firstPart='https://image.tmdb.org/t/p/original';
+        // Traer todos los alquileres del usuario
+        const GetMyRents = async () => {
+            let MyEndPoint = `http://localhost:3002/users/${props.user.userId}/orders`;
+            let rentData = await axios.get(MyEndPoint);
+            console.log(rentData)
+            setShowRent(rentData.data);
+        }
+        GetMyRents();
     }, []);
+
+    console.log(showRent)
 
     let history = useHistory();
 
@@ -25,20 +40,18 @@ const Profile = (props) => {
 
     const allFavouritesMovies = () => {
         const allFavourites = JSON.parse(localStorage.getItem("favoritos"))
-
-
         setFavouritesMovies(allFavourites)
         console.log(favouritesMovies)
-    }
-    
+    };
+
     const deleteItem = (id) => {
         const newFavouriteList = favouritesMovies.filter(
             (favouriteMovie) => favouriteMovie.id !== id
         );
         console.log("dsd")
         setFavouritesMovies(newFavouriteList);
-        localStorage.setItem("favoritos", JSON.stringify(newFavouriteList)) 
-    }
+        localStorage.setItem("favoritos", JSON.stringify(newFavouriteList))
+    };
 
 
     return (
@@ -47,22 +60,25 @@ const Profile = (props) => {
             <div className='content-favourites'>
                 <h3 className='content-favourites-title'>MIS FAVORITOS</h3>
                 <div className='content-favourites-container'>
-                    {favouritesMovies.map(fav => 
-                    <div className='favourite-container'>
-                        
-                        <img className='favourite-img' alt={fav.title} src={FirstPartOfLinkImage+fav.posther_path}/>
-                        <p onClick={() => deleteItem(fav.id)} className="button-delete"> <FontAwesomeIcon icon={faTrashAlt} /></p>
-                        <h5 className='title-movie'>{fav.title}</h5>
-                    </div>)}
+                    {favouritesMovies.map(fav =>
+                        <div className='favourite-container'>
+                            <img className='favourite-img' alt={fav.title} src={FirstPartOfLinkImage + fav.posther_path} />
+                            <p onClick={() => deleteItem(fav.id)} className="button-delete"> <FontAwesomeIcon icon={faTrashAlt} /></p>
+                            <h5 className='title-movie'>{fav.title}</h5>
+                        </div>)}
+                </div>
+                <h3 className='content-favourites-title'>Historial de mi Alquiler</h3>
+                <div className="historial">
+                    {showRent.map(rent => <Movie style="other-card-style" key={showRent._id} {...showRent} />)}
                 </div>
             </div>
         </div>
     )
 }
-const mapStateToProps =state =>{
-    return{
-      user : state.user,
-      token : state.token
+const mapStateToProps = state => {
+    return {
+        user: state.user,
+        token: state.token
     }
-  };
+};
 export default connect(mapStateToProps)(Profile);

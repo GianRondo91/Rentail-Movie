@@ -20,8 +20,16 @@ const orderSchema = new Schema({
         ref: "User",
         required: true
     },
-    movieData:{
+    image: {
+        type: String,
+    },
+
+    poster_path:{
         type:Object,
+    },
+   
+    moviePoster:{
+        type:String,
     },
     price:{
         type: Number,
@@ -34,7 +42,7 @@ const orderSchema = new Schema({
     },
     return_date:{
         type: Date,
-        default: new Date(+new Date()+0*0*0*1*1000)
+        default: new Date(+new Date()+3*24*60*60*1000)
     },
 
 })

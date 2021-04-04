@@ -145,7 +145,11 @@ const Home = (props) => {
       history.push('/home/movie');
    };
 
-   const GotoMovies = () => {
+   const GotoMovies = async() => {
+      let aquaman = 'https://api.themoviedb.org/3/search/movie?api_key=e34f732b92a2e7dbe69709d0433150c3&language=es&query=aquaman';
+      let info = await axios.get(aquaman);
+      localStorage.setItem('movie',JSON.stringify(info.data.results[0]));
+      console.log(info.data.results[0]);
       history.push('/home');
    };
 

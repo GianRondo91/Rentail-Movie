@@ -12,8 +12,14 @@
         margin-right: auto;
         .content-favourites-title {
             font-size: 26px;
-            margin-left: 36px;
+                margin-left: 36px;
+            .historial {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
         }
+    
         .content-favourites-container {
             display: flex;
             flex-direction: row;
@@ -49,6 +55,7 @@
                     font-weight: bold;
                 }
             }
+            
         }
     }
 }
