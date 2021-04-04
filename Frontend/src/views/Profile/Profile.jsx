@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 import Movie from '../../components/Movie/Movie'
+import Footer from '../../components/Footer/Footer';
 
 const Profile = (props) => {
     let FirstPartOfLinkImage = 'https://image.tmdb.org/t/p/original';
@@ -21,7 +22,7 @@ const Profile = (props) => {
         //let firstPart='https://image.tmdb.org/t/p/original';
         // Traer todos los alquileres del usuario
         const GetMyRents = async () => {
-            let MyEndPoint = `http://localhost:3002/users/${props.user.userId}/orders`;
+            let MyEndPoint = `http://localhost:3002/users/${props.user._id}/orders`;
             let rentData = await axios.get(MyEndPoint);
             console.log(rentData)
             setShowRent(rentData.data);
@@ -53,7 +54,6 @@ const Profile = (props) => {
         localStorage.setItem("favoritos", JSON.stringify(newFavouriteList))
     };
 
-
     return (
         <div className='component-profile'>
             <HeaderUser />
@@ -69,12 +69,14 @@ const Profile = (props) => {
                 </div>
                 <h3 className='content-favourites-title'>Historial de mi Alquiler</h3>
                 <div className="historial">
-                    {showRent.map(rent => <Movie style="other-card-style" key={showRent._id} {...showRent} />)}
+                    {showRent.map(rent => <Movie style="other-card-style" key={rent._id} {...rent.movieData} />)}
                 </div>
             </div>
+            <Footer />
         </div>
     )
-}
+};
+
 const mapStateToProps = state => {
     return {
         user: state.user,

@@ -898,22 +898,21 @@ body {
   font-family: "Questrial-Regular";
   position: relative; }
   .component-profile .content-favourites {
-    margin-top: 150px;
+    margin-top: 50px;
     width: 1440px;
-    position: absolute;
+    height: auto;
     margin-left: auto;
     margin-right: auto; }
     .component-profile .content-favourites .content-favourites-title {
-      font-size: 26px;
-      margin-left: 36px; }
-      .component-profile .content-favourites .content-favourites-title .historial {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap; }
+      margin-top: 64px;
+      font-size: 26px; }
+    .component-profile .content-favourites .historial {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap; }
     .component-profile .content-favourites .content-favourites-container {
       display: flex;
       flex-direction: row;
-      margin-left: 50px;
       margin-top: 30px; }
       .component-profile .content-favourites .content-favourites-container .favourite-container {
         position: relative;
@@ -943,10 +942,13 @@ body {
           font-weight: bold; }
 
 .contenedor-padre-series {
-  width: 100vw;
+  width: 1440px;
   height: auto;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto; }
   .contenedor-padre-series .imagen-portada {
     width: 100%;
     height: 560px; }
@@ -967,10 +969,9 @@ body {
     width: 70em;
     margin-left: 6em; }
   .contenedor-padre-series .portada-series {
-    width: 100vw;
-    height: auto;
+    width: 1440px;
+    position: relative;
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap; }
   .contenedor-padre-series .pages {
     width: 300px;

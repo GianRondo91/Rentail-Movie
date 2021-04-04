@@ -1,29 +1,25 @@
 .component-profile {
-    // display: flex;
-    // flex-direction: column;
     color: white;
     font-family: $font-Questrial-Regular;
     position: relative;
     .content-favourites {
-        margin-top: 150px;
+        margin-top: 50px;
         width: 1440px;
-        position: absolute;
+        height: auto;
         margin-left: auto;
         margin-right: auto;
         .content-favourites-title {
+            margin-top: 64px;
             font-size: 26px;
-                margin-left: 36px;
-            .historial {
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-            }
         }
-    
+        .historial {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
         .content-favourites-container {
             display: flex;
             flex-direction: row;
-            margin-left: 50px;
             margin-top: 30px;
             .favourite-container {
                 position: relative;
