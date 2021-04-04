@@ -11,22 +11,21 @@ class Rent {
     }
 
     //Create a new order
-    async rentMovie (userId, filmId ,film){
+    async rentMovie (userId, film){
         const userEntity = await User.findById(userId)
-        //const movieEntity = await Movie.findById(filmId);
+
         
-        const movieEntity =filmId;
         const movieDataEntity = film;
-        console.log("A ver que nos traes...",userEntity, movieEntity,movieDataEntity)
-        if(!userEntity || !movieEntity || !movieDataEntity){
+        
+        if(!userEntity ||  /* !movieEntity || */ !movieDataEntity){
             throw new Error("Movie or user not found")
         }
         return await Order.create({
-            userId: userId,
-            filmId: filmId,
-            //image:poster,
+             userId: userId,
             poster_path:film,
-            payment:true
+            payment:true,
+            
+
         });
     };
     // Get all orders

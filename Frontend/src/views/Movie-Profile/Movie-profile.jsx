@@ -62,10 +62,11 @@ const MovieProfile = (props) => {
       //Datos de lel alquiler , Id del usuario , id de la pelicula y el  objeto completo de la pelicula//
       let rentData = {
          userId: props.user._id,
-         filmId: dataMovie.id,
+         filmTitle: dataMovie.title,
          film: dataMovie.poster_path,
          poster_path:dataMovie.poster_path,
-         payment: true
+         payment: true,
+        
       }
       console.log(rentData)
 
