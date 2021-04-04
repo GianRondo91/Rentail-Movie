@@ -6,29 +6,27 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken')
 const secret = process.env.JWT_SECRET || 'unapalabrasecreta';
 
-class UserController{
-    constructor(){
+class UserController {
+    constructor() {}
 
-    }
     //Mostrar todos los user
-    async showAllUsers(users){
+    async showAllUsers(users) {
         return User.find(users);
     };
 
     //Crear users
-    async createNewUser(user){
+    async createNewUser(user) {
         user.password = await bcrypt.hash(user.password, 5)
-        console.log(user)
-        console.log(user.password)
         return User.create(user);
     };
 
-    async login(email,password){
-        const user =  await User.findOne({email})
-        if(!user){
+    async login(email, password) {
+        const user = await User.findOne({ email })
+        if (!user) {
             throw new Error('Email does not exist')
         }
-        if (!await bcrypt.compare(password,user.password)){
+
+        if (!await bcrypt.compare(password, user.password)) {
             throw new Error('Password incorrect')
         }
 
@@ -36,15 +34,16 @@ class UserController{
             userId: user.id,
             tokenCreationDate: new Date,
         }
+
         const token = jwt.sign(payload, secret);
-        return {token, user}
+        return { token, user }
     };
 
     //Google Login
-    async googleLogin(googleInfo){
-        let user =  await User.findOne({email: googleInfo.email});
+    async googleLogin(googleInfo) {
+        let user = await User.findOne({ email: googleInfo.email });
 
-        if(!user){
+        if (!user) {
             //creo el usuario
             user = {
                 name: googleInfo.givenName,
@@ -54,7 +53,7 @@ class UserController{
                 password: await bcrypt.hash(googleInfo.googleId, 5)
             };
             await User.create(user);
-        } else if(!await bcrypt.compare(googleInfo.googleId,user.password)){
+        } else if (!await bcrypt.compare(googleInfo.googleId, user.password)) {
             throw new Error('Hay un usuario ya registrado con el email: ' + googleInfo.email);
         }
 
@@ -63,21 +62,21 @@ class UserController{
             tokenCreationDate: new Date,
         }
         const token = jwt.sign(payload, secret);
-        return {token, user}
+        return { token, user }
     };
 
     //Mostrar un user por Id
-    async findById(id){
+    async findById(id) {
         return User.findById(id);
     };
 
     //Actualizar user por Id
-    async updateUser(id, user){
-        return User.findByIdAndUpdate(id, user, {new: true});
+    async updateUser(id, user) {
+        return User.findByIdAndUpdate(id, user, { new: true });
     };
 
     //Eliminar user por Id
-    async destroy(id){
+    async destroy(id) {
         return User.findByIdAndRemove(id);
     };
 

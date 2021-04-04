@@ -1,24 +1,91 @@
-@media (min-width: $q-xl){
+@media (min-width: $q-xl) {
     #content {
         display: flex;
         margin-right: auto;
         margin-left: auto;
     }
     /*Data-user*/
-    .component-profile{
+    .component-profile {
         width: $q-l + $mp-q + $mp-d;
         margin-left: auto;
         margin-right: auto;
     }
-    .contenedorHome{
-        .content{
+    .content-home {
+        .content {
             position: absolute;
             top: 600px !important;
         }
     }
+    .movie-profile-container,
+    .component-header-user{
+        max-width: $q-l + $mp-q + $mp-d;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .component-header-user{
+        .component-header-logo{
+            .logo-link{
+                margin-left: 15px;
+            }
+        }
+    }
+    .movie-profile-container {
+        font-family: $font-Questrial-Regular;
+        .movie-panel{
+            margin-top: 136px;
+            .rent-data-movie{
+                .movie-title{
+                    color: nth($fontColor, 3);
+                }
+                .movie-rent{
+                    margin-left: 0;
+                    .rent,
+                    .mas-recomendaciones{
+                        text-align: center;
+                        margin-left: 0;
+                        border-radius: 10px;
+                    }
+                }
+                .overview{
+                    margin-top: 30px;
+                    font-size: 20px;
+                    color: nth($brown, 1);
+                }
+            }
+        }
+        .movie-panel-other{
+            margin-top: 280px;
+            .data-movie{
+                .movie-title{
+                    color: nth($fontColor, 3);
+                }
+                .movie-rent{
+                    margin-left: 0;
+                    .rent,
+                    .mas-recomendaciones{
+                        text-align: center;
+                        margin-left: 0;
+                        border-radius: 10px;
+                    }
+                }
+                .overview{
+                    margin-top: 30px;
+                    font-size: 20px;
+                    color: nth($brown, 1);
+                    letter-spacing: 1px;
+                }
+            }
+            .movie-poster{
+                img{
+                    position: relative;
+                    bottom: 109px;
+                }
+            }
+        }
+    }
 }
 
-@media (min-width: $q-l + $size-a) and (max-width: $q-xl - $size-a){
+@media (min-width: $q-l + $size-a) and (max-width: $q-xl - $size-a) {
     #content {
         width: $q-l;
         display: flex;
@@ -33,60 +100,57 @@
         }
     }
     /*Data-user*/
-    .component-profile{
-        .component-header-user{
-           width: $mp-z;
+    .component-profile {
+        .component-header-user {
+            width: $mp-z;
         }
     }
-    .contenedorHome{
-        #myVideo{
+    .content-home {
+        #my-video {
             height: 800px !important;
         }
-        .content{
+        .content {
             position: absolute;
             top: 510px !important;
         }
     }
 }
+
 @media all and (min-width: $q-m + $size-a) and (max-width: $q-l) {
     #content {
-        width: $q-m + $size-a;
-        display: flex;
+        max-width: $q-m;
         margin-right: auto;
         margin-left: auto;
-        margin-top: $per-1;
+        background-color: rosybrown;
         .content-left {
             width: $per-5;
         }
         .content-right {
-            width: $per-5;
+            width: $per-10;
         }
     }
-    .contenedorHome{
-        width: 900px;
+    .content-home {
+        width: $per-10;
         margin-left: auto;
         margin-right: auto;
-        .header-movies{
+        .header-movies {
             height: 142px;
-            .header-logo{
+            .header-logo {
                 bottom: 45px;
             }
         }
-        .separador{
-            width: 80%;
-        }
     }
     /*Data-user*/
-    .component-profile{
-        .component-header-user{
-           width: $mp-z - ($mp-q);
+    .component-profile {
+        .component-header-user {
+            width: $mp-z - ($mp-q);
         }
-        .data-user{
+        .data-user {
             width: $mp-z - ($mp-p + $mp-b);
-            .form-update-data{
+            .form-update-data {
                 width: $per-5;
             }
-            .form-update-payment{
+            .form-update-payment {
                 margin-left: $mp-h;
                 width: $per-5;
             }
@@ -94,57 +158,252 @@
     }
 }
 
-@media (min-width: $q-s)  and (max-width: $q-m) {
+@media (min-width: $q-s) and (max-width: $q-m) {
     #content {
-        width: auto;
-        display: flex;
-        margin-top: $per-1;
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 500px;
         .content-left {
             width: $per-0;
         }
         .content-right {
-            width: $img-xxll;
+            width: $per-10;
             margin-right: auto;
             margin-left: auto;
         }
     }
-    .contenedorHome{
-        width: 1215px;
+    .content-home,
+    .contenedor-padre-series {
+        max-width: 500px;
+        position: relative;
         margin-left: auto;
         margin-right: auto;
-    }
-    /*Data-user*/
-    .component-profile{
-        width: 512px;
-        margin-left: auto;
-        margin-right: auto;
-        .component-header-user{
-           display: table-cell;
-           text-align: right;
-            .component-header-menu{
-                .component-header-menu-ul{
-                    top: $mp-nn;
-                    position: absolute;
-                    left: $mp-k;
+        .content-movies {
+            #my-video {
+                height: 490px !important;
+            }
+            .content-button-info {
+                top: 398px;
+                left: 270px;
+            }
+        }
+        .content {}
+        .component-header-user {
+            width: auto !important;
+            .header-logo {}
+            .component-header-menu {
+                top: 178px;
+                left: 650px;
+                position: absolute;
+                .component-header-menu-ul {
+                    display: grid;
+                    right: 257px;
+                    top: 13px;
+                    .header-menu-li {
+                        margin-bottom: 30px;
+                        .search {
+                            width: 300px;
+                        }
+                    }
+                    .component-header-menu-li-img {
+                        right: -272px;
+                        bottom: 359px;
+                        position: relative;
+                        width: fit-content;
+                    }
+                    .component-header-menu-li-icon {
+                        right: -363px;
+                        bottom: 410px;
+                        position: relative;
+                        width: fit-content;
+                    }
                 }
             }
         }
-        .data-user{
-            .form-update-data{
-                width: $per-4;
-                .form-data-content{
-                    left: $per-1 / 2;
+        .content-movies {
+            max-width: 490px;
+        }
+        .vistaFooter {
+            max-width: 490px;
+            margin-top: 377px;
+        }
+        .serie-search{
+            top: 365px;
+            height: auto;
+        }
+    }
+    /*Data-user*/
+    .component-profile {
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+        .component-header-user {
+            display: table-cell;
+            text-align: right;
+            .component-header-menu {
+                width: 490px !important;
+                .component-header-menu-ul {
+                    top: 131px;
+                    position: absolute;
+                    left: 66px;
+                    width: 398px;
                 }
             }
-            .form-update-payment{
+            .component-header-logo {
+                .logo-link {
+                    left: 61px;
+                    position: relative;
+                }
+            }
+        }
+        .data-user {
+            margin-top: 60px;
+            width: auto;
+            .form-update-data {
+                width: $per-9;
+                margin-left: auto;
+                margin-right: auto;
+                .form-data-content {
+                    width: $per-7;
+                    margin-left: auto;
+                    margin-right: auto;
+                    position: relative;
+                    left: 3px;
+                    .form-update-data-input {
+                        margin-top: 12px;
+                    }
+                    .form-update-data-button {
+                        position: relative;
+                        top: 450px;
+                    }
+                }
+            }
+            .form-update-payment {
+                width: $per-9;
                 position: absolute;
-                    top: $mp-v + $mp-i;
-                .form-payment-content{
-                    .form-update-payment-button{
+                margin-left: $per-1/2;
+                top: $mp-v + $mp-i;
+                .form-payment-content {
+                    .form-update-payment-button {
                         bottom: $mg-60;
                     }
                 }
             }
         }
+        .vistaFooter{
+            margin-top: 450px;
+        }
+    }
+    .series-title {
+        margin-top: 50px;
+    }
+    .portada-series {
+        max-width: 500px;
+        margin-left: 10%;
+        .movie {
+            width: 200px;
+            .movieStyelDos {
+                width: 212px;
+                height: 224px;
+            }
+            .overlay-two {
+                width: 152px;
+            }
+        }
+    }
+    .content-favourites {
+        max-width: 500px;
+        margin-top: 100px !important;
+        .content-favourites-title {
+            width: auto;
+            margin-left: 20px;
+        }
+        .historial {
+            margin-left: 10%;
+            .movie {
+                width: 200px;
+                .movieStyelDos {
+                    width: 212px;
+                    height: 224px;
+                }
+                .overlay-two {
+                    width: 152px;
+                }
+            }
+        }
+    }
+    .movie-profile-container {
+        max-width: 500px;
+        margin-left: auto;
+        margin: auto;
+        .component-header-user {
+            max-width: 500px;
+            .header-logo {}
+            .header-menu-movies {
+                position: relative;
+                left: 317px;
+                top: 57px;
+                .header-menu-ul{
+                    top: 112px;
+                    .header-menu-li .search{
+                        bottom: 94px;
+                        position: relative;
+                        left: 532px;
+                    }
+                }
+            }
+        }
+        .movie-panel {
+            position: relative;
+            top: 100px;
+            .data-movie {
+                position: relative;
+                right: 50px;
+                width: 216px;
+                bottom: 135px;
+                .movie-title {
+                    position: relative;
+                    bottom: 11px;
+                    font-size: 26px;
+                    width: 100%;
+                    color: nth($fontColor, 3);
+                }
+                .movie-rate {}
+                .movie-rent {
+                    flex-direction: column;
+                    left: 33px;
+                    position: relative;
+                    .rent,
+                    .mas-recomendaciones {
+                        width: 160px;
+                        text-align: center;
+                    }
+                }
+                .overview {}
+                .show-video-movie {
+                    .multimedia {
+                        max-width: 190px;
+                        margin-left: auto;
+                        margin-right: auto;
+                        iframe {
+                            max-width: 450px;
+                        }
+                    }
+                }
+            }
+            .rent-data-movie{
+                bottom: 410px;
+            }
+            .movie-poster {
+                img {
+                    width: 300px;
+                    height: 350px;
+                    bottom: 300px;
+                    position: relative;
+                    bottom: 356px;
+                }
+            }
+        }
     }
 }
+

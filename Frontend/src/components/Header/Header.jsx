@@ -26,14 +26,12 @@ const Header = (props) => {
   //Handler
   const handleStateSearch = (e) => {
     setSearch({ ...query, [e.target.name]: e.target.value })
-    console.log("soy el search del handler", query);
   }
 
   //Llama al callback onSearch
   const search = async (evt) => {
     if (evt.key === 'Enter') {
       props.onSearch(query.query);
-      console.log(query.query);
     }
   }
 
@@ -43,7 +41,7 @@ const Header = (props) => {
 
   const getUserImage = () => {
     if (props.user.image) {
-      return <li className="component-header-menu-li component-header-menu-li-img"><a href="/profile/data" className='header-menu-a-name'><img src={props.user.image} alt="" className='img-user' /></a></li>;
+      return <li className="component-header-menu-li component-header-menu-li-img"><a href="/profile/data" className='header-menu-a-name'><img referrerpolicy="no-referrer" src={props.user.image} alt="" className='img-user' /></a></li>;
     }
     return <li className="component-header-menu-li  header-menu-li header-menu-li-name"><a href="/profile/data" className='header-menu-a-name'>{props.user?.name}</a></li>;
   };
@@ -59,7 +57,7 @@ const Header = (props) => {
       <div className="component-header-menu header-menu-movies">
         <ul className="component-header-menu-ul header-menu-ul">
           <li className="component-header-menu-li  header-menu-li"><input className="search" name="query" type="text" onKeyUp={search} onChange={handleStateSearch} /></li>
-          <li className="component-header-menu-li  header-menu-li-select">
+          <li className="component-header-menu-li header-menu-li header-menu-li-select">
             <select name="genres" onChange={genreSearch} className='header-menu-li-select'>
               <option value="0">Género</option>
               <option value="28">Acción</option>

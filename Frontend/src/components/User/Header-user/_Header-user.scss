@@ -31,7 +31,7 @@
         .component-header-menu-ul{
             display: flex;
             position: absolute;
-            right: $size-u;
+            right: 0;
             bottom: -50px;
             font-size: $size-l;
             .component-header-menu-li{

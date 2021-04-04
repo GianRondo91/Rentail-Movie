@@ -5,16 +5,15 @@ const secret = process.env.JWT_SECRET || 'unapalabrasecreta';
 const auth =  async (req, res, next) => {
     try{
         const auth = req.headers.authorization;
+        
         // const token = auth.split(' ')[1]
         const payload = jwt.verify(auth,secret)
-        console.log('estamos aquiiiiiiiiii',payload);
 
         if(!payload){
             throw new Error('Cannot be verified')
         }
 
         const userId = req.params.id
-        console.log('el userId es', userId);
 
         if (userId != payload.userId){
             throw new Error('User cannot be verified')

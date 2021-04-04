@@ -14,20 +14,20 @@ const Series = (props) => {
 
    const [series, setSeries] = useState([]);
    const [favoritos, setFavoritos] = useState([]);
-   const [query, setSearch] = useState("");
+   // const [query, setSearch] = useState("");
 
    //Constuccion de URL consultas TMDB
-   let key = "ef2edc9da61e81787a8079a7df721936";
-   let base_url = `http://api.themoviedb.org/3/movie/`;
+   // let key = "ef2edc9da61e81787a8079a7df721936";
+   // let base_url = `http://api.themoviedb.org/3/movie/`;
    let language = "language=es-ES"
    let colectionSeries = 'https://api.themoviedb.org/3/tv/popular?api_key=ef2edc9da61e81787a8079a7df721936&language=es-ES&page=1'
 
    useEffect(() => {
       //Ultimas Peliculas
-      let Latest = `${base_url}now_playing?api_key=${key}&${language}&page=1`;
-      let destacado = `${base_url}now_playing?api_key=${key}&${language}&page=2`;
-      let populares = `${base_url}popular?api_key=${key}&${language}`;
-      let recomendaciones = `${base_url}top_rated?api_key=${key}&${language}`
+      // let Latest = `${base_url}now_playing?api_key=${key}&${language}&page=1`;
+      // let destacado = `${base_url}now_playing?api_key=${key}&${language}&page=2`;
+      // let populares = `${base_url}popular?api_key=${key}&${language}`;
+      // let recomendaciones = `${base_url}top_rated?api_key=${key}&${language}`
 
       //Populares
 
@@ -111,7 +111,7 @@ const Series = (props) => {
       const listaFavoritos = [...favoritos, { id, title, posther_path }]
       setFavoritos(listaFavoritos)
       localStorage.setItem("favoritos", JSON.stringify(favoritos))
-   }
+   };
 
    //Functions:
 
@@ -144,29 +144,35 @@ const Series = (props) => {
          <div className="imagen-portada">
             <img className='portada' src={casaDePapel} alt="Casa de papel" />
          </div>
-         <div className="separator"></div>
-         <h2 className='genre-title'>Resultado de la búsqueda por género <em class="title-color">{genreDictionary(genreQuery)}</em></h2>
-         <div className="print-movie-search">
-            {movieGenreSearch.map(genre => <Movie style="other-card-style" key={genre.id} addFavouriteMovie={addFavouriteMovie} {...genre} onClick={() => takeMeTo(genre)} />)}
-         </div>
-         <div className="separator"></div>
-         <h2 className='genre-title'>Resultado de la búsqueda <em class="title-color">{searchQuery}</em></h2>
-         <div className="print-movie-search">
-            {seriesSearch.map(serie => <Movie style='card-style' key={serie.id}  {...serie} onClick={() => takeMeTo(serie)} />)}
-         </div>
-         {/* <div className="separadorSeries"></div>
-         <h2 className='series-title'>Resultado de la búsqueda {searchQuery}</h2>
-         <div className="carousel-series">
-            {seriesSearch.map(serie => <Movie style='card-style' key={serie.id}  {...serie} onClick={() => takeMeTo(serie)} />)}
-         </div> */}
-         <div className="series-genre">
-            <div className="carousel-series">
-               {movieGenreSearch.map(genre => <Movie style='card-style' key={genre.id} addFavouriteMovie={addFavouriteMovie} {...genre} onClick={() => takeMeTo(genre)} />)}
+
+         <div className="serie-search">
+            <h2 className='genre-title'>Resultado de la búsqueda por género <em class="title-color">{genreDictionary(genreQuery)}</em></h2>
+            <div className="print-movie-search">
+               {movieGenreSearch.map(genre => <Movie style="other-card-style" key={genre.id} addFavouriteMovie={addFavouriteMovie} {...genre} onClick={() => takeMeTo(genre)} />)}
             </div>
-         </div>
-         <div className="separadorSeries"></div>
-         <div className="portada-series">
-            {series.map(series => <Movie style='other-card-style' key={series.id}  {...series} onClick={() => takeMeTo(series)} />)}
+
+            <h2 className='genre-title'>Resultado de la búsqueda <em class="title-color">{searchQuery}</em></h2>
+            <div className="print-movie-search">
+               {seriesSearch.map(serie => <Movie style='card-style' key={serie.id}  {...serie} onClick={() => takeMeTo(serie)} />)}
+            </div>
+            
+            <div className="series-genre">
+               <div className="carousel-series">
+                  {seriesSearch.map(serie => <Movie style='card-style' key={serie.id}  {...serie} onClick={() => takeMeTo(serie)} />)}
+               </div>
+               <div className="series-genre">
+                  <div className="carousel-series">
+                     {movieGenreSearch.map(genre => <Movie style='card-style' key={genre.id} addFavouriteMovie={addFavouriteMovie} {...genre} onClick={() => takeMeTo(genre)} />)}
+                  </div>
+               </div>
+               <div className="portada-series">
+                  {series.map(series => <Movie style='other-card-style' key={series.id}  {...series} onClick={() => takeMeTo(series)} />)}
+               </div>
+            </div>
+
+            <div className="portada-series">
+               {series.map(series => <Movie style='other-card-style' key={series.id}  {...series} onClick={() => takeMeTo(series)} />)}
+            </div>
          </div>
          <Footer />
       </div>
