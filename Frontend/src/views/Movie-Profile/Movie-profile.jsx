@@ -9,24 +9,20 @@ import Loading from '../../components/Loading/Loading';
 
 const MovieProfile = (props) => {
    const [rentFilm, setRentFilm] = useState(true)
-   // let user = JSON.parse(localStorage.getItem('user'));
-   // console.log(user._id);
 
    let link = 'https://image.tmdb.org/t/p/original';
    let dataMovie = JSON.parse(localStorage.getItem('movie'));
-   console.log(dataMovie.id);
-   console.log(props.user.name)
 
    const [trailer, setTrailer] = useState("");
-   const [realizado ,setRealizado]=useState('');
-   const [order,setOrder]=useState({
-      orderID:'',
-      titeMovie:'',
-      client:props.user.name,
-      initialRentDate:'',
-      returnRentDate:'',
-      poster:'',
-      payment:true
+   const [realizado, setRealizado] = useState('');
+   const [order, setOrder] = useState({
+      orderID: '',
+      titeMovie: '',
+      client: props.user.name,
+      initialRentDate: '',
+      returnRentDate: '',
+      poster: '',
+      payment: true
 
    })
 
@@ -37,10 +33,10 @@ const MovieProfile = (props) => {
       let base_url = `http://api.themoviedb.org/3/movie/`;
       let movieId = dataMovie.id;
       let keyLink = await axios.get(`${base_url}${movieId}/videos?api_key=${apiKey}`);
-      console.log("soy el key link", keyLink);
       let trailerKey = keyLink.data.results[0]?.key;
-      return setTrailer(`https://www.youtube.com/watch?v=${trailerKey}`)
-   }
+
+      return setTrailer(`https://www.youtube.com/watch?v=${trailerKey}`);
+   };
 
    let history = useHistory();
    const goto = () => {
@@ -65,51 +61,44 @@ const MovieProfile = (props) => {
          userId: props.user._id,
          filmTitle: dataMovie.title,
          film: dataMovie.poster_path,
-         poster_path:dataMovie.poster_path,
+         poster_path: dataMovie.poster_path,
          payment: true,
-        
-      }
-      console.log(rentData)
 
+      };
 
       let response = await axios.post(endPointRent, rentData);
-      console.log("Soy la respuesta del aqluiler", response);
       localStorage.setItem('rentInfo', JSON.stringify(response))
-      let orderResponse =response.data.order;
-      
+      let orderResponse = response.data.order;
+
       let objectRent = {
-         orderID:orderResponse._id,
-         client:props.user.name,
-         initialRentDate:orderResponse.order_date,
-         returnRentDate:orderResponse.return_date,
-         payment:true
+         orderID: orderResponse._id,
+         client: props.user.name,
+         initialRentDate: orderResponse.order_date,
+         returnRentDate: orderResponse.return_date,
+         payment: true
       }
       setOrder(objectRent);
       setRentFilm(false)
 
-      
-      if(order.payment == true){
+      if (order.payment === true) {
          return setRealizado('Pago Realizado Mediante Tarjeta');
       }
    }
 
-   
-
    let NotRented = <div className="rent" onClick={() => Alquilar()}>Alquilar <br />4.99€</div>
    let Rented = <div className="rent" >Estas Viendo <br /></div>
-  
+
    if (!props.token) {
-      setTimeout(()=>{
-          history.push('/');
-      },2000);
-      
-      return(
-          <div className="container-gif">
-              <div className="gif">
-                  <Loading/>
-              </div>
-              
-          </div>
+      setTimeout(() => {
+         history.push('/');
+      }, 2000);
+
+      return (
+         <div className="container-gif">
+            <div className="gif">
+               <Loading />
+            </div>
+         </div>
       );
    };
 
@@ -119,13 +108,13 @@ const MovieProfile = (props) => {
             <Header />
             <div className="movie-panel">
                <div className="data-movie rent-data-movie">
-               <div className="movie-title">{dataMovie.title}{dataMovie.name}</div>
+                  <div className="movie-title">{dataMovie.title}{dataMovie.name}</div>
                   <div className="movie-rent">
                      {Rented}
                      <div className="mas-recomendaciones" onClick={() => goto()}> Ver Mas Recomendaciónes </div>
                   </div>
                   <div className="overview">
-                     <h2 classeName='Rent-Data'>DATOS DEL ALQUILER:</h2><br/>
+                     <h2 classeName='Rent-Data'>DATOS DEL ALQUILER:</h2><br />
                      <h2 classeName='Rent-Data'>Usuario : {order.client}</h2>
                      <h2 classeName='Rent-Data'>Pago Del Alquiler :{realizado}</h2>
                      <h2 classeName='Rent-Data'>Fecha De Inicio Del Alquiler:{order.initialRentDate}</h2>
@@ -136,7 +125,6 @@ const MovieProfile = (props) => {
                   <img src={link + dataMovie.poster_path} alt={dataMovie.tite} />
                </div>
             </div>
-
          </div>
       )
    } else {
@@ -163,7 +151,6 @@ const MovieProfile = (props) => {
                         />
                      </div>
                   </div>
-
                </div>
                <div className="movie-poster">
                   <img src={link + dataMovie.poster_path} alt={dataMovie.tite} />
@@ -173,12 +160,13 @@ const MovieProfile = (props) => {
          </div>
       )
    }
-}
+};
 
 const mapStateToProps = state => {
    return {
       user: state.user,
       token: state.token
    }
-}
+};
+
 export default connect(mapStateToProps)(MovieProfile);

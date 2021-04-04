@@ -114,23 +114,23 @@
             top: 510px !important;
         }
     }
-   
 }
 
 @media all and (min-width: $q-m + $size-a) and (max-width: $q-l) {
     #content {
-        display: flex;
+        max-width: $q-m;
         margin-right: auto;
         margin-left: auto;
+        background-color: rosybrown;
         .content-left {
             width: $per-5;
         }
         .content-right {
-            width: $per-5;
+            width: $per-10;
         }
     }
     .content-home {
-        width: $q-m;
+        width: $per-10;
         margin-left: auto;
         margin-right: auto;
         .header-movies {
@@ -156,19 +156,18 @@
             }
         }
     }
-    
 }
 
 @media (min-width: $q-s) and (max-width: $q-m) {
     #content {
-        display: flex;
         margin-right: auto;
         margin-left: auto;
+        max-width: 500px;
         .content-left {
             width: $per-0;
         }
         .content-right {
-            width: $img-xxll;
+            width: $per-10;
             margin-right: auto;
             margin-left: auto;
         }
@@ -226,6 +225,11 @@
         }
         .vistaFooter {
             max-width: 490px;
+            margin-top: 377px;
+        }
+        .serie-search{
+            top: 365px;
+            height: auto;
         }
     }
     /*Data-user*/
@@ -270,7 +274,7 @@
                     }
                     .form-update-data-button {
                         position: relative;
-                        top: 420px;
+                        top: 450px;
                     }
                 }
             }
@@ -285,6 +289,9 @@
                     }
                 }
             }
+        }
+        .vistaFooter{
+            margin-top: 450px;
         }
     }
     .series-title {
@@ -400,8 +407,3 @@
     }
 }
 
-@media all and (max-width: 360px) {
-    .content-home {
-        background-color: tomato;
-    }
-}

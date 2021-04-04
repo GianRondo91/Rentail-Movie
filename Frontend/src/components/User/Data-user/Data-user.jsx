@@ -7,6 +7,7 @@ import checkError from '../../../My-tools/My-tools';
 import { connect } from 'react-redux';
 import {UPDATE_USER} from '../../../redux/types/userTypes';
 import Loading from '../../Loading/Loading';
+import Footer from '../../Footer/Footer';
 
 const Data = (props) => {
 
@@ -20,7 +21,6 @@ const Data = (props) => {
     // Manejar el estado
     const handleState = (e) => {
         setUser({ ...user, [e.target.name]: e.target.value });
-        console.log(user);
     };
 
     const handleStatePayment = (e) => {
@@ -48,17 +48,12 @@ const Data = (props) => {
         setMessageUpdateData(notValidated);
 
         if (notValidated) {
-            console.log(user)
             alert('no puede actualizar data');
             return;
-        }
-        
-        console.log(user);
+        };
 
         let endpointUser = `http://localhost:3002/users/${user._id}`;
         let response = await axios.put(endpointUser, user, { headers: { authorization: props.token } });
-    
-        console.log(response);
         
         if (response) {
             props.dispatch({type: UPDATE_USER, payload: user});
@@ -78,7 +73,6 @@ const Data = (props) => {
                 <div className="gif">
                     <Loading/>
                 </div>
-                
             </div>
         );
      };
@@ -146,6 +140,7 @@ const Data = (props) => {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 }
@@ -155,4 +150,5 @@ const mapStateToProps =state =>{
       token : state.token
     }
   };
+  
 export default connect(mapStateToProps)(Data);

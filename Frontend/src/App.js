@@ -4,7 +4,6 @@ import {BrowserRouter, Switch , Route} from 'react-router-dom';
 import Landing from './views/Landing/Landing';
 import Home from './views/Home/Home';
 import Register from './components/Register/Register';
-import Loading from './components/Loading/Loading';
 import Profile from './views/Profile/Profile';
 import MovieProfile from './views/Movie-Profile/Movie-profile';
 import Data from './components/User/Data-user/Data-user';

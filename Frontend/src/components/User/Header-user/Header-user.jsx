@@ -21,13 +21,13 @@ const HeaderUser = (props) => {
 
     const getUserImage = () => {
         if(props.user.image){
-            return  <li className="component-header-menu-li component-header-menu-li-img"><img src={props.user.image} alt="" className='img-user'/></li>;
+            return  <li className="component-header-menu-li component-header-menu-li-img"><img referrerpolicy="no-referrer" src={props.user.image} alt="" className='img-user'/></li>;
         }
         return  <li className="component-header-menu-li component-header-menu-li-name"> {props.user?.name}</li>;
     };
 
     return (
-        <div className='component-header-user cell-2'>
+        <div className='component-header-user'>
             <div className="component-header-logo">
                 <a href="/home" className='logo-link'>
                     <div className="user-logo-first">Net </div>

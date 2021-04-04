@@ -5,7 +5,6 @@ import Header from '../../components/Header/Header';
 import { useHistory } from 'react-router-dom';
 import Footer from '../../components/Footer/Footer.jsx';
 import { } from '@fortawesome/free-solid-svg-icons';
-// import AddFavourite from '../../components/Add-fav/AddFavourite';
 import axios from "axios";
 import { connect } from 'react-redux';
 import Loading from '../../components/Loading/Loading';
@@ -20,7 +19,6 @@ const Home = (props) => {
    const [populares, setPopulares] = useState([]);
    const [recomendaciones, setRecomendaciones] = useState([]);
    const [favoritos, setFavoritos] = useState([""]);
-   /* const [favoritos, setFavoritos] = useState([]); */
    const [movieSearch, setSearch] = useState([]);
    const [movieGenreSearch, setGenre] = useState([]);
    const [searchQuery, setSearchQuery] = useState("");
@@ -94,8 +92,6 @@ const Home = (props) => {
             break;
       };
    };
-   // console.log("soy el return de", genreDictionary())
-   
 
 
    useEffect(() => {
@@ -138,18 +134,16 @@ const Home = (props) => {
    //Functions:
    const takeMeTo = (movie) => {
       localStorage.setItem('movie', JSON.stringify(movie));
-      let LittleJson = JSON.parse(localStorage.getItem('movie'));
-      console.log(LittleJson);
+      // let LittleJson = JSON.parse(localStorage.getItem('movie'));
       history.push('/home/movie');
    };
 
-   const GotoMovies = async() => {
-      let aquaman = 'https://api.themoviedb.org/3/search/movie?api_key=e34f732b92a2e7dbe69709d0433150c3&language=es&query=aquaman';
-      let info = await axios.get(aquaman);
-      localStorage.setItem('movie',JSON.stringify(info.data.results[0]));
-      console.log(info.data.results[0]);
-      history.push('/home');
-   };
+   // const GotoMovies = async () => {
+   //    let aquaman = 'https://api.themoviedb.org/3/search/movie?api_key=e34f732b92a2e7dbe69709d0433150c3&language=es&query=aquaman';
+   //    let info = await axios.get(aquaman);
+   //    localStorage.setItem('movie', JSON.stringify(info.data.results[0]));
+   //    history.push('/home');
+   // };
 
    const getFavouriteMovies = () => {
       let allFavourites = JSON.parse(localStorage.getItem('favoritos'));
@@ -169,17 +163,16 @@ const Home = (props) => {
       }
    }
    if (!props.token) {
-      setTimeout(()=>{
-          history.push('/');
-      },2000);
-      
-      return(
-          <div className="container-gif">
-              <div className="gif">
-                  <Loading/>
-              </div>
-              
-          </div>
+      setTimeout(() => {
+         history.push('/');
+      }, 2000);
+
+      return (
+         <div className="container-gif">
+            <div className="gif">
+               <Loading />
+            </div>
+         </div>
       );
    };
 
@@ -189,10 +182,6 @@ const Home = (props) => {
             < Header onSearch={search} onGenre={searchGenre} />
             <div className="content-movies">
                <video className='my-video' autoPlay muted loop id="my-video" src={video}></video>
-               {/* <div class="content-button-info">
-                  <p>AQUA-MAN</p>
-                  <button id="button-info" onClick={GotoMovies}> Mas información </button>
-               </div> */}
                <h2 className="genre-title">Destacadas</h2>
                <div className="print-movie">
                   {destacado.map(destacado => <Movie style="other-card-style" key={destacado.id} {...destacado} addFavouriteMovie={addFavouriteMovie} onClick={() => takeMeTo(destacado)} />)}
@@ -219,12 +208,7 @@ const Home = (props) => {
       return (
          <div className="content-home">
             < Header onSearch={search} onGenre={searchGenre} />
-            <div className="content-movies">
-               <video className='my-video' autoPlay muted loop id="my-video" src={video}></video>
-               {/* <div class="content-button-info">
-                  <p>AQUA-MAN</p>
-                  <button id="button-info" onClick={GotoMovies}> Mas información </button>
-               </div> */}
+            <div className="content-movies content-movies-search">
                <h2 className='genre-title'>Resultado de la búsqueda por género <em class="title-color">{genreDictionary(genreQuery)}</em></h2>
                <div className="print-movie-search">
                   {movieGenreSearch.map(genre => <Movie style="other-card-style" key={genre.id} addFavouriteMovie={addFavouriteMovie} {...genre} onClick={() => takeMeTo(genre)} />)}

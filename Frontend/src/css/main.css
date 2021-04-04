@@ -783,6 +783,9 @@ body {
       align-items: center;
       justify-content: flex-start;
       overflow-x: auto; }
+  .content-home .content-movies-search {
+    position: relative;
+    top: 149px; }
 
 .movie-profile-container {
   margin-top: -15;
@@ -927,7 +930,8 @@ body {
     .component-profile .content-favourites .content-favourites-container {
       display: flex;
       flex-direction: row;
-      margin-top: 30px; }
+      margin-top: 30px;
+      overflow-x: auto; }
       .component-profile .content-favourites .content-favourites-container .favourite-container {
         position: relative;
         display: flex;
@@ -942,8 +946,6 @@ body {
           height: 44px;
           margin-top: 10px; }
         .component-profile .content-favourites .content-favourites-container .favourite-container .favourite-img {
-          width: 100%;
-          height: 100%;
           overflow: hidden;
           margin-top: 10px; }
         .component-profile .content-favourites .content-favourites-container .favourite-container .button-delete {
@@ -972,8 +974,9 @@ body {
       height: 100%; }
   .contenedor-padre-series .series-title {
     margin-left: 10px;
-    font-size: 20px;
-    color: #51C2C0; }
+    font-size: 25px; }
+    .contenedor-padre-series .series-title .title-search {
+      color: #51C2C0; }
   .contenedor-padre-series .carousel-series {
     display: flex;
     flex-direction: row;
@@ -988,6 +991,10 @@ body {
     height: 30px;
     color: white;
     margin-left: 500px; }
+  .contenedor-padre-series .serie-search {
+    position: relative;
+    top: 149px;
+    color: white; }
 
 /*RESPONSIVE DESIGN*/
 @media (min-width: 1440px) {
@@ -1069,15 +1076,16 @@ body {
 
 @media all and (min-width: 1008px) and (max-width: 1200px) {
   #content {
-    display: flex;
+    max-width: 1007px;
     margin-right: auto;
-    margin-left: auto; }
+    margin-left: auto;
+    background-color: rosybrown; }
     #content .content-left {
       width: 50%; }
     #content .content-right {
-      width: 50%; }
+      width: 100%; }
   .content-home {
-    width: 1007px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto; }
     .content-home .header-movies {
@@ -1097,13 +1105,13 @@ body {
 
 @media (min-width: 375px) and (max-width: 1007px) {
   #content {
-    display: flex;
     margin-right: auto;
-    margin-left: auto; }
+    margin-left: auto;
+    max-width: 500px; }
     #content .content-left {
       width: 0%; }
     #content .content-right {
-      width: 500px;
+      width: 100%;
       margin-right: auto;
       margin-left: auto; }
   .content-home,
@@ -1155,7 +1163,12 @@ body {
       max-width: 490px; }
     .content-home .vistaFooter,
     .contenedor-padre-series .vistaFooter {
-      max-width: 490px; }
+      max-width: 490px;
+      margin-top: 377px; }
+    .content-home .serie-search,
+    .contenedor-padre-series .serie-search {
+      top: 365px;
+      height: auto; }
   /*Data-user*/
   .component-profile {
     max-width: 500px;
@@ -1191,7 +1204,7 @@ body {
             margin-top: 12px; }
           .component-profile .data-user .form-update-data .form-data-content .form-update-data-button {
             position: relative;
-            top: 420px; }
+            top: 450px; }
       .component-profile .data-user .form-update-payment {
         width: 90%;
         position: absolute;
@@ -1199,6 +1212,8 @@ body {
         top: 664px; }
         .component-profile .data-user .form-update-payment .form-payment-content .form-update-payment-button {
           bottom: -60px; }
+    .component-profile .vistaFooter {
+      margin-top: 450px; }
   .series-title {
     margin-top: 50px; }
   .portada-series {
@@ -1278,7 +1293,3 @@ body {
         bottom: 300px;
         position: relative;
         bottom: 356px; } }
-
-@media all and (max-width: 360px) {
-  .content-home {
-    background-color: tomato; } }

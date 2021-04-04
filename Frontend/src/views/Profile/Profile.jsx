@@ -15,11 +15,8 @@ const Profile = (props) => {
 
     const [favouritesMovies, setFavouritesMovies] = useState([]);
     const [showRent, setShowRent] = useState([]);
-    const [image, setImage] = useState([]);
+    // const [image, setImage] = useState([]);
 
-
-
-    console.log(favouritesMovies)
     useEffect(() => {
         allFavouritesMovies();
         //let firstPart='https://image.tmdb.org/t/p/original';
@@ -27,25 +24,20 @@ const Profile = (props) => {
         const GetMyRents = async () => {
             let MyEndPoint = `http://localhost:3002/users/${props.user._id}/orders`;
             let rentData = await axios.get(MyEndPoint);
-            console.log(rentData)
             setShowRent(rentData.data);
         }
         GetMyRents();
     }, []);
 
-
-
     const allFavouritesMovies = () => {
         const allFavourites = JSON.parse(localStorage.getItem("favoritos"))
-        setFavouritesMovies(allFavourites)
-        console.log(favouritesMovies)
+        setFavouritesMovies(allFavourites);
     };
 
     const deleteItem = (id) => {
         const newFavouriteList = favouritesMovies.filter(
             (favouriteMovie) => favouriteMovie.id !== id
         );
-        console.log("dsd")
         setFavouritesMovies(newFavouriteList);
         localStorage.setItem("favoritos", JSON.stringify(newFavouriteList))
     };
@@ -60,7 +52,6 @@ const Profile = (props) => {
                 <div className="gif">
                     <Loading />
                 </div>
-
             </div>
         );
     } else {
@@ -89,15 +80,14 @@ const Profile = (props) => {
                 </div>
             </div>
         )
-
     }
-
 };
 
 const mapStateToProps = state => {
     return {
-                    user: state.user,
+        user: state.user,
         token: state.token
     }
 };
+
 export default connect(mapStateToProps)(Profile);

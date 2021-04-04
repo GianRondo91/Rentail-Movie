@@ -53,15 +53,11 @@ const Register = (props) => {
             city: user.city,
             postal: user.postal
         };
-        console.log(userData);
 
         let endpointUser = 'http://localhost:3002/users';
 
         let response = setTimeout(async () => {
-
             await axios.post(endpointUser, userData);
-
-            console.log(response);
         }, 1000)
         if (response) {
             alert('Usuario Registrado Con Exito');
