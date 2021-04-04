@@ -6,6 +6,7 @@ import axios from "axios";
 import checkError from '../../../My-tools/My-tools';
 import { connect } from 'react-redux';
 import {UPDATE_USER} from '../../../redux/types/userTypes';
+import Loading from '../../Loading/Loading';
 
 const Data = (props) => {
 
@@ -15,10 +16,6 @@ const Data = (props) => {
     const [message, setMessageUpdateData] = useState('');
     const [messagePayment, setMessagePayment] = useState('');
 
-    if(!props.token){
-        history.push('/');
-        return null;
-    };
 
     // Manejar el estado
     const handleState = (e) => {
@@ -71,6 +68,21 @@ const Data = (props) => {
         }
     };
 
+    if (!props.token) {
+        setTimeout(()=>{
+            history.push('/');
+        },2000);
+        
+        return(
+            <div className="container-gif">
+                <div className="gif">
+                    <Loading/>
+                </div>
+                
+            </div>
+        );
+     };
+    
     return (
         <div className='component-profile'>
             <HeaderUser />

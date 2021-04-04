@@ -4,7 +4,8 @@ import { useHistory } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import video from '../../video/videoplayback.mp4'
+import Loading from '../../components/Loading/Loading';
+
 
 const MovieProfile = (props) => {
    const [rentFilm, setRentFilm] = useState(true)
@@ -91,14 +92,25 @@ const MovieProfile = (props) => {
       }
    }
 
-   // let DatosRent = JSON.parse(localStorage.getItem('rentInfo'));
+   
 
    let NotRented = <div className="rent" onClick={() => Alquilar()}>Alquilar <br />4.99€</div>
    let Rented = <div className="rent" >Estas Viendo <br /></div>
-   // let Player = 
-   //    <div className='player-movie'>
-   //       <video className='player-movie-child' src={video} controls autoPlay muted loop></video>
-   //    </div>
+  
+   if (!props.token) {
+      setTimeout(()=>{
+          history.push('/');
+      },2000);
+      
+      return(
+          <div className="container-gif">
+              <div className="gif">
+                  <Loading/>
+              </div>
+              
+          </div>
+      );
+   };
 
    if (rentFilm === false) {
       return (

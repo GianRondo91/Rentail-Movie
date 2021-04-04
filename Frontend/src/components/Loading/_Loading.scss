@@ -3,7 +3,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 10em;
-    height: 10em;
-    background-image: url('../../img/Spinner-1s-50px.gif');
+    width: ($size-u)*6;
+    height: ($size-u)*6;
+    background-image: url('../img/loading.gif');
+    object-fit: cover;
 }

@@ -20,9 +20,7 @@ function App() {
               <Route path="/" exact component={Landing}/>
               <Route path="/register" exact component={Register}/>
               <Route path="/home" exact component={Home}/>
-              <Route path='/home/movie' exact component={MovieProfile}/>
-              {/* Que hace Loading */}
-              <Route path='/loading' exact component={Loading}/> 
+              <Route path='/home/movie' exact component={MovieProfile}/> 
               <Route path='/profile' exact component={Profile}/>
               <Route path='/profile/data' exact component={Data}/>
               <Route path='/series' exact component={Series}/>

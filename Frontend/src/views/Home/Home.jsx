@@ -8,9 +8,12 @@ import { } from '@fortawesome/free-solid-svg-icons';
 // import AddFavourite from '../../components/Add-fav/AddFavourite';
 import axios from "axios";
 import { connect } from 'react-redux';
+import Loading from '../../components/Loading/Loading';
 
 
 const Home = (props) => {
+
+   let history = useHistory();
 
    const [latest, setLatest] = useState([]);
    const [destacado, setDestacado] = useState([]);
@@ -92,6 +95,7 @@ const Home = (props) => {
       };
    };
    // console.log("soy el return de", genreDictionary())
+   
 
 
    useEffect(() => {
@@ -130,12 +134,6 @@ const Home = (props) => {
          });
    }, []);
 
-   let history = useHistory();
-
-   if (!props.token) {
-      history.push('/');
-      return null;
-   };
 
    //Functions:
    const takeMeTo = (movie) => {
@@ -170,6 +168,20 @@ const Home = (props) => {
          localStorage.setItem("favoritos", JSON.stringify(listaFavoritos))
       }
    }
+   if (!props.token) {
+      setTimeout(()=>{
+          history.push('/');
+      },2000);
+      
+      return(
+          <div className="container-gif">
+              <div className="gif">
+                  <Loading/>
+              </div>
+              
+          </div>
+      );
+   };
 
    if (movieSearch.length === 0 && movieGenreSearch.length === 0) {
       return (
