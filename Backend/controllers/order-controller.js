@@ -21,7 +21,8 @@ class Rent {
             throw new Error("Movie or user not found")
         }
         return await Order.create({
-             userId: userId,
+            userId: userId,
+            
             poster_path:film,
             payment:true,
             

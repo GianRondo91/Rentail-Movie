@@ -6,7 +6,7 @@ const orderController = require("../controllers/order-controller");
 router.post('/', async (req, res) => {
     console.log("Esto es el req",req)
     try{
-        const order = await orderController.rentMovie(req.body.userId, req.body.filmTitle, req.body.film);
+        const order = await orderController.rentMovie(req.body.userId, req.body.film ,req.body.filmTitle );
         console.log("soy el userId",req.body.userId,req.body.filmTitle,req.body.film)
         const status = 'success';
         res.json({status,order});
