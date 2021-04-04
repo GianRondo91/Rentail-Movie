@@ -42,6 +42,9 @@ const checkError = (data) => {
                 if (data[element] === '') {
                     return 'Por favor escriba su contraseña.';
                 }
+                if(!/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(data[element])){
+                    return 'Contraseña no valida ,min 8 caraterers 1 letra y 1 caracter especial, '
+                }
             break;
 
             case 'passwordTwo': 
