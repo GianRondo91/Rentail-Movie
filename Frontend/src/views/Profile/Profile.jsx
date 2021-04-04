@@ -17,7 +17,7 @@ const Profile = (props) => {
     const [showRent, setShowRent] = useState([]);
     const [image, setImage] = useState([]);
 
-    
+
 
     console.log(favouritesMovies)
     useEffect(() => {
@@ -33,7 +33,7 @@ const Profile = (props) => {
         GetMyRents();
     }, []);
 
-    
+
 
     const allFavouritesMovies = () => {
         const allFavourites = JSON.parse(localStorage.getItem("favoritos"))
@@ -51,19 +51,19 @@ const Profile = (props) => {
     };
 
     if (!props.token) {
-        setTimeout(()=>{
+        setTimeout(() => {
             history.push('/');
-        },2000);
-        
-        return(
+        }, 2000);
+
+        return (
             <div className="container-gif">
                 <div className="gif">
-                    <Loading/>
+                    <Loading />
                 </div>
-                
+
             </div>
         );
-    }else{
+    } else {
         return (
             <div className='component-profile'>
                 <HeaderUser />
@@ -81,18 +81,22 @@ const Profile = (props) => {
                     <div className="historial">
                         {showRent.map(rent => <Movie style="other-card-style" key={rent._id} {...rent.movieData} />)}
                     </div>
+                    <h3 className='content-favourites-title'>Historial de mi Alquiler</h3>
+                    <div className="historial">
+                        {showRent.map(showRent => <Movie style="other-card-style" key={showRent} {...showRent} />)}
+                    </div>
+                    <Footer />
                 </div>
-                <Footer />
             </div>
         )
 
     }
-    
+
 };
 
 const mapStateToProps = state => {
     return {
-        user: state.user,
+                    user: state.user,
         token: state.token
     }
 };

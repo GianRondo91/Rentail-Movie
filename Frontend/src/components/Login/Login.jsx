@@ -70,8 +70,7 @@ const Login = (props) => {
             }, 1000);
         } else {
             setMessage('Sus credenciales son erroneos, comprueba su email o contraseña');
-            setMessage('');
-            alert('Sus credenciales son erroneos, comprueba su email o contraseña');
+            window.confirm('Sus credenciales son erroneos, comprueba su email o contraseña');
         }
     }
 

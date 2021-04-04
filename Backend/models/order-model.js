@@ -4,16 +4,22 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const ObjectId = mongoose.Types.ObjectId;
 const User = mongoose.model('User');
+/* const Movie = mongoose.model('Movie'); */
 
 const orderSchema = new Schema({
     
     
-    filmId: {
+  /*   filmId: {
         type: String,
         ref: "Movie",
         //require: true,
         //unique:true
     },
+    movieId:{
+        type: ObjectId,
+        ref:"Movie",
+        required: true
+    }, */
     
     userId: { 
         type: ObjectId, 

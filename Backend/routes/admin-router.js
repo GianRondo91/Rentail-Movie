@@ -5,6 +5,7 @@ const AdminBroMongoose = require('@admin-bro/mongoose')
 
 const User = require('../models/user-model')
 const Order = require('../models/order-model')
+const Movie = require('../models/movie-model')
 
 
 const mongo = require('mongoose')
@@ -26,7 +27,7 @@ const locale = {
 
 const adminBro = new AdminBro({
   databases: [mongo],
-  resources: [User, Order],
+  resources: [User, Order, Movie],
   rootPath: '/admin',
   locale,
   branding: {
