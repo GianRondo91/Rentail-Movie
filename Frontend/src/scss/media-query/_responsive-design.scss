@@ -17,66 +17,66 @@
         }
     }
     .movie-profile-container,
-    .component-header-user{
+    .component-header-user {
         max-width: $q-l + $mp-q + $mp-d;
         margin-left: auto;
         margin-right: auto;
     }
-    .component-header-user{
-        .component-header-logo{
-            .logo-link{
+    .component-header-user {
+        .component-header-logo {
+            .logo-link {
                 margin-left: 15px;
             }
         }
     }
     .movie-profile-container {
         font-family: $font-Questrial-Regular;
-        .movie-panel{
+        .movie-panel {
             margin-top: 136px;
-            .rent-data-movie{
-                .movie-title{
+            .rent-data-movie {
+                .movie-title {
                     color: nth($fontColor, 3);
                 }
-                .movie-rent{
+                .movie-rent {
                     margin-left: 0;
                     .rent,
-                    .mas-recomendaciones{
+                    .mas-recomendaciones {
                         text-align: center;
                         margin-left: 0;
                         border-radius: 10px;
                     }
                 }
-                .overview{
+                .overview {
                     margin-top: 30px;
                     font-size: 20px;
                     color: nth($brown, 1);
                 }
             }
         }
-        .movie-panel-other{
+        .movie-panel-other {
             margin-top: 280px;
-            .data-movie{
-                .movie-title{
+            .data-movie {
+                .movie-title {
                     color: nth($fontColor, 3);
                 }
-                .movie-rent{
+                .movie-rent {
                     margin-left: 0;
                     .rent,
-                    .mas-recomendaciones{
+                    .mas-recomendaciones {
                         text-align: center;
                         margin-left: 0;
                         border-radius: 10px;
                     }
                 }
-                .overview{
+                .overview {
                     margin-top: 30px;
                     font-size: 20px;
                     color: nth($brown, 1);
                     letter-spacing: 1px;
                 }
             }
-            .movie-poster{
-                img{
+            .movie-poster {
+                img {
                     position: relative;
                     bottom: 109px;
                 }
@@ -227,7 +227,7 @@
             max-width: 490px;
             margin-top: 377px;
         }
-        .serie-search{
+        .serie-search {
             top: 365px;
             height: auto;
         }
@@ -290,7 +290,7 @@
                 }
             }
         }
-        .vistaFooter{
+        .vistaFooter {
             margin-top: 450px;
         }
     }
@@ -343,9 +343,9 @@
                 position: relative;
                 left: 317px;
                 top: 57px;
-                .header-menu-ul{
+                .header-menu-ul {
                     top: 112px;
-                    .header-menu-li .search{
+                    .header-menu-li .search {
                         bottom: 94px;
                         position: relative;
                         left: 532px;
@@ -391,7 +391,7 @@
                     }
                 }
             }
-            .rent-data-movie{
+            .rent-data-movie {
                 bottom: 410px;
             }
             .movie-poster {
@@ -406,4 +406,3 @@
         }
     }
 }
-
