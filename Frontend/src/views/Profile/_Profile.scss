@@ -1,7 +1,17 @@
+.container-gif{
+    top: 40%;
+    left: 40%;
+    position: absolute;
+    .gif{
+        width:150px;
+        height: 150px;
+    }
+}
 .component-profile {
     color: white;
     font-family: $font-Questrial-Regular;
     position: relative;
+    
     .content-favourites {
         margin-top: 50px;
         width: 1440px;

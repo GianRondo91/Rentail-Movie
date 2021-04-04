@@ -679,6 +679,16 @@ se transforma en
         font-weight: bold;
         padding-left: 10px; }
 
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 300px;
+  background-image: url("../img/loading.gif");
+  object-fit: cover; }
+
 /*VIEWS*/
 body {
   background-color: rgba(22, 25, 28, 0.97); }
@@ -891,6 +901,14 @@ body {
     .movie-profile-container .movie-panel .movie-poster img {
       width: 480px;
       height: 640px; }
+
+.container-gif {
+  top: 40%;
+  left: 40%;
+  position: absolute; }
+  .container-gif .gif {
+    width: 150px;
+    height: 150px; }
 
 .component-profile {
   color: white;
