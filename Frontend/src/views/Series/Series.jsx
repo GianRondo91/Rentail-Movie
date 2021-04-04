@@ -133,7 +133,6 @@ const Series = (props) => {
          <div className="imagen-portada">
             <img className='portada' src={casaDePapel} alt="Casa de papel" />
          </div>
-         <div className="separadorSeries"></div>
          <h2 className='series-title'>Resultado de la búsqueda {searchQuery}</h2>
          <div className="carousel-series">
             {seriesSearch.map(serie => <Movie style='card-style' key={serie.id}  {...serie} onClick={() => takeMeTo(serie)} />)}
@@ -143,7 +142,6 @@ const Series = (props) => {
                {movieGenreSearch.map(genre => <Movie style='card-style' key={genre.id} addFavouriteMovie={addFavouriteMovie} {...genre} onClick={() => takeMeTo(genre)} />)}
             </div>
          </div>
-         <div className="separadorSeries"></div>
          <div className="portada-series">
             {series.map(series => <Movie style='other-card-style' key={series.id}  {...series} onClick={() => takeMeTo(series)} />)}
          </div>

@@ -32,13 +32,13 @@ const Movie = ({ title, poster_path, id, onClick, style, addFavouriteMovie }) =>
 
   //renderizando
 
-  if (style === 'card-style') {
+  if (style === "card-style") {
     return (
       [movieStyelOne]
     )
   };
 
-  if (style === 'other-card-style') {
+  if (style === "other-card-style") {
     return (
       [movieStyelDos]
     )

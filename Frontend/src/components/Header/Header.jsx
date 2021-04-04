@@ -59,7 +59,7 @@ const Header = (props) => {
       <div className="component-header-menu header-menu-movies">
         <ul className="component-header-menu-ul header-menu-ul">
           <li className="component-header-menu-li  header-menu-li"><input className="search" name="query" type="text" onKeyUp={search} onChange={handleStateSearch} /></li>
-          <li className="component-header-menu-li  header-menu-li-select">
+          <li className="component-header-menu-li header-menu-li header-menu-li-select">
             <select name="genres" onChange={genreSearch} className='header-menu-li-select'>
               <option value="0">Género</option>
               <option value="28">Acción</option>

@@ -177,27 +177,23 @@ const Home = (props) => {
             < Header onSearch={search} onGenre={searchGenre} />
             <div className="content-movies">
                <video className='my-video' autoPlay muted loop id="my-video" src={video}></video>
-               <div class="content-button-info">
+               {/* <div class="content-button-info">
                   <p>AQUA-MAN</p>
                   <button id="button-info" onClick={GotoMovies}> Mas información </button>
-               </div>
-               <div className="separator"></div>
+               </div> */}
                <h2 className="genre-title">Destacadas</h2>
                <div className="print-movie">
                   {destacado.map(destacado => <Movie style="other-card-style" key={destacado.id} {...destacado} addFavouriteMovie={addFavouriteMovie} onClick={() => takeMeTo(destacado)} />)}
                </div>
-               <div className="separator"></div>
                <h2 className="genre-title">Ultimas Peliculas Añadidas</h2>
                <div className="print-movie">
                   {latest.map(latest => <Movie style="card-style" key={latest.id} addFavouriteMovie={addFavouriteMovie} {...latest} onClick={() => takeMeTo(latest)} />)}
                </div>
 
-               <div className="separator"></div>
                <h2 className="genre-title">Populares</h2>
                <div className="print-movie">
                   {populares.map(populares => <Movie style="card-style" key={populares.id} {...populares} addFavouriteMovie={addFavouriteMovie} onClick={() => takeMeTo(populares)} />)}
                </div>
-               <div className="separator"></div>
                <h2 className='genre-title'>Recomendaciones</h2>
                <div className="print-movie">
                   {recomendaciones.map(recomendaciones => <Movie style="card-style" key={recomendaciones.id} addFavouriteMovie={addFavouriteMovie} {...recomendaciones} onClick={() => takeMeTo(recomendaciones)} />)}
@@ -213,38 +209,30 @@ const Home = (props) => {
             < Header onSearch={search} onGenre={searchGenre} />
             <div className="content-movies">
                <video className='my-video' autoPlay muted loop id="my-video" src={video}></video>
-               <div class="content-button-info">
+               {/* <div class="content-button-info">
                   <p>AQUA-MAN</p>
                   <button id="button-info" onClick={GotoMovies}> Mas información </button>
-               </div>
-               <div className="separator"></div>
+               </div> */}
                <h2 className='genre-title'>Resultado de la búsqueda por género <em class="title-color">{genreDictionary(genreQuery)}</em></h2>
                <div className="print-movie-search">
                   {movieGenreSearch.map(genre => <Movie style="other-card-style" key={genre.id} addFavouriteMovie={addFavouriteMovie} {...genre} onClick={() => takeMeTo(genre)} />)}
                </div>
-               <div className="separator"></div>
                <h2 className='genre-title'>Resultado de la búsqueda <em class="title-color">{searchQuery}</em></h2>
                <div className="print-movie-search">
                   {movieSearch.map(finded => <Movie style="other-card-style" key={finded.id} addFavouriteMovie={addFavouriteMovie} {...finded} onClick={() => takeMeTo(finded)} />)}
                </div>
-               <div className="separator"></div>
                <h2 className="genre-title">Ultimas Peliculas Añadidas</h2>
                <div className="print-movie">
                   {latest.map(latest => <Movie style="card-style" key={latest.id} addFavouriteMovie={addFavouriteMovie} {...latest} onClick={() => takeMeTo(latest)} />)}
                </div>
-
-               <div className="separator"></div>
                <h2 className="genre-title">Populares</h2>
                <div className="print-movie">
                   {populares.map(populares => <Movie style="card-style" key={populares.id} {...populares} addFavouriteMovie={addFavouriteMovie} onClick={() => takeMeTo(populares)} />)}
                </div>
-
-               <div className="separator"></div>
                <h2 className="genre-title">Destacadas</h2>
                <div className="print-movie">
                   {destacado.map(destacado => <Movie style='other-card-style' key={destacado.id} {...destacado} addFavouriteMovie={addFavouriteMovie} onClick={() => takeMeTo(destacado)} />)}
                </div>
-               <div className="separator"></div>
                <h2 className="genre-title">Recomendaciones</h2>
                <div className="print-movie">
                   {recomendaciones.map(recomendaciones => <Movie style="card-style" key={recomendaciones.id} addFavouriteMovie={addFavouriteMovie} {...recomendaciones} onClick={() => takeMeTo(recomendaciones)} />)}

@@ -105,9 +105,8 @@ const MovieProfile = (props) => {
          <div className='movie-profile-container'>
             <Header />
             <div className="movie-panel">
-               <div className="data-movie">
+               <div className="data-movie rent-data-movie">
                <div className="movie-title">{dataMovie.title}{dataMovie.name}</div>
-
                   <div className="movie-rent">
                      {Rented}
                      <div className="mas-recomendaciones" onClick={() => goto()}> Ver Mas Recomendaciónes </div>
@@ -118,9 +117,6 @@ const MovieProfile = (props) => {
                      <h2 classeName='Rent-Data'>Pago Del Alquiler :{realizado}</h2>
                      <h2 classeName='Rent-Data'>Fecha De Inicio Del Alquiler:{order.initialRentDate}</h2>
                      <h2 classeName='Rent-Data'>Fecha De La Devolucion : {order.returnRentDate}</h2>
-                 
-               
-
                   </div>
                </div>
                <div className="movie-poster">
@@ -134,8 +130,8 @@ const MovieProfile = (props) => {
       return (
          <div className='movie-profile-container'>
             <Header />
-            <div className="movie-panel">
-               <div className="data-movie">
+            <div className="movie-panel movie-panel-other">
+               <div className="data-movie ">
                   <div className="movie-title">{dataMovie.title}{dataMovie.name}</div>
                   <div className="movie-rate">Rate : {dataMovie.vote_average}  votos : {dataMovie.vote_count}  Release date : {dataMovie.release_date}</div>
                   <div className="movie-rent">
