@@ -19,8 +19,6 @@ const Series = (props) => {
    let colectionSeries = 'https://api.themoviedb.org/3/tv/popular?api_key=ef2edc9da61e81787a8079a7df721936&language=es-ES&page=1'
 
    useEffect(() => {
-     
-
       fetch(colectionSeries)
          .then(res => (res.json()))
          .then(data => {
@@ -46,9 +44,7 @@ const Series = (props) => {
    };
 
    //Busqueda por Genero
-
    let url_genre = 'http://api.themoviedb.org/3/discover/tv?api_key=ef2edc9da61e81787a8079a7df721936&language=es&query=aventura';
-
 
    const searchGenre = async (genres) => {
       let genreFilms = await axios.get(`${url_Base_Genre}discover/tv?api_key=${api_key}&${language}&with_genres=${genres}`);
@@ -94,7 +90,6 @@ const Series = (props) => {
          default:
             break;
       };
-
    };
 
    const addFavouriteMovie = (id, title, posther_path) => {
@@ -104,7 +99,6 @@ const Series = (props) => {
    };
 
    //Functions:
-
    if (!props.token) {
       setTimeout(() => {
          history.push('/');
@@ -115,7 +109,6 @@ const Series = (props) => {
             <div className="gif">
                <Loading />
             </div>
-
          </div>
       );
    };

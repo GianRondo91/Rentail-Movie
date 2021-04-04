@@ -19,8 +19,6 @@ const Profile = (props) => {
 
     useEffect(() => {
         allFavouritesMovies();
-        //let firstPart='https://image.tmdb.org/t/p/original';
-        // Traer todos los alquileres del usuario
         const GetMyRents = async () => {
             let MyEndPoint = `http://localhost:3002/users/${props.user._id}/orders`;
             let rentData = await axios.get(MyEndPoint);
@@ -68,7 +66,6 @@ const Profile = (props) => {
                                 <h5 className='title-movie'>{fav.title}</h5>
                             </div>)}
                     </div>
-                    
                     <h3 className='content-favourites-title'>Historial de mi Alquiler</h3>
                     <div className="historial">
                         {showRent.map(showRent => <Movie style="other-card-style" key={showRent} {...showRent} />)}
