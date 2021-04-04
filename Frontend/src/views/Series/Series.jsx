@@ -70,37 +70,37 @@ const Series = (props) => {
    const genreDictionary = (genreQuery) => {
       switch (genreQuery) {
          case "10759":
-            return "acción y aventura"
+            return "Acción y aventura"
          case "10762":
-            return "infantil"
+            return "Infantil"
          case "16":
-            return "animación"
+            return "Animación"
          case "35":
-            return "comedia"
+            return "Comedia"
          case "80":
-            return "crimen"
+            return "Crimen"
          case "99":
-            return "documental"
+            return "Documental"
          case "18":
-            return "drama"
+            return "Drama"
          case "10751":
-            return "familia"
+            return "Familia"
          case "10767":
-            return "monólogos"
+            return "Monólogos"
          case "10764":
-            return "reality"
+            return "Reality"
          case "9648":
-            return "misterio"
+            return "Misterio"
+         case "10766":
+            return "Telenovela"
          case "10765":
-            return "telenovela"
-         case "10765":
-            return "ciencia ficción"
+            return "Ciencia ficción"
          case "10763":
-            return "noticias"
+            return "Noticias"
          case "10768":
-            return "bélicas & política"
+            return "Bélicas & política"
          case "37":
-            return "western"
+            return "Western"
          default:
             break;
       };
@@ -146,17 +146,17 @@ const Series = (props) => {
          </div>
 
          <div className="serie-search">
-            <h2 className='genre-title'>Resultado de la búsqueda por género <em class="title-color">{genreDictionary(genreQuery)}</em></h2>
-            <div className="print-movie-search">
+            <h2 className='series-title'>Resultado de la búsqueda por género <em class="title-search">{genreDictionary(genreQuery)}</em></h2>
+            <div className="carousel-series">
                {movieGenreSearch.map(genre => <Movie style="other-card-style" key={genre.id} addFavouriteMovie={addFavouriteMovie} {...genre} onClick={() => takeMeTo(genre)} />)}
             </div>
 
-            <h2 className='genre-title'>Resultado de la búsqueda <em class="title-color">{searchQuery}</em></h2>
-            <div className="print-movie-search">
-               {seriesSearch.map(serie => <Movie style='card-style' key={serie.id}  {...serie} onClick={() => takeMeTo(serie)} />)}
+            <h2 className='series-title'>Resultado de la búsqueda <em class="title-search">{searchQuery}</em></h2>
+            <div className="carousel-series">
+               {seriesSearch.map(serie => <Movie style='other-card-style' key={serie.id}  {...serie} onClick={() => takeMeTo(serie)} />)}
             </div>
             
-            <div className="series-genre">
+            {/* <div className="series-genre">
                <div className="carousel-series">
                   {seriesSearch.map(serie => <Movie style='card-style' key={serie.id}  {...serie} onClick={() => takeMeTo(serie)} />)}
                </div>
@@ -168,8 +168,8 @@ const Series = (props) => {
                <div className="portada-series">
                   {series.map(series => <Movie style='other-card-style' key={series.id}  {...series} onClick={() => takeMeTo(series)} />)}
                </div>
-            </div>
-
+            </div> */}
+            <h2 className='series-title'>Las más vistas</h2>
             <div className="portada-series">
                {series.map(series => <Movie style='other-card-style' key={series.id}  {...series} onClick={() => takeMeTo(series)} />)}
             </div>
