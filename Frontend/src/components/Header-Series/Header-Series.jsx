@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { LOGOUT } from '../../redux/types/userTypes';
 
 
-const Header = (props) => {
+const HeaderSeries = (props) => {
 
   let history = useHistory();
   const [query, setSearch] = useState("");
@@ -26,12 +26,14 @@ const Header = (props) => {
   //Handler
   const handleStateSearch = (e) => {
     setSearch({ ...query, [e.target.name]: e.target.value })
+    console.log("soy el search del handler", query);
   }
 
   //Llama al callback onSearch
   const search = async (evt) => {
     if (evt.key === 'Enter') {
       props.onSearch(query.query);
+      console.log(query.query);
     }
   }
 
@@ -41,7 +43,7 @@ const Header = (props) => {
 
   const getUserImage = () => {
     if (props.user.image) {
-      return <li className="component-header-menu-li component-header-menu-li-img"><a href="/profile/data" className='header-menu-a-name'><img referrerpolicy="no-referrer" src={props.user.image} alt="" className='img-user' /></a></li>;
+      return <li className="component-header-menu-li component-header-menu-li-img"><a href="/profile/data" className='header-menu-a-name'><img src={props.user.image} alt="" className='img-user' /></a></li>;
     }
     return <li className="component-header-menu-li  header-menu-li header-menu-li-name"><a href="/profile/data" className='header-menu-a-name'>{props.user?.name}</a></li>;
   };
@@ -57,26 +59,24 @@ const Header = (props) => {
       <div className="component-header-menu header-menu-movies">
         <ul className="component-header-menu-ul header-menu-ul">
           <li className="component-header-menu-li  header-menu-li"><input className="search" name="query" type="text" onKeyUp={search} onChange={handleStateSearch} /></li>
-          <li className="component-header-menu-li header-menu-li header-menu-li-select">
+          <li className="component-header-menu-li  header-menu-li-select">
             <select name="genres" onChange={genreSearch} className='header-menu-li-select'>
               <option value="0">Género</option>
-              <option value="28">Acción</option>
-              <option value="12">Aventura</option>
-              <option value="16">Animacion</option>
+              <option value="10759">Acción y Aventura</option>
+              <option value="16">Animación</option>
               <option value="35">Comedia</option>
               <option value="80">Crimen</option>
               <option value="99">Documental</option>
               <option value="18">Drama</option>
+              <option value="10762">Infantil</option>
               <option value="10751">Familia</option>
-              <option value="14">Fantasía</option>
-              <option value="36">Historia</option>
-              <option value="27">Terror</option>
-              <option value="10402">Musica</option>
+              <option value="10767">Monólogos</option>
               <option value="9648">Misterio</option>
-              <option value="10749">Romance</option>
-              <option value="878">Ficción</option>
-              <option value="53">Triller</option>
-              <option value="10752">Bélica</option>
+              <option value="10766">Telenovela</option>
+              <option value="10765">Ficción</option>
+              <option value="10764">Reality</option>
+              <option value="10763">Noticias</option>
+              <option value="10768">Bélica y Política</option>
               <option value="37">Western</option>
             </select>
           </li>
@@ -96,4 +96,4 @@ const mapStateToProps = state => {
     token: state.token
   }
 };
-export default connect(mapStateToProps)(Header);
+export default connect(mapStateToProps)(HeaderSeries);

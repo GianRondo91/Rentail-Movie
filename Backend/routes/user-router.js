@@ -7,11 +7,11 @@ const auth = require('../middlewares/auth')
 const userController = require("../controllers/user-controller")
 
 //traecr todos los users
-router.get("/", async (req,res)=>{
-    try{
+router.get("/", async(req, res) => {
+    try {
         res.json(await userController.showAllUsers());
 
-    }catch(error){
+    } catch (error) {
         return res.status(500).json({
             message: "Server Error"
         });
@@ -19,25 +19,24 @@ router.get("/", async (req,res)=>{
 });
 
 //Crear un user
-router.post("/", async (req, res)=>{
-    try{
-       console.log(req.body)
+router.post("/", async(req, res) => {
+    try {
         const user = await userController.createNewUser(req.body);
         const status = "Success";
-        res.json({status, user});
-      
-    }catch(error){
+        res.json({ status, user });
+
+    } catch (error) {
         return res.status(500).json({
             message: error.message
         });
     };
 });
 //Login de user
-router.post('/login',async (req, res) => {   
-    try{
-        const {email,password} = req.body;
-        const jwt = await userController.login(email,password);
-        res.json({jwt})
+router.post('/login', async(req, res) => {
+    try {
+        const { email, password } = req.body;
+        const jwt = await userController.login(email, password);
+        res.json({ jwt })
     } catch (error) {
         return res.status(401).json({
             message: error.message
@@ -46,10 +45,10 @@ router.post('/login',async (req, res) => {
 });
 
 //Google login
-router.post('/google/login',async (req, res) => {   
-    try{
+router.post('/google/login', async(req, res) => {
+    try {
         const jwt = await userController.googleLogin(req.body);
-        res.json({jwt});
+        res.json({ jwt });
     } catch (error) {
         return res.status(401).json({
             message: error.message
@@ -58,11 +57,11 @@ router.post('/google/login',async (req, res) => {
 });
 
 //Traer un user por Id
-router.get("/:id", async (req, res)=>{
-    try{
-        const id= req.params.id;
+router.get("/:id", async(req, res) => {
+    try {
+        const id = req.params.id;
         res.json(await userController.findById(id));
-    }catch(error){
+    } catch (error) {
         return res.status(500).json({
             message: err.message
         })
@@ -70,12 +69,12 @@ router.get("/:id", async (req, res)=>{
 })
 
 //Actualizar datos de user
-router.put("/:id", auth, async (req, res)=>{
-    try{
+router.put("/:id", auth, async(req, res) => {
+    try {
         const id = req.params.id;
         const updatedUser = await userController.updateUser(id, req.body);
         res.status(200).json(updatedUser);
-    }catch(err){
+    } catch (err) {
         return res.status(500).json({
             message: err.message
         })
@@ -83,17 +82,17 @@ router.put("/:id", auth, async (req, res)=>{
 })
 
 //Borrar user por Id
-router.delete("/:id", async(req, res)=>{
-    try{
-        const id= req.params.id;
+router.delete("/:id", async(req, res) => {
+    try {
+        const id = req.params.id;
         const status = "deleted";
         await userController.destroy(id);
-        res.json({status, id});
-    }catch(err){
+        res.json({ status, id });
+    } catch (err) {
         return res.status(500).json({
             message: "Server error"
         });
-        
+
     };
 });
 

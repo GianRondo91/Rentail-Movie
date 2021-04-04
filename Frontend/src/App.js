@@ -4,11 +4,11 @@ import {BrowserRouter, Switch , Route} from 'react-router-dom';
 import Landing from './views/Landing/Landing';
 import Home from './views/Home/Home';
 import Register from './components/Register/Register';
-import Loading from './components/Loading/Loading';
 import Profile from './views/Profile/Profile';
 import MovieProfile from './views/Movie-Profile/Movie-profile';
 import Data from './components/User/Data-user/Data-user';
 import Series from './views/Series/Series';
+import SeriesProfile from './views/Series-Profile/Series-Profile';
 
 
 function App() {
@@ -24,6 +24,7 @@ function App() {
               <Route path='/profile' exact component={Profile}/>
               <Route path='/profile/data' exact component={Data}/>
               <Route path='/series' exact component={Series}/>
+              <Route path='/series/profile' exact component={SeriesProfile}/>
          </Switch>
       </BrowserRouter>
     </div>

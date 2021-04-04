@@ -31,6 +31,7 @@
             display: flex;
             flex-direction: row;
             margin-top: 30px;
+            overflow-x: auto;
             .favourite-container {
                 position: relative;
                 display: flex;
@@ -46,8 +47,6 @@
                     margin-top: 10px;
                 }
                 .favourite-img {
-                    width: $per-10;
-                    height: $per-10;
                     overflow: hidden;
                     margin-top: 10px;
                 }

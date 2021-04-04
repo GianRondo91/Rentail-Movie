@@ -35,10 +35,10 @@
                 color: nth($btnBlue, 3);
                 cursor: pointer;
                 margin: 0.5em;
-            }
-            &:hover {
-                background: #ddd;
-                color: black;
+                &:hover {
+                    background: transparent .2px;
+                    color: white;
+                }
             }
         }
         .genre-title {
@@ -51,11 +51,6 @@
             .title-color{
                 color: nth($fontColor, 3);
             }
-        }
-        .separator {
-            border: 0.5px solid rgb(58, 56, 56);
-            width: 70em;
-            margin-left: 6em;
         }
         .print-movie {
             margin-left: 1.5em;
@@ -73,5 +68,9 @@
             justify-content: flex-start;
             overflow-x: auto;
         }
+    }
+    .content-movies-search{
+        position: relative;
+        top: 149px;
     }
 }
