@@ -6,13 +6,12 @@ const orderController = require("../controllers/order-controller");
 router.post('/', async (req, res) => {
     try{
         const order = await orderController.rentMovie(req.body.userId, req.body.film ,req.body.filmTitle );
-        console.log("soy el userId",req.body.userId,req.body.filmTitle,req.body.film)
         const status = 'success';
         res.json({status,order});
     } catch( error ){
         return res.status(404).json(
         );
-    }
+    };
 });
 
 router.get('/', async (req, res)=>{
@@ -22,7 +21,7 @@ router.get('/', async (req, res)=>{
         return res.status(404).json({
             message: "Orders not found"
         });
-    }
+    };
 });
 
 module.exports = router;
