@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import Movie from '../../components/Movie/Movie';
-import Header from '../../components/Header/Header';
+import HeaderSeries from '../../components/Header-Series/Header-Series';
 import Footer from '../../components/Footer/Footer';
 import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { } from '@fortawesome/free-solid-svg-icons';
 import casaDePapel from '../../img/casa02.jpg';
-import BasicPagination from '../../components/Pagination/Pagination';
 import axios from 'axios';
-
+import Loading from '../../components/Loading/Loading';
 
 const Series = (props) => {
+   let history = useHistory();
 
    const [series, setSeries] = useState([]);
    const [favoritos, setFavoritos] = useState([]);
@@ -20,7 +20,7 @@ const Series = (props) => {
    let key = "ef2edc9da61e81787a8079a7df721936";
    let base_url = `http://api.themoviedb.org/3/movie/`;
    let language = "language=es-ES"
-   let colectionSeries = 'https://api.themoviedb.org/3/tv/popular?api_key=ef2edc9da61e81787a8079a7df721936&language=en-US&page=1'
+   let colectionSeries = 'https://api.themoviedb.org/3/tv/popular?api_key=ef2edc9da61e81787a8079a7df721936&language=es-ES&page=1'
 
    useEffect(() => {
       //Ultimas Peliculas
@@ -38,12 +38,17 @@ const Series = (props) => {
          })
    }, []);
 
-   // Busqueda de series por titulo
+
    let url_Base_series = 'https://api.themoviedb.org/3/search/tv?';
    let api_key = 'ef2edc9da61e81787a8079a7df721936';
+   let url_Base_Genre = `http://api.themoviedb.org/3/`;
+
    const [searchQuery, setSearchQuery] = useState("");
    const [seriesSearch, setSeriesSearch] = useState([]);
+   const [movieGenreSearch, setGenre] = useState([]);
+   const [genreQuery, setGenreQuery] = useState("");
 
+   // Busqueda de series por titulo
    const search = async (query) => {
       let resultSearch = await axios.get(`${url_Base_series}api_key=${api_key}&language=es&query=${query}`);
       setSearchQuery(query);
@@ -51,13 +56,12 @@ const Series = (props) => {
    };
 
    //Busqueda por Genero
-   let url_Base_Genge = `http://api.themoviedb.org/3/`;
+
    let url_genre = 'http://api.themoviedb.org/3/discover/tv?api_key=ef2edc9da61e81787a8079a7df721936&language=es&query=aventura';
-   
-   const [movieGenreSearch, setGenre] = useState([]);
-   const [genreQuery, setGenreQuery] = useState("");
+
+
    const searchGenre = async (genres) => {
-      let genreFilms = await axios.get(`${url_Base_Genge}discover/tv?api_key=${api_key}&${language}&with_genres=${genres}`);
+      let genreFilms = await axios.get(`${url_Base_Genre}discover/tv?api_key=${api_key}&${language}&with_genres=${genres}`);
       setGenreQuery(genres);
       return setGenre(genreFilms.data.results);
    };
@@ -65,10 +69,10 @@ const Series = (props) => {
    //Genres dictionary
    const genreDictionary = (genreQuery) => {
       switch (genreQuery) {
-         case "28":
-            return "acción"
-         case "12":
-            return "aventura"
+         case "10759":
+            return "acción y aventura"
+         case "10762":
+            return "infantil"
          case "16":
             return "animación"
          case "35":
@@ -81,24 +85,20 @@ const Series = (props) => {
             return "drama"
          case "10751":
             return "familia"
-         case "14":
-            return "fantasía"
-         case "36":
-            return "historia"
-         case "27":
-            return "terror"
-         case "10402":
-            return "música"
+         case "10767":
+            return "monólogos"
+         case "10764":
+            return "reality"
          case "9648":
             return "misterio"
-         case "10749":
-            return "romance"
-         case "878":
+         case "10765":
+            return "telenovela"
+         case "10765":
             return "ciencia ficción"
-         case "53":
-            return "thriller"
-         case "10752":
-            return "bélico"
+         case "10763":
+            return "noticias"
+         case "10768":
+            return "bélicas & política"
          case "37":
             return "western"
          default:
@@ -114,30 +114,51 @@ const Series = (props) => {
    }
 
    //Functions:
-   let history = useHistory();
+
    if (!props.token) {
-      history.push('/');
-      return null;
+      setTimeout(() => {
+         history.push('/');
+      }, 2000);
+
+      return (
+         <div className="container-gif">
+            <div className="gif">
+               <Loading />
+            </div>
+
+         </div>
+      );
    };
 
    const takeMeTo = (movie) => {
       localStorage.setItem('movie', JSON.stringify(movie));
       let LittleJson = JSON.parse(localStorage.getItem('movie'));
       console.log(LittleJson);
-      history.push('/home/movie')
+      history.push('/series/profile')
    }
+
 
    return (
       <div className='contenedor-padre-series'>
-         < Header onSearch={search} onGenre={searchGenre} />
+         < HeaderSeries onSearch={search} onGenre={searchGenre} />
          <div className="imagen-portada">
             <img className='portada' src={casaDePapel} alt="Casa de papel" />
          </div>
-         <div className="separadorSeries"></div>
+         <div className="separator"></div>
+         <h2 className='genre-title'>Resultado de la búsqueda por género <em class="title-color">{genreDictionary(genreQuery)}</em></h2>
+         <div className="print-movie-search">
+            {movieGenreSearch.map(genre => <Movie style="other-card-style" key={genre.id} addFavouriteMovie={addFavouriteMovie} {...genre} onClick={() => takeMeTo(genre)} />)}
+         </div>
+         <div className="separator"></div>
+         <h2 className='genre-title'>Resultado de la búsqueda <em class="title-color">{searchQuery}</em></h2>
+         <div className="print-movie-search">
+            {seriesSearch.map(serie => <Movie style='card-style' key={serie.id}  {...serie} onClick={() => takeMeTo(serie)} />)}
+         </div>
+         {/* <div className="separadorSeries"></div>
          <h2 className='series-title'>Resultado de la búsqueda {searchQuery}</h2>
          <div className="carousel-series">
             {seriesSearch.map(serie => <Movie style='card-style' key={serie.id}  {...serie} onClick={() => takeMeTo(serie)} />)}
-         </div>
+         </div> */}
          <div className="series-genre">
             <div className="carousel-series">
                {movieGenreSearch.map(genre => <Movie style='card-style' key={genre.id} addFavouriteMovie={addFavouriteMovie} {...genre} onClick={() => takeMeTo(genre)} />)}
@@ -147,7 +168,7 @@ const Series = (props) => {
          <div className="portada-series">
             {series.map(series => <Movie style='other-card-style' key={series.id}  {...series} onClick={() => takeMeTo(series)} />)}
          </div>
-         <Footer/>
+         <Footer />
       </div>
    )
 };

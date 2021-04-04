@@ -35,15 +35,13 @@ const Home = (props) => {
    let language = "language=es-ES";
 
 
-   // https://api.themoviedb.org/3/search/movie?api_key=e34f732b92a2e7dbe69709d0433150c3&language=es&query=${query};
-
    //Buscar Pelis
    const search = async (query) => {
       let resultSearch = await axios.get(`${base_url}${base_search}/${movie}api_key=${key}&language=es&query=${query}`);
       setSearchQuery(query);
       return setSearch(resultSearch.data.results);
    }
-   //https://api.themoviedb.org/3/genre/movie/list?api_key=<<api_key>>&language=en-US
+  
    //Busqueda por genero
    const searchGenre = async (genres) => {
       let genreFilms = await axios.get(`${base_url}discover/${movie}api_key=${key}&${language}&with_genres=${genres}`);
