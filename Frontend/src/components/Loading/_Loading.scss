@@ -1,0 +1,10 @@
+.loading{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: ($size-u)*6;
+    height: ($size-u)*6;
+    background-image: url('../img/loading.gif');
+    object-fit: cover;
+}

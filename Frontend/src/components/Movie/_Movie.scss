@@ -1,0 +1,71 @@
+.movie {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    transition: transform 0.2s;
+    .movieStyelOne {
+        display: block;
+        margin: 0.5em;
+        color: rgb(230, 219, 219);
+        width: 9em;
+        height: 13em;
+        border-radius: 0em;
+        transition: 0.5s;
+    }
+    .movieStyelDos {
+        display: block;
+        margin: 0.5em;
+        color: rgb(230, 219, 219);
+        width: 15em;
+        height: 22em;
+        border-radius: 0em;
+        transition: 0.5s;
+    }
+    .overlay {
+        position: absolute;
+        background: rgba(0, 0, 0, 0.8);
+        width: 7em;
+        height: 24px;
+        transition: 0.5s ease;
+        opacity: 0;
+        bottom: -7px;
+        padding: 1em;
+        margin-bottom: 0.9em;
+        text-align: center;
+        .mr-2{
+            margin-right: 5px;
+            text-align: center;
+        }
+    }
+    .overlay-two {
+        position: absolute;
+        background: rgba(0, 0, 0, 0.8);
+        width: 13em;
+        height: 24px;
+        color: white;
+        transition: 0.5s ease;
+        opacity: 0;
+        bottom: -7px;
+        padding: 1em;
+        margin-bottom: 0.9em;
+        text-align: center;
+        .mr-2{
+            margin-right: 5px;
+        }
+    }
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        .overlay {
+            opacity: 1;
+            color: white;
+        }
+        .overlay-two {
+            opacity: 1;
+            color: white;
+        }
+    }
+}
+

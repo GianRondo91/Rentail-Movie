@@ -1,0 +1,83 @@
+@mixin principal-button($firstColor, $secondColor, $thirdColor) {
+    background: linear-gradient(to bottom, $firstColor 5%, $thirdColor 100%);
+    background-color: $firstColor;
+    border-radius: $size-d;
+    border: $size-0 solid $secondColor;
+    display: inline-block;
+    cursor: pointer;
+    font-size: $size-j;
+    font-weight: bold;
+    padding: $size-b $mp-f;
+    text-decoration: none;
+    margin: $mp-g;
+}
+
+@mixin principal-login-button($firstColor, $secondColor, $thirdColor) {
+    background: linear-gradient(to bottom, $firstColor 5%, $thirdColor 100%);
+    background-color: $firstColor;
+    border-radius: $size-d;
+    border: $size-0 solid $secondColor;
+    display: inline-block;
+    cursor: pointer;
+    font-size: $size-i;
+    font-weight: bold;
+    padding: $size-a $mp-e;
+    text-decoration: none;
+    width: $per-10;
+    text-align: center;
+    height: $mp-j + $mp-a;
+    padding-top: $mp-e;
+}
+
+@mixin alternative-button($firstColor, $secondColor) {
+    border-radius: $size-a;
+    border: $size-0 solid $secondColor;
+    display: inline-block;
+    cursor: pointer;
+    font-size: $size-g;
+    font-weight: bold;
+    padding: $size-b $mp-f;
+    text-decoration: none;
+    margin: $mp-e;
+}
+
+@mixin alternative-button-social-network($firstColor, $secondColor) {
+    border-radius: $size-c;
+    border: $size-a solid $secondColor;
+    display: inline-block;
+    cursor: pointer;
+    font-size: $size-i;
+    font-weight: bold;
+    padding: $size-b $mp-f;
+    text-decoration: none;
+    margin: $mp-h;
+    width: $mp-p;
+    height: $mp-l;
+    text-align: center;
+}
+
+@mixin input($bk-color, $text-color) {
+    width: $per-10;
+    height: $mp-k;
+    background-color: $bk-color;
+    color: $text-color;
+    border-radius: $size-c;
+    border: $size-a solid $bk-color;
+    font-size: $size-j;
+}
+
+@mixin input-security($width) {
+    width: $width;
+    margin-top: $mp-c - $size-a;
+    margin-bottom: $mp-h;
+    font-size: $mp-g;
+    border-radius: $mp-e;
+    outline: none;
+    border: none;
+}
+
+@mixin center ($width){
+    max-width: $width;
+    margin-right: auto;
+    margin-left: auto;
+}

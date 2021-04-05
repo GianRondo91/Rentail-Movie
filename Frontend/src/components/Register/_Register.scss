@@ -1,0 +1,40 @@
+.form-content-register{
+    .form-content-title-register{
+        margin-top: $ng-52;
+        margin-bottom: $mp-i;
+    }
+    .form-content-inputs-register{
+        margin: $mp-0;
+        height: auto;
+        .form-label-register{
+            margin-top: $size-g;
+        }
+        .city{
+            width: $per-10;
+            display: flex;
+            justify-content: space-between;
+            .city-options{
+                width: $per-3;
+            }
+        }
+        .form-password-register{
+            margin-top: $mp-0;
+        }
+        .form-button-register{
+            margin-top: $mp-k;
+            margin-bottom: $mp-j;
+        }
+    }
+    .form-content-options-register{
+        margin-top: $size-k;
+        .form-content-options-label-register{
+            margin-bottom: $mp-0;
+        }
+        .form-content-register-change{
+            margin-top: $size-d;
+            width: $mp-t + $mp-g;
+        }
+    }
+}
+
+

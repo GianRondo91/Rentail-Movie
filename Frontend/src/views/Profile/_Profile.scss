@@ -1,0 +1,66 @@
+.container-gif{
+    top: 40%;
+    left: 40%;
+    position: absolute;
+    .gif{
+        width:150px;
+        height: 150px;
+    }
+}
+.component-profile {
+    color: white;
+    font-family: $font-Questrial-Regular;
+    position: relative;
+    
+    .content-favourites {
+        margin-top: 50px;
+        width: 1440px;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        .content-favourites-title {
+            margin-top: 64px;
+            font-size: 26px;
+        }
+        .historial {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .content-favourites-container {
+            display: flex;
+            flex-direction: row;
+            margin-top: 30px;
+            overflow-x: auto;
+            .favourite-container {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                width: 15em;
+                height: 22em;
+                color: white;
+                margin-left: $em-a;
+                .title-movie {
+                    text-align: center;
+                    font-size: 20px;
+                    height: 44px;
+                    margin-top: 10px;
+                }
+                .favourite-img {
+                    overflow: hidden;
+                    margin-top: 10px;
+                }
+                .button-delete {
+                    cursor: pointer;
+                    font-size: 24px;
+                    position: absolute;
+                    bottom: 62px;
+                    right: 24px;
+                    color: red;
+                    font-weight: bold;
+                }
+            }
+            
+        }
+    }
+}

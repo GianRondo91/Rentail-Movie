@@ -1,0 +1,378 @@
+@media (min-width: $q-xl) {
+    #content {
+        @include center($q-xl);
+        display: flex;
+    }
+    /*Data-user*/
+    .component-profile {
+        @include center($q-l + $mp-q + $mp-d);
+    }
+    .content-home {
+        .content {
+            position: absolute;
+            top: $cent-f !important;
+        }
+    }
+    .movie-profile-container,
+    .component-header-user {
+        @include center($q-l + $mp-q + $mp-d);
+        height: $cent-a + $mp-k + $mp-a;
+    }
+    .component-header-user {
+        .component-header-logo {
+            .logo-link {
+                margin-left: $mp-g;
+            }
+        }
+    }
+    .movie-profile-container {
+        font-family: $font-Questrial-Regular;
+        .movie-panel {
+            margin-top: $cent-a + $mp-j + $mp-b;
+            .rent-data-movie {
+                .movie-title {
+                    color: nth($fontColor, 3);
+                }
+                .movie-rent {
+                    margin-left: $mp-0;
+                    .rent,
+                    .mas-recomendaciones {
+                        text-align: center;
+                        margin-left: $mp-0;
+                        border-radius: $mp-e;
+                    }
+                }
+                .overview {
+                    margin-top: $mp-h + $mp-e;
+                    font-size: $mp-h;
+                    color: nth($brown, 1);
+                }
+            }
+        }
+        .movie-panel-other {
+            margin-top: 280px;
+            .data-movie {
+                .movie-title {
+                    color: nth($fontColor, 3);
+                }
+                .movie-rent {
+                    margin-left: $mp-0;
+                    .rent,
+                    .mas-recomendaciones {
+                        text-align: center;
+                        margin-left: $mp-0;
+                        border-radius: $mp-e;
+                    }
+                }
+                .overview {
+                    margin-top: $mp-h + $mp-e;
+                    font-size: $mp-h;
+                    color: nth($brown, 1);
+                    letter-spacing: $size-a;
+                }
+            }
+            .movie-poster {
+                img {
+                    position: relative;
+                    bottom: $cent-a + $mp-d;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $q-l + $size-a) and (max-width: $q-xl - $size-a) {
+    #content {
+        display: flex;
+        @include center($q-l);
+        margin-top: $per-1;
+        .content-left {
+            width: $per-5;
+        }
+        .content-right {
+            width: $per-5;
+        }
+    }
+    /*Data-user*/
+    .component-profile {
+        .component-header-user {
+            width: $mp-z;
+        }
+    }
+    .content-home {
+        #my-video {
+            height: $cent-h !important;
+        }
+        .content {
+            position: absolute;
+            top: $cent-e + $mp-e !important;
+        }
+    }
+}
+
+@media all and (min-width: $q-m + $size-a) and (max-width: $q-l) {
+    #content {
+        @include center($q-m);
+        .content-left {
+            width: $per-5;
+        }
+        .content-right {
+            width: $per-10;
+        }
+    }
+    .content-home {
+        @include center($per-10);
+        .header-movies {
+            height: $cent-a + $mp-k + $mp-a;
+            .header-logo {
+                bottom: $mp-k + $size-c;
+            }
+        }
+    }
+    /*Data-user*/
+    .component-profile {
+        .component-header-user {
+            width: $mp-z - ($mp-q);
+        }
+        .data-user {
+            width: $mp-z - ($mp-p + $mp-b);
+            .form-update-data {
+                width: $per-5;
+            }
+            .form-update-payment {
+                margin-left: $mp-h;
+                width: $per-5;
+            }
+        }
+    }
+}
+
+@media (min-width: $q-s) and (max-width: $q-m) {
+    #content {
+        @include center($img-xxll);
+        .content-left {
+            width: $per-0;
+        }
+        .content-right {
+            @include center($per-10);
+        }
+    }
+    .content-home,
+    .contenedor-padre-series {
+        @include center($img-xxll);
+        position: relative;
+        .content-movies {
+            #my-video {
+                height: $mp-u + $mp-e !important;
+            }
+            .content-button-info {
+                top: $cent-d - $mp-a;
+                left: $mp-s + $mp-f + $mp-a;
+            }
+        }
+        .content {}
+        .component-header-user {
+            width: auto !important;
+            .header-logo {}
+            .component-header-menu {
+                top: $mp-p + $mp-g + $mp-a;
+                left: $mp-v + $mp-e;
+                position: absolute;
+                .component-header-menu-ul {
+                    display: grid;
+                    right: $mp-s;
+                    top: $mp-f;
+                    .header-menu-li {
+                        margin-bottom: $mp-k - $mp-e;
+                        .search {
+                            width: $cent-c;
+                        }
+                    }
+                    .component-header-menu-li-img {
+                        right: -272px;
+                        bottom: $cent-d;
+                        position: relative;
+                        width: fit-content;
+                    }
+                    .component-header-menu-li-icon {
+                        right: -363px;
+                        bottom: $cent-d + $mp-e;
+                        position: relative;
+                        width: fit-content;
+                    }
+                }
+            }
+        }
+        .content-movies {
+            max-width: $mp-u + $mp-e;
+        }
+        .vistaFooter {
+            max-width: $mp-u + $mp-e;
+            margin-top: $q-s + $mp-a;
+        }
+        .serie-search {
+            top: $q-s - $mp-e;
+            height: auto;
+        }
+    }
+    /*Data-user*/
+    .component-profile {
+        @include center($img-xxll);
+        .component-header-user {
+            display: table-cell;
+            text-align: right;
+            .component-header-menu {
+                width: $mp-u + $mp-e !important;
+                .component-header-menu-ul {
+                    top: $cent-a + $mp-j;
+                    position: absolute;
+                    left: $mp-m + $mp-a;
+                    width: $cent-d - $mp-a;
+                }
+            }
+            .component-header-logo {
+                .logo-link {
+                    left: $mp-m - $mp-a;
+                    position: relative;
+                }
+            }
+        }
+        .data-user {
+            margin-top: 60px;
+            width: auto;
+            .form-update-data {
+                @include center($per-9);
+                .form-data-content {
+                    @include center($per-7);
+                    position: relative;
+                    left: $mp-b;
+                    .form-update-data-input {
+                        margin-top: $mp-f;
+                    }
+                    .form-update-data-button {
+                        position: relative;
+                        top: $cent-d + $size-u;
+                    }
+                }
+            }
+            .form-update-payment {
+                width: $per-9;
+                position: absolute;
+                margin-left: $per-1/2;
+                top: $mp-v + $mp-i;
+                .form-payment-content {
+                    .form-update-payment-button {
+                        bottom: $mg-60;
+                    }
+                }
+            }
+        }
+        .vistaFooter {
+            margin-top: $cent-d + $size-u;
+        }
+    }
+    .series-title {
+        margin-top: $size-u;
+    }
+    .portada-series {
+        max-width: $cent-e;
+        margin-left: $per-1;
+        .movie {
+            width: $cent-b;
+            .movieStyelDos {
+                width: $cent-b + $mp-f;
+                height: $mp-r;
+            }
+            .overlay-two {
+                width: $cent-a + $size-u + $mp-a;
+            }
+        }
+    }
+    .content-favourites {
+        max-width: $cent-e;
+        margin-top: $cent-a!important;
+        .content-favourites-title {
+            width: auto;
+            margin-left: $mp-h;
+        }
+        .historial {
+            margin-left: $per-1;
+            .movie {
+                width: $cent-b;
+                .movieStyelDos {
+                    width: $cent-b + $mp-f;
+                    height: $mp-r;
+                }
+                .overlay-two {
+                    width: $cent-a + $size-u + $mp-a;
+                }
+            }
+        }
+    }
+    .movie-profile-container {
+        @include center($img-xxll);
+        .component-header-user {
+            max-width: 500px;
+            .header-menu-movies {
+                position: relative;
+                left: $cent-c + $mp-g;
+                top: $size-u + $mp-c;
+                .header-menu-ul {
+                    top: $cent-a + $mp-f;
+                    .header-menu-li .search {
+                        bottom: $mp-nn - $mp-a;
+                        position: relative;
+                        left: $cent-e + $mp-j;
+                    }
+                }
+            }
+        }
+        .movie-panel {
+            position: relative;
+            top: $cent-a;
+            .data-movie {
+                position: relative;
+                right: 50px;
+                width: $cent-b + $mp-g;
+                bottom: $img-xl;
+                .movie-title {
+                    position: relative;
+                    bottom: $mp-f;
+                    font-size: $mp-i;
+                    width: $per-10;
+                    color: nth($fontColor, 3);
+                }
+                .movie-rent {
+                    flex-direction: column;
+                    left: $size-p;
+                    position: relative;
+                    .rent,
+                    .mas-recomendaciones {
+                        width: $mp-p;
+                        text-align: center;
+                    }
+                }
+                .show-video-movie {
+                    .multimedia {
+                        @include center($mp-q);
+                        iframe {
+                            max-width: $mp-u - $size-o;
+                        }
+                    }
+                }
+            }
+            .rent-data-movie {
+                bottom: $cent-d + $mp-e;
+            }
+            .movie-poster {
+                img {
+                    width: $cent-c;
+                    height: $mp-t + $size-o;
+                    bottom: $cent-c;
+                    position: relative;
+                    bottom: $img-xxl;
+                }
+            }
+        }
+    }
+}

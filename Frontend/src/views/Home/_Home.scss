@@ -1,0 +1,76 @@
+.App {
+    width: $per-10 !important;
+}
+
+.content-home {
+    width: 1440px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    .content-movies {
+        background-color: nth($dark, 1);
+        #my-video {
+            all: unset;
+            top: 5em;
+            left: $mp-0;
+            width: $per-10;
+            object-fit: none;
+        }
+        .content-button-info {
+            position: absolute;
+            z-index: 1;
+            top: 710px;
+            color: #f1f1f1;
+            left: $cent-a;
+            font-size: 30px;
+            font-weight: 800;
+            text-align: center;
+            #button-info {
+                width: 200px;
+                font-size: 18px;
+                padding: $mp-e;
+                border: none;
+                border-radius: 0.5em;
+                background: rgb(243, 240, 240);
+                color: nth($btnBlue, 3);
+                cursor: pointer;
+                margin: 0.5em;
+                &:hover {
+                    background: transparent .2px;
+                    color: $principal-color;
+                }
+            }
+        }
+        .genre-title {
+            color: rgb(170, 169, 163);
+            margin: 1em;
+            height: 1em;
+            font-size: 26px;
+            font-family: $font-Questrial-Regular;
+            margin-left: 36px;
+            .title-color{
+                color: nth($fontColor, 3);
+            }
+        }
+        .print-movie {
+            margin-left: 1.5em;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            overflow-x: auto
+        }
+        .print-movie-search{
+            margin-left: 1.5em;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            overflow-x: auto;
+        }
+    }
+    .content-movies-search{
+        position: relative;
+        top: 149px;
+    }
+}

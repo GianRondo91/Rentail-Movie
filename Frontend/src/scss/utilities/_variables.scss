@@ -1,0 +1,197 @@
+/*Fonts*/
+
+$font-Questrial-Regular: "Questrial-Regular";
+
+/*Colors*/
+
+$red: (#CD5C5C, #F08080, #FA8072, #E9967A, #FFA07A, #DC143C, #FF0000, #B22222, #8B0000);
+$yellow: (#FFFFE0, #FFFACD, #FAFAD2, #FFFF00, #FFD700);
+$green: (#98FB98, #90EE90, #00FA9A, #00FF7F, #3CB371, #2E8B57, #228B22, #008000, #006400);
+$blue: (#1E90FF, #6495ED, #4169E1, #0000FF, #0000CD, #00008B);
+$brown:(#FFF8DC, #FFEBCD, #FFE4C4, #F5DEB3, #DEB887, #CD853F, #8B4513);
+$grey: (#DCDCDC, #C0C0C0, #A9A9A9, #808080, #696969);
+$dark: (#1E2126, #16191C);
+$formulary:( #8b8680, #51C2C0, #fad586);
+
+/**/
+
+$principal-color:white; 
+$alternative-color:#ADDDFD; //definir
+$Danger-color:white; //definir
+//#585858
+$fontColor:(#ffffff, #A4A4A4, #51C2C0, #1C1C1C, #000000);
+
+/*Gama de colores por definir - Yellows and Blues*/
+
+$YellowsandBlue: (#CDD1CC, #ACACAC, #E2C547, #C2DDC8, #99BFB3);
+
+/*Botones*/
+
+$btnBlue:(#3d94f6, #337fed, #1e62d0);
+$btnRed:(#f24537, #c62d1f, #d02718);
+$btnGreen:(#89c403, #74b807, #77a809);
+
+/*Sizes*/
+
+$size-0: 0px;
+$size-a: 1px;
+$size-b: 2px;
+$size-c: 4px;
+$size-d: 6px;
+$size-e: 8px;
+$size-f: 10px;
+$size-g: 12px;
+$size-h: 14px;
+$size-i: 16px;
+$size-j: 18px;
+$size-k: 20px;
+$size-l: 22px;
+$size-m: 24px;
+$size-n: 26px;
+$size-nn: 28px;
+$size-o: 30px;
+$size-p: 32px;
+$size-q: 34px;
+$size-r: 36px;
+$size-s: 38px;
+$size-t: 40px;
+$size-u: 50px;
+$size-v: 80px;
+
+/*Margin and Padding*/
+
+$mp-0: 0px;
+$mp-a: 2px;
+$mp-b: 4px;
+$mp-c: 6px;
+$mp-d: 8px;
+$mp-e: 10px;
+$mp-f: 12px;
+$mp-g: 16px;
+$mp-h: 20px;
+$mp-i: 24px;
+$mp-j: 32px;
+$mp-k: 40px;
+$mp-l: 48px;
+$mp-m: 64px;
+$mp-n: 80px;
+$mp-nn: 96px;
+$mp-o: 128px;
+$mp-p: 160px;
+$mp-q: 192px;
+$mp-r: 224px;
+$mp-s: 256px;
+$mp-t: 320px;
+$mp-u: 480px;
+$mp-v: 640px;
+$mp-w: 700px;
+$mp-x: 800px;
+$mp-y: 900px;
+$mp-z: 1200px;
+
+/*centenas*/
+
+$cent-a: 100px;
+$cent-b: 200px;
+$cent-c: 300px;
+$cent-d: 400px;
+$cent-e: 500px;
+$cent-f: 600px;
+$cent-g: 700px;
+$cent-h: 800px;
+$cent-i: 900px;
+
+/*Media-query*/
+
+$q-s: 375px;
+$q-m: 1007px;
+$q-l: 1200px;
+$q-xl: 1440px;
+
+/*Porcentjes*/
+
+$per-0: 0%;
+$per-1: 10%;
+$per-2: 20%;
+$per-3: 30%;
+$per-4: 40%;
+$per-5: 50%;
+$per-6: 60%;
+$per-7: 70%;
+$per-8: 80%;
+$per-9: 90%;
+$per-10: 100%;
+
+/*Imagenes-Sizes*/
+
+$img-s: 0px;
+$img-m: 40px;
+$img-l: 128px;
+$img-xl: 138px;
+$img-xxl: 355px;
+$img-xxll: 500px;
+$img-xxxl: 600px;
+
+
+
+/*--------------------------------------------------*/
+
+$ng-52: -52px;
+$mg-60: -60px;
+
+/*Ems*/
+$em-a:1em;
+$em-b:2em;
+$em-c:3em;
+$em-d:4em;
+$em-f:5em;
+$em-g:6em;
+$em-h:7em;
+$em-i:8em;
+$em-j:9em;
+$em-k:10em;
+$em-l:11em;
+$em-m:12em;
+$em-n:13em;
+$em-o:14em;
+$em-p:15em;
+
+/*For Grid*/
+
+$max: 6;
+@for $i from 1 through $max {
+    $equ: 100% / $i;
+    #header.cell-#{$i}>div {
+        width: $equ;
+    }
+    #footer.cell-#{$i}>div {
+        width: $equ;
+    }
+}
+
+
+/*--------------------------------------------------*/
+
+
+/*Funciones*/
+
+@function getBorderSize($size) {
+    @return 10px * $size;
+}
+
+
+/*
+Se utiliza
+
+  .c-button {
+  color: #FF0000;
+  border: getBorderSize(2) solid #00FF00;
+}
+
+se transforma en
+
+.c-button {
+  color: #FF0000;
+  border: 20px solid #00FF00;
+}
+*/

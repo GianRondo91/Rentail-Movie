@@ -1,0 +1,132 @@
+.movie-profile-container {
+    margin-top: -15;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: nth($dark, 1);
+    .movie-panel {
+        margin-top: 390px;
+        width: 100%;
+        height: $mp-v+$mp-e;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        justify-content: space-evenly;
+        .data-movie {
+            width: 45%;
+            height: $mp-w;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .movie-title {
+                width: 100%;
+                font-family: $font-Questrial-Regular;
+                color: nth($fontColor, 2);
+                margin-left: $mp-nn;
+                font-size: $size-u;
+                margin-top: -10px;
+            }
+            .movie-rate {
+                width: 100%;
+                font-family: $font-Questrial-Regular;
+                font-size: $size-j;
+                margin-left: $mp-nn;
+                color: nth($fontColor, 2);
+                display: flex;
+                flex-direction: row;
+            }
+            .movie-rent {
+                font-family: $font-Questrial-Regular;
+                font-size: $size-j;
+                display: flex;
+                flex-direction: row;
+                width: 85%;
+                height: $mp-m;
+                justify-content: space-evenly;
+                align-items: center;
+                margin:$mp-k $mp-d;
+                .rent {
+                    width: 40%;
+                    height: 4em;
+                    border: 0.01em solid rgb(17, 18, 19);
+                    border-radius: 0.3em;
+                    display: flex;
+                    margin: 1em;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: nth($YellowsandBlue, 3);
+                    cursor: pointer;
+                }
+                .mas-recomendaciones {
+                    width: 40%;
+                    height: 4em;
+                    border: 0.01em solid rgb(17, 18, 19);
+                    border-radius: 0.3em;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: nth($YellowsandBlue, 5);
+                    cursor: pointer;
+                }
+            }
+            .overview {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 100%;
+                height: $mp-q+$mp-d;
+                color: nth($fontColor, 2);
+                margin-left: $mp-nn;
+                .Rent-Data {
+                    color: whitesmoke;
+                    font-size: 32px;
+                }
+                .player-movie {
+                    margin: 40px;
+                    width: 800px;
+                    height: 360px;
+                    margin: 50px;
+                    margin-top: -20px;
+                    margin-left: -18px;
+                    .player-movie-child {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .sinopsis {
+                    font-size: $size-nn;
+                }
+                .overviewSize {
+                    margin-top: 20px;
+                    font-family: $font-Questrial-Regular;
+                    font-size: $size-j;
+                }
+            }
+            .show-video-movie {
+                display: flex;
+                margin-top: 123px;
+                margin-left: 80px;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: $mp-t+$mp-n;
+                .multimedia {
+                    height: 100%;
+                }
+            }
+        }
+        .movie-poster {
+            width: 40%;
+            height: 40em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .movie-poster img {
+            width: $mp-u;
+            height: $mp-v;
+        }
+    }
+}

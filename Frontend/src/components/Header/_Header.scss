@@ -1,0 +1,42 @@
+.header-movies {
+    width: $per-10 !important;
+    height: $mp-g - $size-a;
+    background-color: transparent;
+    position: absolute !important;
+    z-index: 1;
+    .header-menu-movies {
+        .header-menu-ul {
+            .header-menu-li {
+                .search {
+                    width: $mp-s - $mp-c;
+                    height: $size-k;
+                    font-size: $mp-g - $size-a;
+                    border-radius: $size-f;
+                    margin-right: $size-o - $size-a;
+                    outline: none;
+                    border: none;
+                }
+            }
+            .header-menu-li-select{
+                font-size: $size-k;
+                .header-menu-li-select {
+                    width: $cent-a + $size-r;
+                    border-radius: $mp-c;
+                    background-color: transparent;
+                    border: none;
+                    color: white;
+                    outline: none;
+                }
+            }
+            .header-menu-li-name {
+                .header-menu-a-name {
+                    color: nth($fontColor, 3);
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    .header-logo{
+        margin-left: $mp-k;
+    }
+}

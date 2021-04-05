@@ -1,0 +1,30 @@
+/*BASE*/
+@import './scss/base/reset.scss';
+@import './scss/base/fonts.scss';
+
+/*UTILITIES*/
+@import './scss/utilities/variables.scss';
+@import './scss/utilities/mixins.scss';
+
+/*COMPONENTS*/
+@import './components/Header/Header.scss';
+@import './components/Login/Login.scss';
+@import './components/Register/Register.scss';
+@import './components/Movie/Movie.scss';
+@import './components/User/Header-user/Header-user.scss';
+@import './components/User/Data-user/Data-user.scss';
+@import './components/Footer/Footer.scss';
+@import './components/Loading/Loading.scss';
+
+/*VIEWS*/
+@import './views/Landing/Landing.scss';
+@import './views/Home/Home.scss';
+@import './views/Movie-Profile/Movie-profile.scss';
+@import './views/Profile/Profile.scss';
+@import './views/Series/Series.scss';
+
+//*CAROUSSEL*//
+@import "react-responsive-carousel/lib/styles/carousel.min.css"; 
+
+/*RESPONSIVE DESIGN*/
+@import './scss/media-query/responsive-design.scss';
