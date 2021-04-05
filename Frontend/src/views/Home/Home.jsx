@@ -99,7 +99,8 @@ const Home = (props) => {
       let populares = `${base}popular?api_key=${key}&${language}`;
       let recomendaciones = `${base}top_rated?api_key=${key}&${language}`;
 
-      getFavouriteMovies()
+      getFavouriteMovies();
+      
       //Populares
       fetch(populares)
          .then(res => (res.json()))
@@ -154,6 +155,7 @@ const Home = (props) => {
          localStorage.setItem("favoritos", JSON.stringify(listaFavoritos))
       }
    }
+
    if (!props.token) {
       setTimeout(() => {
          history.push('/');

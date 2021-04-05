@@ -1,5 +1,5 @@
 .App {
-    width: 100% !important;
+    width: $per-10 !important;
 }
 
 .content-home {
@@ -12,8 +12,8 @@
         #my-video {
             all: unset;
             top: 5em;
-            left: 0;
-            width: 100%;
+            left: $mp-0;
+            width: $per-10;
             object-fit: none;
         }
         .content-button-info {
@@ -21,14 +21,14 @@
             z-index: 1;
             top: 710px;
             color: #f1f1f1;
-            left: 100px;
+            left: $cent-a;
             font-size: 30px;
             font-weight: 800;
             text-align: center;
             #button-info {
                 width: 200px;
                 font-size: 18px;
-                padding: 10px;
+                padding: $mp-e;
                 border: none;
                 border-radius: 0.5em;
                 background: rgb(243, 240, 240);
@@ -37,7 +37,7 @@
                 margin: 0.5em;
                 &:hover {
                     background: transparent .2px;
-                    color: white;
+                    color: $principal-color;
                 }
             }
         }

@@ -1,9 +1,7 @@
 .component-header-user{
     font-family: $font-Questrial-Regular;
-    width: $q-xl - $mp-k;
-    margin-left: auto;
-    margin-right: auto;
-    height: 105px;
+    @include center($q-xl - $mp-k);
+    height: $q-m - $mp-a;
     display: flex;
     color: nth($principal-color, 1);
     position: relative;
@@ -15,7 +13,7 @@
         cursor: pointer;
         .logo-link{
             text-decoration: none;
-            color: white;
+            color: $principal-color;
             display: flex;
             .user-logo-first{
                 color: nth($fontColor, 3);
@@ -31,7 +29,7 @@
         .component-header-menu-ul{
             display: flex;
             position: absolute;
-            right: 0;
+            right: $mp-0;
             bottom: -50px;
             font-size: $size-l;
             .component-header-menu-li{
@@ -50,11 +48,11 @@
                 color: nth($btnRed, 1);
             }
             .component-header-menu-li-img{
-                bottom: 52px;
+                bottom: $size-u + $mp-a;
                 position: relative;
                 .img-user{
-                    width: 80px;
-                    border-radius: 50%;
+                    width: $size-v;
+                    border-radius: $per-5;
                 }
             }
         }

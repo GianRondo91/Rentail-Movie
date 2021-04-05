@@ -4,7 +4,6 @@ import AddFavourite from '../Add-fav/AddFavourite'
 
 
 const Movie = ({ title, poster_path, id, onClick, style, addFavouriteMovie }) => {
-
   //-----ADDING A FAV-------------//
   const [heartStyle, setHeartStyle] = useState('one');
 

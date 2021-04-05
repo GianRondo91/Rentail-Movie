@@ -15,10 +15,13 @@ const Series = (props) => {
    const [series, setSeries] = useState([]);
    const [favoritos, setFavoritos] = useState([]);
 
-   let language = "language=es-ES"
-   let colectionSeries = 'https://api.themoviedb.org/3/tv/popular?api_key=ef2edc9da61e81787a8079a7df721936&language=es-ES&page=1'
+   let language = "language=es-ES";
+   let colectionSeries = 'https://api.themoviedb.org/3/tv/popular?api_key=ef2edc9da61e81787a8079a7df721936&language=es-ES&page=1';
 
    useEffect(() => {
+
+      getFavouriteMovies();
+
       fetch(colectionSeries)
          .then(res => (res.json()))
          .then(data => {
@@ -92,6 +95,11 @@ const Series = (props) => {
       };
    };
 
+   const getFavouriteMovies = () => {
+      let allFavourites = JSON.parse(localStorage.getItem('favoritos'));
+      setFavoritos(allFavourites);
+   };
+
    const addFavouriteMovie = (id, title, posther_path) => {
       const listaFavoritos = [...favoritos, { id, title, posther_path }]
       setFavoritos(listaFavoritos)
@@ -131,7 +139,7 @@ const Series = (props) => {
             <div className="serie-search">
                <h2 className='series-title'>Las más vistas</h2>
                <div className="portada-series">
-                  {series.map(series => <Movie style='other-card-style' key={series.id}  {...series} onClick={() => takeMeTo(series)} />)}
+                  {series.map(series => <Movie style='other-card-style' key={series.id} addFavouriteMovie={addFavouriteMovie} {...series} onClick={() => takeMeTo(series)} />)}
                </div>
             </div>
             <Footer />
@@ -154,21 +162,19 @@ const Series = (props) => {
    
                <h2 className='series-title'>Resultado de la búsqueda <em class="title-search">{searchQuery}</em></h2>
                <div className="carousel-series">
-                  {seriesSearch.map(serie => <Movie style='other-card-style' key={serie.id}  {...serie} onClick={() => takeMeTo(serie)} />)}
+                  {seriesSearch.map(serie => <Movie style='other-card-style' key={serie.id}  {...serie} addFavouriteMovie={addFavouriteMovie} onClick={() => takeMeTo(serie)} />)}
                </div>
                
                
                <h2 className='series-title'>Las más vistas</h2>
                <div className="portada-series">
-                  {series.map(series => <Movie style='other-card-style' key={series.id}  {...series} onClick={() => takeMeTo(series)} />)}
+                  {series.map(series => <Movie style='other-card-style' key={series.id} addFavouriteMovie={addFavouriteMovie}  {...series} onClick={() => takeMeTo(series)} />)}
                </div>
             </div>
             <Footer />
          </div>
       )
-
    }
-   
 };
 
 const mapStateToProps = state => {

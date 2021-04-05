@@ -161,6 +161,7 @@ table {
 /*Botones*/
 /*Sizes*/
 /*Margin and Padding*/
+/*centenas*/
 /*Media-query*/
 /*Porcentjes*/
 /*Imagenes-Sizes*/
@@ -220,11 +221,6 @@ se transforma en
   border: 20px solid #00FF00;
 }
 */
-/*
-.principal-buton{
-    @include principal-button(nth($btnBlue,1), nth($btnBlue,2), nth($btnBlue,3));
-}
-*/
 /*COMPONENTS*/
 .header-movies {
   width: 100% !important;
@@ -243,7 +239,7 @@ se transforma en
   .header-movies .header-menu-movies .header-menu-ul .header-menu-li-select {
     font-size: 20px; }
     .header-movies .header-menu-movies .header-menu-ul .header-menu-li-select .header-menu-li-select {
-      width: 137px;
+      width: 136px;
       border-radius: 6px;
       background-color: transparent;
       border: none;
@@ -452,10 +448,10 @@ se transforma en
 
 .component-header-user {
   font-family: "Questrial-Regular";
-  width: 1400px;
-  margin-left: auto;
+  max-width: 1400px;
   margin-right: auto;
-  height: 105px;
+  margin-left: auto;
+  height: 1005px;
   display: flex;
   color: white;
   position: relative; }
@@ -479,7 +475,7 @@ se transforma en
     .component-header-user .component-header-menu .component-header-menu-ul {
       display: flex;
       position: absolute;
-      right: 0;
+      right: 0px;
       bottom: -50px;
       font-size: 22px; }
       .component-header-user .component-header-menu .component-header-menu-ul .component-header-menu-li {
@@ -735,7 +731,7 @@ body {
     .content-home .content-movies #my-video {
       all: unset;
       top: 5em;
-      left: 0;
+      left: 0px;
       width: 100%;
       object-fit: none; }
     .content-home .content-movies .content-button-info {
@@ -971,8 +967,10 @@ body {
     height: 560px; }
     .contenedor-padre-series .imagen-portada .portada {
       width: 100%;
-      height: 100%; }
+      height: 600px; }
   .contenedor-padre-series .series-title {
+    margin-top: 30px;
+    margin-bottom: 10px;
     margin-left: 10px;
     font-size: 25px; }
     .contenedor-padre-series .series-title .title-search {
@@ -999,24 +997,26 @@ body {
 /*RESPONSIVE DESIGN*/
 @media (min-width: 1440px) {
   #content {
-    display: flex;
+    max-width: 1440px;
     margin-right: auto;
-    margin-left: auto; }
+    margin-left: auto;
+    display: flex; }
   /*Data-user*/
   .component-profile {
-    width: 1400px;
-    margin-left: auto;
-    margin-right: auto; }
+    max-width: 1400px;
+    margin-right: auto;
+    margin-left: auto; }
   .content-home .content {
     position: absolute;
     top: 600px !important; }
   .movie-profile-container,
   .component-header-user {
     max-width: 1400px;
+    margin-right: auto;
     margin-left: auto;
-    margin-right: auto; }
+    height: 142px; }
   .component-header-user .component-header-logo .logo-link {
-    margin-left: 15px; }
+    margin-left: 16px; }
   .movie-profile-container {
     font-family: "Questrial-Regular"; }
     .movie-profile-container .movie-panel {
@@ -1024,11 +1024,11 @@ body {
       .movie-profile-container .movie-panel .rent-data-movie .movie-title {
         color: #51C2C0; }
       .movie-profile-container .movie-panel .rent-data-movie .movie-rent {
-        margin-left: 0; }
+        margin-left: 0px; }
         .movie-profile-container .movie-panel .rent-data-movie .movie-rent .rent,
         .movie-profile-container .movie-panel .rent-data-movie .movie-rent .mas-recomendaciones {
           text-align: center;
-          margin-left: 0;
+          margin-left: 0px;
           border-radius: 10px; }
       .movie-profile-container .movie-panel .rent-data-movie .overview {
         margin-top: 30px;
@@ -1039,11 +1039,11 @@ body {
       .movie-profile-container .movie-panel-other .data-movie .movie-title {
         color: #51C2C0; }
       .movie-profile-container .movie-panel-other .data-movie .movie-rent {
-        margin-left: 0; }
+        margin-left: 0px; }
         .movie-profile-container .movie-panel-other .data-movie .movie-rent .rent,
         .movie-profile-container .movie-panel-other .data-movie .movie-rent .mas-recomendaciones {
           text-align: center;
-          margin-left: 0;
+          margin-left: 0px;
           border-radius: 10px; }
       .movie-profile-container .movie-panel-other .data-movie .overview {
         margin-top: 30px;
@@ -1052,12 +1052,12 @@ body {
         letter-spacing: 1px; }
       .movie-profile-container .movie-panel-other .movie-poster img {
         position: relative;
-        bottom: 109px; } }
+        bottom: 108px; } }
 
 @media (min-width: 1201px) and (max-width: 1439px) {
   #content {
-    width: 1200px;
     display: flex;
+    max-width: 1200px;
     margin-right: auto;
     margin-left: auto;
     margin-top: 10%; }
@@ -1078,20 +1078,19 @@ body {
   #content {
     max-width: 1007px;
     margin-right: auto;
-    margin-left: auto;
-    background-color: rosybrown; }
+    margin-left: auto; }
     #content .content-left {
       width: 50%; }
     #content .content-right {
       width: 100%; }
   .content-home {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto; }
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto; }
     .content-home .header-movies {
       height: 142px; }
       .content-home .header-movies .header-logo {
-        bottom: 45px; }
+        bottom: 44px; }
   /*Data-user*/
   .component-profile .component-header-user {
     width: 1008px; }
@@ -1105,21 +1104,21 @@ body {
 
 @media (min-width: 375px) and (max-width: 1007px) {
   #content {
+    max-width: 500px;
     margin-right: auto;
-    margin-left: auto;
-    max-width: 500px; }
+    margin-left: auto; }
     #content .content-left {
       width: 0%; }
     #content .content-right {
-      width: 100%;
+      max-width: 100%;
       margin-right: auto;
       margin-left: auto; }
   .content-home,
   .contenedor-padre-series {
     max-width: 500px;
-    position: relative;
+    margin-right: auto;
     margin-left: auto;
-    margin-right: auto; }
+    position: relative; }
     .content-home .content-movies #my-video,
     .contenedor-padre-series .content-movies #my-video {
       height: 490px !important; }
@@ -1138,8 +1137,8 @@ body {
         .content-home .component-header-user .component-header-menu .component-header-menu-ul,
         .contenedor-padre-series .component-header-user .component-header-menu .component-header-menu-ul {
           display: grid;
-          right: 257px;
-          top: 13px; }
+          right: 256px;
+          top: 12px; }
           .content-home .component-header-user .component-header-menu .component-header-menu-ul .header-menu-li,
           .contenedor-padre-series .component-header-user .component-header-menu .component-header-menu-ul .header-menu-li {
             margin-bottom: 30px; }
@@ -1149,7 +1148,7 @@ body {
           .content-home .component-header-user .component-header-menu .component-header-menu-ul .component-header-menu-li-img,
           .contenedor-padre-series .component-header-user .component-header-menu .component-header-menu-ul .component-header-menu-li-img {
             right: -272px;
-            bottom: 359px;
+            bottom: 400px;
             position: relative;
             width: fit-content; }
           .content-home .component-header-user .component-header-menu .component-header-menu-ul .component-header-menu-li-icon,
@@ -1172,34 +1171,34 @@ body {
   /*Data-user*/
   .component-profile {
     max-width: 500px;
-    margin-left: auto;
-    margin-right: auto; }
+    margin-right: auto;
+    margin-left: auto; }
     .component-profile .component-header-user {
       display: table-cell;
       text-align: right; }
       .component-profile .component-header-user .component-header-menu {
         width: 490px !important; }
         .component-profile .component-header-user .component-header-menu .component-header-menu-ul {
-          top: 131px;
+          top: 132px;
           position: absolute;
           left: 66px;
           width: 398px; }
       .component-profile .component-header-user .component-header-logo .logo-link {
-        left: 61px;
+        left: 62px;
         position: relative; }
     .component-profile .data-user {
       margin-top: 60px;
       width: auto; }
       .component-profile .data-user .form-update-data {
-        width: 90%;
-        margin-left: auto;
-        margin-right: auto; }
+        max-width: 90%;
+        margin-right: auto;
+        margin-left: auto; }
         .component-profile .data-user .form-update-data .form-data-content {
-          width: 70%;
-          margin-left: auto;
+          max-width: 70%;
           margin-right: auto;
+          margin-left: auto;
           position: relative;
-          left: 3px; }
+          left: 4px; }
           .component-profile .data-user .form-update-data .form-data-content .form-update-data-input {
             margin-top: 12px; }
           .component-profile .data-user .form-update-data .form-data-content .form-update-data-button {
@@ -1243,14 +1242,14 @@ body {
           width: 152px; }
   .movie-profile-container {
     max-width: 500px;
-    margin-left: auto;
-    margin: auto; }
+    margin-right: auto;
+    margin-left: auto; }
     .movie-profile-container .component-header-user {
       max-width: 500px; }
       .movie-profile-container .component-header-user .header-menu-movies {
         position: relative;
-        left: 317px;
-        top: 57px; }
+        left: 316px;
+        top: 56px; }
         .movie-profile-container .component-header-user .header-menu-movies .header-menu-ul {
           top: 112px; }
           .movie-profile-container .component-header-user .header-menu-movies .header-menu-ul .header-menu-li .search {
@@ -1264,25 +1263,25 @@ body {
         position: relative;
         right: 50px;
         width: 216px;
-        bottom: 135px; }
+        bottom: 138px; }
         .movie-profile-container .movie-panel .data-movie .movie-title {
           position: relative;
-          bottom: 11px;
-          font-size: 26px;
+          bottom: 12px;
+          font-size: 24px;
           width: 100%;
           color: #51C2C0; }
         .movie-profile-container .movie-panel .data-movie .movie-rent {
           flex-direction: column;
-          left: 33px;
+          left: 32px;
           position: relative; }
           .movie-profile-container .movie-panel .data-movie .movie-rent .rent,
           .movie-profile-container .movie-panel .data-movie .movie-rent .mas-recomendaciones {
             width: 160px;
             text-align: center; }
         .movie-profile-container .movie-panel .data-movie .show-video-movie .multimedia {
-          max-width: 190px;
-          margin-left: auto;
-          margin-right: auto; }
+          max-width: 192px;
+          margin-right: auto;
+          margin-left: auto; }
           .movie-profile-container .movie-panel .data-movie .show-video-movie .multimedia iframe {
             max-width: 450px; }
       .movie-profile-container .movie-panel .rent-data-movie {
@@ -1292,4 +1291,4 @@ body {
         height: 350px;
         bottom: 300px;
         position: relative;
-        bottom: 356px; } }
+        bottom: 355px; } }

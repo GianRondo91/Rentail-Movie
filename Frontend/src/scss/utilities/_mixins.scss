@@ -56,7 +56,7 @@
     text-align: center;
 }
 
-@mixin input($bk-color, $text-color){
+@mixin input($bk-color, $text-color) {
     width: $per-10;
     height: $mp-k;
     background-color: $bk-color;
@@ -66,7 +66,7 @@
     font-size: $size-j;
 }
 
-@mixin input-security($width){
+@mixin input-security($width) {
     width: $width;
     margin-top: $mp-c - $size-a;
     margin-bottom: $mp-h;
@@ -75,8 +75,9 @@
     outline: none;
     border: none;
 }
-/*
-.principal-buton{
-    @include principal-button(nth($btnBlue,1), nth($btnBlue,2), nth($btnBlue,3));
+
+@mixin center ($width){
+    max-width: $width;
+    margin-right: auto;
+    margin-left: auto;
 }
-*/

@@ -15,10 +15,9 @@ $formulary:( #8b8680, #51C2C0, #fad586);
 
 /**/
 
-$principal-color:white; //definir
+$principal-color:white; 
 $alternative-color:#ADDDFD; //definir
 $Danger-color:white; //definir
-
 //#585858
 $fontColor:(#ffffff, #A4A4A4, #51C2C0, #1C1C1C, #000000);
 
@@ -51,13 +50,13 @@ $size-m: 24px;
 $size-n: 26px;
 $size-nn: 28px;
 $size-o: 30px;
-
 $size-p: 32px;
 $size-q: 34px;
 $size-r: 36px;
 $size-s: 38px;
 $size-t: 40px;
 $size-u: 50px;
+$size-v: 80px;
 
 /*Margin and Padding*/
 
@@ -90,12 +89,24 @@ $mp-x: 800px;
 $mp-y: 900px;
 $mp-z: 1200px;
 
+/*centenas*/
+
+$cent-a: 100px;
+$cent-b: 200px;
+$cent-c: 300px;
+$cent-d: 400px;
+$cent-e: 500px;
+$cent-f: 600px;
+$cent-g: 700px;
+$cent-h: 800px;
+$cent-i: 900px;
 
 /*Media-query*/
+
 $q-s: 375px;
 $q-m: 1007px;
 $q-l: 1200px;
-$q-xl: 1440px; 
+$q-xl: 1440px;
 
 /*Porcentjes*/
 
@@ -121,6 +132,8 @@ $img-xxl: 355px;
 $img-xxll: 500px;
 $img-xxxl: 600px;
 
+
+
 /*--------------------------------------------------*/
 
 $ng-52: -52px;
@@ -143,12 +156,9 @@ $em-n:13em;
 $em-o:14em;
 $em-p:15em;
 
-
-
 /*For Grid*/
 
 $max: 6;
-
 @for $i from 1 through $max {
     $equ: 100% / $i;
     #header.cell-#{$i}>div {
@@ -161,7 +171,10 @@ $max: 6;
 
 
 /*--------------------------------------------------*/
+
+
 /*Funciones*/
+
 @function getBorderSize($size) {
     @return 10px * $size;
 }

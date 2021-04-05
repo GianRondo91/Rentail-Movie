@@ -1,6 +1,6 @@
 .header-movies {
-    width: 100% !important;
-    height: 15px;
+    width: $per-10 !important;
+    height: $mp-g - $size-a;
     background-color: transparent;
     position: absolute !important;
     z-index: 1;
@@ -8,20 +8,20 @@
         .header-menu-ul {
             .header-menu-li {
                 .search {
-                    width: 250px;
-                    height: 20px;
-                    font-size: 15px;
-                    border-radius: 10px;
-                    margin-right: 29px;
+                    width: $mp-s - $mp-c;
+                    height: $size-k;
+                    font-size: $mp-g - $size-a;
+                    border-radius: $size-f;
+                    margin-right: $size-o - $size-a;
                     outline: none;
                     border: none;
                 }
             }
             .header-menu-li-select{
-                font-size: 20px;
+                font-size: $size-k;
                 .header-menu-li-select {
-                    width: 137px;
-                    border-radius: 6px;
+                    width: $cent-a + $size-r;
+                    border-radius: $mp-c;
                     background-color: transparent;
                     border: none;
                     color: white;
@@ -37,6 +37,6 @@
         }
     }
     .header-logo{
-        margin-left: 40px;
+        margin-left: $mp-k;
     }
 }
