@@ -8,7 +8,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 </div>
 
-# Proyect - Rental of Movies and Series
+# Project - Rental of Movies and Series
 
 
 ## 📝 Table of Contents
